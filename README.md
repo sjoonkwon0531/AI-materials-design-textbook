@@ -1,6 +1,6 @@
 # AI 기반 첨단소재 탐색·설계·발견·최적화: 코드와 그림
 
-권석준(성균관대학교)의 교과서 「AI 기반 첨단소재 탐색·설계·발견·최적화」의 동반 저장소입니다. 본문에 실린 Hands-on Lab의 Python 코드, 같은 Lab을 옮긴 Julia 코드, 그림과 그림 생성 스크립트, 연습문제 해답 검증 코드를 장별로 모았습니다. 원고는 이 저장소에 포함되지 않습니다.
+권석준(성균관대학교) 교수가 작업 중인 교과서 'AI 기반 첨단소재 탐색, 설계, 발견, 최적화'(출판사 사회평론)의 코드 및 데이터 저장소입니다. 본문에 실린 Hands-on Lab의 Python 코드, 같은 Lab을 포팅한 Julia 코드, 그림과 그림 생성 스크립트, 연습문제 해답 검증 코드를 장별로 저장한 저장소입니다. 교과서 텍스트는 이 저장소에 포함되지 않았습니다.
 
 Companion repository for the Korean textbook *AI-Driven Discovery, Design, and Optimization of Advanced Materials* by Seok Joon Kwon (Sungkyunkwan University). It contains the Python and Julia code for every hands-on lab, the figures and the scripts that draw them, and the code that checks the end-of-chapter exercise solutions. The manuscript itself is not included.
 
@@ -66,5 +66,5 @@ Julia 코드는 Julia 1.10 이상에서 확인했습니다. 쓰는 패키지는 
 ## 인용
 
 ```
-권석준, 「AI 기반 첨단소재 탐색·설계·발견·최적화」 동반 코드 저장소, 2026.
+권석준, AI 기반 첨단소재 탐색/설계/발견/최적화' (출판사: 사회평론) 동반 코드 저장소, 2026.
 ```
