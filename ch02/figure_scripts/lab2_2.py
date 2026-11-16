@@ -1,5 +1,5 @@
 """Lab 2.2 / Fig 2.2.4: mass-spring energy with explicit Euler, implicit Euler, RK4, velocity-Verlet."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import numpy as np, bookstyle as bs, matplotlib.pyplot as plt
 w2=1.0; x0,v0=1.0,0.0; dt=0.1
 E=lambda x,v: 0.5*v**2+0.5*w2*x**2
@@ -64,4 +64,4 @@ from matplotlib.lines import Line2D
 h=[Line2D([],[],**{kk:vv for kk,vv in st[k].items() if kk!='markevery'}) for k in ['fe','be','rk4','vv']]+[Line2D([],[],**ex)]
 fig.legend(handles=h,loc='lower center',ncol=5,frameon=False,bbox_to_anchor=(0.5,-0.02))
 fig.tight_layout(w_pad=2.5,rect=(0,0.09,1,1))
-fig.savefig('../ch02/figures/Fig2.2.4_energy_drift.png')
+fig.savefig('../../ch02/figures/Fig2.2.4_energy_drift.png')

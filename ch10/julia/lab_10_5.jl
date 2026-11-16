@@ -4,8 +4,8 @@
 #       parts: info eos elastic stresscheck c44 timing equiv nve nve_dt ood  (생략하면 전부)
 #   julia lab_10_5.jl merge                네 모델의 결과를 표로 (FROM_PYTHON = true면 파이썬의 data/103_<model>.json)
 # 네 모델은 PythonCall로 부르는 ASE 계산기다. 한 Julia 세션은 파이썬 하나만 쓰므로 모델에 맞는 가상환경을 골라 실행한다:
-#   JULIA_CONDAPKG_BACKEND=Null JULIA_PYTHONCALL_EXE=/tmp/claude-0/v10/bin/python  julia lab_10_5.jl mace      (chgnet도 같다)
-#   JULIA_CONDAPKG_BACKEND=Null JULIA_PYTHONCALL_EXE=/tmp/claude-0/v10b/bin/python julia lab_10_5.jl sevennet  (mattersim도 같다)
+#   JULIA_CONDAPKG_BACKEND=Null JULIA_PYTHONCALL_EXE=$MLIP_PY_A julia lab_10_5.jl mace      (chgnet도 같다)
+#   JULIA_CONDAPKG_BACKEND=Null JULIA_PYTHONCALL_EXE=$MLIP_PY_B julia lab_10_5.jl sevennet  (mattersim도 같다)
 # Julia로 직접 계산하는 것: Birch–Murnaghan 맞춤, 변형-응력의 중심 차분, 탄성 상수와 B의 조립, 속도 Verlet NVE와 표류 맞춤,
 # 무작위 회전, 이합체 곡선의 판정. 원자 이완(탄성 상수의 relaxed-ion)은 ASE의 BFGS를 PythonCall로 부른다.
 include("ch10_common.jl")

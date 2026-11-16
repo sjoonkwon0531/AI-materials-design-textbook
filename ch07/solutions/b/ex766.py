@@ -3,8 +3,8 @@ DDP is emulated exactly in one process: rank r of DistributedSampler gets perm[r
 perm[256k:256(k+1)] split into its even/odd entries; DDP's gradient = (mean grad over half 0 + mean grad over half 1)/2."""
 import os, numpy as np, torch, torch.nn as nn
 torch.set_num_threads(1)
-src = open("../ch07/labs/76_ddp.py").read().split('if __name__ == "__main__":')[0]
-src = src.replace("HERE = os.path.dirname(os.path.abspath(__file__))", "HERE = '../ch07/labs'")
+src = open("../../../ch07/labs/76_ddp.py").read().split('if __name__ == "__main__":')[0]
+src = src.replace("HERE = os.path.dirname(os.path.abspath(__file__))", "HERE = '../../../ch07/labs'")
 exec(src)
 X, y = load()
 def opt_for(params, name, eps):

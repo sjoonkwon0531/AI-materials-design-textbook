@@ -9,7 +9,7 @@ torch.set_num_threads(1)
 HERE = os.path.dirname(os.path.abspath(__file__))
 _s = importlib.util.spec_from_file_location("sam83", os.path.join(HERE, "83_sam.py"))
 S = importlib.util.module_from_spec(_s); _s.loader.exec_module(S)
-DATA = os.path.join(HERE, "..", "..", "ch7", "data")
+DATA = os.path.join(HERE, "..", "..", "ch07", "data")
 NAT, SPECIES = 9, {1: 0, 6: 1, 8: 2}
 t0 = time.time()
 

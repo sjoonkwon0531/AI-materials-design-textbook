@@ -119,7 +119,7 @@ if __name__ == "__main__":
         print(f"    seed {sd}: max|Q-Q*| = {np.abs(Q-Qs).max():.3f}, greedy policy matches pi* in "
               f"{int(match*nS)}/{nS} states, worst-state value loss = {max(0.0, -log[-1][2]):.4f}, "
               f"mismatched n = {np.where(Q.argmax(1) != pis)[0].tolist()}")
-    np.savez("../ch08/data/81_anneal.npz", hist=hist, Vs=Vs, pis=pis,
+    np.savez("../../ch08/data/81_anneal.npz", hist=hist, Vs=Vs, pis=pis,
              logs=np.array(logs), **{f"pe_{k[0]}_{k[1].replace(' ','_').replace('=','')}": v for k, v in res.items()})
     # greedy-policy annealing trajectories from n=20 (for the figure)
     rng = np.random.default_rng(7); trajs = []
@@ -129,6 +129,6 @@ if __name__ == "__main__":
             a = pis[s]; tr.append((s, E.TEMPS[a])); s, _ = E.step(s, a, rng)
         trajs.append(tr)
     trajs = np.array(trajs)
-    np.save("../ch08/data/81_anneal_traj.npy", trajs)
+    np.save("../../ch08/data/81_anneal_traj.npy", trajs)
     print("\nunder pi* from n=20 (200 runs): step, mean n, mean T:", [(t+1, round(float(trajs[:,t,0].mean()),2), int(round(float(trajs[:,t,1].mean())))) for t in (9,19,39,59,79,119)])
     print(f"runtime {time.time()-t0:.1f} s")

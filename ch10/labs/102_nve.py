@@ -8,7 +8,7 @@
  (C) Second derivatives: Hessian of the perfect 8-atom cell by double autograd vs finite differences of forces;
      frequencies of the 24 modes at the k-points folded into this cell (Gamma and X of the primitive cell),
      student vs oracle (oracle Hessian by finite differences).
-Run with /tmp/claude-0/v10/bin/python.
+Run with $MLIP_PY_A (MACE/CHGNet environment).
 """
 import os, json, time, importlib.util, warnings
 import numpy as np

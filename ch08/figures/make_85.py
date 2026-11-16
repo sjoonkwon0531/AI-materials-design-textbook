@@ -1,10 +1,10 @@
 """Figures for Sec.8.5 (Fig8.5.1-8.5.3). Run after labs/85_ppo.py and labs/85_sam_surrogate.py."""
 import os, sys, importlib
 import numpy as np
-sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common')); sys.path.insert(0, "../ch08/labs")
+sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common')); sys.path.insert(0, "../../ch08/labs")
 from bookstyle import plt, panel_label, NAVY, RED, BLUE, GOLD, GREEN, PURPLE, GRAY
 E = importlib.import_module("85_film_env")
-HERE = os.path.dirname(os.path.abspath(__file__)); LABS = "../ch08/labs"
+HERE = os.path.dirname(os.path.abspath(__file__)); LABS = "../../ch08/labs"
 P = E.FilmParams()
 
 # ------------------------------------------------------------ Fig 8.5.1 environment physics

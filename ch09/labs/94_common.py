@@ -16,7 +16,8 @@ import torch, torch.nn as nn
 
 torch.set_num_threads(1)
 L = 2 * math.pi
-D = "../ch09/data/"
+import os as _os
+D = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "data") + "/"   # works from any folder
 
 
 # --------------------------------------------------------------------------------------------------

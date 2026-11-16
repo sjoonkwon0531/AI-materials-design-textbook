@@ -2,7 +2,7 @@
 Also Ex 8.3.2(c): block-restricted lambda_max of the AdamW seed-0 model."""
 import os, sys, time, json, numpy as np, torch
 torch.set_num_threads(1)
-HERE = "../ch08/labs"
+HERE = "../../../ch08/labs"
 src = open(os.path.join(HERE, "83_bandgap_sam.py")).read().split("sub = np.random.default_rng(1)")[0]
 src = src.replace('HERE = os.path.dirname(os.path.abspath(__file__))', f'HERE = {HERE!r}')
 g = {"__file__": os.path.join(HERE, "83_bandgap_sam.py"), "__name__": "x"}; exec(compile(src, "83_bandgap_sam.py", "exec"), g)

@@ -1,0 +1,14 @@
+--- learning curve: U/force RMSE vs #training points ---
+  Ntrain   U-RMSE     F-RMSE
+     10   3.068e+00  1.390e+01
+     20   2.113e-01  3.605e+00
+     40   1.710e-02  9.290e-01
+     80   1.493e-02  4.468e-01
+    160   1.281e-02  3.308e-01
+    320   1.263e-02  3.197e-01
+
+final model (160 pts): U-RMSE=1.49e-02, F-RMSE=4.35e-01
+  true-LJ g(r) first peak: r=1.124, g=3.115
+  ML      g(r) first peak: r=1.124, g=3.129
+  RMSE between g(r) curves (r>0.9): 0.048
+  g(r) tail mean (r>3): true=1.030, ml=1.038

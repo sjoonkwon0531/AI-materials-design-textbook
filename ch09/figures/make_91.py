@@ -5,7 +5,7 @@ import numpy as np
 from bookstyle import *
 from matplotlib.patches import FancyBboxPatch
 
-OUT = "../ch09/figures/"
+OUT = "../../ch09/figures/"
 
 # ------------------------------------------------------------------ Fig 9.1.1
 def fig_map():
@@ -44,7 +44,7 @@ def fig_map():
 
 # ------------------------------------------------------------------ Fig 9.1.2
 def fig_hnn():
-    d = json.load(open("../ch09/data/91_hnn.json"))
+    d = json.load(open("../../ch09/data/91_hnn.json"))
     t = np.array(d["t"]); ref = np.array(d["ref"])
     fig, axs = plt.subplots(1, 3, figsize=(17, 5.2), gridspec_kw=dict(wspace=0.33, width_ratios=[1, 1.15, 1.15]))
     ax = axs[0]

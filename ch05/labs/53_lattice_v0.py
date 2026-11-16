@@ -216,7 +216,7 @@ def main():
     # snapshots for figure
     _, _, _, s1 = zgb(Lz, 0.45, 2000, 1, 1)
     _, _, _, s2 = zgb(Lz, 0.525, 300, 1, 3)
-    np.savez("../ch05/labs/53_lattice_fig.npz", Ts=Ts, D0=out[0.0], D1=out[0.10],
+    np.savez("../../ch05/labs/53_lattice_fig.npz", Ts=Ts, D0=out[0.0], D1=out[0.10],
              Dsingle=np.array(res1), nu=nu, Ea=Ea, zgb=rows, snap1=s1, snap2=s2)
 
 if __name__ == "__main__":

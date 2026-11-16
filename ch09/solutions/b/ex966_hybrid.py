@@ -52,7 +52,7 @@ for nc in NCS:
 print(f"  solver at t = 50: F = {cc.F_s[:NT, -1].mean():.3f}, L = {cc.L_s[:NT, -1].mean():.3f}, slope {cc.slope(cc.t1, cc.L_s[:NT].mean(0)):.3f}")
 
 print("\n(b) effective conductivity of the binarised microstructure (c > 0 -> k2 = 10, else k1 = 1), periodic Q1 FEM on 64 x 64 pixels")
-homog = cc.load("homog", "../ch05/labs/55_homog.py")
+homog = cc.load("homog", "../../../ch05/labs/55_homog.py")
 cell = homog.PeriodicCell(64)
 lam = np.zeros((64, 64), bool); lam[32:, :] = True; Kl = homog.k_eff(cell, lam, 1.0, 10.0)
 print(f"  laminate check: k_xx = {Kl[0, 0]:.4f} (series 1.8182), k_yy = {Kl[1, 1]:.4f} (parallel 5.5)")

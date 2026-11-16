@@ -11,7 +11,7 @@ Evaluation only after the last round (2500 K test RMSE, 1500 K test RMSE, 2 x 50
 """
 import os, sys, time, json
 import numpy as np, torch
-sys.path.insert(0, '../ch10/labs')
+sys.path.insert(0, '../../ch10/labs')
 from importlib import import_module
 C = import_module('104_common')
 torch.set_num_threads(1)
@@ -80,6 +80,6 @@ for s in range(2):
 tag = f"LO{LO}_S{SEED}_{VARIANT}_M{MC}"
 print(f"[{tag}] final: labels {len(data)} (oracle calls {len(data)}), F-RMSE 2500 K {err[1]:.0f} meV/A (1500 K {err15[1]:.0f}), "
       f"2500 K MD steps survived {st}; CPU {time.process_time()-t0:.0f} s")
-torch.save(models[0].state_dict(), os.path.join('../ch10/solutions', f'ex_10_4_{tag}.pt'))
+torch.save(models[0].state_dict(), os.path.join('../../ch10/solutions', f'ex_10_4_{tag}.pt'))
 json.dump(dict(log=log, F=err[1], F1500=err15[1], stable=st, labels=len(data)),
-          open(os.path.join('../ch10/solutions', f'ex_10_4_{tag}.json'), 'w'))
+          open(os.path.join('../../ch10/solutions', f'ex_10_4_{tag}.json'), 'w'))

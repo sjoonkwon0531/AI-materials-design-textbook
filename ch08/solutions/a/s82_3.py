@@ -1,7 +1,7 @@
 """Ex 8.2.3: drop the 22 Magpie 'mode' features from the surrogate; redo family curves and Q-learning."""
 import importlib, sys, os, time
 import numpy as np
-sys.path.insert(0, "../ch08/labs")
+sys.path.insert(0, "../../../ch08/labs")
 m = importlib.import_module("82_compenv")
 from sklearn.model_selection import KFold
 import pandas as pd
@@ -25,7 +25,7 @@ tab = Tab(); tab.elements = ELEMS; tab.N = N; tab.states = states; tab.index = {
 tab.mu, tab.sigma = mu, sig; tab.balanced = np.array([m.charge_balanced(ELEMS, s) for s in states]); tab.dist = np.zeros(len(states)); tab.d95 = 1.0
 tab.score = lambda target, kappa=0.0, lam=0.0, cb=0.0: -np.abs(tab.mu - target) - kappa * tab.sigma - cb * (~tab.balanced)
 St = np.array(states); tie = (St[:, 3] == St[:, 4]) & (St[:, 3] > 0)
-old = np.load("../ch08/labs/82_grid_CuInGaSSe_N12.npz")
+old = np.load("../../../ch08/labs/82_grid_CuInGaSSe_N12.npz")
 print("family curves (x = #S of 6 anions): new mu+/-sd | old mu+/-sd")
 for name, cat in [("Cu3In3", (3, 3, 0)), ("Cu3In1Ga2", (3, 1, 2)), ("Cu3Ga3", (3, 0, 3))]:
     line = []

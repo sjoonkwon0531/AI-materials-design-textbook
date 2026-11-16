@@ -1,8 +1,8 @@
 """Fig 2.4.3: first-order upwind FVM, u_t+u_x=0, N=200, CFL=0.8, one period."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import logging; logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
 import numpy as np, bookstyle as bs, matplotlib.pyplot as plt
-exec(open('../ch02/labs/b04_L1335.py').read())
+exec(open('../../ch02/labs/b04_L1335.py').read())
 xc,u0,u,mass=run_fvm(); drift=np.abs(mass-mass[0])/mass[0]
 print("max drift %.3e, nonzero steps %d/%d"%(drift.max(),(drift>0).sum(),len(drift)))
 fig,axs=plt.subplots(1,2,figsize=(14,5.2))
@@ -17,4 +17,4 @@ ax.axhline(np.finfo(float).eps,ls='--',color=bs.RED,lw=2,label=r"machine epsilon
 ax.set_ylim(1e-18,1e-13); ax.set_xlabel("time step"); ax.set_ylabel(r"|M(t) - M(0)| / M(0)")
 ax.legend(frameon=False,loc='upper left')
 for a,l in zip(axs,'ab'): bs.panel_label(a,l)
-fig.tight_layout(w_pad=3); fig.savefig('../ch02/figures/Fig2.4.3_fvm.png')
+fig.tight_layout(w_pad=3); fig.savefig('../../ch02/figures/Fig2.4.3_fvm.png')

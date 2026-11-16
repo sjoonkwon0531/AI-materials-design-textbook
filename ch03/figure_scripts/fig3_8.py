@@ -1,7 +1,7 @@
 """Fig 3.8 - cumulative roadmap: four paradigms stack (Past - Present - Future) and converge.
 Paradigm names and colors match Fig 3.1; Kohn-Sham DFT sits in Computation & data (Sec. 3.1.3)."""
 import sys
-sys.path.insert(0, '../ch02/figures')
+sys.path.insert(0, '../../ch02/figure_scripts')
 import bookstyle as bs
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, Rectangle, FancyArrowPatch
@@ -46,4 +46,4 @@ ax.text(box_x + box_w/2, box_y + box_h/2, 'Materials AI\nfoundation models\n+\ns
         ha='center', va='center', fontsize=21, fontweight='bold', color=bs.NAVY,
         linespacing=1.1, zorder=4)
 
-fig.savefig('../ch03/figures/Fig3.8_roadmap.png')
+fig.savefig('../../ch03/figures/Fig3.8_roadmap.png')

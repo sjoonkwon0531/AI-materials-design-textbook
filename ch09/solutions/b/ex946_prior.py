@@ -3,10 +3,10 @@ few-shot LoRA adaptation (K = 4, 16) and the ensemble / residual diagnostics on 
 Usage: python ex946_prior.py [smoke]"""
 import sys, time, importlib, numpy as np, torch
 from scipy.stats import spearmanr
-sys.path.insert(0, "../ch09/labs")
+sys.path.insert(0, "../../../ch09/labs")
 C = importlib.import_module("94_common"); P = importlib.import_module("94b_pretrain")
 FS = importlib.import_module("94c_fewshot"); UQ = importlib.import_module("94d_uq")
-OUT = "../ch09/solutions/b/"
+OUT = "../../../ch09/solutions/b/"
 SMOKE = len(sys.argv) > 1
 NTR, STEPS, FSTEPS = (64, 60, 60) if SMOKE else (2000, P.STEPS, FS.STEPS)
 T_IDX = list(range(4, 41, 4))

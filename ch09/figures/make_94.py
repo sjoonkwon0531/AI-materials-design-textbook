@@ -3,7 +3,7 @@ Usage: python make_94.py [incontext] [fewshot] [uq] [conformal]"""
 import sys, numpy as np
 sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common'))
 from bookstyle import *
-D = "../ch09/data/"; F = "../ch09/figures/"
+D = "../../ch09/data/"; F = "../../ch09/figures/"
 which = sys.argv[1:] or ["incontext", "fewshot", "uq", "conformal"]
 
 if "incontext" in which:
@@ -114,7 +114,7 @@ if "fewshot" in which:
     import re
     d = np.load(D + "94c_fewshot.npz"); R = {k: v for k, v in zip(d["keys"], d["vals"])}
     phys = [float(m) for m in re.findall(r"residual only, \d+ steps \(0 labels\)\s+target-test error\s+([\d.]+)",
-                                          open("../ch09/labs/94e_physics_ft.out").read())]
+                                          open("../../ch09/labs/94e_physics_ft.out").read())]
     Ks = [4, 16, 64, 224]
     sty = [("scratch", "from scratch", GRAY, "s", "--"), ("last", "last layer (65)", GOLD, "v", ":"),
            ("lora4", "LoRA r = 4 (1,820)", RED, "o", "-"), ("full", "full fine-tuning", BLUE, "^", "-.")]

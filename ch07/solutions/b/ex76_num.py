@@ -1,7 +1,7 @@
 import json, numpy as np
 from scipy.stats import norm
 from scipy.optimize import brentq
-d = json.load(open("../ch07/labs/76_mlp_bandgap_oof.json"))
+d = json.load(open("../../../ch07/labs/76_mlp_bandgap_oof.json"))
 s = d["random 5-fold (seed 0)"]; y = np.array(s["y"]); mu = np.array(s["mu"]); sd = np.array(s["sd"]); gb = np.array(s["gb"])
 met = y == 0; f = met.mean(); print("n", len(y), "metals", met.sum(), f)
 for name, p in (("ens", mu), ("gb", gb)):

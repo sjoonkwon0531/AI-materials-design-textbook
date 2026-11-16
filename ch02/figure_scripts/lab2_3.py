@@ -1,6 +1,6 @@
 """Lab 2.3 / Fig 2.2.5: stiff mass-conserving network, explicit Euler blow-up vs BDF.
 Network (chosen so that eig = {-1001.5, -1.5, 0}):  X1 -> X2 (k=1001.5, fast),  X2 <-> X3 (k=0.5, k_-=1.0)."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import numpy as np, bookstyle as bs, matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 from scipy.linalg import expm
@@ -48,4 +48,4 @@ ax.set_ylim(-0.03,1.42); ax.set_yticks([0,0.2,0.4,0.6,0.8,1.0])
 ax.legend(loc='upper left',frameon=False,fontsize=14,ncol=2)
 for a,l in zip(axs,'ab'): bs.panel_label(a,l)
 fig.tight_layout(w_pad=3)
-fig.savefig('../ch02/figures/Fig2.2.5_stiffness.png')
+fig.savefig('../../ch02/figures/Fig2.2.5_stiffness.png')

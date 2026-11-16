@@ -1,0 +1,10 @@
+=== Part A: harmonic oscillator, energy after 300 steps (exact=0.5) ===
+  Velocity Verlet : E_end=0.4979   drift=-4.28e-03
+  Symplectic Euler: E_end=0.4722   drift=-5.55e-02
+  Forward Euler   : E_end=396.2461   drift=+7.91e+02  (blows up)
+
+=== Part B: 2D LJ NVE (Velocity Verlet), N=36, rho=0.7 ===
+  total E mean=-39.734, peak-to-peak/|E|=7.69e-04, E(end)/E(0)=1.0001
+=== Part C: NVT velocity-rescaling thermostat, T0=1.0 ===
+  NVT mean T (2nd half)=1.004 +/- 0.074  (target 1.000)
+  NVE mean T (2nd half)=0.768  (uncontrolled)

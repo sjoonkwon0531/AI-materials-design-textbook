@@ -9,7 +9,7 @@ Part C  receptive field: move one atom of a 192-atom Si crystal (long axis 32.8 
 Part D  body order: many-body expansion of a 6-atom Si cluster, split into the energy read out
         after layer 1 and after layer 2 (forward hooks on the two readout blocks).
 
-Run:  /tmp/claude-0/v10/bin/python 106_dissect.py      (CPU ~1-2 min, 1 thread)
+Run:  $MLIP_PY_A (MACE/CHGNet environment) 106_dissect.py      (CPU ~1-2 min, 1 thread)
 """
 import os, sys, json, time, itertools, warnings
 warnings.filterwarnings('ignore')

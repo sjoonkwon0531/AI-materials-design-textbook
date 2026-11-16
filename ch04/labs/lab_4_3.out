@@ -1,0 +1,18 @@
+=== Diagonalization wall-time vs matrix size (scipy eigvalsh) ===
+   N      time(s)   reps
+   200     0.0014   5
+   400     0.0061   5
+   800     0.0382   5
+  1200     0.1357   3
+  1600     0.3072   3
+  2400     1.0609   1
+  3200     2.4530   1
+
+full-range fit p = 2.74  |  asymptotic tail (N>=800) p = 3.00  (ideal=3)
+local doubling exponents:
+  200->400: time x4.38  -> exponent 2.13
+  400->800: time x6.25  -> exponent 2.64
+  800->1200: time x3.55  -> exponent 3.13
+  1200->1600: time x2.26  -> exponent 2.84
+  1600->2400: time x3.45  -> exponent 3.06
+  2400->3200: time x2.31  -> exponent 2.91

@@ -1,6 +1,6 @@
 """Exercise 9.6.6 (b), diagnostics: why does the binarised volume fraction differ even when the mass is conserved?"""
 import numpy as np, ch_common as cc
-homog = cc.load("homog", "../ch05/labs/55_homog.py"); cell = homog.PeriodicCell(64)
+homog = cc.load("homog", "../../../ch05/labs/55_homog.py"); cell = homog.PeriodicCell(64)
 test = cc.test; ref = test[:, 10]
 kfun = lambda fields: np.array([np.trace(homog.k_eff(cell, c > 0, 1.0, 10.0)) / 2 for c in fields])
 k_s = kfun(ref); f_s = (ref > 0).mean((1, 2))

@@ -1,6 +1,6 @@
 """Fig 3.6 - Li-O formation-energy convex hull (values from Lab 3.3, pymatgen)."""
 import sys
-sys.path.insert(0, '../ch02/figures')
+sys.path.insert(0, '../../ch02/figure_scripts')
 import bookstyle as bs
 import matplotlib.pyplot as plt
 
@@ -37,4 +37,4 @@ ax.set_xlim(-0.05, 1.05); ax.set_ylim(-2.35, 0.35)
 ax.set_xlabel('composition  $x_{\\mathrm{O}}$  (O atomic fraction)')
 ax.set_ylabel('formation energy (eV/atom)')
 ax.grid(alpha=0.25)
-fig.savefig('../ch03/figures/Fig3.6_convex_hull.png')
+fig.savefig('../../ch03/figures/Fig3.6_convex_hull.png')

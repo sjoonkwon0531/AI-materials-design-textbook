@@ -10,7 +10,7 @@ from importlib.machinery import SourceFileLoader
 from pymatgen.core import Structure, Lattice
 torch.set_num_threads(1)
 torch.set_default_dtype(torch.float64)
-sn = SourceFileLoader("sn72b", "../ch07/labs/72b_schnet.py").load_module()
+sn = SourceFileLoader("sn72b", "../../ch07/labs/72b_schnet.py").load_module()
 
 # ---------------- Part A
 print("=== Part A: Si diamond graphs (a = 5.43 A)")
@@ -30,7 +30,7 @@ print("primitive, r_c=2.5: edges into atom 0 come from atom", sorted(set(ni[ci =
 
 # ---------------- Part B
 print("=== Part B: ethanol graphs (frame 0 of the 300 K xTB trajectory)")
-d = np.load("../ch07/data/ethanol_xtb_300K.npz")
+d = np.load("../../ch07/data/ethanol_xtb_300K.npz")
 R0, Z = d["R"][0], d["Z"]
 D = np.linalg.norm(R0[:, None] - R0[None], axis=-1)
 for rc in [1.7, 2.5, 5.0]:

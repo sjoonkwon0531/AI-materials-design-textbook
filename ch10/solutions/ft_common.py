@@ -1,7 +1,7 @@
 """Shared helpers for the Sec. 10.5 solution scripts: copied verbatim from labs/105_ft.py (functions, data, forgetting probes), without the lab driver."""
 import os, sys, time, json, copy
 import numpy as np, torch
-sys.path.insert(0, '../ch10/labs')
+sys.path.insert(0, '../../ch10/labs')
 from importlib import import_module
 C = import_module('104_common')
 from ase import Atoms, units

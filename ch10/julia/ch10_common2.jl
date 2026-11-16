@@ -7,8 +7,8 @@
 # (3) ASE에 맡기는 셀 이완(FrechetCellFilter + FixSymmetry), 호출 횟수를 세는 계산기 묶음.
 # (4) 직접 옮긴 수치 도구: ASE 3.29와 같은 BFGS(원자 위치만)와 FIRE, ASE 기본 'sj' 상태방정식,
 #     유한 변위 힘 상수와 공약 q점의 동역학 행렬(phonopy와 같은 병진, 순열 대칭화), 겹침수로 모드 붙이기.
-const PY_EXE = Dict("mace" => "/tmp/claude-0/v10/bin/python", "chgnet" => "/tmp/claude-0/v10/bin/python",
-                    "sevennet" => "/tmp/claude-0/v10b/bin/python", "mattersim" => "/tmp/claude-0/v10b/bin/python")
+const PY_EXE = Dict("mace" => get(ENV, "MLIP_PY_A", "python"), "chgnet" => get(ENV, "MLIP_PY_A", "python"),
+                    "sevennet" => get(ENV, "MLIP_PY_B", "python"), "mattersim" => get(ENV, "MLIP_PY_B", "python"))
 if !haskey(ENV, "JULIA_PYTHONCALL_EXE")
     ENV["JULIA_CONDAPKG_BACKEND"] = "Null"                 # conda를 쓰지 않고 기존 가상환경의 파이썬을 쓴다
     ENV["JULIA_PYTHONCALL_EXE"] = PY_EXE[get(ENV, "CH10_MODEL", "mace")]

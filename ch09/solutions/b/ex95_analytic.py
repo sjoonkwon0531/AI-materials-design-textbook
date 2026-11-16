@@ -1,7 +1,7 @@
 """Exercises 9.5.1, 9.5.2, 9.5.4: closed-form numbers with numerical checks."""
 import time, importlib.util, numpy as np
 from scipy.linalg import solve_banded
-LABS = "../ch09/labs/"
+LABS = "../../../ch09/labs/"
 def load(name, path):
     spec = importlib.util.spec_from_file_location(name, path)
     mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod); return mod

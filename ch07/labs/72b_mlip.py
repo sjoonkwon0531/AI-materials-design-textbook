@@ -6,8 +6,8 @@ import time, json
 import numpy as np, torch
 from importlib.machinery import SourceFileLoader
 torch.set_num_threads(1)
-U = SourceFileLoader("u72b", "../ch07/labs/72b_utils.py").load_module()
-OUT = "../ch07/labs"
+U = SourceFileLoader("u72b", "../../ch07/labs/72b_utils.py").load_module()
+OUT = "../../ch07/labs"
 
 R, Z, E, F = U.load(300)
 tr, va, te = U.split_300K(seed=0)

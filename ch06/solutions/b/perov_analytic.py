@@ -1,6 +1,6 @@
 import numpy as np, pandas as pd
 from scipy.optimize import minimize_scalar
-L="../ch06/labs/"
+L="../../../ch06/labs/"
 def tf(rA,rB,rX,nA):
     t=(rA+rX)/(np.sqrt(2)*(rB+rX)); mu=rB/rX; tau=rX/rB-nA*(nA-(rA/rB)/np.log(rA/rB)); return t,mu,tau
 P=lambda tau:1/(1+np.exp(-(-1.968*tau+8.348)))

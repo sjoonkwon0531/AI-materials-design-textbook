@@ -2,9 +2,9 @@
 Both K(1,10) and K(10,1) are displacement-FEM upper bounds (in the matrix sense), so the product of
 determinants approaches (k1 k2)^2 from above."""
 import sys, time, numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 import importlib; H = importlib.import_module("55_homog")
-img = np.load("../ch05/labs/55_homog_imgs.npz")["m+0.00"]
+img = np.load("../../../ch05/labs/55_homog_imgs.npz")["m+0.00"]
 t0 = time.time(); prev = None
 for r in [int(a) for a in sys.argv[1:]] or (1, 2, 4):   # r=8 needs > 7 GB with spsolve
     cell = H.PeriodicCell(128, r)

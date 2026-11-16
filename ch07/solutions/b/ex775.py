@@ -2,7 +2,7 @@
 (same budget/protocol as Lab 7.21). Seeds given on the command line (default 0)."""
 import os, sys, json, time, importlib.util, numpy as np, torch
 torch.set_num_threads(1)
-L = "../ch07/labs/"
+L = "../../../ch07/labs/"
 _s = importlib.util.spec_from_file_location("m77", L + "77_models.py"); M = importlib.util.module_from_spec(_s); _s.loader.exec_module(M)
 R3, E3, F3, Z = M.load(300)
 x = R3[2200].double().numpy(); D = np.linalg.norm(x[:, None] - x[None], axis=-1)

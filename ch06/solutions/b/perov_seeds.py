@@ -1,6 +1,6 @@
 import numpy as np, pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-d=pd.read_csv("../ch06/labs/bartel_TableS1.csv").rename(columns={"rA (Ang)":"rA","rB (Ang)":"rB","rX (Ang)":"rX"})
+d=pd.read_csv("../../../ch06/labs/bartel_TableS1.csv").rename(columns={"rA (Ang)":"rA","rB (Ang)":"rB","rX (Ang)":"rX"})
 y=(d.exp_label>0).astype(int).values; hal=d.X.isin(["F","Cl","Br","I"]).values; oxi=~hal
 print("halide nA counts",d[hal].nA.value_counts().to_dict(),"perov frac by nA",d[hal].groupby("nA").exp_label.apply(lambda s:(s>0).mean()).round(3).to_dict())
 raw=d[["rA","rB","rX","nA","nB","nX"]].values

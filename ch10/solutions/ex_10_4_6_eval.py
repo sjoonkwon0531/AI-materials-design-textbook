@@ -2,7 +2,7 @@
 Usage: python ex_10_4_6_eval.py MODEL.pt   (v10 interpreter). Same items and settings as labs/104_val.py Part B."""
 import os, sys, time
 import numpy as np, torch
-sys.path.insert(0, '../ch10/labs')
+sys.path.insert(0, '../../ch10/labs')
 from importlib import import_module
 C = import_module('104_common')
 torch.set_num_threads(1)

@@ -90,6 +90,6 @@ if __name__ == "__main__":
         n, vm = baird(mode, sweeps=5000); out[mode] = n; out[mode + "_vmax"] = vm
         print(f"  {mode:8s}: ||w|| at sweep 1/1000/5000 = {n[0]:.3g} / {n[999]:.3g} / {n[-1]:.3g};"
               f"  max|v - v_pi| = {vm[0]:.3g} / {vm[999]:.3g} / {vm[-1]:.3g}")
-    np.savez("../ch08/data/81_cliff_triad.npz", sarsa=curves["sarsa"],
+    np.savez("../../ch08/data/81_cliff_triad.npz", sarsa=curves["sarsa"],
              qlearn=curves["qlearn"], **{f"baird_{k}": v for k, v in out.items()})
     print(f"runtime {time.time()-t0:.1f} s")

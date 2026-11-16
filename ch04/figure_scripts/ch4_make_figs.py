@@ -2,7 +2,7 @@ import sys, io, re, contextlib, runpy, numpy as np
 sys.path.insert(0, '.')
 import logging; logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
 from bookstyle import *
-LAB='../ch04/labs/'
+LAB='../../ch04/labs/'
 def run(name):
     with contextlib.redirect_stdout(io.StringIO()):
         return runpy.run_path(LAB+name, run_name='__main__')
@@ -62,7 +62,7 @@ if '42' in only:
     save(fig,'Fig4.2.3_mixing.png')
 
 if '43' in only:
-    txt=open(LAB+'out_4_3.txt').read()
+    txt=open(LAB+'lab_4_3.out').read()
     rows=re.findall(r'^\s+(\d+)\s+([\d.]+)\s+\d+\s*$', txt, re.M)
     N=np.array([float(r[0]) for r in rows]); t=np.array([float(r[1]) for r in rows])
     m=N>=800; p,c=np.polyfit(np.log(N[m]),np.log(t[m]),1)

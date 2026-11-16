@@ -3,7 +3,7 @@ Scratch models trained for 2,300 steps (= 1,500 pretraining + 800 fine-tuning st
 same model, loss, lr schedule shape, data subsets and test set as 74_pretrain_ethanol.py.
 Runtime ~15-20 min under shared load (~4 min on an idle core)."""
 import time, numpy as np, torch
-src = open("../ch07/labs/74_pretrain_ethanol.py").read()
+src = open("../../ch07/labs/74_pretrain_ethanol.py").read()
 exec(src.split("# ------------------------------------------------------------ pretraining (once per seed)")[0])
 t0 = time.time()
 for N in (50, 200):

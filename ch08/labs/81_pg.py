@@ -131,7 +131,7 @@ if __name__ == "__main__":
               f" (per seed {np.round(last).astype(int).tolist()}); first episode with 20-ep avg >= 475: {first475}"
               f"  [{time.time()-t0:.0f} s]")
         sys.stdout.flush()
-    if curves: np.savez("../ch08/data/81_pg_curves.npz", **curves)
+    if curves: np.savez("../../ch08/data/81_pg_curves.npz", **curves)
 
     # variance experiment at a fixed, partially trained policy (REINFORCE+baseline, seed 0, 60 episodes)
     _, pi_mid, _ = train("baseline", 0, n_ep=60)
@@ -141,5 +141,5 @@ if __name__ == "__main__":
     base = rows[2][1]
     for k, tv, nm, se, cos0, cos in rows:
         print(f"{k:24s} {tv:9.3g} {tv/base:8.3f} {nm:7.1f} {se:6.1f} {cos0:10.3f} {cos:9.3f}")
-    np.save("../ch08/data/81_pg_variance.npy", np.array([r[1:] for r in rows]))
+    np.save("../../ch08/data/81_pg_variance.npy", np.array([r[1:] for r in rows]))
     print(f"runtime {time.time()-t0:.0f} s")

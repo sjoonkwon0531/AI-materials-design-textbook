@@ -1,7 +1,7 @@
 """Ex 8.3.6: (a) 3x longer training (3600 steps) Adam vs SAM; (c) add 30 unseen 600 K frames to the training set."""
 import os, sys, time, json, importlib.util, numpy as np, torch
 torch.set_num_threads(1)
-HERE = "../ch08/labs"
+HERE = "../../../ch08/labs"
 _s = importlib.util.spec_from_file_location("m83", os.path.join(HERE, "83_mlip_sam.py"))
 M = importlib.util.module_from_spec(_s); _s.loader.exec_module(M)
 t0 = time.time()

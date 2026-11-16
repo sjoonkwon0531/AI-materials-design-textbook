@@ -1,10 +1,10 @@
 """Ex 7.6.3: swap the losses. MLP trained with MSE (ensemble K=2, otherwise Lab 7.18 settings; early stopping still on
 validation MAE), LightGBM with objective='l1' (otherwise Ch.6 settings). Random 5-fold only."""
 import time, json, numpy as np, torch
-src = open("../ch07/labs/76_mlp_bandgap.py").read()
+src = open("../../../ch07/labs/76_mlp_bandgap.py").read()
 pre_src = src.split("P = dict(")[0].replace("loss = (model(xb).squeeze(-1) - yb).abs().mean()", "loss = (model(xb).squeeze(-1) - yb).pow(2).mean()")
 assert ".pow(2).mean()" in pre_src
-pre_src = pre_src.replace("HERE = os.path.dirname(os.path.abspath(__file__))", "HERE = \"../ch07/labs\"")
+pre_src = pre_src.replace("HERE = os.path.dirname(os.path.abspath(__file__))", "HERE = \"../../../ch07/labs\"")
 exec(pre_src)
 P = dict(n_estimators=400, learning_rate=0.05, num_leaves=31, min_child_samples=10,
          subsample=0.8, subsample_freq=1, colsample_bytree=0.5, n_jobs=1, verbose=-1)
@@ -20,7 +20,7 @@ for f, (tr, te) in enumerate(splits):
         with torch.no_grad(): preds.append(m(torch.from_numpy(Xb[len(iva):])).squeeze(-1).clamp_min(0).numpy())
     o_mse1[te] = preds[0]; o_mse2[te] = np.mean(preds, 0)
     print(f"fold {f}: LGBM-l1 {np.abs(o_l1[te]-y[te]).mean():.3f} | MLP-MSE single {np.abs(o_mse1[te]-y[te]).mean():.3f} ens2 {np.abs(o_mse2[te]-y[te]).mean():.3f} ({time.time()-t0:.0f}s)", flush=True)
-d = json.load(open("../ch07/labs/76_mlp_bandgap_oof.json"))["random 5-fold (seed 0)"]
+d = json.load(open("../../../ch07/labs/76_mlp_bandgap_oof.json"))["random 5-fold (seed 0)"]
 met = y == 0
 def row(name, p):
     p = np.asarray(p); e = np.abs(p - y)

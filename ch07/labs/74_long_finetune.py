@@ -4,7 +4,7 @@
 Same model, loss, lr 2e-3 cosine schedule, subsets (seeds 0,1) and test set.
 Runtime ~15-30 min under shared load (~5 min on an idle core)."""
 import time, numpy as np, torch
-src = open("../ch07/labs/74_pretrain_ethanol.py").read()
+src = open("../../ch07/labs/74_pretrain_ethanol.py").read()
 exec(src.split("# ------------------------------------------------------------ pretraining (once per seed)")[0])
 pre = torch.load("74_pretrained_states.pt")
 t0 = time.time()

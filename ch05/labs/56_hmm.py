@@ -91,7 +91,7 @@ if __name__ == "__main__":
     yb = (np.arange(16)+0.5)/16
     print(f"    lattice-exact harmonic mean (16 bonds) = {A(x0)/np.mean(1/a(yb)):.4f}")
     print(f"    slope estimate (second half) = {D_hmm0:.4f};  micro run length = {tau_cross:.1f} x eps^2/<D>")
-    np.savez("../ch05/labs/56_micro.npz", t=t_m, D_t=D_t, arith=A(x0), harm=A(x0)*HARM)
+    np.savez("../../ch05/labs/56_micro.npz", t=t_m, D_t=D_t, arith=A(x0), harm=A(x0)*HARM)
 
     # seed-to-seed scatter of the micro estimator
     reps = np.array([micro_D(x0, seed=s)[0] for s in range(10, 20)])
@@ -136,7 +136,7 @@ if __name__ == "__main__":
     print(f"\n[5] cost: fine FV {n_f} cells x {int(T/dt)} steps; HMM macro {M} cells x {int(T/dt)} steps "
           f"+ micro {micro_ws:.2e} walker-steps (once, coefficient is time-independent)")
     print(f"    fine-solver wall time {t_fine:.2f} s")
-    np.savez("../ch05/labs/56_hmm.npz", xf_macro=xf_macro, D_hmm=D_hmm, D_hom=D_hom, D_ari=D_ari,
+    np.savez("../../ch05/labs/56_hmm.npz", xf_macro=xf_macro, D_hmm=D_hmm, D_hom=D_hom, D_ari=D_ari,
              xc_f=xc_f, xc_m=xc_m, fine01=fine[0.01], fine1=fine[0.1], fines=fine['steady'],
              hmm01=res["HMM"][0.01], hmm1=res["HMM"][0.1], hmms=res["HMM"]['steady'],
              ari01=res["arithmetic"][0.01], ari1=res["arithmetic"][0.1], aris=res["arithmetic"]['steady'])

@@ -1,6 +1,6 @@
 """Ex 8.1.6: GAE lambda map (critic 1500 vs 100 iters) and PPO-clip vs A2C on CartPole."""
 import sys, importlib, time, numpy as np, torch
-sys.path.insert(0, "../ch08/labs"); torch.set_num_threads(1)
+sys.path.insert(0, "../../../ch08/labs"); torch.set_num_threads(1)
 L = importlib.import_module("81_pg")
 import gymnasium as gym
 LAMS = [0, 0.5, 0.8, 0.9, 0.95, 0.99, 1.0]

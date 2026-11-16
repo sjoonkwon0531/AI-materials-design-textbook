@@ -3,7 +3,7 @@ lr 3e-3 cosine, wE=10, wF=1). Usage: python ex_10_2_5.py KIND WIDTH SEED   (v10 
 import os, sys, importlib.util
 import numpy as np, torch
 torch.set_num_threads(1)
-LABS = '../ch10/labs'
+LABS = '../../ch10/labs'
 spec = importlib.util.spec_from_file_location('t102', os.path.join(LABS, '102_train.py'))
 T = importlib.util.module_from_spec(spec); spec.loader.exec_module(T)
 kind, F, seed = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])

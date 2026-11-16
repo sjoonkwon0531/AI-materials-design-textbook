@@ -1,7 +1,7 @@
 """Ex 5.7.6: throughput of the vmapped JAX checkerboard Ising (Lab 5.10 'vrun') vs batch size B.
 L=64, 200 sweeps per call, best of 5 interleaved repetitions. Also: XLA CPU thread usage note."""
 import sys, os, time, math
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 import numpy as np, jax, jax.numpy as jnp
 from ising_speed import jax_half, make_masks
 L = 64; NSW = 200

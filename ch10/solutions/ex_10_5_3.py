@@ -1,6 +1,6 @@
 """Exercise 10.5.3: force parity slope (through the origin) of MACE-MP-0 small against GFN2-xTB
 on the 16 xTB test cells of Lab 10.9, before and after full fine-tuning (N = 48, 40 and 200 Adam steps).
-Run: /tmp/claude-0/v10/bin/python ex_10_5_3.py"""
+Run: $MLIP_PY_A (MACE/CHGNet environment) ex_10_5_3.py"""
 import time, copy
 import numpy as np, torch
 import ft_common as FT

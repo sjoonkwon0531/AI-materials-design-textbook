@@ -14,7 +14,7 @@ import time, json, numpy as np, pandas as pd, torch, torch.nn as nn
 from pymatgen.core import Composition
 torch.set_num_threads(1)
 t0 = time.time()
-DATA = "../ch07/data/"
+DATA = "../../ch07/data/"
 
 df = pd.read_parquet(DATA + "magpie_expt_gap.parquet")
 feat = [c for c in df.columns if c.startswith("MagpieData")]

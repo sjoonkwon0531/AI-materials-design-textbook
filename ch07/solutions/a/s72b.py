@@ -42,8 +42,8 @@ for rj in [5.01, 5.0001, 4.9999, 4.99]:
 print("=== 7.2.6 SchNet layer with hand-set weights vs ACSF G2")
 def load(name, path):
     spec = importlib.util.spec_from_file_location(name, path); m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
-U = load("u", "../ch07/labs/72b_utils.py"); sn = load("sn", "../ch07/labs/72b_schnet.py")
-D = np.load("../ch07/data/ethanol_xtb_300K.npz"); print("  keys", list(D.keys()))
+U = load("u", "../../../ch07/labs/72b_utils.py"); sn = load("sn", "../../../ch07/labs/72b_schnet.py")
+D = np.load("../../../ch07/data/ethanol_xtb_300K.npz"); print("  keys", list(D.keys()))
 Z = D["Z"] if "Z" in D else D["numbers"]; Rall = D["R"] if "R" in D else D["positions"]
 Zt = torch.tensor(Z); frames = [0, 500, 1000, 1500, 2999]
 R = torch.tensor(Rall[frames], dtype=torch.float64)

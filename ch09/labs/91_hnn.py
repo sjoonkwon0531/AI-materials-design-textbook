@@ -116,5 +116,5 @@ if __name__ == "__main__":
         x = x + h / 6 * (k1 + 2 * k2 + 2 * k3 + k4); Emax = max(Emax, abs(H_true(*x) - E0))
     print(f"  true field + RK4 (h={h}): max|E-E0| = {Emax:.1e}  (integrator error is negligible)")
     res["ref"] = ref[::5].tolist(); res["t"] = tt[::5].tolist(); res["train_clean"] = clean.tolist(); res["train_noisy"] = noisy.tolist()
-    json.dump(res, open("../ch09/data/91_hnn.json", "w"))
+    json.dump(res, open("../../ch09/data/91_hnn.json", "w"))
     print(f"total wall {time.perf_counter()-t_all:.0f} s")

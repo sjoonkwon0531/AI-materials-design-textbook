@@ -1,7 +1,7 @@
 import math, numpy as np, torch, importlib.util, time, itertools
 torch.set_num_threads(1); torch.set_default_dtype(torch.float64)
-spec = importlib.util.spec_from_file_location("grp", "../ch07/labs/73a_group.py")
-src = open("../ch07/labs/73a_group.py").read().split('print("=== Part A')[0]
+spec = importlib.util.spec_from_file_location("grp", "../../../ch07/labs/73a_group.py")
+src = open("../../../ch07/labs/73a_group.py").read().split('print("=== Part A')[0]
 grp = {}; exec(src, grp); rot, mirror, close = grp["rot"], grp["mirror"], grp["close"]
 print("=== 7.3.1 S3 non-abelian")
 def comp(p, q): return tuple(p[q[i]] for i in range(3))     # (p o q)(i) = p(q(i))

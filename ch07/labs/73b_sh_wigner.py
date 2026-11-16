@@ -72,7 +72,7 @@ G = (Y * wt[:, None]).T @ Y
 print(f"  Gram matrix {tuple(G.shape)}: max|G - I| = {(G - torch.eye(25)).abs().max():.1e}")
 
 print("=== Part E (link to Ch.6 Derivation Box 6.3): SOAP-like coefficients of ethanol atom C1 ===")
-d = np.load("../ch07/data/ethanol_xtb_300K.npz")
+d = np.load("../../ch07/data/ethanol_xtb_300K.npz")
 X = torch.tensor(d["R"][0])
 rij = X - X[0]
 rij = rij[1:]

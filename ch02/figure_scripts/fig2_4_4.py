@@ -1,8 +1,8 @@
 """Fig 2.4.4: spectral vs 2nd-order FDM derivative of exp(sin x)."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import logging; logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
 import numpy as np, bookstyle as bs, matplotlib.pyplot as plt
-exec(open('../ch02/labs/b05_L1435.py').read())
+exec(open('../../ch02/labs/b05_L1435.py').read())
 fig,axs=plt.subplots(1,2,figsize=(14,5.2))
 ax=axs[0]; N=16; x=np.linspace(0,2*np.pi,N,endpoint=False); k=np.fft.fftfreq(N,d=1.0/N)
 sp_=np.real(np.fft.ifft(1j*k*np.fft.fft(u(x)))); h=2*np.pi/N; fd=(np.roll(u(x),-1)-np.roll(u(x),1))/(2*h)
@@ -22,5 +22,5 @@ ax.axhline(np.finfo(float).eps,color=bs.GRAY,lw=1,ls='-.'); ax.text(64,5e-16,"ma
 ax.set_xlabel("N (grid points)"); ax.set_ylabel("max |error|"); ax.set_ylim(1e-17,3)
 ax.legend(frameon=False,loc='center right')
 for a,l in zip(axs,'ab'): bs.panel_label(a,l)
-fig.tight_layout(w_pad=3); fig.savefig('../ch02/figures/Fig2.4.4_spectral.png')
+fig.tight_layout(w_pad=3); fig.savefig('../../ch02/figures/Fig2.4.4_spectral.png')
 print("N=16 max err spectral %.2e fdm %.2e"%(np.abs(sp_-du(x)).max(),np.abs(fd-du(x)).max()))

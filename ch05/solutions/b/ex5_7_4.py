@@ -1,6 +1,6 @@
 """Ex 5.7.4(b): DPD pressure and kinetic temperature vs dt for lambda = 0.65 (and 0.5), rho=3, a=25."""
 import sys, time, numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 from dpd_basics import simulate, mean_err
 from dpd_core import make_amat
 t0 = time.time()

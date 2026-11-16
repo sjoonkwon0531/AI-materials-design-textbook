@@ -8,7 +8,7 @@ Fits: tanh profile psi = A[tanh((x+L0/4)/lam) - tanh((x-L0/4)/lam) - 1] and the 
 import sys, time, math, numpy as np
 from scipy.optimize import curve_fit
 from scipy.special import erf
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 from dpd_core import seed, forces, run, run_field, make_amat
 from bcp_common import build_melt, sq_psi
 L0 = 6.41; N = 10; DA = 15.0; NB = 80

@@ -1,4 +1,4 @@
-import sys; sys.path.insert(0,'../ch02/figures'); import bookstyle as bs
+import sys; sys.path.insert(0,'../../ch02/figure_scripts'); import bookstyle as bs
 import numpy as np, matplotlib.pyplot as plt, logging
 logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 th=np.linspace(0,np.pi,400); s2=np.sin(th/2)**2

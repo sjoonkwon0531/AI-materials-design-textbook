@@ -1,0 +1,19 @@
+# Environment B: e3nn >= 0.5.  Used for
+#   - Ch.7 scripts that import e3nn (73b_*.py, 76_e3nn_block.py, 77_*.py, solutions s73*.py, ex764/773/775.py,
+#     figures make_73b.py, make_76.py)
+#   - Ch.10 SevenNet and MatterSim (MLIP_PY_B)
+# Exact versions used for the verification run: lock/env-b.txt (Python 3.11).
+numpy
+scipy
+matplotlib
+pandas<3
+pyarrow
+scikit-learn==1.8.0
+ase
+pymatgen
+phonopy
+torch
+e3nn==0.6.0
+tblite==0.8.0
+sevenn==0.13.0
+mattersim==1.2.3

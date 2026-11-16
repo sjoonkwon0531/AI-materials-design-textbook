@@ -1,12 +1,14 @@
+# Environment A: everything except the scripts listed in requirements-b.txt.
+# Exact versions used for the verification run: lock/env-a.txt (Python 3.11).
 # Core (Ch.1-10)
 numpy
 scipy
 matplotlib
 sympy
 numba
-pandas
+pandas<3
 pyarrow
-scikit-learn
+scikit-learn==1.8.0   # 1.9 changes GroupKFold fold assignment, so the Ch.6-7 grouped-CV numbers differ
 # Materials and atomistic (Ch.3-4, 6, 7, 10)
 ase
 pymatgen
@@ -15,9 +17,15 @@ dscribe
 phonopy
 # Deep learning (Ch.7-10)
 torch
-e3nn
-mace-torch
 jax
+deepxde
+torch-geometric
+# MLIPs for Ch.10 (MLIP_PY_A).  MACE-MP-0 models need e3nn 0.4.4, which in turn cannot read its own
+# constants with torch>=2.6 unless the model is loaded through MACE.  Ch.7 scripts that use e3nn
+# directly therefore run in environment B (see requirements-b.txt for the list).
+e3nn==0.4.4
+mace-torch==0.3.17
+chgnet==0.4.2
 # Classical ML extras (Ch.6-7)
 lightgbm
 xgboost
@@ -25,8 +33,9 @@ umap-learn
 cvxpy
 # Reinforcement learning (Ch.8)
 gymnasium
-# Optional: semi-empirical labels (Ch.7, Ch.10) and electronic structure
-# tblite        # GFN-xTB labels for the ethanol datasets
-# pyscf
-# mp-api        # Materials Project access (needs an API key)
-# scikit-fem    # Ch.2 finite elements
+# Semi-empirical labels (Ch.7, Ch.10)
+tblite==0.8.0         # GFN-xTB; the MD trajectories are not bit-reproducible, see VERIFICATION.md
+# Electronic structure and other optional tools
+pyscf
+scikit-fem            # Ch.2 finite elements
+mp-api                # Materials Project access (needs an API key and network)

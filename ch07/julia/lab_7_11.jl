@@ -2,7 +2,7 @@
 # Part A 생성원에서 점군 닫기(C3v, D4h, Oh, Td), 공리 점검. Part B SO(2), O(3). Part C C3v 지표와 기약 표현 분해.
 # Part D E(3) 원소 (R, t)의 합성 규칙과 역원. 순수 선형대수라 그대로 옮겼다.
 include("so3.jl")
-using Printf
+using Printf, Statistics
 
 "생성원을 포함하고 곱에 닫힌 가장 작은 행렬 집합"
 function close_group(gens; tol = 1e-9)

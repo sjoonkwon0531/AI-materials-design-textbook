@@ -1,6 +1,6 @@
-import sys; sys.path.insert(0,'../ch02/labs')
+import sys; sys.path.insert(0,'../../ch02/labs')
 import numpy as np
-exec(open('../ch02/labs/b03_L1217.py').read())
+exec(open('../../ch02/labs/b03_L1217.py').read())
 def l2_err(x,u,nf=20):
     # piecewise-linear interpolant evaluated on fine sub-grid, trapezoid integral
     xf=np.linspace(0,1,(len(x)-1)*nf+1); uf=np.interp(xf,x,u)

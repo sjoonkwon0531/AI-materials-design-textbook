@@ -2,11 +2,11 @@
 import os, sys, math, importlib
 import numpy as np, torch
 torch.set_num_threads(1)
-LAB = "../ch09/labs"; sys.path.insert(0, LAB); M = importlib.import_module("93_models")
+LAB = "../../../ch09/labs"; sys.path.insert(0, LAB); M = importlib.import_module("93_models")
 d = np.load(os.path.join(LAB, "..", "data", "93_ks.npz")); traj = torch.tensor(d["traj"]); NTR, L, N = int(d["ntr"]), float(d["L"]), traj.shape[-1]; te = traj[NTR:]
 make = lambda cons=None: M.FNO1d(width=32, kmax=24, depth=4, residual=True, conserve=cons, L=64.0)
 sd = torch.load(os.path.join(LAB, "93_rollout_models.pt")); nets = {"cons": make("mean"), "flux": make("flux")}
-nets["cons"].load_state_dict(sd["cons"]); nets["flux"].load_state_dict(torch.load("../ch09/solutions/a/s93_6_flux.pt"))
+nets["cons"].load_state_dict(sd["cons"]); nets["flux"].load_state_dict(torch.load("../../../ch09/solutions/a/s93_6_flux.pt"))
 x = torch.arange(N) * L / N; EPS = 1e-2; states = te[:, 100].double()
 def gain(step, ks):
     base = step(states); g = []

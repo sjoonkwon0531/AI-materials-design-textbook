@@ -42,6 +42,6 @@ if __name__ == "__main__":
         out[name] = (rew, opt, creg)
         print(f"{name:18s} {rew[-100:].mean():20.3f} {100*opt[-100:].mean():17.1f}% {creg[-1]:16.1f}")
     print(f"mean of best arm over problems = {best.mean():.3f}")
-    np.savez("../ch08/data/81_bandit.npz",
+    np.savez("../../ch08/data/81_bandit.npz",
              **{k.replace(' ', '_'): np.stack(v) for k, v in out.items()})
     print(f"runtime {time.time()-t0:.1f} s")

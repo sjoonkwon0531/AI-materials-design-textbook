@@ -10,7 +10,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 import xgboost as xgb, lightgbm as lgb
 warnings.filterwarnings("ignore")
-L="../ch06/labs/"
+L="../../../ch06/labs/"
 df=pd.read_parquet(L+"magpie_expt_gap.parquet")
 X=df.drop(columns=["formula","target"]).to_numpy(np.float32); y=df["target"].to_numpy()
 cols=df.drop(columns=["formula","target"]).columns

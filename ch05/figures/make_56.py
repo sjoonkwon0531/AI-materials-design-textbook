@@ -3,7 +3,7 @@ import logging; logging.getLogger("matplotlib.font_manager").setLevel(logging.ER
 from bookstyle import *
 import numpy as np
 from matplotlib.patches import Rectangle, Circle, FancyArrowPatch, FancyBboxPatch, Polygon
-L = '../ch05/labs/'; F = '../ch05/figures/'
+L = '../../ch05/labs/'; F = '../../ch05/figures/'
 
 # ---------------- Fig 5.6.1 schematic
 fig, axs = plt.subplots(1, 4, figsize=(18, 5.0))

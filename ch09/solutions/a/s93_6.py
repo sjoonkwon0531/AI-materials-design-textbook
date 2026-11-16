@@ -2,7 +2,7 @@
 import os, sys, time, math, importlib, copy
 import numpy as np, torch
 torch.set_num_threads(1)
-LAB = "../ch09/labs"; sys.path.insert(0, LAB); M = importlib.import_module("93_models")
+LAB = "../../../ch09/labs"; sys.path.insert(0, LAB); M = importlib.import_module("93_models")
 d = np.load(os.path.join(LAB, "..", "data", "93_ks.npz"))
 traj = torch.tensor(d["traj"]); NTR, NS, L, N = int(d["ntr"]), int(d["ns_tr"]), float(d["L"]), traj.shape[-1]
 X = traj[:NTR, :NS + 1]; te = traj[NTR:]
@@ -20,7 +20,7 @@ def run(net, updates, lr, seed):
     return time.process_time() - c0
 @torch.no_grad()
 def onestep_err(net): return M.rel_l2(net(te[:, :-1].reshape(-1, 1, N)), te[:, 1:].reshape(-1, 1, N)).item()
-PT = "../ch09/solutions/a/s93_6_flux.pt"
+PT = "../../../ch09/solutions/a/s93_6_flux.pt"
 if not os.path.exists(PT):
     pre_upd = PRE_EP * (NTR * NS // BATCH)
     torch.manual_seed(0); net = make("flux"); c1 = run(net, pre_upd, 2e-3, seed=1); e1 = onestep_err(net)

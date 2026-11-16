@@ -75,7 +75,7 @@ import pandas as pd
 from sklearn.model_selection import KFold
 from sklearn.feature_selection import VarianceThreshold
 from sklearn.preprocessing import StandardScaler
-df = pd.read_parquet("../ch07/data/magpie_expt_gap.parquet")
+df = pd.read_parquet("../../../ch07/data/magpie_expt_gap.parquet")
 X = df.drop(columns=["formula", "target"]).values; y = df.target.values
 trn, te = next(iter(KFold(5, shuffle=True, random_state=0).split(X)))
 rng = np.random.default_rng(0); n = 600; sub = rng.choice(trn, n, replace=False)

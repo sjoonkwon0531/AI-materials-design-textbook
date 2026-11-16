@@ -1,8 +1,8 @@
 """Fig 2.4.1b: professor's Wk7 Poisson examples (1D exact FDM, 2D solution, block-tridiagonal sparsity)."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import logging; logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
 import numpy as np, bookstyle as bs, matplotlib.pyplot as plt
-exec(open('../ch02/figure_scripts/ex2_4_poisson.py').read().split('prev=None')[0].replace('print(','(lambda *a,**k:None)('))
+exec(open('../../ch02/figure_scripts/ex2_4_poisson.py').read().split('prev=None')[0].replace('print(','(lambda *a,**k:None)('))
 fig,axs=plt.subplots(1,3,figsize=(17,5.8),gridspec_kw=dict(width_ratios=[1.1,0.7,0.95]))
 # (a) 1D
 ax=axs[0]; xx=np.linspace(0,1,300)
@@ -37,5 +37,5 @@ ax.set_xlabel(f"h = 0.25:  {n}$\\times${n} matrix\n$N_y$ = {ny} interior points 
 ax.xaxis.set_label_position('bottom'); ax.tick_params(labelsize=14,top=False,labeltop=False,bottom=True,labelbottom=True)
 for a,l in zip(axs,'abc'): bs.panel_label(a,l,y=1.06 if l=='c' else 1.02)
 fig.tight_layout(w_pad=2)
-fig.savefig('../ch02/figures/Fig2.4.1b_poisson_fdm.png')
+fig.savefig('../../ch02/figures/Fig2.4.1b_poisson_fdm.png')
 print(A.shape, A.nnz, "offsets", sorted(set((A.tocoo().col-A.tocoo().row).tolist())))

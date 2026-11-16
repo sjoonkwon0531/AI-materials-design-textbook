@@ -5,14 +5,14 @@ sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2]
 import numpy as np
 from bookstyle import plt, panel_label, NAVY, RED, BLUE, GOLD, GREEN, PURPLE, GRAY
 from matplotlib.patches import Circle, FancyArrowPatch, Polygon
-FIG = "../ch07/figures"
-LAB = "../ch07/labs"
+FIG = "../../ch07/figures"
+LAB = "../../ch07/labs"
 which = sys.argv[1:] or ["4", "5", "6"]
 COL = {6: GRAY, 8: RED, 1: BLUE}
 
 
 def fig4():
-    d = np.load("../ch07/data/ethanol_xtb_300K.npz")
+    d = np.load("../../ch07/data/ethanol_xtb_300K.npz")
     X, Z = d["R"][0], d["Z"]
     X = X - X.mean(0)
     # project on the plane of the heavy atoms

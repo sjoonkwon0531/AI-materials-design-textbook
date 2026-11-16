@@ -1,11 +1,11 @@
 """Figures for Sec.8.6 (Fig8.6.1, Fig8.6.2). Run after labs/86_dro.py."""
 import os, sys, importlib
 import numpy as np, torch
-sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common')); sys.path.insert(0, "../ch08/labs")
+sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common')); sys.path.insert(0, "../../ch08/labs")
 from bookstyle import plt, panel_label, NAVY, RED, BLUE, GOLD, GREEN, PURPLE, GRAY
 torch.set_num_threads(1)
 M = importlib.import_module("86_dro")
-HERE = os.path.dirname(os.path.abspath(__file__)); LABS = "../ch08/labs"
+HERE = os.path.dirname(os.path.abspath(__file__)); LABS = "../../ch08/labs"
 z = np.load(os.path.join(LABS, "86_dro_results.npz"))
 
 # ------------------------------------------------------------ Fig 8.6.1 landscapes + training

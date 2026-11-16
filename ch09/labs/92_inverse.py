@@ -90,4 +90,4 @@ if __name__ == "__main__":
             print(f"  B2 sine-series least squares (BC assumed known): D = {np.mean(Dc):.4f} +/- {np.std(Dc):.4f}, cpu {np.mean([c[1] for c in cl])*1e3:.0f} ms")
             out["B"]["B2_classical"] = Dc
     print(f"total cpu {time.process_time()-t_all:.0f} s")
-    json.dump(out, open("../ch09/data/92_inverse.json", "w"))
+    json.dump(out, open("../../ch09/data/92_inverse.json", "w"))

@@ -1,14 +1,14 @@
 """Figures for section 6.2 (data from labs/62_cm.py and labs/62_desc.py)."""
 import sys, importlib
 sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common'))
-sys.path.insert(0, "../ch06/labs")
+sys.path.insert(0, "../../ch06/labs")
 from bookstyle import *  # noqa
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 
-L = "../ch06/labs/"
-F = "../ch06/figures/"
+L = "../../ch06/labs/"
+F = "../../ch06/figures/"
 
 # ---------------- Fig6.2.1 Coulomb matrix failure modes
 d = np.load(L + "62_cm_scan.npz")

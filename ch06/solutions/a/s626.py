@@ -1,5 +1,5 @@
 import sys, importlib, numpy as np
-sys.path.insert(0,'../ch06/labs'); importlib.import_module("62_dscribe_compat")
+sys.path.insert(0,'../../../ch06/labs'); importlib.import_module("62_dscribe_compat")
 from dscribe.descriptors import ACSF
 from ase import Atoms
 r=1.09; RC=5.0

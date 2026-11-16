@@ -13,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 from pymatgen.core import Composition
 t0 = time.time()
 
-df = pd.read_parquet(os.path.join(HERE, "..", "..", "ch7", "data", "67_features_clean.parquet"))
+df = pd.read_parquet(os.path.join(HERE, "..", "..", "ch07", "data", "67_features_clean.parquet"))
 feat = [c for c in df.columns if c not in ("formula", "target", "chemsys", "reduced")]
 X, y = df[feat].values.astype(np.float64), df.target.values.astype(np.float32)
 FAM = {**{e: "halide" for e in ("F", "Cl", "Br", "I")}, "O": "oxide",

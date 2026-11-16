@@ -1,6 +1,6 @@
 """Ex 5.5.5: decaying shear wave on a 32x32 periodic D2Q9 BGK lattice -> measured viscosity."""
 import sys, numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 import importlib; lbm = importlib.import_module("55_lbm")
 n = 32; U0 = 1e-3; k = 2*np.pi/n
 X, Y = np.meshgrid(np.arange(n), np.arange(n), indexing='ij')

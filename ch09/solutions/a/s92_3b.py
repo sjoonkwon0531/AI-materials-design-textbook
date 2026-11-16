@@ -2,7 +2,7 @@
 import math, importlib.util, sys
 import numpy as np, torch
 sys.argv = ["x"]; 
-src = open("../ch09/solutions/a/s92_3.py").read().split("print(f\"exact J")[0]
+src = open("../../../ch09/solutions/a/s92_3.py").read().split("print(f\"exact J")[0]
 exec(src)
 PI = math.pi
 def Jh_exact(x):

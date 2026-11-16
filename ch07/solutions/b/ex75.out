@@ -2,7 +2,7 @@ source (no N/P/As/Sb) train 2906, test 727 | target (pnictogen) pool 400, test 5
 mean gap: source 0.933 eV, target 1.136 eV; metals: source 0.58, target 0.37; target-test MAE of the pool median 1.017 eV
 pretrained: params 132865, source-test MAE 0.401 eV, zero-shot target-test MAE 0.632 eV  (20 s)
 === Ex 7.5.3 ===
-../ch07/solutions/b/ex75.py:24: RuntimeWarning: invalid value encountered in divide
+../../../ch07/solutions/b/ex75.py:24: RuntimeWarning: invalid value encountered in divide
   e = sv ** 2 / (sv ** 2).sum(); return [round(float(e[:k].sum()), 3) for k in ks]
 N=50 adam lr=0.001: n_train=40, dim span(x)=40; target-test MAE 0.632; layer1: |dW1 outside span(x)|/|dW1| = nan, numerical rank(1e-6) 0; layer1 energy top1/4/8 [nan, nan, nan]; layer2 energy top1/4/8 [nan, nan, nan]; |dW2|_F 0.000
 N=50 sgd lr=0.01: n_train=40, dim span(x)=40; target-test MAE 0.632; layer1: |dW1 outside span(x)|/|dW1| = nan, numerical rank(1e-6) 0; layer1 energy top1/4/8 [nan, nan, nan]; layer2 energy top1/4/8 [nan, nan, nan]; |dW2|_F 0.000

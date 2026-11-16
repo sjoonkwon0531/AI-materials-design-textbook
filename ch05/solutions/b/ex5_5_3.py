@@ -1,6 +1,6 @@
 """Ex 5.5.3: Poiseuille slip of halfway bounce-back BGK; prediction u_s/u_max = (48 nu^2 - 1)/H^2."""
 import sys, numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 import importlib; lbm = importlib.import_module("55_lbm")
 tau_star = 0.5 + np.sqrt(3/16)
 print(f"tau* = 1/2 + sqrt(3/16) = {tau_star:.6f}")

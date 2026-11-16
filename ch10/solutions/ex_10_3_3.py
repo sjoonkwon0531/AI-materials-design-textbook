@@ -1,6 +1,6 @@
 """Ex 10.3.3: V0 errors of the four models relative to PBE and to experiment (Lab 10.5 Part B data)."""
 import json, numpy as np
-D = '../ch10/data/'
+D = '../../ch10/data/'
 names = {'mace': 'MACE', 'chgnet': 'CHGNet', 'sevennet': '7net-0', 'mattersim': 'MatSim'}
 els = ['Al', 'Cu', 'Ag', 'Au', 'Si', 'Ge', 'Mo', 'W']
 for f, n in names.items():

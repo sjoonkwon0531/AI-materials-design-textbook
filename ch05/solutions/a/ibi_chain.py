@@ -2,7 +2,7 @@
 Run directly to (re)build the cache; other scripts call get_chain()."""
 import os, sys, importlib, time
 import numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 ibi = importlib.import_module("54_ibi")
 CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ibi_chain_cache.npz")
 NMOL, T, DT = ibi.NMOL, ibi.T, 0.005

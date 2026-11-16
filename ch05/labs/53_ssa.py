@@ -125,7 +125,7 @@ def main():
         th = np.sqrt((1 / 3) * (2 / 3) / N)
         stds[N] = (vals.mean(), vals.std(ddof=1), th)
         print(f"  N={N:6d}: mean={vals.mean():.4f}  std={vals.std(ddof=1):.4f}  theory={th:.4f}")
-    np.savez("../ch05/labs/53_ssa_partA.npz",
+    np.savez("../../ch05/labs/53_ssa_partA.npz",
              t_obs=t_obs, X=X, N0=N0)
     # a few full trajectories for the figure
     tgrid = np.linspace(0.0, 8.0, 401)
@@ -181,7 +181,7 @@ def main():
     print(f"  fraction of time above unstable point={hi.mean():.3f}, basin-to-basin transitions={ntr}")
     print(f"  mean dwell time per visit={tmax/(ntr+1):.1f} (time units)")
     print(f"  mean on low branch={rec[~hi].mean():.1f}, mean on high branch={rec[hi].mean():.1f}")
-    np.savez("../ch05/labs/53_ssa_fig.npz", tgrid=tgrid, exact=exact,
+    np.savez("../../ch05/labs/53_ssa_fig.npz", tgrid=tgrid, exact=exact,
              tr100=trajs[100], tr1000=trajs[1000], rec=rec, dtr=dtr, roots=roots,
              stdN=np.array([[N, *stds[N]] for N in stds]))
 

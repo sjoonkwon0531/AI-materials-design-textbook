@@ -2,7 +2,7 @@
 
 Importable module (owner D may copy it):
     from importlib.machinery import SourceFileLoader
-    sn = SourceFileLoader("sn", "../ch07/labs/72b_schnet.py").load_module()
+    sn = SourceFileLoader("sn", "../../ch07/labs/72b_schnet.py").load_module()
     model = sn.SchNet(n_feat=64, n_rbf=32, cutoff=5.0, n_inter=3)
     E, F = sn.energy_forces(model, Z, R, edge_index, batch, n_graphs)
 

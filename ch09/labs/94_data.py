@@ -2,7 +2,7 @@
 Solver: ETDRK4, 256 points, dt = 5e-3, T = 1 (200 steps), 2/3 dealiasing; stored on 128 points, 41 snapshots.
 Run:  python 94_data.py     (about 90 CPU-s)"""
 import sys, time, importlib, numpy as np
-sys.path.insert(0, "../ch09/labs")
+sys.path.insert(0, "../../ch09/labs")
 C = importlib.import_module("94_common")
 
 # --- solver verification --------------------------------------------------------------------------

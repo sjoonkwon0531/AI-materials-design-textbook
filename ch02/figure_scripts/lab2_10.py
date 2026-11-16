@@ -1,5 +1,5 @@
 import numpy as np
-exec(open('../ch02/labs/b05_L1435.py').read())
+exec(open('../../ch02/labs/b05_L1435.py').read())
 print(f"{'N':>5} {'spectral_err':>14} {'FDM2_err':>12} {'FDM_order':>11}")
 prev=None;prevN=None
 for N in [4,8,12,16,24,32,48,64]:

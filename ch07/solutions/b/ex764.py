@@ -1,4 +1,4 @@
-import sys, torch; sys.path.insert(0, "../ch07/labs")
+import sys, torch; sys.path.insert(0, "../../../ch07/labs")
 import importlib; eb = importlib.import_module("76_e3nn_block")
 from e3nn import o3
 for hid in ("16x0e + 8x1o + 8x1e", "16x0e + 8x1o"):
@@ -11,7 +11,7 @@ for hid in ("16x0e + 8x1o + 8x1e", "16x0e + 8x1o"):
     print(f"   paths {len(b2.tp.instructions)}, TP weights/edge {b2.tp.weight_numel}, block params {sum(p.numel() for p in b2.parameters())}, model params {sum(p.numel() for p in m.parameters())}")
 # pseudovector example: cross product of two bond vectors in ethanol; parity check
 import numpy as np
-d = np.load("../ch07/data/ethanol_xtb_300K.npz"); R = d["R"][2200]; Z = d["Z"]; print("Z", Z)
+d = np.load("../../../ch07/data/ethanol_xtb_300K.npz"); R = d["R"][2200]; Z = d["Z"]; print("Z", Z)
 # --- are the 1e channels alive in the 2-layer model? (block-1 1e output, gradient of E wrt 1e-only weights)
 torch.manual_seed(0); torch.set_default_dtype(torch.float64)
 species = {1: 0, 6: 1, 8: 2}

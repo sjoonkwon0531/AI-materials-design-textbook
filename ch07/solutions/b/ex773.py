@@ -1,7 +1,7 @@
 """Ex 7.7.3: equivariance error vs rotation angle about n=(1,1,1)/sqrt3, 200 test frames (2200-2399)."""
 import os, importlib.util, numpy as np, torch
 torch.set_num_threads(1)
-L = "../ch07/labs/"
+L = "../../../ch07/labs/"
 _s = importlib.util.spec_from_file_location("m77", L + "77_models.py"); M = importlib.util.module_from_spec(_s); _s.loader.exec_module(M)
 R3, E3, F3, Z = M.load(300); R = R3[2200:2400]
 def rot(theta, n):

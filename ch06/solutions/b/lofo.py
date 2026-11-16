@@ -4,7 +4,7 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import KFold
 from pymatgen.core import Composition
 warnings.filterwarnings("ignore"); t0=time.time()
-df=pd.read_parquet("../ch06/labs/67_features_clean.parquet")
+df=pd.read_parquet("../../../ch06/labs/67_features_clean.parquet")
 feat=[c for c in df.columns if c not in ("formula","target","chemsys","reduced")]
 X,y=df[feat].values,df.target.values
 P=dict(n_estimators=400,learning_rate=0.05,num_leaves=31,min_child_samples=10,subsample=0.8,subsample_freq=1,colsample_bytree=0.5,n_jobs=2,verbose=-1)

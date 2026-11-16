@@ -5,7 +5,7 @@ from sklearn.isotonic import IsotonicRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import brier_score_loss, log_loss
 warnings.filterwarnings("ignore")
-d=pd.read_csv("../ch06/labs/bartel_TableS1.csv").rename(columns={"rA (Ang)":"rA","rB (Ang)":"rB","rX (Ang)":"rX"})
+d=pd.read_csv("../../../ch06/labs/bartel_TableS1.csv").rename(columns={"rA (Ang)":"rA","rB (Ang)":"rB","rX (Ang)":"rX"})
 y=(d.exp_label>0).astype(int).values; tr=(d.is_train==1).values; te=(d.is_train==-1).values
 rA,rB,rX,nA,nB,nX=[d[c].values.astype(float) for c in ("rA","rB","rX","nA","nB","nX")]
 t=(rA+rX)/(np.sqrt(2)*(rB+rX)); mu=rB/rX; tau=rX/rB-nA*(nA-(rA/rB)/np.log(rA/rB))

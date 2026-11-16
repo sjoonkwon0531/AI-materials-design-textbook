@@ -1,6 +1,6 @@
 """Ex 8.2.6: starvation penalty (beta * age of oldest lot at window end) and FIFO warm start for the REINFORCE dispatcher."""
 import sys, importlib, time, numpy as np
-sys.path.insert(0, "../ch08/labs")
+sys.path.insert(0, "../../../ch08/labs")
 M = importlib.import_module("82_fab")
 Fab, RAW, NF = M.Fab, M.RAW, M.NF
 # feature standardization exactly as in the lab (FIFO run, seed 777)

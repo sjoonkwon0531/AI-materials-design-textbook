@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 from matplotlib import gridspec
 from e3nn import o3
 torch.set_default_dtype(torch.float64)
-OUT = "../ch07/figures/"
-LAB = "../ch07/labs/"
+OUT = "../../ch07/figures/"
+LAB = "../../ch07/labs/"
 
 # ---------------------------------------------------------------- Fig 7.3.5 real spherical harmonics + equivariance error
 fig = plt.figure(figsize=(13, 6.6))

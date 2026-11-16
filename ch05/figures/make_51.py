@@ -50,5 +50,5 @@ for x, lab in [(-10, "1 Å"), (-9, "1 nm"), (-6, "1 μm"), (-3, "1 mm"), (0, "1 
 for y, lab in [(-15, "1 fs"), (-12, "1 ps"), (-9, "1 ns"), (-6, "1 μs"), (-3, "1 ms"), (0, "1 s")]:
     ax.axhline(y, color=GRAY, lw=0.6, ls=":", zorder=0)
     ax.text(0.95, y, lab, ha="left", va="center", fontsize=14, color=GRAY)
-fig.savefig("../ch05/figures/Fig5.1.1_multiscale_map.png")
+fig.savefig("../../ch05/figures/Fig5.1.1_multiscale_map.png")
 print("saved")

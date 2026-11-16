@@ -316,7 +316,7 @@ def main():
     print(f"  cost per step: fine={tf/2000*1e3:.3f} ms, CG={tc/2000*1e3:.3f} ms, ratio={tf/tc:.1f}")
     print(f"  D_COM(fine)={Df:.3f} +/- {Dfs.std(ddof=1)/np.sqrt(3):.3f}, D(CG, IBI)={Dc:.3f} +/- {Dcs.std(ddof=1)/np.sqrt(3):.3f},"
           f" speed-up D_CG/D_fine={Dc/Df:.2f}")
-    np.savez("../ch05/labs/54_ibi_fig.npz", r=RGRID, g_t=g_t, gs=np.array(gs),
+    np.savez("../../ch05/labs/54_ibi_fig.npz", r=RGRID, g_t=g_t, gs=np.array(gs),
              Vs=np.array(Vs), hist=np.array(hist), hp=np.array(hp), P_fine=P_fine,
              g_pc=g_pc, Vp=Vp, g2f=g2f, g2_ibi=out["IBI"], g2_p=out["IBI+P"])
 

@@ -190,4 +190,4 @@ if "B" in only:
             print(f"  cost per loss+gradient ({NFB} points): mixed {bench(loss_fn):.0f} ms, direct 4th-order {bench(loss4):.0f} ms")
 
 print(f"total cpu {time.process_time()-t_all:.0f} s")
-if not quick: json.dump(out, open(f"../ch09/data/92_pdes_{only}.json", "w"))
+if not quick: json.dump(out, open(f"../../ch09/data/92_pdes_{only}.json", "w"))

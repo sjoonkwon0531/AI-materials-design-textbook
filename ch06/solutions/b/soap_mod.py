@@ -1,7 +1,7 @@
 """Ex 6.7.5 (c)(d): pooling variants on the Lab 6.18 Cu-Au cells (strain off)."""
 import os, time, warnings, importlib.util
 import numpy as np
-L="../ch06/labs/"
+L="../../../ch06/labs/"
 spec=importlib.util.spec_from_file_location("compat",L+"67_dscribe_compat.py"); spec.loader.exec_module(importlib.util.module_from_spec(spec))
 from ase.build import bulk
 from ase.calculators.emt import EMT

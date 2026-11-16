@@ -1,7 +1,7 @@
 """Shared helpers for exercises 9.6.4 - 9.6.6 (same definitions as labs/96_fno_ch_eval.py)."""
 import time, importlib.util
 import numpy as np, torch
-LABS = "../ch09/labs/"; DATA = "../ch09/data/"; OUT = "../ch09/solutions/b/"
+LABS = "../../../ch09/labs/"; DATA = "../../../ch09/data/"; OUT = "../../../ch09/solutions/b/"
 def load(name, path):
     spec = importlib.util.spec_from_file_location(name, path)
     mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod); return mod

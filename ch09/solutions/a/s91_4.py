@@ -2,7 +2,7 @@
 import importlib.util, sys, time, math
 import numpy as np, torch
 torch.set_num_threads(1)
-spec = importlib.util.spec_from_file_location("hnn", "../ch09/labs/91_hnn.py")
+spec = importlib.util.spec_from_file_location("hnn", "../../../ch09/labs/91_hnn.py")
 L = importlib.util.module_from_spec(spec); spec.loader.exec_module(L)
 torch.set_default_dtype(torch.float64)
 H_true = L.H_true
@@ -70,4 +70,4 @@ for seed in [int(a) for a in sys.argv[1:]] or [0]:
         E = H_true(tr[:, 0], tr[:, 1]); Hh = Hth(tr)
         marks = [1000, 5000, 10000, 20000]
         print(f"  long {name}: " + "; ".join(f"T={k*0.2:.0f}: max|E-E0| {np.abs(E[:k+1]-E0).max():.4f}, H_th-H_th(0) {Hh[k]-Hh[0]:+.4f}" for k in marks), flush=True)
-    torch.save(m.state_dict(), f"../ch09/solutions/a/s91_4_sep_{seed}.pt")
+    torch.save(m.state_dict(), f"../../../ch09/solutions/a/s91_4_sep_{seed}.pt")

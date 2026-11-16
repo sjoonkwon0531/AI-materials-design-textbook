@@ -4,7 +4,7 @@ Usage: python ex_10_4_4.py small|big   (v10 interpreter)
  big  : 64 features, 3 interactions, 400 epochs."""
 import os, sys, time
 import numpy as np, torch
-sys.path.insert(0, '../ch10/labs')
+sys.path.insert(0, '../../ch10/labs')
 from importlib import import_module
 C = import_module('104_common')
 torch.set_num_threads(1)

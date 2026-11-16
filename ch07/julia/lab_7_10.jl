@@ -18,7 +18,7 @@ AttnBlock(d = 64, heads = 4, ff = 128) = AttnBlock(LayerNorm((d,); dims = 1), La
                                                    Chain(ldense(d, ff, swish), ldense(ff, d)), heads)
 function (b::AttnBlock)(x, ps, st)
     d, n, B = size(x); h = b.heads; dk = d ÷ h
-    y, _ = b.ln1(x, ps.ln1, st.ln1)
+    y, _ = b.ln1(reshape(x, d, :), ps.ln1, st.ln1)     # 2차원(d x nB)으로 펴서 정규화: Lux 1.x LayerNorm은 3차원 입력에 (d,) 모양 파라미터를 받지 않음
     qkv, _ = b.qkv(reshape(y, d, :), ps.qkv, st.qkv)
     qkv = reshape(qkv, dk, h, 3, n, B)                                   # torch reshape(B, n, 3, h, dk)의 전치
     part(k) = reshape(permutedims(qkv[:, :, k, :, :], (1, 3, 2, 4)), dk, n, h * B)   # dk x n x (h B)
@@ -28,7 +28,7 @@ function (b::AttnBlock)(x, ps, st)
     att = reshape(permutedims(reshape(att, dk, n, h, B), (1, 3, 2, 4)), d, n * B)
     o, _ = b.o(att, ps.o, st.o)
     x = x .+ reshape(o, d, n, B)
-    y2, _ = b.ln2(x, ps.ln2, st.ln2)
+    y2, _ = b.ln2(reshape(x, d, :), ps.ln2, st.ln2)
     f, _ = b.ff(reshape(y2, d, :), ps.ff, st.ff)
     return x .+ reshape(f, d, n, B), st
 end
@@ -48,7 +48,7 @@ function (m::XYZTransformer)(R, ps, st)
     e, _ = m.emb(m.tokens, ps.emb, st.emb)
     p, _ = m.pos(reshape(R .- mean(R; dims = 2), 3, :), ps.pos, st.pos)  # 무게중심 기준 좌표 → 이동 불변, 회전 대칭은 없음
     x, _ = m.blocks(reshape(p, :, n, B) .+ e, ps.blocks, st.blocks)
-    y, _ = m.head(x, ps.head, st.head)
+    y, _ = m.head(reshape(x, size(x, 1), :), ps.head, st.head)
     return vec(sum(reshape(y, n, B); dims = 1)) .+ Float32(m.e0[]), st
 end
 

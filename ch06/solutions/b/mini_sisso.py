@@ -1,6 +1,6 @@
 """Ex 6.8.5: a miniature SISSO-like search (feature construction + 1-threshold stump) trained on one anion family."""
 import numpy as np, pandas as pd, itertools, time
-d=pd.read_csv("../ch06/labs/bartel_TableS1.csv").rename(columns={"rA (Ang)":"rA","rB (Ang)":"rB","rX (Ang)":"rX"})
+d=pd.read_csv("../../../ch06/labs/bartel_TableS1.csv").rename(columns={"rA (Ang)":"rA","rB (Ang)":"rB","rX (Ang)":"rX"})
 y=(d.exp_label>0).astype(int).values; hal=d.X.isin(["F","Cl","Br","I"]).values; oxi=~hal
 raw={k:d[k].values.astype(float) for k in ("rA","rB","rX","nA","nB","nX")}
 t0=time.time()

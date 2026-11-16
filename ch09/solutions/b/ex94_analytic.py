@@ -1,7 +1,7 @@
 """Exercises 9.4.1 - 9.4.5: closed-form numbers, each checked numerically."""
 import numpy as np
 from scipy import stats
-D = "../ch09/data/"
+D = "../../../ch09/data/"
 
 print("=== 9.4.1 ===")
 cs, c32, ci, ce, Cd, Ct = 18.261e-3, 0.321e-3, 0.125e-3, 0.628e-3, 38.0, 58.0

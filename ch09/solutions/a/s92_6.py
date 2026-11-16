@@ -2,7 +2,7 @@
 import importlib.util, sys, time, math, json
 import numpy as np, torch
 torch.set_num_threads(1)
-spec = importlib.util.spec_from_file_location("conv", "../ch09/labs/92_convection.py")
+spec = importlib.util.spec_from_file_location("conv", "../../../ch09/labs/92_convection.py")
 C = importlib.util.module_from_spec(spec); spec.loader.exec_module(C)
 torch.set_default_dtype(torch.float64)
 PI2 = 2 * math.pi; BETA = 30; NA, NL = 2400, 600

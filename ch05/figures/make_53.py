@@ -6,8 +6,8 @@ import logging
 logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 from bookstyle import plt, panel_label, NAVY, RED, BLUE, GOLD, GREEN, PURPLE, GRAY
 from matplotlib.colors import ListedColormap
-LAB = "../ch05/labs/"
-OUT = "../ch05/figures/"
+LAB = "../../ch05/labs/"
+OUT = "../../ch05/figures/"
 KB = 8.617333262e-5
 
 # ---------------- Fig 5.3.1

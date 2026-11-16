@@ -1,6 +1,6 @@
 import os, numpy as np, pandas as pd
 from pymatgen.core import Composition
-LABS="../ch06/labs"
+LABS="../../../ch06/labs"
 def load_nonmetal():
     d = pd.read_parquet(os.path.join(LABS, "magpie_expt_gap.parquet"))
     d = d[d.target > 0].reset_index(drop=True)

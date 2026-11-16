@@ -6,7 +6,7 @@ sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2]
 import numpy as np
 from bookstyle import plt, panel_label, NAVY, RED, BLUE, GOLD, GREEN, PURPLE, GRAY
 from matplotlib.patches import FancyBboxPatch, Circle, FancyArrowPatch
-FIG = "../ch07/figures"; LAB = "../ch07/labs"
+FIG = "../../ch07/figures"; LAB = "../../ch07/labs"
 which = sys.argv[1:] or ["1", "2", "3", "4"]
 
 

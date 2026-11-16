@@ -1,7 +1,7 @@
 """§9.4.2 structure check: the pre-training family (rho = 0) conserves the mean of u exactly.
 How well does the pre-trained FNO (no conservation built in) keep it?  Run: python 94f_mass.py  (seconds)"""
 import sys, importlib, numpy as np, torch
-sys.path.insert(0, "../ch09/labs")
+sys.path.insert(0, "../../ch09/labs")
 C = importlib.import_module("94_common"); P = importlib.import_module("94b_pretrain")
 m = C.TFNO(P.WIDTH, P.MODES, P.DEPTH); m.load_state_dict(torch.load(C.D + "94_fno_member0.pt")); m.eval()
 for name in ("pre_test", "lownu_test", "highk_test"):

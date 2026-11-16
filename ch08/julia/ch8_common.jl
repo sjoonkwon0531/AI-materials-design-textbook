@@ -6,7 +6,7 @@ using Random, Statistics, LinearAlgebra, Printf
 const CH8 = normpath(joinpath(@__DIR__, ".."))
 const CH8_DATA = joinpath(CH8, "data")
 const CH8_LABS = joinpath(CH8, "labs")
-const CH7_JL = normpath(joinpath(CH8, "..", "ch7", "julia"))     # 7장 Julia 포트(ch7_common.jl, flux_tools.jl, mlip_common.jl)
+const CH7_JL = normpath(joinpath(CH8, "..", "ch07", "julia"))     # 7장 Julia 포트(ch7_common.jl, flux_tools.jl, mlip_common.jl)
 
 # ---------------------------------------------------------------- 작은 수치 도구
 softmax_vec(z) = (e = exp.(z .- maximum(z)); e ./ sum(e))

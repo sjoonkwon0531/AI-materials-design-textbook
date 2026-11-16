@@ -5,7 +5,7 @@ Compared with the original ZGB (rejection, instantaneous reaction) at the same L
 import sys, importlib, time
 import numpy as np
 from numba import njit
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 zgb = importlib.import_module("53_lattice").zgb
 
 @njit(cache=True)

@@ -4,7 +4,7 @@ member 0 runs one 150-step 1500 K Langevin MD; eps_F evaluated on each frame wit
 Also the estimator-level check: E[(1/M) sum_k |F_k - Fbar|^2] = (M-1)/M * 3 s^2 for iid noise."""
 import os, sys, time
 import numpy as np, torch
-sys.path.insert(0, '../ch10/labs')
+sys.path.insert(0, '../../ch10/labs')
 from importlib import import_module
 C = import_module('104_common')
 torch.set_num_threads(1)

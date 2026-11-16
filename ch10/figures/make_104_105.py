@@ -5,8 +5,8 @@ sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2]
 from bookstyle import *
 import matplotlib.pyplot as plt
 
-D = '../ch10/data'
-OUT = '../ch10/figures'
+D = '../../ch10/data'
+OUT = '../../ch10/figures'
 which = sys.argv[1:] or ['data', 'al', 'val', 'ft']
 
 
@@ -27,7 +27,7 @@ def fig_data():
     ax[1].scatter(d['Pt'][:, 0], d['Pt'][:, 1], s=40, marker='*', color='k', label='test 1500 K')
     ax[1].set_xlabel('SOAP PC1'); ax[1].set_ylabel('SOAP PC2'); ax[1].legend(frameon=False, fontsize=12, loc='best', ncol=1)
     names = ['block', 'random', 'fps', 'rattle']; labs = ['block', 'random', 'FPS', 'rattle']
-    x = np.arange(len(keys)); w = 0.26
+    x = np.arange(len(names)); w = 0.26
     for k, (col, c, h, lab) in enumerate([(0, RED, '', '1500 K test'), (1, PURPLE, '//', '1800 K'), (2, BLUE, '..', 'strained')]):
         ax[2].bar(x + (k - 1) * w, [s[n]['mean'][col] for n in names], w, yerr=[s[n]['std'][col] for n in names],
                   color=c, hatch=h, edgecolor='white', capsize=3, label=lab, alpha=0.9)

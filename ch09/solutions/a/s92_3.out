@@ -1,5 +1,5 @@
 exact J = -pi^2/4 = -2.467401; midpoint-256 energy of the exact solution: -2.467401
-../ch09/solutions/a/s92_3.py:38: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+../../../ch09/solutions/a/s92_3.py:38: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
 Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
   Jtrain = float(energy(net, xl)) if pts != "fresh" else float("nan"); Jtrue = float(energy(net, xq))
 strong grid  (2000 Adam): rel L2 = 1.24e-04 +/- 1.4e-05 (1.22e-04, 1.42e-04, 1.08e-04), max err 1.69e-04, 2.26 ms/iter, J on training points -2.46740, -2.46740, -2.46740; true J(u_theta) -2.467400, -2.467400, -2.467400 (J - J_exact: +8.1e-07, +1.1e-06, +7.2e-07)

@@ -5,7 +5,7 @@ import numpy as np
 from bookstyle import *
 from matplotlib.colors import LogNorm
 
-OUT = "../ch09/figures/"; DATA = "../ch09/data/"
+OUT = "../../ch09/figures/"; DATA = "../../ch09/data/"
 load = lambda n: json.load(open(DATA + n))
 PI = math.pi
 u_exact = lambda x, t, D=0.1: np.exp(-D * PI**2 * t) * np.sin(PI * x) + 0.5 * np.exp(-9 * D * PI**2 * t) * np.sin(3 * PI * x)

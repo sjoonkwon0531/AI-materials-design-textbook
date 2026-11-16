@@ -1,6 +1,6 @@
 """Fig 3.4 - forward (many-to-one) vs inverse (one-to-many) on a property landscape."""
 import sys
-sys.path.insert(0, '../ch02/figures')
+sys.path.insert(0, '../../ch02/figure_scripts')
 import bookstyle as bs
 import numpy as np
 import matplotlib.pyplot as plt
@@ -62,4 +62,4 @@ ax.set_xlim(0, 1); ax.set_ylim(0, 1)
 ax.set_xlabel('structure descriptor  $x_1$')
 ax.set_ylabel('structure descriptor  $x_2$')
 ax.spines[['top', 'right']].set_visible(True)
-fig.savefig('../ch03/figures/Fig3.4_forward_inverse.png')
+fig.savefig('../../ch03/figures/Fig3.4_forward_inverse.png')

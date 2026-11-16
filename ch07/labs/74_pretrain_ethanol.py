@@ -13,7 +13,7 @@ Runtime: ~25 min measured under 4-author shared load on 2 cores (~6-8 min on an 
 import math, time, json, numpy as np, torch, torch.nn as nn
 torch.set_num_threads(1)
 t_start = time.time()
-DATA = "../ch07/data/"
+DATA = "../../ch07/data/"
 
 def ssp(x): return nn.functional.softplus(x) - math.log(2.0)
 class SSP(nn.Module):

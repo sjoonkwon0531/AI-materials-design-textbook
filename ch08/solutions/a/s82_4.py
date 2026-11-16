@@ -1,6 +1,6 @@
 """Ex 8.2.4: softmax (temperature tau) rollout policy for MCTS / random search; deeper networks."""
 import sys, importlib, math, time, numpy as np
-sys.path.insert(0, "../ch08/labs")
+sys.path.insert(0, "../../../ch08/labs")
 M = importlib.import_module("82_mcts")
 MAXD = 12
 

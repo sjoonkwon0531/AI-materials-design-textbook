@@ -1,7 +1,7 @@
 """Ex 6.5.6(b): LightGBM quantile regression (alpha 0.05, 0.95) -> 90% interval, 5-fold CV seed 0 on expt_gap Magpie."""
 import numpy as np, pandas as pd, lightgbm as lgb, time
 from sklearn.model_selection import KFold
-L="../ch06/labs/"
+L="../../../ch06/labs/"
 df=pd.read_parquet(L+"magpie_expt_gap.parquet")
 X=df.drop(columns=["formula","target"]).to_numpy(np.float32); y=df["target"].to_numpy()
 P=dict(n_estimators=600,learning_rate=0.05,num_leaves=31,subsample=0.8,subsample_freq=1,colsample_bytree=0.5,

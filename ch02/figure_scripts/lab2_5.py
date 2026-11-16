@@ -1,5 +1,5 @@
 """Lab 2.5 / Fig 2.2.7: shooting method for T''=kap(T-Ta), T(0)=40, T(10)=200 (code block b02 + diagnostics)."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import numpy as np, bookstyle as bs, matplotlib.pyplot as plt
 kap, Ta, L, T0, TL = 0.01, 20.0, 10.0, 40.0, 200.0
 rhs = lambda Y: np.array([Y[1], kap*(Y[0]-Ta)])
@@ -48,4 +48,4 @@ ax.annotate('first below tol:\niteration 39',xy=(39,er[38]),xytext=(27,3e-12),fo
 ax.set_xlabel('Iteration'); ax.set_ylabel('|T(L) - 200|'); ax.legend(loc='upper right',frameon=False)
 for a,l in zip(axs,'ab'): bs.panel_label(a,l)
 fig.tight_layout(w_pad=3)
-fig.savefig('../ch02/figures/Fig2.2.7_shooting.png')
+fig.savefig('../../ch02/figures/Fig2.2.7_shooting.png')

@@ -1,6 +1,6 @@
 """Lab 2.7: 1D heat equation u_t = u_xx on [0,1], u(0)=u(1)=0, by Method of Lines.
 Parameters (stated in text): alpha=1, N=50 intervals (h=0.02), IC = triangular hat 1-|2x-1|, t_final=0.2."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import numpy as np, scipy.sparse as sp
 from scipy.integrate import solve_ivp
 from scipy.sparse.linalg import eigsh
@@ -79,5 +79,5 @@ ax.set_xlabel("N (grid intervals)"); ax.set_ylabel(r"$|\lambda_{max}|\,/\,|\lamb
 ax.legend(frameon=False,loc='upper left')
 for a,l in zip(axs,'abc'): bs.panel_label(a,l)
 fig.tight_layout(w_pad=2.5)
-fig.savefig('../ch02/figures/Fig2.4.1_heat_mol.png')
+fig.savefig('../../ch02/figures/Fig2.4.1_heat_mol.png')
 print("stiffness", dict(zip(Ns,np.round(S,1))))

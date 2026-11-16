@@ -2,9 +2,9 @@
 import os, sys, math, importlib
 import numpy as np, torch
 torch.set_num_threads(1)
-LAB = "../ch09/labs"; sys.path.insert(0, LAB); M = importlib.import_module("93_models")
+LAB = "../../../ch09/labs"; sys.path.insert(0, LAB); M = importlib.import_module("93_models")
 d = np.load(os.path.join(LAB, "..", "data", "93_ks.npz")); traj = torch.tensor(d["traj"]); NTR, L, N = int(d["ntr"]), float(d["L"]), traj.shape[-1]; te = traj[NTR:]
-net = M.FNO1d(width=32, kmax=24, depth=4, residual=True, conserve="flux", L=64.0); net.load_state_dict(torch.load("../ch09/solutions/a/s93_6_flux.pt"))
+net = M.FNO1d(width=32, kmax=24, depth=4, residual=True, conserve="flux", L=64.0); net.load_state_dict(torch.load("../../../ch09/solutions/a/s93_6_flux.pt"))
 def lowpass(u, kc):
     uh = torch.fft.rfft(u); uh[..., kc + 1:] = 0; return torch.fft.irfft(uh, n=u.shape[-1])
 def corr(p, t):

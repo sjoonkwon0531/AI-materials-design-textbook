@@ -1,6 +1,6 @@
 """Ex 7.5.3: row space and spectrum of Delta W after 400 full-batch steps (NO early stopping), SGD(momentum) vs Adam."""
 import numpy as np, torch
-src = open("../ch07/labs/75_lora_bandgap.py").read()
+src = open("../../../ch07/labs/75_lora_bandgap.py").read().replace("../../ch07/", "../../../ch07/")  # lab paths are relative to ch07/labs
 exec(src.split("methods = [")[0])
 def energy(sv, ks=(1, 4, 8)):
     e = sv ** 2 / (sv ** 2).sum(); return [round(float(e[:k].sum()), 2) for k in ks]

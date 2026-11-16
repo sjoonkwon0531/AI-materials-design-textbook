@@ -3,10 +3,10 @@
 5 rounds at 10, 16, 22, 28, 34 labels; warm start), using 34 oracle-labelled 64-atom frames from data/104_pool.npz
 and data/104_rattle.npz (the cost depends on the number of frames and epochs, not on which frames).
 Then Q* = (n t_U + C) / (t_U - t_S) with t_U = 0.308 s, t_S = 9.5 ms (Lab 10.8) and n = 34.
-Run: /tmp/claude-0/v10/bin/python ex_10_5_6.py"""
+Run: $MLIP_PY_A (MACE/CHGNet environment) ex_10_5_6.py"""
 import sys, time, os
 import numpy as np, torch
-sys.path.insert(0, '../ch10/labs')
+sys.path.insert(0, '../../ch10/labs')
 from importlib import import_module
 C = import_module('104_common')
 torch.set_num_threads(1)

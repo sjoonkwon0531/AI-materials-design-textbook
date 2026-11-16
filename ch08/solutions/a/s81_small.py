@@ -1,5 +1,5 @@
 import sys, importlib, numpy as np
-sys.path.insert(0, "../ch08/labs")
+sys.path.insert(0, "../../../ch08/labs")
 E = importlib.import_module("81_anneal_env")
 P, R = E.build_model(); nS, nA = E.nS, E.nA
 np.set_printoptions(precision=6, suppress=True)

@@ -1,8 +1,8 @@
 """Ex 7.7.4: O-H (and C-C, C-O) bond-length distributions pooled over several initial-velocity seeds, 2 ps NVE each."""
 import os, sys, numpy as np, torch, json
 sys.argv = ["x"]
-src = open("../ch07/labs/77_md.py").read().split("out = {}")[0]
-src = src.replace('HERE = os.path.dirname(os.path.abspath(__file__))', 'HERE = "../ch07/labs"')
+src = open("../../../ch07/labs/77_md.py").read().split("out = {}")[0]
+src = src.replace('HERE = os.path.dirname(os.path.abspath(__file__))', 'HERE = "../../../ch07/labs"')
 exec(src)
 from tblite.ase import TBLite
 plan = {"xTB": range(5), "schnet_N1000": range(5), "nequip_N1000": range(3)}

@@ -3,7 +3,7 @@ average, written as an explicit window sum in Julia), gradient1 (= np.gradient),
 extrapolation, taper) and the bin/interpolation index rule of cg_forces (trunc toward zero, +1 for 1-based).
 A synthetic g(r) is used; Julia-style implementations are compared with the numpy originals of 54_ibi.py."""
 import sys, numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../ch05/labs")
 from importlib import import_module
 I = import_module("54_ibi")
 r = I.RGRID; gt = np.where(r > 0.8, 1 + 0.5*np.exp(-(r-1.5)**2/0.05)*np.cos(3*(r-1.5)), 0.0)

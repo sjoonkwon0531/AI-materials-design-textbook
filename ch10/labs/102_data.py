@@ -9,7 +9,7 @@ Configurations: 8-atom cubic diamond-Si cells (a0 = 5.43 A), random symmetric st
 (|eps_ij| <= 0.03), Gaussian rattle with sigma drawn from U(0.02, 0.15) A.
 Output: ../data/102_si8.npz with R (n,8,3), cell (n,3,3), E (n,), F (n,8,3), S (n,3,3) [eV/A^3],
 and ../data/102_si8_{train,test}.xyz (extxyz) for the MACE command-line trainer.
-Run with /tmp/claude-0/v10/bin/python.
+Run with $MLIP_PY_A (MACE/CHGNet environment).
 """
 import os, time, warnings
 import numpy as np

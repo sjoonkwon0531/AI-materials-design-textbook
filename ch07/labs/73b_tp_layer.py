@@ -59,7 +59,7 @@ class PointConv(torch.nn.Module):
         agg = torch.zeros(n, irreps_mid.dim).index_add_(0, dst, msg)
         return self.gate(agg)
 
-d = np.load("../ch07/data/ethanol_xtb_300K.npz")
+d = np.load("../../ch07/data/ethanol_xtb_300K.npz")
 for dtype in (torch.float32, torch.float64):
     torch.set_default_dtype(dtype)
     torch.manual_seed(0)

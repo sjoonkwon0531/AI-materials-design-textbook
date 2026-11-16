@@ -1,11 +1,11 @@
 """Ex 10.2.6: direct-force model of Lab 10.3 with the net force projected out, F_i <- F_i - mean_j F_j.
 Same NVE protocol as Lab 10.3 (64-atom Si, 600 K MB start seed 0, 5 ps, velocity Verlet).
 Also: work around a closed loop in configuration space (curl test) for cons / direct / direct-projected.
-Run with /tmp/claude-0/v10/bin/python."""
+Run with $MLIP_PY_A (MACE/CHGNet environment)."""
 import os, sys, importlib.util, warnings
 import numpy as np, torch
 warnings.filterwarnings('ignore'); torch.set_num_threads(1)
-LABS = '../ch10/labs'
+LABS = '../../ch10/labs'
 spec = importlib.util.spec_from_file_location('n102', os.path.join(LABS, '102_nve.py'))
 N = importlib.util.module_from_spec(spec); spec.loader.exec_module(N)
 T, M = N.T, N.M

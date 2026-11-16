@@ -403,7 +403,7 @@ if __name__ == "__main__":
     print(f"  Part D time {time.time()-t3:.1f} s;  total {time.time()-t0:.1f} s")
 
     # save for figures
-    np.savez("../ch05/labs/52_ljmc_results.npz",
+    np.savez("../../ch05/labs/52_ljmc_results.npz",
              rhoA=[r["rho"] for r in resA], uA=[r["u"] for r in resA], uA_err=[r["u_err"] for r in resA],
              pA=[r["p"] for r in resA], pA_err=[r["p_err"] for r in resA],
              rhoB_series1=resB[0]["series"], rhoB_series3=resB[1]["series"],
@@ -412,4 +412,4 @@ if __name__ == "__main__":
     # dense EOS curve for plotting
     rr = np.linspace(0.02, 0.95, 120)
     up = np.array([eos_up(T, r) for r in rr])
-    np.savez("../ch05/labs/52_ljmc_eos.npz", rho=rr, u=up[:, 0], p=up[:, 1])
+    np.savez("../../ch05/labs/52_ljmc_eos.npz", rho=rr, u=up[:, 0], p=up[:, 1])

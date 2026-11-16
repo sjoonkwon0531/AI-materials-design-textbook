@@ -1,7 +1,7 @@
 """Ex 5.6.3 (cont.): exact expectation of the micro estimator (no sampling noise), from the
 first and second displacement moments of the discrete-time ring walk, plus a 100-seed MC check."""
 import sys, numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 import importlib; H = importlib.import_module("56_hmm")
 
 def exact_estimator(x0=0.5, m=16, nsteps=8000, nrec=80):

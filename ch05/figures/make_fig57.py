@@ -1,12 +1,12 @@
 """Figures 5.7.1 (Ising acceleration) and 5.7.2 (DPD basics) from the lab JSON outputs."""
 import sys, json, math, logging
 logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
-sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common')); sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common')); sys.path.insert(0, "../../ch05/labs")
 from bookstyle import *
 import numpy as np
 from ising_speed import onsager_energy, yang_m, TC
 
-LAB = "../ch05/labs/"; FIG = "../ch05/figures/"
+LAB = "../../ch05/labs/"; FIG = "../../ch05/figures/"
 
 # ------------------------------------------------------------------ Fig 5.7.1
 sp = json.load(open(LAB + "ising_speed.json")); wf = json.load(open(LAB + "ising_wolff.json"))

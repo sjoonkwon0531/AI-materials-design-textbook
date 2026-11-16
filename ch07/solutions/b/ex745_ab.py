@@ -2,9 +2,9 @@
 (equal total optimisation steps). N = 10, 25, fine-tune subsets seeds 0,1,2. Test: 300 K frames 2000-2999 and
 1000 K frames not used in pretraining (odd indices, 500 frames)."""
 import time, json, numpy as np, torch
-src = open("../ch07/labs/74_pretrain_ethanol.py").read()
+src = open("../../../ch07/labs/74_pretrain_ethanol.py").read().replace("../../ch07/", "../../../ch07/")  # lab paths are relative to ch07/labs
 exec(src.split("# ------------------------------------------------------------ pretraining (once per seed)")[0])
-pre = torch.load("../ch07/labs/74_pretrained_states.pt")
+pre = torch.load("../../../ch07/labs/74_pretrained_states.pt")
 t1k = np.load(DATA + "ethanol_xtb_1000K.npz")
 odd = np.arange(1, 1000, 2)
 R1k = torch.tensor(t1k["R"][odd], dtype=torch.float32); E1k = torch.tensor(t1k["E"][odd], dtype=torch.float32)

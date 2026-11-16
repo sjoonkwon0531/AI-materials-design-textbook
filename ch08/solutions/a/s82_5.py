@@ -1,6 +1,6 @@
 """Ex 8.2.5: FIFO(fab) = LBFS on the 1-machine line; does it break with parallel machines?"""
 import sys, importlib, heapq, time, numpy as np
-sys.path.insert(0, "../ch08/labs")
+sys.path.insert(0, "../../../ch08/labs")
 M = importlib.import_module("82_fab")
 ROUTE, RAW = M.ROUTE, M.RAW
 

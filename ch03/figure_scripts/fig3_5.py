@@ -1,7 +1,7 @@
 """Fig 3.5 - materials database landscape by scale (log x) and data character (bands).
 Values as stated in ch3.md Sec. 3.5.2 (as of Oct 2026)."""
 import sys
-sys.path.insert(0, '../ch02/figures')
+sys.path.insert(0, '../../ch02/figure_scripts')
 import bookstyle as bs
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
@@ -62,4 +62,4 @@ ax.spines[['left', 'top', 'right']].set_visible(False)
 ax.set_xlabel('approximate number of entries (log scale; order of magnitude, as of Oct 2026)')
 ax.text(0.995, 0.012, 'sizes change over time (cf. Box 3.6)', transform=ax.transAxes,
         ha='right', va='bottom', fontsize=15, style='italic', color=bs.GRAY)
-fig.savefig('../ch03/figures/Fig3.5_db_landscape.png')
+fig.savefig('../../ch03/figures/Fig3.5_db_landscape.png')

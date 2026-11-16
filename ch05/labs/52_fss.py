@@ -96,7 +96,7 @@ gn = np.polyfit(np.log(Ls), np.log([np.max(observables(rw_moments(*data[L], L*L,
 print(f"  fit chi'_max ~ L^{gn:.3f}  (gamma/nu = 1.75)")
 print(f"total {time.time()-t0:.0f} s")
 
-np.savez("../ch05/labs/52_fss2d_results.npz", T=T, Tc=Tc,
+np.savez("../../ch05/labs/52_fss2d_results.npz", T=T, Tc=Tc,
          **{f"U_{L}": curves[L] for L in Ls},
          **{f"cx_{L}": coll[L][0] for L in Ls}, **{f"cy_{L}": coll[L][1] for L in Ls},
          checks=np.array(checks), cross=np.array(cross))

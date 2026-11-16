@@ -2,7 +2,7 @@
     u_t + c u_x + beta (u^2/2)_x = nu u_xx   (rho = 0 in pre-training; the rho channel is always zero).
 Data from 94_data.py.  Run: python 94b_pretrain.py   (about 4 x 60 CPU-s)"""
 import sys, time, importlib, numpy as np, torch
-sys.path.insert(0, "../ch09/labs")
+sys.path.insert(0, "../../ch09/labs")
 C = importlib.import_module("94_common")
 load = lambda name: dict(np.load(C.D + f"94_{name}.npz"))
 WIDTH, MODES, DEPTH, STEPS, BS, LR, MEMBERS = 32, 16, 4, 3000, 32, 3e-3, 4

@@ -8,7 +8,7 @@ Part C  ROI: "pre-relax with the cheap model, finish with the expensive one". CH
         the expensive reference (a stand-in for DFT; no DFT code runs here). We count how many
         reference force calls are needed from the raw start and from the MACE-relaxed start.
 
-Run:  /tmp/claude-0/v10/bin/python 106_relax.py [A|B|C]   (CPU ~5 min in total, 1 thread; parts A+B then C)
+Run:  $MLIP_PY_A (MACE/CHGNet environment) 106_relax.py [A|B|C]   (CPU ~5 min in total, 1 thread; parts A+B then C)
 """
 import os, sys, json, time, warnings
 warnings.filterwarnings('ignore')

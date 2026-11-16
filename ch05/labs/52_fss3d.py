@@ -66,5 +66,5 @@ print(f"=== weighted fit T*(L) = T_c + a L^-{w_exp:.2f} over L = {La.astype(int)
 print(f"  T_c = {coef[0]:.4f} +/- {np.sqrt(cov[0,0]):.4f},  a = {coef[1]:.3f},  chi2/dof = {chi2/(len(La)-2):.2f}")
 print(f"  naive (largest pair only): T* = {Ts[-1]:.4f};  reference T_c = 1/0.221654626 = {1/0.221654626:.4f}")
 print(f"total {time.time()-t0:.0f} s")
-np.savez("../ch05/labs/52_fss3d_results.npz", T=T, **{f"U_{L}": curves[L] for L in runs},
+np.savez("../../ch05/labs/52_fss3d_results.npz", T=T, **{f"U_{L}": curves[L] for L in runs},
          La=La, Ts=Ts, eT=eT, coef=coef, w_exp=w_exp)

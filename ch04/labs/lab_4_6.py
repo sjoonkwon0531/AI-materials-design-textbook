@@ -57,4 +57,4 @@ e_slabH = slabH.get_potential_energy()
 h2 = molecule('H2'); h2.calc = EMT(); BFGS(h2, logfile=None).run(fmax=0.01); eH2 = h2.get_potential_energy()   # relaxed H2
 print(f"  slab={e_slab:.4f} slab+H={e_slabH:.4f} H2={eH2:.4f}  E_ads={e_slabH-e_slab-0.5*eH2:.4f} eV")
 print(f"  pbc={slab.pbc}, cell={np.round(slab.cell.lengths(),3)}")
-np.savez('../ch04/labs/lab46_data.npz', vols=vols, ens=ens, v0=v0, a=a_eq, B=B_GPa, Ts=Ts)
+np.savez('../../ch04/labs/lab46_data.npz', vols=vols, ens=ens, v0=v0, a=a_eq, B=B_GPa, Ts=Ts)

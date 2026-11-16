@@ -1,6 +1,6 @@
 """Lab 2.6 / Fig 2.3: Cartesian pendulum (m=L=1, g=9.81), index-1 reduction naive vs Baumgarte.
 Horizontal release: (x,y,vx,vy)=(1,0,0,0). RK45, rtol=1e-7 (atol default 1e-6 unless noted), alpha=beta=5."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import numpy as np, bookstyle as bs, matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 g=9.81
@@ -31,4 +31,4 @@ ax.semilogy(te,np.maximum(vb,1e-16),color=bs.NAVY,lw=1.8,ls='--',label=r'Baumgar
 ax.set_xlabel('t'); ax.set_ylabel(r'Constraint violation $|x^2+y^2-1|$')
 ax.set_ylim(1e-10,1e-1)
 ax.legend(loc='upper left',frameon=False)
-fig.tight_layout(); fig.savefig('../ch02/figures/Fig2.3_dae_drift.png')
+fig.tight_layout(); fig.savefig('../../ch02/figures/Fig2.3_dae_drift.png')

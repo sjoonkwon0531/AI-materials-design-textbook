@@ -131,5 +131,5 @@ if __name__ == "__main__":
         w = np.exp(ll - ll.max()); w /= w.sum()
         fig[f"post{K}"] = w.reshape(len(G_NU), len(G_C)); fig[f"mb{K}"] = bayes_multiplier(S, P)[0]
         fig[f"mn{K}"] = net_multiplier(S, P)[0]; fig[f"ls{K}"] = (S / P)[0]
-    np.savez("../ch09/data/94a_incontext.npz", Ks=np.array(list(res)), res=np.array(list(res.values())),
+    np.savez("../../ch09/data/94a_incontext.npz", Ks=np.array(list(res)), res=np.array(list(res.values())),
              G_NU=G_NU, G_C=G_C, m_true=np.exp(-nu0 * kk ** 2 - 1j * c0 * kk), **fig)

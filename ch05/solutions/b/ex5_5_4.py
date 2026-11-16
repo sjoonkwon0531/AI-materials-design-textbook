@@ -2,11 +2,11 @@
 Also: tiled cells (2x2, 3x3 copies of the same periodic map) to show the boundary-layer effect shrink."""
 import sys, time, numpy as np
 from scipy.sparse.linalg import spsolve
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 import importlib; H = importlib.import_module("55_homog")
 from skfem import LinearForm, asm
 from skfem.helpers import grad
-img = np.load("../ch05/labs/55_homog_imgs.npz")["m+0.00"]
+img = np.load("../../../ch05/labs/55_homog_imgs.npz")["m+0.00"]
 k1, k2 = 1.0, 10.0
 
 def k_kubc(cell, img, G):

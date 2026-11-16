@@ -23,4 +23,4 @@ lay=[3,4,5,6]; Elay=[E_ads_site('fcc', size=(2,2,n)) for n in lay]
 for n,e in zip(lay,Elay): print(f"  layers {n}: {e:+.4f}")
 vac=[5,7,9,12]; Evac=[E_ads_site('fcc', vacuum=float(v)) for v in vac]
 for v,e in zip(vac,Evac): print(f"  vacuum {v}: {e:+.4f}")
-np.savez('../ch04/labs/lab47_data.npz', sites=sites, Eads=[Eads[s] for s in sites], lay=lay, Elay=Elay, vac=vac, Evac=Evac)
+np.savez('../../ch04/labs/lab47_data.npz', sites=sites, Eads=[Eads[s] for s in sites], lay=lay, Elay=Elay, vac=vac, Evac=Evac)

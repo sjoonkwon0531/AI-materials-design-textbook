@@ -82,7 +82,7 @@ if __name__ == "__main__":
     part = sys.argv[1] if len(sys.argv) > 1 else "AB"
     NA, NL = 2400, 600
     t_all = time.perf_counter(); c_all = time.process_time()
-    JS = "../ch09/data/92_convection.json"
+    JS = "../../ch09/data/92_convection.json"
     out = json.load(open(JS)) if "A" not in part else {}
     if "A" in part:
         print(f"=== A. vanilla PINN vs beta ({NA} Adam + up to {NL} L-BFGS iterations, 1000 collocation points) ===")

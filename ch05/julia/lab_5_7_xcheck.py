@@ -4,7 +4,7 @@ fed with the chapter's numpy Cahn-Hilliard maps. It must reproduce the chapter's
 Indices are written 0-based here; lab_5_7.jl uses the same formulas 1-based."""
 import sys, numpy as np, scipy.sparse as sp
 from scipy.sparse.linalg import splu
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../ch05/labs")
 from importlib import import_module
 H = import_module("55_homog")            # only cahn_hilliard() and the bounds are reused
 

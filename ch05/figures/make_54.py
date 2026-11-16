@@ -5,7 +5,7 @@ import logging
 logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 import numpy as np
 from bookstyle import plt, panel_label, NAVY, RED, BLUE, GOLD, GREEN, PURPLE, GRAY
-d = np.load("../ch05/labs/54_ibi_fig.npz")
+d = np.load("../../ch05/labs/54_ibi_fig.npz")
 r = d["r"]; m = r > 0.6
 fig, ax = plt.subplots(2, 2, figsize=(12.5, 9.2))
 a = ax[0, 0]
@@ -46,4 +46,4 @@ panel_label(a, "d")
 for a in (ax[1, 0], ax[1, 1]):
     a.set_xticks(range(0, 16, 3))
 fig.tight_layout(h_pad=2.0, w_pad=2.5)
-fig.savefig("../ch05/figures/Fig5.4.1_ibi.png")
+fig.savefig("../../ch05/figures/Fig5.4.1_ibi.png")

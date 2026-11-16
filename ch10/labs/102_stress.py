@@ -5,7 +5,7 @@
      undetermined energy constant; force-label noise; adding stress labels.
 Student: EqNet, rc = 3.0 A, 2 layers, 32 channels; 1500 Adam steps, batch 8, lr 3e-3, seed 0.
 Oracle data: ../data/102_si8.npz (MACE-MP-0 small labels standing in for DFT).
-Run with /tmp/claude-0/v10/bin/python.
+Run with $MLIP_PY_A (MACE/CHGNet environment).
 """
 import os, json, importlib.util, warnings
 import numpy as np

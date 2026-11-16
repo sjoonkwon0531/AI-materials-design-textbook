@@ -1,4 +1,4 @@
-import sys; sys.path.insert(0,'../ch02/figures'); import bookstyle as bs
+import sys; sys.path.insert(0,'../../ch02/figure_scripts'); import bookstyle as bs
 import numpy as np, matplotlib.pyplot as plt, logging
 logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 d=np.load('lab2_14_data.npz'); t=d['t']; F=d['F']; M=d['M']; Lt=d['Lt']

@@ -8,7 +8,7 @@ Run: python ex_10_7_5.py <mace|chgnet|sevennet|mattersim>   (re-executes itself 
 import os, sys, json, time, warnings
 warnings.filterwarnings('ignore')
 import numpy as np
-sys.path.insert(0, '../ch10/labs')
+sys.path.insert(0, '../../ch10/labs')
 from importlib import import_module
 C = import_module('103_common')
 model = sys.argv[1]; C.reexec_for(model)
@@ -103,4 +103,4 @@ res = dict(model=model, a0=a0, B=B_GPa, edge=bool(iE in (0, len(avals) - 1)),
 print(f"{info['label']:20s} a0 {a0:.4f} A, B {B_GPa:5.1f} GPa{' (min at scan edge!)' if res['edge'] else ''} | "
       f"lowest G {low('G')}, X {low('X')}, M {low('M')}, R {low('R')} cm-1 | rigid tilt min {prof[im]:.1f} meV/f.u. at {phis[im]:.0f} deg |"
       f" {sg} relax: {phi_rel:.2f} deg, {dE_rel:.1f} meV/f.u., c/a {cp[2]/cp[0]:.4f}, {opt.nsteps} steps | CPU {res['cpu']:.0f} s")
-json.dump(res, open(f'../ch10/solutions/ex_10_7_5_{model}.json', 'w'), indent=1)
+json.dump(res, open(f'../../ch10/solutions/ex_10_7_5_{model}.json', 'w'), indent=1)

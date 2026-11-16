@@ -139,4 +139,4 @@ if __name__ == "__main__":
         print(f"  Nx=Nt={Nx:4d}: rel L2 {r:.2e}, max err {m:.2e}, cpu {dt*1e3:.2f} ms")
 
     print(f"total cpu {time.process_time()-t_all:.0f} s")
-    json.dump(out, open("../ch09/data/92_heat.json", "w"))
+    json.dump(out, open("../../ch09/data/92_heat.json", "w"))

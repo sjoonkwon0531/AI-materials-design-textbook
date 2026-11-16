@@ -1,8 +1,8 @@
 """Fig 2.4.2: P1 FEM for -u''=pi^2 sin(pi x). L2 error by fine-grid interpolation (20 sub-points/element)."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import logging; logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
 import numpy as np, bookstyle as bs, matplotlib.pyplot as plt
-exec(open('../ch02/labs/b03_L1217.py').read())
+exec(open('../../ch02/labs/b03_L1217.py').read())
 from scipy.sparse import diags; from scipy.sparse.linalg import spsolve
 def l2_err(x,u,nf=20):
     xf=np.linspace(0,1,(len(x)-1)*nf+1); uf=np.interp(xf,x,u)
@@ -40,4 +40,4 @@ ax.loglog(hs,3*hs**2,':',color=bs.GRAY,lw=2); ax.text(hs[3],3*hs[3]**2*2.5,"slop
 ax.loglog(hs,0.02*hs**4,':',color=bs.GRAY,lw=2); ax.text(hs[4]*0.85,0.02*hs[4]**4*0.5,"slope 4",fontsize=15,color=bs.GRAY,ha="left",va="top")
 ax.set_xlabel("h"); ax.set_ylabel("error"); ax.legend(frameon=False,loc='lower right',fontsize=14)
 for a,l in zip(axs,'abc'): bs.panel_label(a,l)
-fig.tight_layout(w_pad=2.5); fig.savefig('../ch02/figures/Fig2.4.2_fem.png')
+fig.tight_layout(w_pad=2.5); fig.savefig('../../ch02/figures/Fig2.4.2_fem.png')

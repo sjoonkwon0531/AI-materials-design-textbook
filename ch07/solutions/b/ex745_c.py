@@ -1,7 +1,7 @@
 """Ex 7.4.5 (c): bigger SchNet (F=64, 3 interactions). G-pretraining (GFN1 labels, 1500 steps, seed 0), then
 scratch 2300 steps vs G + 800 FT, N=50 (scratch only, seeds 0,1) and N=200 (seeds 0,1,2)."""
 import time, json, numpy as np, torch
-src = open("../ch07/labs/74_pretrain_ethanol.py").read()
+src = open("../../../ch07/labs/74_pretrain_ethanol.py").read().replace("../../ch07/", "../../../ch07/")  # lab paths are relative to ch07/labs
 exec(src.split("# ------------------------------------------------------------ pretraining (once per seed)")[0])
 t0 = time.time()
 torch.manual_seed(0); m0 = SchNetDense(Z, F=64, n_inter=3); s0 = {k: v.clone() for k, v in m0.state_dict().items()}

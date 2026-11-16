@@ -3,7 +3,7 @@ Same protocol as Lab 5.15 (Delta a=15, h=0.2, t=400, seed 5). Prints max S/n, it
 S/n along x at the pattern wave number. Usage: python ex5_8_6.py 1.0 1.1 1.2:0.05 ...  (period factor[:field h[:seed]])"""
 import sys, os, time
 import numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 from dpd_core import seed, forces, run_field, make_amat
 from bcp_common import build_melt, sq_psi
 L0 = 6.41; N = 10; DA = 15.0

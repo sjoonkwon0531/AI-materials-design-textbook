@@ -1,5 +1,5 @@
-P=/tmp/claude-0/v10/bin/python
-cd ../ch10/solutions
+P=${MLIP_PY_A:-python}
+cd ../../ch10/solutions
 # wait for the 10.2 chain to finish
 while ! grep -q done ex_10_2_5.out 2>/dev/null; do sleep 20; done
 $P ex_10_2_6.py > ex_10_2_6.out 2>&1

@@ -2,7 +2,7 @@ import numpy as np
 N = np.array([100, 300, 1000.]); M = np.array([124.5, 101.1, 68.3])
 b, a = np.polyfit(np.log(N), np.log(M), 1); print("slope", b, "a", a, "fit", np.exp(a) * N ** b)
 # exact values from json
-import json; r = json.load(open("../ch07/labs/77_results.json"))
+import json; r = json.load(open("../../../ch07/labs/77_results.json"))
 Mx = np.array([r[f"schnet_N{n}"]["300K"]["F_mae"] * 1e3 for n in (100, 300, 1000)]); print("json", Mx, np.polyfit(np.log(N), np.log(Mx), 1)[0])
 Mn = np.array([r[f"nequip_N{n}"]["300K"]["F_mae"] * 1e3 for n in (100, 300, 1000)]); print("nequip", Mn, np.polyfit(np.log(N), np.log(Mn), 1)[0])
 N34 = np.exp((np.log(34) - a) / b); print("N for 34:", N34, " from N=1000 anchor:", 1000 * (34 / 68.3) ** (1 / b))

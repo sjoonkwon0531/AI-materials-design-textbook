@@ -1,5 +1,5 @@
 """Fig 2.2.0: two failures of existence/uniqueness (sqrt(x) non-uniqueness; 100x-101e^{-t} ill-conditioning)."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import numpy as np, bookstyle as bs, matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 # numerical check of the "실행 결과"
@@ -31,4 +31,4 @@ ax.set_xlabel('t'); ax.set_ylabel('x(t)'); ax.set_ylim(0.3,1e8)
 ax.legend(loc='upper left',frameon=False)
 for a,l in zip(axs,'ab'): bs.panel_label(a,l)
 fig.tight_layout(w_pad=3)
-fig.savefig('../ch02/figures/Fig2.2.0_lipschitz.png')
+fig.savefig('../../ch02/figures/Fig2.2.0_lipschitz.png')

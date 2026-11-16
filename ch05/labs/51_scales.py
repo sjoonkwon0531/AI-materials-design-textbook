@@ -8,7 +8,7 @@ import numpy as np
 from scipy.linalg import expm
 from scipy.integrate import solve_ivp
 
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../ch05/labs")
 lj = importlib.import_module("52_ljmc")
 
 # ---------------------------------------------------------------- (A)

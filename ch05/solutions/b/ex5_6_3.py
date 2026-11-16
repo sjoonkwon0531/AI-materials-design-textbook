@@ -1,6 +1,6 @@
 """Ex 5.6.3: statistical error of the HMM micro estimator vs number of walkers; bias of short runs."""
 import sys, time, numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 import importlib; H = importlib.import_module("56_hmm")
 exact = 0.5 + 0.5; exact = 1.0*H.HARM
 t0 = time.time()

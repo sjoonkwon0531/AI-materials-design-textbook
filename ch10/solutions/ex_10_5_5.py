@@ -4,7 +4,7 @@ use seed 3), labelled by the ORIGINAL MACE-MP-0 small. Every Adam step uses 4 xT
 loss = L_xTB + lambda * L_replay (same form: 100 (dE/N)^2 + |dF|^2). Replay energies are shifted by the E0(Si)
 re-fit times the number of Si atoms, so that the E0 step does not fight the replay term.
 Budget as in the lab: 40 Adam steps, lr 1e-3 cosine, N = 48 xTB cells.
-Run: /tmp/claude-0/v10/bin/python ex_10_5_5.py"""
+Run: $MLIP_PY_A (MACE/CHGNet environment) ex_10_5_5.py"""
 import time, copy, sys
 import numpy as np, torch
 from ase.build import bulk

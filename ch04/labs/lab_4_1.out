@@ -1,0 +1,36 @@
+=== Structure check ===
+Hamiltonian is symmetric (Hermitian, real): True
+
+=== Case A: Harmonic oscillator  E_n = n + 1/2 ===
+ n   E_numeric   E_exact   abs.err
+ 0    0.49999    0.5000  1.25e-05
+ 1    1.49994    1.5000  6.26e-05
+ 2    2.49984    2.5000  1.63e-04
+ 3    3.49969    3.5000  3.13e-04
+ 4    4.49949    4.5000  5.14e-04
+ 5    5.49924    5.5000  7.64e-04
+
+Eigenvector overlap matrix <i|j> (should be Identity):
+[[ 1.  0. -0.  0.]
+ [ 0.  1. -0. -0.]
+ [-0. -0.  1.  0.]
+ [ 0. -0.  0.  1.]]
+
+=== Case B: Infinite square well  E_n = n^2 pi^2 / (2 L^2),  L=1 ===
+ n   E_numeric   E_exact    rel.err
+ 1     4.9249     4.9348  2.00e-03
+ 2    19.6998    19.7392  2.00e-03
+ 3    44.3244    44.4132  2.00e-03
+ 4    78.7988    78.9568  2.00e-03
+ 5   123.1229   123.3701  2.00e-03
+
+=== Case C: Variational principle, trial Gaussian for HO ===
+E(a) = a/4 + 1/(4a),  exact E0 = 0.5 at a=1
+   a     E_trial(a)
+  0.40    0.72500
+  0.70    0.53214
+  1.00    0.50000
+  1.50    0.54167
+  2.50    0.72500
+numerical minimum at a = 1.0000, E = 0.50000  (>= 0.5, equality at a=1)
+ground-state grid-convergence errors: ['1.28e-03', '3.16e-04', '7.85e-05', '1.96e-05', '4.89e-06', '1.22e-06']

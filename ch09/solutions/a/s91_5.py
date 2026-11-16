@@ -3,7 +3,7 @@ import importlib.util, sys, time, math
 import numpy as np, torch
 from scipy.integrate import solve_ivp
 torch.set_num_threads(1)
-spec = importlib.util.spec_from_file_location("hnn", "../ch09/labs/91_hnn.py")
+spec = importlib.util.spec_from_file_location("hnn", "../../../ch09/labs/91_hnn.py")
 Lb = importlib.util.module_from_spec(spec); spec.loader.exec_module(Lb)
 torch.set_default_dtype(torch.float64)
 H_true = Lb.H_true; GAM = 0.05
@@ -54,4 +54,4 @@ for name, cls in (("mlp", Lb.MLPField), ("hnn", Lb.HNN), ("dhnn", DHNN)):
         if name == "dhnn":
             R = m.R().detach().numpy(); line += f", R = [[{R[0,0]:.4f},{R[0,1]:.4f}],[{R[1,0]:.4f},{R[1,1]:.4f}]], eig {np.linalg.eigvalsh(R)}"
         print(line, flush=True)
-        np.save(f"../ch09/solutions/a/s91_5_{name}_{seed}.npy", np.c_[tr, E])
+        np.save(f"../../../ch09/solutions/a/s91_5_{name}_{seed}.npy", np.c_[tr, E])

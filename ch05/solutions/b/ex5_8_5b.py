@@ -4,7 +4,7 @@ then fits w^2 = c + s ln(L) over all runs found in the output of this and ex5_8_
 import sys, time, math, numpy as np
 from scipy.optimize import curve_fit
 from scipy.special import erf
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 from dpd_core import seed, forces, run, run_field, make_amat
 from bcp_common import build_melt
 N = 10; D = 6.41; NB = 80; A = make_amat(25.0, 15.0)

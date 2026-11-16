@@ -1,6 +1,6 @@
 """Fig 3.2 - design -> make -> test discovery cycle, closed by data (MII hub)."""
 import sys
-sys.path.insert(0, '../ch02/figures')
+sys.path.insert(0, '../../ch02/figure_scripts')
 import bookstyle as bs
 import numpy as np
 import matplotlib.pyplot as plt
@@ -60,4 +60,4 @@ ax.text(0, -4.55, 'historical bottleneck\n(synthesis and measurement)', ha='cent
 ax.text(-4.35, 2.95, 'data feedback\n(active learning)', ha='right', va='center',
         fontsize=18, color=bs.GRAY, fontweight='bold', linespacing=1.1)
 
-fig.savefig('../ch03/figures/Fig3.2_design_make_test.png')
+fig.savefig('../../ch03/figures/Fig3.2_design_make_test.png')

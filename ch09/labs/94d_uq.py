@@ -7,7 +7,7 @@
 Needs 94_data.py and 94b_pretrain.py.  Run: python 94d_uq.py   (about 3 CPU-min)"""
 import sys, time, importlib, numpy as np, torch, torch.nn as nn
 from scipy.stats import spearmanr, pearsonr
-sys.path.insert(0, "../ch09/labs")
+sys.path.insert(0, "../../ch09/labs")
 C = importlib.import_module("94_common"); P = importlib.import_module("94b_pretrain")
 T_IDX = list(range(4, 41, 4))                                # t = 0.1, 0.2, ..., 1.0
 

@@ -3,7 +3,7 @@ The equation is known, so unlabeled inputs are free: draw fresh (u0, nu, c, beta
 the PDE residual of the pre-trained model (PINO-style physics fine-tuning, cf. §9.3.4), optionally together with
 the data loss on K labelled trajectories.  Run: python 94e_physics_ft.py   (about 3 CPU-min)"""
 import sys, time, importlib, numpy as np, torch
-sys.path.insert(0, "../ch09/labs")
+sys.path.insert(0, "../../ch09/labs")
 C = importlib.import_module("94_common"); P = importlib.import_module("94b_pretrain"); FS = importlib.import_module("94c_fewshot")
 STEPS, BS = 400, 32
 

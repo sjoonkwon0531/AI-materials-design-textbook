@@ -1,7 +1,7 @@
 """Exercise 10.6.3 (c): Si monovacancy formation energy with MACE-MP-0 small in a 512-atom cell (4x4x4),
 same recipe as labs/106_relax.py Part B (positions only, fmax 0.005 eV/A, four neighbours rattled by 0.02 A,
 seed 1). float32 is checked against float64 on the 64-atom cell first.
-Run: /tmp/claude-0/v10/bin/python ex_10_6_3.py"""
+Run: $MLIP_PY_A (MACE/CHGNet environment) ex_10_6_3.py"""
 import time, numpy as np, torch, warnings
 warnings.filterwarnings('ignore')
 torch.set_num_threads(1)
@@ -10,7 +10,7 @@ from ase.optimize import BFGS
 from ase.filters import FrechetCellFilter
 from ase.constraints import FixSymmetry
 from mace.calculators import MACECalculator
-MODEL = '../ch10/data/mace_mp0_small.model'
+MODEL = '../../ch10/data/mace_mp0_small.model'
 
 def bulk_si(calc):
     si = bulk('Si', 'diamond', a=5.43, cubic=True); si.calc = calc; si.set_constraint(FixSymmetry(si))

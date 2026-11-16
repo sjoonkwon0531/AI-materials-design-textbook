@@ -1,8 +1,8 @@
 """Figures for §8.1 (Fig8.1.1-8.1.4). Reads data written by labs/81_*.py."""
 import sys, importlib, numpy as np
-sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common')); sys.path.insert(0, "../ch08/labs")
+sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common')); sys.path.insert(0, "../../ch08/labs")
 from bookstyle import *
-D = "../ch08/data/"; F = "../ch08/figures/"
+D = "../../ch08/data/"; F = "../../ch08/figures/"
 which = sys.argv[1:] or ["bandit", "anneal", "cliff", "pg"]
 
 def smooth(x, w):

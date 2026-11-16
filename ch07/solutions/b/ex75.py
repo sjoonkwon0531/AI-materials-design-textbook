@@ -1,6 +1,6 @@
 """Ex 7.5.3 (SGD vs Adam: rank / row space of Delta W) and 7.5.5 (L2-SP sweep vs LoRA), Lab 7.17 setup."""
 import numpy as np, torch, json, time
-src = open("../ch07/labs/75_lora_bandgap.py").read()
+src = open("../../../ch07/labs/75_lora_bandgap.py").read().replace("../../ch07/", "../../../ch07/")  # lab paths are relative to ch07/labs
 exec(src.split("methods = [")[0])
 def finetune2(m, idx, seed, steps=400, lr=1e-3, opt_name="adam", lam=0.0, theta0=None):
     params = [p for p in m.parameters() if p.requires_grad]

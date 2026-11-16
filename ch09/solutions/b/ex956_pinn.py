@@ -4,7 +4,7 @@
 Usage: python ex956_pinn.py feat|march [n_adam per window] [n_lbfgs per window] [extra: 0|1] [resample: 0|1]"""
 import sys, time, math, importlib.util
 import numpy as np, torch
-LABS = "../ch09/labs/"
+LABS = "../../../ch09/labs/"
 spec = importlib.util.spec_from_file_location("ns", LABS + "95_ns_solver.py")
 ns = importlib.util.module_from_spec(spec); spec.loader.exec_module(ns)
 torch.set_num_threads(1); torch.manual_seed(0); np.random.seed(0)

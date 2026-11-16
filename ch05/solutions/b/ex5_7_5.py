@@ -1,7 +1,7 @@
 """Ex 5.7.5: chi from coexistence (eq. 5.7.4), mean-field chi_MF = pi rho Delta a / 15, and the pair-correlation
 weighting int phi g d^3r / int phi d^3r of a one-component DPD fluid at rho = 3 and rho = 5."""
 import sys, time, math, numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 from dpd_basics import simulate
 from dpd_core import make_amat
 phi = 0.05; chi = math.log((1-phi)/phi)/(1-2*phi)

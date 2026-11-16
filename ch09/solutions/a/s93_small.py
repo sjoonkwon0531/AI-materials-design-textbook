@@ -2,7 +2,7 @@
 import sys, math, importlib
 import numpy as np, torch
 torch.set_num_threads(1)
-sys.path.insert(0, "../ch09/labs"); M = importlib.import_module("93_models")
+sys.path.insert(0, "../../../ch09/labs"); M = importlib.import_module("93_models")
 PI = math.pi
 print("== 9.3.1 ==")
 for km in (16, 8):

@@ -4,7 +4,7 @@ where the text gives one, otherwise mid-year.
 Staircase layout: events sorted by date, one row each; each label ends at (or starts from)
 its own leader line, so labels never overlap and leaders never cross a label."""
 import sys
-sys.path.insert(0, '../ch02/figures')
+sys.path.insert(0, '../../ch02/figure_scripts')
 import bookstyle as bs
 import matplotlib.pyplot as plt
 
@@ -65,4 +65,4 @@ ax.set_yticks([])
 ax.set_xticks(range(2010, 2027, 2))
 ax.spines[['left', 'top', 'right']].set_visible(False)
 ax.set_xlabel('year')
-fig.savefig('../ch03/figures/Fig3.7_KR_timeline.png')
+fig.savefig('../../ch03/figures/Fig3.7_KR_timeline.png')

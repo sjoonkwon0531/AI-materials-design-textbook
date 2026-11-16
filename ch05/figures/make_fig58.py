@@ -1,11 +1,11 @@
 """Figures 5.8.1 (RPA / ODT / spacing) and 5.8.2 (thin-film DSA snapshots)."""
 import sys, json, math, logging
 logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
-sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common')); sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common')); sys.path.insert(0, "../../ch05/labs")
 from bookstyle import *
 import numpy as np
 from bcp_common import rpa_spsi
-LAB = "../ch05/labs/"; FIG = "../ch05/figures/"
+LAB = "../../ch05/labs/"; FIG = "../../ch05/figures/"
 
 rp = json.load(open(LAB + "bcp_rpa.json")); od = json.load(open(LAB + "bcp_odt.json"))
 spc = json.load(open(LAB + "bcp_spacing.json"))

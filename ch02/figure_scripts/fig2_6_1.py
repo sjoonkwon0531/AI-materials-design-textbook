@@ -1,4 +1,4 @@
-import sys; sys.path.insert(0,'../ch02/figures'); import bookstyle as bs
+import sys; sys.path.insert(0,'../../ch02/figure_scripts'); import bookstyle as bs
 import numpy as np, matplotlib.pyplot as plt, logging
 logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 eps=0.1; kc=1/eps; ks=1/(eps*np.sqrt(2))

@@ -77,7 +77,7 @@ for L in [64]:
     print(f"=== CPU seconds per independent sample (2 tau_int) at L={L}: Metropolis {cm*1e3:.1f} ms, Wolff {cw*1e3:.2f} ms, ratio {cm/cw:.0f} ===")
 print(f"total {time.time()-t0:.0f} s")
 
-np.savez("../ch05/labs/52_tau_results.npz",
+np.savez("../../ch05/labs/52_tau_results.npz",
          Lm=Lm, tm=[res_m[L]["tm"] for L in Lm], tm_err=[res_m[L]["tm_err"] for L in Lm],
          te_m=[res_m[L]["te"] for L in Lm],
          Lw=Lw, tw=[res_w[L]["tm"] for L in Lw], tw_err=[res_w[L]["tm_err"] for L in Lw],

@@ -3,7 +3,7 @@ Athermal A5B5 DPD melt (Lab 5.13 setup, 10^3 box, 300 chains): measure intrachai
 form factors with good statistics; compare chi_s N from (i) measured form factors, (ii) a Gaussian chain with the
 measured <r_ij^2>, (iii) the discrete Gaussian chain with uniform b^2."""
 import sys, time, numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 from dpd_core import seed, forces, run, make_amat
 from bcp_common import build_melt, unwrap_chains, intrachain_sq
 from scipy.optimize import minimize_scalar

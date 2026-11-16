@@ -1,6 +1,6 @@
 """Lab 2.4 / Fig 2.2.6: e=0.8 Kepler orbit with adaptive RK45 (GM=1, a=1, start at perihelion,
 rtol=1e-8, atol=1e-11, 4 periods)."""
-import sys; sys.path.insert(0,'../ch02/figures')
+import sys; sys.path.insert(0,'../../ch02/figure_scripts')
 import numpy as np, bookstyle as bs, matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 e=0.8; P=2*np.pi; y0=[1-e,0,0,np.sqrt((1+e)/(1-e))]
@@ -39,4 +39,4 @@ h1,l1=ax.get_legend_handles_labels(); h2,l2=ax2.get_legend_handles_labels()
 ax.legend(h1+h2,l1+l2,loc='upper center',frameon=False,ncol=2,fontsize=14)
 bs.panel_label(axs[0],'a',x=-0.2,y=1.1); bs.panel_label(axs[1],'b',x=-0.12)
 fig.tight_layout(w_pad=2)
-fig.savefig('../ch02/figures/Fig2.2.6_adaptive.png')
+fig.savefig('../../ch02/figures/Fig2.2.6_adaptive.png')

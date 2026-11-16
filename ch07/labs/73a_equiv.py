@@ -11,7 +11,7 @@ import os, numpy as np, torch, torch.nn as nn
 from importlib.machinery import SourceFileLoader
 torch.set_num_threads(1)
 torch.set_default_dtype(torch.float64)
-U = SourceFileLoader("u72b", "../ch07/labs/72b_utils.py").load_module()
+U = SourceFileLoader("u72b", "../../ch07/labs/72b_utils.py").load_module()
 sn = U.sn
 R, Z, E, F = U.load(300)
 _, _, te = U.split_300K()
@@ -20,7 +20,7 @@ rng = np.random.default_rng(1)
 
 # (a) trained SchNet, cast to float64
 schnet = U.SchNetMol(Z, n_feat=32, n_rbf=20, cutoff=5.0, n_inter=3)
-schnet.load_state_dict(torch.load("../ch07/labs/72b_schnet_ethanol_N1000.pt"))
+schnet.load_state_dict(torch.load("../../ch07/labs/72b_schnet_ethanol_N1000.pt"))
 schnet = schnet.double(); schnet.e0 = float(E[:2000].mean())
 
 torch.manual_seed(0)
@@ -92,5 +92,5 @@ for name, (kind, m) in models.items():
 print(f"{'model':28s} {'|sum_i F_i|/<|F|>':>18s} {'|sum_i r_i x F_i|/<|F|> (A)':>28s}")
 for name, v in summary.items():
     print(f"{name:28s} {v['netF']:18.1e} {v['torque']:28.1e}")
-import json; json.dump(summary, open("../ch07/labs/73a_equiv_results.json", "w"), indent=1)
+import json; json.dump(summary, open("../../ch07/labs/73a_equiv_results.json", "w"), indent=1)
 print("errors: E in eV (max over 200 group elements x 20 frames); F relative to <|F|>; loop: r = 0.1 A, 400 segments")

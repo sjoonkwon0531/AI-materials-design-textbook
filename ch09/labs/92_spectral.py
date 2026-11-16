@@ -199,4 +199,4 @@ if __name__ == "__main__":
         ex = np.sin(2 * PI * x) + 0.1 * np.sin(50 * PI * x)
         print(f"  N = {n:5d}: rel L2 error {np.linalg.norm(u-ex)/np.linalg.norm(ex):.2e}, cpu {min(ts)*1e3:.3f} ms")
     print(f"total wall {time.perf_counter()-t_all:.0f} s, cpu {time.process_time()-c_all:.0f} s")
-    if not quick: json.dump(out, open("../ch09/data/92_spectral.json", "w"))
+    if not quick: json.dump(out, open("../../ch09/data/92_spectral.json", "w"))

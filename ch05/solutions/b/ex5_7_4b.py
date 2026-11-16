@@ -1,7 +1,7 @@
 """Ex 5.7.4 (cont.): temperature dependence of the excess (virial) pressure of the rho=3, a=25 DPD fluid,
 at small dt (0.01, lambda=0.5), temperature set by sigma^2 = 2 gamma kT."""
 import sys, numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 from dpd_basics import simulate, mean_err
 from dpd_core import make_amat
 box = (6.0, 6.0, 6.0); n = 648; typ = np.zeros(n, np.int64); A = make_amat(25.0, 0.0)

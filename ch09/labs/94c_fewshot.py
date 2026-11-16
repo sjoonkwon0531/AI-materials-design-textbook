@@ -5,7 +5,7 @@ with the SAME number of optimiser steps for every method (compute-matched), K = 
 The learning rate of each method is chosen for each K on 32 held-out pool trajectories (subset 0).
 Run: python 94c_fewshot.py   (about 9 CPU-min)"""
 import sys, time, importlib, numpy as np, torch, torch.nn as nn
-sys.path.insert(0, "../ch09/labs")
+sys.path.insert(0, "../../ch09/labs")
 C = importlib.import_module("94_common"); P = importlib.import_module("94b_pretrain")
 STEPS, BS, LRS = 400, 32, (1e-3, 3e-3, 1e-2)
 

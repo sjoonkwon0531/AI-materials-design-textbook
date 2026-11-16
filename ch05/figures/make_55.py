@@ -3,7 +3,7 @@ from bookstyle import *
 import logging; logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 import numpy as np
 from matplotlib.colors import ListedColormap, LogNorm
-L = '../ch05/labs/'; F = '../ch05/figures/'
+L = '../../ch05/labs/'; F = '../../ch05/figures/'
 d = json.load(open(L+'55_homog.json'))
 imgs = np.load(L+'55_homog_imgs.npz')
 two = ListedColormap(['#F2F2F2', NAVY])

@@ -1,5 +1,5 @@
 """Exercise 10.7.1: number of displaced supercells phonopy needs for cubic and I4/mcm SrTiO3.
-Run: /tmp/claude-0/v10/bin/python ex_10_7_1.py"""
+Run: $MLIP_PY_A (MACE/CHGNet environment) ex_10_7_1.py"""
 import numpy as np, itertools
 from ase import Atoms
 from phonopy import Phonopy

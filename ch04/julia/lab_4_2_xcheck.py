@@ -1,5 +1,5 @@
 # Run the reference lab_4_2.py logic exactly as ported in lab_4_2.jl (same loop order/prints)
-import sys; sys.path.insert(0,'../ch04/labs')
+import sys; sys.path.insert(0,'../../ch04/labs')
 import numpy as np, lab_4_2 as R
 Eh,dnh,n,eps,psi=R.scf(0.5,0.3,verbose=True)
 print(f"converged in {len(Eh)} iters, E={Eh[-1]:.6f}; eps={eps[:4]}; Ne={np.sum(n)*R.dx:.6f}")

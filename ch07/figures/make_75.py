@@ -3,7 +3,7 @@ import sys, json, numpy as np
 sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common'))
 from bookstyle import *
 import matplotlib.pyplot as plt
-LAB = "../ch07/labs/"
+LAB = "../../ch07/labs/"
 res = json.load(open(LAB + "75_lora_results.json")); sv = np.load(LAB + "75_dW_svals.npy")
 fig, axs = plt.subplots(1, 3, figsize=(16, 4.9), gridspec_kw=dict(width_ratios=[1.25, 1, 1]))
 mk = {"linear probe": ("v", GREEN), "full": ("s", RED), "adapter": ("D", PURPLE), "scratch": ("x", GRAY)}
@@ -46,5 +46,5 @@ ax.set_xlabel("singular value index"); ax.set_ylabel(r"$\sigma_k(\Delta W)$")
 ax.set_xlim(0, 260)
 panel_label(ax, "c", x=-0.2)
 fig.tight_layout(w_pad=2)
-fig.savefig("../ch07/figures/Fig7.5.1_lora_finetuning.png"); plt.close(fig)
+fig.savefig("../../ch07/figures/Fig7.5.1_lora_finetuning.png"); plt.close(fig)
 print("done")

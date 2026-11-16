@@ -2,7 +2,7 @@
 import sys
 import numpy as np
 from scipy.signal import lfilter
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 from isingkern import tau_int, blocking
 
 def ar1(phi, n, seed):

@@ -5,8 +5,8 @@ logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 from bookstyle import *
 import numpy as np
 
-LAB = "../ch05/labs/"
-OUT = "../ch05/figures/"
+LAB = "../../ch05/labs/"
+OUT = "../../ch05/figures/"
 
 # ------------------------------------------------------------------ Fig5.2.1
 r = np.load(LAB + "52_ljmc_results.npz")

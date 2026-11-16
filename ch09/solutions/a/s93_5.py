@@ -2,7 +2,7 @@
 import os, sys, time, math, importlib
 import numpy as np, torch, torch.nn as nn, torch.nn.functional as F
 torch.set_num_threads(1)
-LAB = "../ch09/labs"; sys.path.insert(0, LAB); M = importlib.import_module("93_models")
+LAB = "../../../ch09/labs"; sys.path.insert(0, LAB); M = importlib.import_module("93_models")
 d = np.load(os.path.join(LAB, "..", "data", "93_burgers.npz"))
 traj = torch.tensor(d["traj"]); NTR, NTE, NF = 1000, 200, traj.shape[-1]
 A, U = traj[:, 0], traj[:, -1]; tr, te = slice(0, NTR), slice(2000, 2000 + NTE)
@@ -62,7 +62,7 @@ else:
     r = int(which); torch.manual_seed(0); net = make(r); cpu = train(net)
     print(f"alias-free FNO, upsampling x{r}, trained at s=64 ({cpu:.0f} s CPU): test " + "  ".join(f"{s}: {test(net, s):.4f}" for s in RES), flush=True)
     bl_check(net, f"AA x{r}")
-    torch.save(net.state_dict(), f"../ch09/solutions/a/s93_5_aa{r}.pt")
+    torch.save(net.state_dict(), f"../../../ch09/solutions/a/s93_5_aa{r}.pt")
     with torch.no_grad():
         # residual aliasing of the activation: same weights, same grid, different upsampling factors (reference x8)
         for s in (32, 64, 128):

@@ -93,4 +93,4 @@ for k in range(1, 5):
     OUT["cost"].append((k, a, b, c, d))
     print(f"   {k}   {a:8.2f} ms ({a/t_fwd:5.1f}x)  {b:8.2f} ms     {c:8.2f} ms ({c/t_fwd:5.1f}x)   {d:8.2f} ms     {diff:.1e}")
 OUT["t_fwd"] = t_fwd
-import json; json.dump(OUT, open("../ch09/data/92_ad.json", "w"))
+import json; json.dump(OUT, open("../../ch09/data/92_ad.json", "w"))

@@ -1,6 +1,6 @@
 """Ex 5.6.6: HMM with a GP-learned constitutive relation D(x) and 3 rounds of active learning."""
 import sys, time, numpy as np, warnings
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 import importlib; H = importlib.import_module("56_hmm")
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, WhiteKernel, ConstantKernel as C

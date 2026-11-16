@@ -51,5 +51,5 @@ h2, = ax.plot([], [], "o", ms=13, mfc="white", mec=BLUE, mew=2.2, label="used / 
 h3, = ax.plot([], [], "x", ms=10, color=GRAY, mew=1.5, label="not suited")
 ax.legend(handles=[h1, h2, h3], loc="upper center", bbox_to_anchor=(0.45, -0.02), ncol=3,
           frameon=False)
-fig.savefig("../ch06/figures/Fig6.1.1_descriptor_map.png")
+fig.savefig("../../ch06/figures/Fig6.1.1_descriptor_map.png")
 print("saved")

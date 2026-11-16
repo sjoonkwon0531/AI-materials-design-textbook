@@ -3,7 +3,7 @@ Same Wolff runs (same seeds, lengths, measurement rule) as the Lab FSS scripts, 
 dU4/dbeta = [m2 (<m4 E>-<m4><E>) - 2 m4 (<m2 E>-<m2><E>)] / (3 m2^3); jackknife 20 blocks."""
 import sys, time
 import numpy as np
-sys.path.insert(0, "../ch05/labs")
+sys.path.insert(0, "../../../ch05/labs")
 from isingkern import run_wolff2d_sweeps, run_wolff3d_sweeps
 from reweight import rw_moments, observables
 

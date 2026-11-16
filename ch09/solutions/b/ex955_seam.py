@@ -5,7 +5,7 @@ train with the same seed and budget, then compare seam error and diagonal-shift 
 Usage: python ex955_seam.py f | trig | eval   [smoke]   (run from anywhere)"""
 import sys, os, time, math, importlib.util
 import numpy as np, torch, torch.nn as nn, torch.nn.functional as F
-LABS = "../ch09/labs/"; OUT = "../ch09/solutions/b/"
+LABS = "../../../ch09/labs/"; OUT = "../../../ch09/solutions/b/"
 def load(name, path):
     spec = importlib.util.spec_from_file_location(name, path)
     mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod); return mod

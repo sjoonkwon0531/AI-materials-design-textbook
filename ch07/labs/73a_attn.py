@@ -12,8 +12,8 @@ import time, json, math
 import numpy as np, torch, torch.nn as nn
 from importlib.machinery import SourceFileLoader
 torch.set_num_threads(1)
-U = SourceFileLoader("u72b", "../ch07/labs/72b_utils.py").load_module()
-OUT = "../ch07/labs"
+U = SourceFileLoader("u72b", "../../ch07/labs/72b_utils.py").load_module()
+OUT = "../../ch07/labs"
 
 
 class Block(nn.Module):

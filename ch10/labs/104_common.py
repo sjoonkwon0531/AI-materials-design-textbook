@@ -3,7 +3,7 @@
 * oracle(): MACE-MP-0 small (float32) used as the stand-in for DFT.
 * A periodic SchNet student (from Ch.7 labs/72b_schnet.py) with image shifts.
 * batching, energy+force training, Langevin MD with a student, failure test.
-Run under /tmp/claude-0/v10/bin/python (has mace, ase, dscribe).
+Run under $MLIP_PY_A (MACE/CHGNet environment) (has mace, ase, dscribe).
 """
 import os, time, math, warnings
 import numpy as np
@@ -14,7 +14,7 @@ warnings.filterwarnings('ignore')
 torch.set_num_threads(1)
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(os.path.dirname(HERE), 'data')
-sn = SourceFileLoader("sn", "../ch07/labs/72b_schnet.py").load_module()
+sn = SourceFileLoader("sn", "../../ch07/labs/72b_schnet.py").load_module()
 
 A0 = 5.464          # MACE-MP-0 small equilibrium lattice constant of diamond Si (Lab 10.4.1 prints it)
 RC = 4.0            # student cutoff (A): first and second neighbour shells of Si

@@ -124,7 +124,7 @@ if __name__ == "__main__":
         res_tau.append((tau, err))
         slip = np.mean(u-ua)*nu/g          # u - ua is a uniform shift (std/mean < 1e-9)
         print(f"  {tau:5.3f}  {nu:.4f}   {err:.3e}    {it:6d}   {dr:.1e}       {slip:+.5f}    {(16*tau**2-16*tau+1)/24:+.5f}")
-    np.save("../ch05/labs/55_lbm_tau.npy", np.array(res_tau))
+    np.save("../../ch05/labs/55_lbm_tau.npy", np.array(res_tau))
 
     print("\n[2] grid convergence at tau=0.8 (u_max=0.01 fixed, Ma fixed)")
     print("   ny     L2 rel err    order")
@@ -135,8 +135,8 @@ if __name__ == "__main__":
         order = "" if prev is None else f"{np.log2(prev/err):.2f}"
         print(f"  {ny:3d}    {err:.3e}    {order}")
         res_n.append((ny, err)); prev = err
-        if ny == 16: np.savez("../ch05/labs/55_lbm_prof.npz", y=y, u=u, ua=ua)
-    np.save("../ch05/labs/55_lbm_n.npy", np.array(res_n))
+        if ny == 16: np.savez("../../ch05/labs/55_lbm_prof.npz", y=y, u=u, ua=ua)
+    np.save("../../ch05/labs/55_lbm_n.npy", np.array(res_n))
 
     print("\n[3] cylinder in a periodic channel (body-force driven), two forcing levels")
     nx, ny, R, tau = 200, 60, 8, 0.6
@@ -159,5 +159,5 @@ if __name__ == "__main__":
         L_rec = (rev.max() - (nx//4+R) + 1) if rev.size else 0
         print(f"   g={g:.1e}: mean u={U:.3e}, max|u|={umax:.3e} (Ma={umax/np.sqrt(cs2):.3f}), Re_D={Re:.1f}, "
               f"mass drift={abs(f.sum()-m0)/m0:.1e}, recirculation length={L_rec} lu ({L_rec/(2*R):.2f} D)")
-        np.savez(f"../ch05/labs/55_lbm_cyl_{tag}.npz", ux=ux, uy=uy, solid=solid, Re=Re)
+        np.savez(f"../../ch05/labs/55_lbm_cyl_{tag}.npz", ux=ux, uy=uy, solid=solid, Re=Re)
     print(f"\nruntime {time.time()-t0:.1f} s")

@@ -1,5 +1,5 @@
 """Ex 10.3.6: float32 round-off floor of the total energy, NaCl 64-atom cell of Lab 10.5 Part F.
-Run with /tmp/claude-0/v10/bin/python (MACE float64 and CHGNet float32)."""
+Run with $MLIP_PY_A (MACE/CHGNet environment) (MACE float64 and CHGNet float32)."""
 import os, warnings, numpy as np, torch
 warnings.filterwarnings('ignore'); torch.set_num_threads(1)
 from ase.build import bulk
@@ -7,7 +7,7 @@ eps32 = float(np.finfo(np.float32).eps)
 a = bulk('NaCl', 'rocksalt', a=5.64, cubic=True) * (2, 2, 2); a.rattle(0.1, seed=3)
 from mace.calculators import MACECalculator
 from chgnet.model import CHGNetCalculator
-for name, calc in [('MACE-MP-0 small', MACECalculator(model_paths='../ch10/data/mace_mp0_small.model', device='cpu', default_dtype='float64')),
+for name, calc in [('MACE-MP-0 small', MACECalculator(model_paths='../../ch10/data/mace_mp0_small.model', device='cpu', default_dtype='float64')),
                    ('CHGNet 0.3.0', CHGNetCalculator(use_device='cpu', verbose=False))]:
     a.calc = calc; E = a.get_potential_energy(); F = a.get_forces()
     print(f"{name}: E = {E:.4f} eV ({E/len(a):.4f} eV/atom); RMS force {np.sqrt((F**2).mean()):.3f} eV/A; "

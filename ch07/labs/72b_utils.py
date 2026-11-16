@@ -6,8 +6,10 @@ import torch
 import torch.nn as nn
 from importlib.machinery import SourceFileLoader
 
-DATA = "../ch07/data"
-sn = SourceFileLoader("sn72b", "../ch07/labs/72b_schnet.py").load_module()
+import os as _os
+_HERE = _os.path.dirname(_os.path.abspath(__file__))
+DATA = _os.path.join(_HERE, "..", "data")
+sn = SourceFileLoader("sn72b", _os.path.join(_HERE, "72b_schnet.py")).load_module()
 
 
 def load(T=300):

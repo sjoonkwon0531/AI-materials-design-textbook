@@ -1,9 +1,9 @@
 """Ex 10.2.3: stress weight sweep, EqNet rc=3.0, 40 training cells, E+F(+S), same budget as Lab 10.2 (B).
-Run with /tmp/claude-0/v10/bin/python. wS=100 reproduces the E+F+S row of Lab 10.2; wS=0 the E+F row."""
+Run with $MLIP_PY_A (MACE/CHGNet environment). wS=100 reproduces the E+F+S row of Lab 10.2; wS=0 the E+F row."""
 import os, sys, json, importlib.util
 import numpy as np, torch
 torch.set_num_threads(1)
-LABS = '../ch10/labs'
+LABS = '../../ch10/labs'
 sys.argv = [sys.argv[0]] + sys.argv[1:]
 spec = importlib.util.spec_from_file_location('s102', os.path.join(LABS, '102_stress.py'))
 S = importlib.util.module_from_spec(spec); spec.loader.exec_module(S)

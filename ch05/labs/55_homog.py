@@ -148,7 +148,7 @@ if __name__ == "__main__":
     for m in means:
         c = cahn_hilliard(N=n, mean=m, seed=1)
         imgs[m] = c > 0
-    np.savez("../ch05/labs/55_homog_imgs.npz", **{f"m{m:+.2f}": imgs[m] for m in means})
+    np.savez("../../ch05/labs/55_homog_imgs.npz", **{f"m{m:+.2f}": imgs[m] for m in means})
     print("\n[1] CH microstructures (128^2, L=2pi, eps=0.03, dt=0.02, 800 steps, S=2, seed=1)")
     rows = []
     for m in means:
@@ -213,7 +213,7 @@ if __name__ == "__main__":
             V, R, HSl, HSu = bounds_bulk2d(f2, K1, G1, K2, G2)
             el.append((f2, kap, V, R, HSl, HSu))
             if m == 0.0 and not swap:
-                np.save("../ch05/labs/55_sxx.npy", sxx.mean(axis=1))
+                np.save("../../ch05/labs/55_sxx.npy", sxx.mean(axis=1))
                 Csym = C
     el.sort()
     for f2, kap, V, R, HSl, HSu in el:
@@ -224,6 +224,6 @@ if __name__ == "__main__":
     # save field for figure
     Kf, fields = k_eff(cell, img0, k1, k2, return_field=True)
     jx, jy = fields[0][1].mean(axis=1), fields[0][2].mean(axis=1)
-    np.savez("../ch05/labs/55_flux.npz", jx=jx, jy=jy, pix0=cell.pix[0], pix1=cell.pix[1])
-    json.dump(out, open("../ch05/labs/55_homog.json", "w"))
+    np.savez("../../ch05/labs/55_flux.npz", jx=jx, jy=jy, pix0=cell.pix[0], pix1=cell.pix[1])
+    json.dump(out, open("../../ch05/labs/55_homog.json", "w"))
     print(f"\nruntime {time.time()-t0:.1f} s")

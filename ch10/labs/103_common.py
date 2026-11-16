@@ -9,8 +9,11 @@ import os, sys, time, json, warnings
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(os.path.dirname(HERE), 'data')
-PY = {'mace': '/tmp/claude-0/v10/bin/python', 'chgnet': '/tmp/claude-0/v10/bin/python',
-      'sevennet': '/tmp/claude-0/v10b/bin/python', 'mattersim': '/tmp/claude-0/v10b/bin/python'}
+# MACE and CHGNet need e3nn 0.4.4; SevenNet and MatterSim need e3nn >= 0.5, so they live in two
+# separate Python environments.  Point MLIP_PY_A / MLIP_PY_B at those interpreters (default: this one).
+_PYA = os.environ.get('MLIP_PY_A', sys.executable)
+_PYB = os.environ.get('MLIP_PY_B', sys.executable)
+PY = {'mace': _PYA, 'chgnet': _PYA, 'sevennet': _PYB, 'mattersim': _PYB}
 LABEL = {'mace': 'MACE-MP-0 (small)', 'chgnet': 'CHGNet 0.3.0',
          'sevennet': 'SevenNet-0', 'mattersim': 'MatterSim-v1.0.0-1M'}
 MODELS = ['mace', 'chgnet', 'sevennet', 'mattersim']

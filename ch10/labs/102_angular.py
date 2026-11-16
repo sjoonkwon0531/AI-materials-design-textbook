@@ -5,7 +5,7 @@ Oracle: MACE-MP-0 small (stands in for DFT).  Data: ../data/102_si8.npz (102_dat
 Students: InvNet (scalars only, distances only) and EqNet (scalars + vectors), both 2 layers, 32 channels.
 Same training budget for every run: 400 training cells, 2500 Adam steps, batch 16, lr 3e-3 cosine, wE = 10, wF = 1, seed 0.
 (A first pass with 1000 steps x batch 8 was under-trained: 400 cells did worse than 50 cells.)
-Run with /tmp/claude-0/v10/bin/python (one thread).
+Run with $MLIP_PY_A (MACE/CHGNet environment) (one thread).
 """
 import os, json, time, importlib.util
 import numpy as np

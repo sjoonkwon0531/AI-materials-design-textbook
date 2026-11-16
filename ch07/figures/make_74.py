@@ -4,7 +4,7 @@ import sys, re, numpy as np
 sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[2] / 'common'))
 from bookstyle import *
 import matplotlib.pyplot as plt
-LAB = "../ch07/labs/"
+LAB = "../../ch07/labs/"
 pat = re.compile(r"N=\s*(\d+) (?:init=(\w)|scratch)[^:]*: E MAE\s+[\d.]+ \(([\d.]+), ([\d.]+)\) meV\s+F MAE\s+[\d.]+ \(([\d.]+), ([\d.]+)\)")
 data = {}
 for fn, steps in (("74_pretrain_ethanol.out", 800), ("74_scratch_control.out", 2300), ("74_long_finetune.out", 2300)):
@@ -31,5 +31,5 @@ axs[0].set_ylim(0, 260); axs[1].set_ylim(0, 95)
 h, l = axs[0].get_legend_handles_labels()
 fig.legend(h, l, frameon=False, fontsize=13, ncol=3, loc="upper center", bbox_to_anchor=(0.5, 1.0))
 fig.tight_layout(w_pad=3, rect=(0, 0, 1, 0.86))
-fig.savefig("../ch07/figures/Fig7.4.1_pretraining_ethanol.png"); plt.close(fig)
+fig.savefig("../../ch07/figures/Fig7.4.1_pretraining_ethanol.png"); plt.close(fig)
 print({k: (v[0].mean().round(1), v[1].mean().round(1)) for k, v in data.items()})
