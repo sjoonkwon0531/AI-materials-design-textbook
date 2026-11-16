@@ -1,0 +1,1 @@
+DeepONet width 256, depth 4 (315009 params), N=1000, 20000 updates: train 0.0284  test 0.2428   (783 s wall, 100 s CPU)

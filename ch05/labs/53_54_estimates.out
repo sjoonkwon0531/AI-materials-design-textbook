@@ -1,0 +1,17 @@
+== Estimate 5.3: rare-event waiting times, nu=1e13 s^-1 ==
+  T=300 K Ea=0.30 eV: k=9.12e+07 s^-1, <t_wait>=1.10e-08 s, MD steps(1 fs)=1.1e+07
+  T=300 K Ea=0.50 eV: k=3.98e+04 s^-1, <t_wait>=2.51e-05 s, MD steps(1 fs)=2.5e+10
+  T=300 K Ea=0.75 eV: k=2.52e+00 s^-1, <t_wait>=3.98e-01 s, MD steps(1 fs)=4.0e+14
+  T=300 K Ea=1.00 eV: k=1.59e-04 s^-1, <t_wait>=6.30e+03 s, MD steps(1 fs)=6.3e+18
+  T=600 K Ea=0.30 eV: k=3.02e+10 s^-1, <t_wait>=3.31e-11 s, MD steps(1 fs)=3.3e+04
+  T=600 K Ea=0.50 eV: k=6.31e+08 s^-1, <t_wait>=1.58e-09 s, MD steps(1 fs)=1.6e+06
+  T=600 K Ea=0.75 eV: k=5.02e+06 s^-1, <t_wait>=1.99e-07 s, MD steps(1 fs)=2.0e+08
+  T=600 K Ea=1.00 eV: k=3.98e+04 s^-1, <t_wait>=2.51e-05 s, MD steps(1 fs)=2.5e+10
+  kT(300 K)=0.0259 eV, Ea/kT for 0.5 eV = 19.34
+  sensitivity: 0.1 eV barrier error at 300 K -> rate factor 47.9
+  Ch.2 network: eigenvalues -1001.5, -1.5 -> tau_fast=9.99e-04, tau_slow=0.667
+== Estimate 5.4: 20 nm x 20 nm DPPC bilayer patch ==
+  lipids=1270, waters=38095
+  all-atom particles=2.79e+05, Martini beads=2.48e+04, ratio=11.3
+  x time step 20 fs/2 fs = 10, x effective speed-up 4 -> total ~ 451
+  1 us Martini effective = 1.25e+07 steps at 20 fs; all-atom 1 us at 2 fs = 5.0e+08 steps

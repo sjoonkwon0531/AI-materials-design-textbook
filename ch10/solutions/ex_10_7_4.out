@@ -1,0 +1,9 @@
+phonons at a = 3.944 A, 2x2x2, 0.01 A (gives G, X, M, R)                :  3 x   64 =   192 units
+same, 0.02 A (displacement check, Lab 10.13)                            :  3 x   64 =   192 units
+rigid a0a0c- tilt scan, 10-atom I4/mcm cell, 5 angles                   :  5 x    4 =    20 units
+I4/mcm relaxation of cell + O(8h) x, 10-atom cell, ~15 ionic steps      : 15 x    4 =    60 units
+total 464 units (minimal plan without the 0.02 A check: 272)
+whole Lab 10.12 by DFT: 2,633-3,017 units; plan / whole = 9.0%-17.6%
+272 units x 78 s = 5.9 CPU h (PySCF minimal-basis benchmark; a lower bound)
+464 units x 78 s = 10.1 CPU h (PySCF minimal-basis benchmark; a lower bound)
+whole Lab by DFT: 57-65 CPU h

@@ -1,0 +1,11 @@
+# ★Why 1.3.3: ||A||_2 = sqrt(lambda_max(A^T A)) 수치 확인 (A = Wk3 행렬)
+import numpy as np
+A = np.array([[4.1, 2.8], [9.7, 6.6]])
+lam, V = np.linalg.eigh(A.T @ A)
+th = np.linspace(0, 2*np.pi, 200001); X = np.vstack([np.cos(th), np.sin(th)])
+ratios = np.linalg.norm(A @ X, axis=0)
+print(f"max_x ||Ax||/||x|| (brute force) = {ratios.max():.10f}")
+print(f"sqrt(lambda_max(A^T A))          = {np.sqrt(lam[-1]):.10f}")
+print(f"np.linalg.norm(A, 2)              = {np.linalg.norm(A, 2):.10f}")
+print(f"min ratio = {ratios.min():.10f}  vs sqrt(lambda_min) = {np.sqrt(lam[0]):.10f}")
+print("maximizer direction vs top eigenvector:", X[:, ratios.argmax()], V[:, -1])

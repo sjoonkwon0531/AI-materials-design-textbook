@@ -1,0 +1,9 @@
+=== equilibrium check at T=800 K (kT=0.0689 eV, beta Eb=1.451) ===
+  Kawasaki Metropolis MC (Boltzmann reference), 3 seeds: <z> = 1.2100 +/- 0.0104
+  KMC bond counting (origin)  : <z> = 1.1956 +/- 0.0045,  D/D_single = 0.353 +/- 0.028
+  KMC arrival rule            : <z> = 1.2022 +/- 0.0005,  D/D_single = 1.119 +/- 0.023
+  KMC saturated min(n,1)      : <z> = 0.8577 +/- 0.0030,  D/D_single = 0.403 +/- 0.006
+  (no interaction, Eb=0: <z> = 0.3946; random placement value 4*(N-1)/(L^2-1) = 0.3977)
+=== saturated rule in the Lab 5.5 Part A setting (Eb=0.1, 1e5+3e5 events, seed 100) ===
+  rule 0: D/D_single = 0.006 0.019 0.031 0.099 0.158 0.396;  <z> = 3.25 3.31 3.01 2.51 1.91 1.20;  apparent Ea = 0.670 eV
+  rule 2: D/D_single = 0.079 0.126 0.136 0.260 0.286 0.463;  <z> = 1.54 1.45 1.32 1.14 1.03 0.85;  apparent Ea = 0.571 eV

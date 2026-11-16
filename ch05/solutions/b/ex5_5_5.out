@@ -1,0 +1,6 @@
+tau=0.6: steps=2334, nu_meas=0.033436, cs2(tau-1/2)=0.033333 (rel.err +3.09e-03), cs2*tau=0.200000 (rel.diff -0.833); U(1)/U0=0.993595; mass drift=2.1e-13, x-momentum=2.3e-13
+tau=0.8: steps=778, nu_meas=0.100206, cs2(tau-1/2)=0.100000 (rel.err +2.06e-03), cs2*tau=0.266667 (rel.diff -0.624); U(1)/U0=0.993595; mass drift=5.3e-14, x-momentum=7.3e-14
+tau=1.2: steps=333, nu_meas=0.232602, cs2(tau-1/2)=0.233333 (rel.err -3.13e-03), cs2*tau=0.400000 (rel.diff -0.418); U(1)/U0=0.993595; mass drift=1.3e-14, x-momentum=3.2e-14
+  tau=0.8, wavelength 16: rel.err +8.329e-03
+  tau=0.8, wavelength 32: rel.err +2.063e-03
+  tau=0.8, wavelength 64: rel.err +5.144e-04

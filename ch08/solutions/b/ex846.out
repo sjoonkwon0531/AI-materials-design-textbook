@@ -1,0 +1,18 @@
+[dagger] round 0: N_train 300 | F1000 MAE   302 meV/A | MD stable 2 ps       max std  0.60 eV/A, trigger at 1.660 ps | 41 s
+      labelled frame: xTB E - E_min(train) = 1.05 eV, max |F| 3.08 eV/A
+[dagger] round 1: N_train 301 | F1000 MAE   309 meV/A | MD stable 2 ps       max std  0.41 eV/A, no trigger | 132 s
+      labelled frame: xTB E - E_min(train) = 0.54 eV, max |F| 3.66 eV/A
+[dagger] round 2: N_train 302 | F1000 MAE   303 meV/A | MD stable 2 ps       max std  0.44 eV/A, no trigger | 277 s
+      labelled frame: xTB E - E_min(train) = 0.46 eV, max |F| 4.31 eV/A
+[dagger] round 3: N_train 303 | F1000 MAE   304 meV/A | MD stable 2 ps       max std  0.56 eV/A, trigger at 0.990 ps | 414 s
+      labelled frame: xTB E - E_min(train) = 0.65 eV, max |F| 5.31 eV/A
+[dagger] round 4: N_train 304 | F1000 MAE   302 meV/A | MD stable 2 ps       max std  0.72 eV/A, trigger at 1.877 ps | 592 s
+      labelled frame: xTB E - E_min(train) = 0.63 eV, max |F| 4.45 eV/A
+[dagger] round 5: N_train 305 | F1000 MAE   296 meV/A | MD stable 2 ps       max std  0.46 eV/A, no trigger | 777 s
+[random] round 0: N_train 300 | F1000 MAE   302 meV/A | 779 s
+[random] round 1: N_train 301 | F1000 MAE   308 meV/A | 833 s
+[random] round 2: N_train 302 | F1000 MAE   304 meV/A | 879 s
+[random] round 3: N_train 303 | F1000 MAE   304 meV/A | 920 s
+[random] round 4: N_train 304 | F1000 MAE   303 meV/A | 964 s
+[random] round 5: N_train 305 | F1000 MAE   298 meV/A | MD stable 2 ps       max std  0.40 eV/A, no trigger | 1088 s
+wall 1088 s

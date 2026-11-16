@@ -1,0 +1,14 @@
+L=8 done (49s)
+L=16 done (192s)
+L=32 done (646s)
+L=64 done (1322s)
+L=  8: T*=2.3365, chi'_max=1.517, chi(Tc)=18.214, U4(Tc)~0.6126, -dU/dT|Tc=0.271
+L= 16: T*=2.4024, chi'_max=6.098, chi(Tc)=61.591, U4(Tc)~0.6113, -dU/dT|Tc=0.554
+L= 32: T*=2.3348, chi'_max=20.642, chi(Tc)=207.044, U4(Tc)~0.6109, -dU/dT|Tc=1.092
+L= 64: T*=2.3037, chi'_max=69.684, chi(Tc)=698.689, U4(Tc)~0.6119, -dU/dT|Tc=2.312
+gamma/nu: from chi'_max = 1.832, from chi(Tc) = 1.753   (exact 7/4 = 1.75)
+1/nu: from dU/dT|Tc = 1.026, from T*(L)-Tc = 0.391   (exact 1)
+=> nu = 0.975, gamma = (gamma/nu)*nu = 1.709 (using chi(Tc)), 1.786 (using chi'_max)
+   L=8->16: gamma/nu(chi Tc)=1.758, 1/nu(slope)=1.034
+   L=16->32: gamma/nu(chi Tc)=1.749, 1/nu(slope)=0.977
+   L=32->64: gamma/nu(chi Tc)=1.755, 1/nu(slope)=1.083

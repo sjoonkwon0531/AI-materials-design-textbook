@@ -1,0 +1,2 @@
+sam rho=0.003 3600 steps seed 0: F300    58 F600   121 F1000   257 meV/A | lam_max    291.0 | cpu 178 s  [371 s]
+wall 371 s

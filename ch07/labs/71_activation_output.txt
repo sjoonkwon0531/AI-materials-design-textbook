@@ -1,0 +1,22 @@
+Morse De=4.0 eV, a=2.0 1/A, re=1.0 A, mu=0.9483 amu; train on 41 points in [0.80,1.60] A (E and F)
+true force constant k = d2E/dr2 at re = 32.00 eV/A^2
+act   seed RMSE_E(meV) RMSE_F(eV/A)  max|dF| per 1e-4A  k at re
+ReLU     0        1.29       0.2230             1.9480     0.00
+ReLU     1        1.48       0.2132             1.8047     0.00
+ReLU     2        1.13       0.2261             2.1306     0.00
+GELU     0        0.20       0.0058             0.0091    32.22
+GELU     1        0.23       0.0099             0.0088    32.47
+GELU     2        0.16       0.0055             0.0091    32.01
+SiLU     0        0.19       0.0053             0.0091    32.17
+SiLU     1        0.41       0.0131             0.0087    32.43
+SiLU     2        0.33       0.0089             0.0091    32.25
+tanh     0        0.23       0.0080             0.0089    32.28
+tanh     1        0.26       0.0093             0.0090    32.26
+tanh     2        0.21       0.0068             0.0090    31.77
+NVE velocity-Verlet, r0 = 1.15 A at rest, 2000 fs: max |E_tot - E_tot(0)| (meV) vs dt (fs)  [seed 0]
+dt           0.40      0.20      0.10      0.05
+ReLU     314.9676  148.5023   81.6335   36.7712   log-log slope  1.02
+GELU       3.2101    0.8022    0.2005    0.0501   log-log slope  2.00
+SiLU       3.2027    0.8003    0.2001    0.0500   log-log slope  2.00
+tanh       3.2126    0.8027    0.2007    0.0502   log-log slope  2.00
+wall 573 s

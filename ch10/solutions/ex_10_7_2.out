@@ -1,0 +1,7 @@
+phi = 4.9 deg: u = (a/2) tan(phi) = 0.1691 A; Ti-O-Ti = 170.2 deg; rigid-tilt Ti-O stretch 1/cos(phi) - 1 = 0.367 %
+phi = 2.1 deg: u = (a/2) tan(phi) = 0.0723 A; Ti-O-Ti = 175.8 deg; rigid-tilt Ti-O stretch 1/cos(phi) - 1 = 0.067 %
+model      phi_rel   1/cos(phi)   c/a(relaxed)   a_inplane/(2 a0)   c/(2 a0)
+mace         4.75   1.00344      1.00397        0.99797            1.00193
+chgnet       3.93   1.00235      1.00263        0.99913            1.00175
+sevennet     4.80   1.00351      1.00400        0.99822            1.00222
+mattersim    4.06   1.00252      1.00315        0.99856            1.00171

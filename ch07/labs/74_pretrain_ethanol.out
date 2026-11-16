@@ -1,0 +1,13 @@
+pretraining geometries: 1500 (600 K: 1000, 1000 K: 500); 300 K pool 2000, test 1000
+300 K test set: E std 127 meV, |F| component MAD from 0 714 meV/A
+seed 0: pretrain time S 166 s, G 214 s;  G zero-shot on GFN2 300 K test: E MAE (after removing the mean offset) 43 meV, F MAE 155 meV/A
+N=  50 init=0: E MAE   52.4 (56.5, 48.3) meV   F MAE  182.4 (192.6, 172.1) meV/A   [t=542s]
+N=  50 init=S: E MAE   39.2 (39.8, 38.6) meV   F MAE  146.3 (149.4, 143.2) meV/A   [t=716s]
+N=  50 init=G: E MAE   41.2 (40.9, 41.5) meV   F MAE  141.4 (143.4, 139.3) meV/A   [t=873s]
+N= 200 init=0: E MAE   72.3 (65.1, 79.4) meV   F MAE  209.0 (210.8, 207.2) meV/A   [t=1008s]
+N= 200 init=S: E MAE   37.4 (34.8, 40.1) meV   F MAE  138.0 (140.1, 136.0) meV/A   [t=1139s]
+N= 200 init=G: E MAE   42.5 (41.9, 43.2) meV   F MAE  135.7 (135.3, 136.1) meV/A   [t=1245s]
+--- ratio (pretrained / scratch), mean of 2 seeds ---
+N=  50: S/0  E 0.75  F 0.80   |   G/0  E 0.79  F 0.78
+N= 200: S/0  E 0.52  F 0.66   |   G/0  E 0.59  F 0.65
+total runtime 1245 s (shared machine)

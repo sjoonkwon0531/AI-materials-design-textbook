@@ -1,0 +1,5 @@
+Lab 2.14 re-run with the batched re-implementation (256^2, T = 400, seed 1)
+[1] MASS conservation:   max |mean(t)-mean0| = 1.77e-16
+[2] FREE ENERGY:         F: 46.37 -> 2.63,  F-increase steps = 0 / 400
+[3] COARSENING:          late-time log-log slope = 0.38
+CPU time 53.9 s  (6.74 ms per step)

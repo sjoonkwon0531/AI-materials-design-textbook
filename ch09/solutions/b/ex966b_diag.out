@@ -1,0 +1,10 @@
+t = 25                mean |d<c>|   <c | c>0>   <c | c<0>   |df| binarised   median |dk|/k   share of trajectories with |dk|/k > 5%
+solver                0             0.8769      -0.8758
+cons                  1.96e-17      0.8831      -0.8675      0.0046           0.86%          5 / 40
+    worst trajectory 30: m = +0.006, f solver 0.506 / model 0.504, k_eff solver 3.795 / model 3.308 (-12.8%)
+        k_xx, k_yy: solver 4.601, 2.988; model 4.186, 2.429
+    mean |dk|/k for |f - 0.5| < 0.03 (14 traj.): 1.78%;  otherwise: 2.08%
+free                  1.18e-02      0.8798      -0.8749      0.0049           0.92%          1 / 40
+    worst trajectory 30: m = +0.006, f solver 0.506 / model 0.503, k_eff solver 3.795 / model 3.288 (-13.4%)
+        k_xx, k_yy: solver 4.601, 2.988; model 4.140, 2.435
+    mean |dk|/k for |f - 0.5| < 0.03 (14 traj.): 1.76%;  otherwise: 1.56%

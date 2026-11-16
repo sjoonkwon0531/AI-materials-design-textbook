@@ -1,0 +1,16 @@
+=== Part A: forward problem, soft vs hard constraints (2-32-32-32-1 tanh, 1000 collocation points) ===
+  soft seed 0: rel L2 after Adam 4.71e-03 -> after L-BFGS 9.68e-04, max err 4.40e-03, cpu 43.4 s
+  soft seed 1: rel L2 after Adam 2.23e-03 -> after L-BFGS 7.62e-04, max err 2.88e-03, cpu 47.6 s
+  soft seed 2: rel L2 after Adam 4.16e-03 -> after L-BFGS 7.18e-04, max err 3.30e-03, cpu 48.1 s
+  soft: rel L2 = 8.16e-04 +/- 1.1e-04, max = 3.53e-03, cpu = 46.4 s (3 seeds)
+  hard seed 0: rel L2 after Adam 8.74e-03 -> after L-BFGS 1.20e-04, max err 1.71e-04, cpu 51.7 s
+  hard seed 1: rel L2 after Adam 1.17e-02 -> after L-BFGS 7.53e-05, max err 9.89e-05, cpu 48.9 s
+  hard seed 2: rel L2 after Adam 8.37e-03 -> after L-BFGS 1.37e-04, max err 2.72e-04, cpu 47.5 s
+  hard: rel L2 = 1.11e-04 +/- 2.6e-05, max = 1.81e-04, cpu = 49.3 s (3 seeds)
+=== Crank-Nicolson baseline (Thomas solve, numpy) ===
+  Nx=Nt=  25: rel L2 5.23e-04, max err 4.35e-04, cpu 0.45 ms
+  Nx=Nt=  50: rel L2 1.31e-04, max err 1.09e-04, cpu 0.87 ms
+  Nx=Nt= 100: rel L2 3.28e-05, max err 2.72e-05, cpu 1.95 ms
+  Nx=Nt= 200: rel L2 8.22e-06, max err 6.80e-06, cpu 8.37 ms
+  Nx=Nt= 400: rel L2 2.06e-06, max err 1.70e-06, cpu 18.37 ms
+total cpu 288 s

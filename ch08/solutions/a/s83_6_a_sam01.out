@@ -1,0 +1,4 @@
+sam rho=0.01 3600 steps seed 0: F300    62 F600   135 F1000   284 meV/A | lam_max    196.2 | cpu 172 s  [275 s]
+sam rho=0.01 3600 steps seed 1: F300    57 F600   127 F1000   258 meV/A | lam_max    187.9 | cpu 166 s  [541 s]
+sam rho=0.01 3600 steps seed 2: F300    63 F600   139 F1000   282 meV/A | lam_max    183.0 | cpu 169 s  [871 s]
+wall 871 s

@@ -1,0 +1,44 @@
+=== 4.4.1 symbolic: one VV step then dt -> -dt returns the initial state (SHO and general F) ===
+  x2 - x0 = 0 ;  v2 - v0 = 0
+  flip version: x3 - x0 = 0 ;  v3 + v0 = 0
+  forward Euler: x2 - x0 = -dt**2*F(x0)  (nonzero -> irreversible)
+
+=== 4.4.2 LJ ===
+  dU/dr=0 -> [2**(1/6)*sigma] ; U(rmin) = -epsilon ; U(sigma) = 0
+  U''(rmin) = 36*2**(2/3)*epsilon/sigma**2 = 57.14643787085518 (eps/sigma^2)
+
+=== 4.4.3 SHO: Verlet vs forward Euler vs dt (same physical time T=45) ===
+  dt=0.05 ( 900 steps): Euler E_end/E0=9.4611e+00 (theory (1+dt^2)^n=9.4611e+00) | Verlet peak-to-peak/E0=6.250e-04, theory dt^2/4=6.250e-04
+  dt=0.15 ( 300 steps): Euler E_end/E0=7.9249e+02 (theory (1+dt^2)^n=7.9249e+02) | Verlet peak-to-peak/E0=5.625e-03, theory dt^2/4=5.625e-03
+  dt=0.30 ( 150 steps): Euler E_end/E0=4.1113e+05 (theory (1+dt^2)^n=4.1113e+05) | Verlet peak-to-peak/E0=2.250e-02, theory dt^2/4=2.250e-02
+  dt=0.05: shadow invariant I=v^2/2+(1-dt^2/4)x^2/2: max|I-I0|/I0=6.0e-15
+  dt=0.15: shadow invariant I=v^2/2+(1-dt^2/4)x^2/2: max|I-I0|/I0=1.8e-15
+  dt=0.3: shadow invariant I=v^2/2+(1-dt^2/4)x^2/2: max|I-I0|/I0=1.8e-15
+  Verlet amplitude order between dt=0.05 and 0.15: 2.000
+  Verlet amplitude order between dt=0.15 and 0.3: 2.000
+  300 steps, dt=0.05: Euler E_end=1.0575e+00
+  300 steps, dt=0.15: Euler E_end=3.9625e+02
+  300 steps, dt=0.3: Euler E_end=8.4512e+10
+
+=== 4.4.1 numerical: LJ N=36, 1000 steps forward, flip v, 1000 steps ===
+    100 steps there and back: max|R-R0|=8.88e-16, max|v+v0|=7.61e-15
+   1000 steps there and back: max|R-R0|=2.63e-10, max|v+v0|=9.73e-10
+
+=== 4.4.4 LJ NVE dt scan (same physical time t=24, same initial condition) ===
+  check vs Lab Part B (dt=0.004, 6000 steps): pp/|E|=7.69e-04, E(end)/E(0)=1.0001, mean E=-39.734
+  dt=0.002 (12000 steps): peak-to-peak/|E|=2.67e-04, drift (E_end-E0)/|E0|=-5.79e-05
+  dt=0.004 ( 6000 steps): peak-to-peak/|E|=7.69e-04, drift (E_end-E0)/|E0|=-8.14e-05
+  dt=0.008 ( 3000 steps): peak-to-peak/|E|=3.68e-03, drift (E_end-E0)/|E0|=-6.25e-04
+  dt=0.016 ( 1500 steps): peak-to-peak/|E|=1.01e-02, drift (E_end-E0)/|E0|=-1.49e-03
+  dt=0.024 ( 1000 steps): peak-to-peak/|E|=5.63e-02, drift (E_end-E0)/|E0|=+1.77e-02
+  dt=0.032 (  750 steps): peak-to-peak/|E|=2.22e+00, drift (E_end-E0)/|E0|=+5.11e+54
+  dt=0.040 (  600 steps): peak-to-peak/|E|=4.29e+00, drift (E_end-E0)/|E0|=+8.33e+62
+  local order 0.002->0.004: 1.53
+  local order 0.004->0.008: 2.26
+  local order 0.008->0.016: 1.45
+  least-squares order over dt=0.002..0.016: 1.80
+  LJ dimer: omega=sqrt(U''/mu)=10.691, period=0.588, period/20=0.0294
+
+=== 4.4.6 ===
+  steps=1e+05; BOMD: 3.00e+06 s = 833 h = 34.7 days; MLIP: 100 s; speed-up = 3.0e+04
+  2560 atoms: BOMD ~95 years; MLIP 1000 s; speed-up = 3.0e+06

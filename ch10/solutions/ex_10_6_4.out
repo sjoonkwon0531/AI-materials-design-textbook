@@ -1,0 +1,9 @@
+SrTiO3 rattled: (n_raw - n_pre)/n_ML = (21-5)/19 = 0.842
+Si vacancy: (n_raw - n_pre)/n_ML = (15-17)/22 = -0.091  -> never profitable
+reference only from x0 = -0.75: x = -1.0355, reference gradient calls 16
+uMLIP minima shifted by +0.05: ML relax -> -0.9855 (16 ML calls), then reference -> -1.0355 (12 reference calls; raw 16)
+uMLIP minima shifted by -0.30: ML relax -> -1.3355 (20 ML calls), then reference -> -1.0357 (14 reference calls; raw 16)
+uMLIP minima shifted by -0.60: ML relax -> -1.6355 (25 ML calls), then reference -> -1.0357 (13 reference calls; raw 16)
+uMLIP minima shifted by +0.50: ML relax -> -0.5356 (14 ML calls), then reference -> -1.0355 (19 reference calls; raw 16)
+uMLIP minima shifted by +0.80: ML relax -> -0.2356 (14 ML calls), then reference -> -1.0355 (23 reference calls; raw 16)
+uMLIP minima shifted by +1.20: ML relax -> +0.1645 (16 ML calls), then reference -> +0.9600 (33 reference calls; raw 16)  DIFFERENT MINIMUM

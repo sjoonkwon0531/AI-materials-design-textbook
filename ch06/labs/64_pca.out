@@ -1,0 +1,36 @@
+all compositions: n = 4601, p = 128 (constant / >99%-identical columns removed); metals: 2450
+
+=== Part A: raw vs standardized ===
+raw features: PC1 explains 0.543 of variance; largest |loading| = maximum MeltingT (+0.670)
+three largest raw standard deviations: range MeltingT (813), maximum MeltingT (800), mode MeltingT (725)
+standardized: EVR of PC1..PC5 = 0.199, 0.122, 0.094, 0.083, 0.061
+   components for 80% variance: 14
+   components for 90% variance: 24
+   components for 95% variance: 33
+   components for 99% variance: 58
+check: max |sigma_i^2/(n-1) - eigenvalue_i| = 2.49e-14; |<v1_svd, v1_pca>| = 1.000000000000
+
+=== Part B: loadings ===
+PC1: mode Row (+0.17), mean Row (+0.17), minimum CovalentRadius (+0.17), mode CovalentRadius (+0.16), maximum Electronegativity (-0.16)
+PC2: mean MendeleevNumber (+0.20), mean Column (+0.20), minimum Column (+0.20), minimum MendeleevNumber (+0.18), minimum Electronegativity (+0.16)
+PC3: maximum Number (+0.24), maximum AtomicWeight (+0.24), maximum Row (+0.23), range AtomicWeight (+0.20), avg_dev AtomicWeight (+0.20)
+corr(PC1 score, band gap) = -0.433
+corr(PC2 score, band gap) = +0.207
+PC1 score: metals mean +1.16, non-metals mean -1.32
+
+=== Part C: PCA as a regularizer (PCR) on the non-metals, grouped 5-fold CV ===
+non-metals: n = 2151, p = 123 after re-applying the >99%-identical filter to this subset
+   PCR k =   2: MAE = 0.772 eV
+   PCR k =   5: MAE = 0.728 eV
+   PCR k =  10: MAE = 0.671 eV
+   PCR k =  20: MAE = 0.630 eV
+   PCR k =  40: MAE = 0.600 eV
+   PCR k =  80: MAE = 0.578 eV
+   PCR k = 120: MAE = 0.577 eV
+   ridge (alpha = 31.6): MAE = 0.570 eV
+
+=== Part D: metal vs non-metal from k PCs (logistic regression, grouped 5-fold) ===
+   k =   2: accuracy = 0.748
+   k =  10: accuracy = 0.823
+   k = 128: accuracy = 0.863
+time 74.8 s

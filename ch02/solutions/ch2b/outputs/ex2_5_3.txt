@@ -1,0 +1,16 @@
+[check] closed-form sum vs step loop, max diff = 7.77e-16;  rho(D) = 0.9760
+
+analytic steady excess V_max = 2.3750  -> T_max = 84.375 C
+h=0.050 dtau=3e-03 (lam= 1.0) implicit: T_max(tau=1.5) = 84.375 C
+h=0.050 dtau=3e-03 (lam= 1.0) book    : T_max(tau=1.5) = 90.625 C
+h=0.020 dtau=4e-04 (lam= 1.0) implicit: T_max(tau=1.5) = 84.500 C
+h=0.020 dtau=4e-04 (lam= 1.0) book    : T_max(tau=1.5) = 85.500 C
+h=0.010 dtau=1e-03 (lam=10.0) implicit: T_max(tau=1.5) = 84.375 C
+h=0.010 dtau=1e-03 (lam=10.0) book    : T_max(tau=1.5) = 86.875 C
+
+eta>0 (h=0.01, dtau=1e-3, implicit source):
+eta= 1.0: peak T_max = 70.92 C at tau = 0.242;  T_max(tau=3) = 28.243 C
+eta= 3.0: peak T_max = 60.48 C at tau = 0.156;  T_max(tau=3) = 25.010 C
+eta=10.0: peak T_max = 47.21 C at tau = 0.081;  T_max(tau=3) = 25.000 C
+
+[diagnostic] transient peak = 44.46 C would need eta ~ 13.1 (h=0.01, dtau=1e-3) under this interpretation

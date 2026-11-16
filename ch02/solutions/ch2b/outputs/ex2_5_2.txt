@@ -1,0 +1,13 @@
+g_CN = (-2*lambda*sin(theta/2)**2 + 1)/(2*lambda*sin(theta/2)**2 + 1)
+1 - g_CN^2 = 8*lambda*sin(theta/2)**2/(2*lambda*sin(theta/2)**2 + 1)**2  (>=0 for lam>0)
+lim lam->oo at theta=pi: -1
+numeric max|g_CN| over lam in [1e-3,1e4], theta in [0,pi]: 1.000000
+lam=   0.5: theta=pi  g_CN=+0.0000   g_BTCS=+0.3333
+lam=     1: theta=pi  g_CN=-0.3333   g_BTCS=+0.2000
+lam=    10: theta=pi  g_CN=-0.9048   g_BTCS=+0.0244
+lam=   100: theta=pi  g_CN=-0.9900   g_BTCS=+0.0025
+step  1: CN min=-0.2835 max=0.9999 (wiggles near wall: 0)   BTCS min=+0.2702 max=0.9992
+step  2: CN min=+0.2810 max=0.9993 (wiggles near wall: 1)   BTCS min=+0.1562 max=0.9963
+step  3: CN min=-0.1390 max=0.9966 (wiggles near wall: 0)   BTCS min=+0.1181 max=0.9897
+step 10: CN min=+0.0810 max=0.8459 (wiggles near wall: 1)   BTCS min=+0.0582 max=0.8442
+rho(D_CN)=0.9613, most negative eig=-0.9047;  rho(D_BTCS)=0.9620

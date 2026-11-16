@@ -1,0 +1,26 @@
+=== 9.5.1 ===
+(a) p = 2.000 1.997 2.001
+    least-squares fit: p = 1.999, C = 0.2718;  C from n = 200 with p = 2: 0.2728
+(b) n for 1e-8: from n = 200, p = 2: 5223;  from the fit: 5230
+    Crank-Nicolson n = 100: max|err| at t=1 = 2.727e-05, CPU 0.003 s
+    Crank-Nicolson n = 5223: max|err| at t=1 = 9.899e-09, CPU 0.705 s
+(c) (n/100)^2 = 2728;  1.80 ms x that = 4.91 s;  from n = 800 (25.59 ms): 1.09 s
+    measured CPU exponent between n = 100 and 800: 1.28
+    PINN: error ratio to 1e-8: soft 13100, hard 2840; loss would have to fall by ~8.1e+06 (hard: 4.7e-8 -> 5.8e-15)
+=== 9.5.2 ===
+(a) lowest aliased wavenumber N - 3K > K  <=>  K < N/4;  (b) N = 64: K < 16, keep |k| <= 15 (0.469 of the band); 2/3 rule keeps |k| <= 21
+    K = 15: max aliasing error of (c^3)_k for |k| <= K: 2.4e-16
+    K = 16: max aliasing error of (c^3)_k for |k| <= K: 3.7e-03
+    K = 21: max aliasing error of (c^3)_k for |k| <= K: 2.4e-01
+(c) k =  4: denominator = 1 + 1.6 + 0.1 = 2.7;  dt k^2 / den = 0.2933;  (1 + dt S k^2)/den = 0.9531
+(c) k = 32: denominator = 1 + 102.4 + 524.3 = 627.7;  dt k^2 / den = 0.0816;  (1 + dt S k^2)/den = 0.1647
+(c) k = 64: denominator = 1 + 409.6 + 8388.6 = 8799.2;  dt k^2 / den = 0.0233;  (1 + dt S k^2)/den = 0.0467
+    k -> inf: dt k^2/den -> 1/(eps^2 k^2) = 0.0244 at k = 64;  without the eps^2 k^4 term: (1 + dt S k^2)/den = 1
+    256^2, L = 4 pi at t = 10 (std c = 0.87): share of |c_k|^2 at |k| > 32 (= N/4): 4.1e-07, at |k| > 43: 3.3e-09
+    aliasing error of FFT(c^3): ||coarse - exact|| / ||exact|| = 1.4e-05; for |k| > 32: 1.9e-03
+=== 9.5.4 ===
+   64^2: t_s = 18.19 ms; (a) N* = 1,291 (speed-up 5.37);  (b) t_FNO/50 = 0.0678 ms: N* = 1,054 (speed-up 268)
+   32^2: t_s = 5.13 ms; (a) N* = 10,977 (speed-up 1.51);  (b) t_FNO/50 = 0.0678 ms: N* = 3,773 (speed-up 76)
+   16^2: t_s = 1.95 ms; (a) N* = -13,264 (speed-up 0.58);  (b) t_FNO/50 = 0.0678 ms: N* = 10,148 (speed-up 29)
+   lower bound C/(20 t_s): 64^2 1,050, 32^2 3,723, 16^2 9,795
+   (b) fair: solver also 50x faster in batch -> 16^2: 0.0390 ms vs FNO 0.0678 ms; ratio unchanged 0.58

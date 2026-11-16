@@ -1,0 +1,25 @@
+force autocorrelation <F(t).F(t+lag)>/<F.F> along oracle MD (dt = 2 fs)
+    300 K: lag 1 = 0.990, lag 5 = 0.793, lag 10 = 0.338; first below 0.1 at lag 13 (26 fs)
+    900 K: lag 1 = 0.989, lag 5 = 0.763, lag 10 = 0.272; first below 0.1 at lag 12 (24 fs)
+   1500 K: lag 1 = 0.988, lag 5 = 0.742, lag 10 = 0.238; first below 0.1 at lag 12 (24 fs)
+SOAP: 105 components per frame
+  block  seed 0: test-1500K F-RMSE  214.8 meV/A | 1800K  227.4 | strained  128.6 | E-RMSE 22.25 meV/atom | SOAP NN-dist to test  7.75
+  random seed 0: test-1500K F-RMSE  211.0 meV/A | 1800K  233.5 | strained  115.6 | E-RMSE 15.75 meV/atom | SOAP NN-dist to test  7.48
+  fps    seed 0: test-1500K F-RMSE  206.8 meV/A | 1800K  219.1 | strained  107.9 | E-RMSE 11.24 meV/atom | SOAP NN-dist to test  6.21
+  rattle seed 0: test-1500K F-RMSE  246.2 meV/A | 1800K  266.8 | strained   70.6 | E-RMSE 16.57 meV/atom | SOAP NN-dist to test 18.12
+  block  seed 1: test-1500K F-RMSE  223.1 meV/A | 1800K  240.7 | strained  216.4 | E-RMSE 22.27 meV/atom | SOAP NN-dist to test  8.85
+  random seed 1: test-1500K F-RMSE  212.7 meV/A | 1800K  237.1 | strained  171.5 | E-RMSE 14.95 meV/atom | SOAP NN-dist to test  6.51
+  fps    seed 1: test-1500K F-RMSE  210.8 meV/A | 1800K  219.9 | strained  137.0 | E-RMSE 15.32 meV/atom | SOAP NN-dist to test  6.39
+  rattle seed 1: test-1500K F-RMSE  233.7 meV/A | 1800K  241.5 | strained   82.5 | E-RMSE 23.55 meV/atom | SOAP NN-dist to test 18.12
+  block  seed 2: test-1500K F-RMSE  227.5 meV/A | 1800K  236.9 | strained  171.3 | E-RMSE 12.90 meV/atom | SOAP NN-dist to test  7.62
+  random seed 2: test-1500K F-RMSE  225.9 meV/A | 1800K  241.6 | strained  195.6 | E-RMSE 15.63 meV/atom | SOAP NN-dist to test  7.54
+  fps    seed 2: test-1500K F-RMSE  218.6 meV/A | 1800K  221.0 | strained  137.6 | E-RMSE 13.81 meV/atom | SOAP NN-dist to test  6.85
+  rattle seed 2: test-1500K F-RMSE  247.3 meV/A | 1800K  252.1 | strained   87.9 | E-RMSE  8.59 meV/atom | SOAP NN-dist to test 18.12
+summary (mean +/- std over 3 seeds), force RMSE in meV/A:
+  block : 1500K  221.8 +/-  5.3 | 1800K  235.0 +/-  5.6 | strained  172.1 +/- 35.9 | E 19.14 meV/atom | cover 8.07
+  random: 1500K  216.5 +/-  6.7 | 1800K  237.4 +/-  3.3 | strained  160.9 +/- 33.5 | E 15.44 meV/atom | cover 7.17
+  fps   : 1500K  212.0 +/-  4.9 | 1800K  220.0 +/-  0.8 | strained  127.5 +/- 13.9 | E 13.46 meV/atom | cover 6.48
+  rattle: 1500K  242.4 +/-  6.2 | 1800K  253.5 +/- 10.4 | strained   80.3 +/-  7.2 | E 16.24 meV/atom | cover 18.12
+FPS (seed 0) picks per temperature: {300: 1, 900: 3, 1500: 12}
+PCA: first two components explain 78.5 % of SOAP variance
+CPU 340 s

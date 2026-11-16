@@ -1,0 +1,8 @@
+PINN for one NS instance (soft initial condition): T = 5, two MLPs 21-64-64-64-64-1 tanh, 27,906 parameters, 2048 collocation points (resampled, IC on 64^2)
+  Adam   500: CPU    52 s | loss PDE 1.36e-02, Poisson 2.54e-02, IC 1.80e-04 | rel. L2 at t=1: 0.6152, at t=5: 1.0339
+  Adam  1000: CPU   102 s | loss PDE 1.22e-02, Poisson 1.15e-02, IC 1.19e-04 | rel. L2 at t=1: 0.6387, at t=5: 1.0022
+  Adam  1500: CPU   152 s | loss PDE 1.17e-02, Poisson 9.02e-03, IC 1.05e-04 | rel. L2 at t=1: 0.6506, at t=5: 0.9947
+  Adam  2000: CPU   204 s | loss PDE 1.15e-02, Poisson 7.73e-03, IC 1.01e-04 | rel. L2 at t=1: 0.6540, at t=5: 0.9933
+  + L-BFGS  : CPU   241 s | loss PDE 1.15e-02, Poisson 4.20e-03, IC 9.66e-05 | rel. L2 at t=1: 0.6417, at t=5: 0.9904
+rel. L2 error vs the 64^2 solver at t = 1..5: 0.6417 0.8959 0.9604 0.9810 0.9904
+this single instance: wall 415 s on a shared machine, CPU time 241 s

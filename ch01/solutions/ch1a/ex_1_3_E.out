@@ -1,0 +1,15 @@
+r=0: final train MSE FP64=1.818e-03 FP32=1.822e-03  max|p32-p64|=3.36e-03
+r=1: final train MSE FP64=1.732e-03 FP32=1.729e-03  max|p32-p64|=2.62e-03
+r=2: final train MSE FP64=1.814e-03 FP32=1.822e-03  max|p32-p64|=1.50e-02
+r=3: final train MSE FP64=1.829e-03 FP32=1.829e-03  max|p32-p64|=6.43e-03
+r=4: final train MSE FP64=1.749e-03 FP32=1.749e-03  max|p32-p64|=3.62e-03
+r=5: final train MSE FP64=2.066e-03 FP32=2.066e-03  max|p32-p64|=3.03e-03
+r=6: final train MSE FP64=2.149e-03 FP32=2.076e-03  max|p32-p64|=2.79e-02
+r=7: final train MSE FP64=1.908e-03 FP32=1.911e-03  max|p32-p64|=9.45e-03
+|x|<1       : Bias^2=1.85e-04  Var=1.24e-03  Prec(FP32-FP64)^2=1.75e-05
+1<=|x|<1.75 : Bias^2=1.51e-04  Var=7.72e-04  Prec(FP32-FP64)^2=3.59e-05
+|x|>=1.75   : Bias^2=6.00e-04  Var=6.49e-04  Prec(FP32-FP64)^2=6.92e-05
+overall    : Bias^2=2.25e-04  Var=9.90e-04  Prec=3.10e-05  sigma^2=2.50e-03
+forward-only FP32 vs FP64 rms diff (untrained net) = 3.16e-08
+after training rms(P32-P64) = 5.56e-03
+elapsed 211s

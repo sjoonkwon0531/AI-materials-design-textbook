@@ -1,0 +1,14 @@
+/usr/local/lib/python3.11/dist-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+residual routine on the exact Cole-Hopf solution: max|r| = 1.8e-08
+Burgers nu=0.02, T=0.25: solver N=256, dt=1e-3 (3.09 ms CPU per trajectory); data loss at s=64, residual at s=128
+operator [data,  25 labelled]: test rel-L2 0.1513 (median 0.1231)  residual MSE   81.059   (19 s CPU)
+operator [both,  25 labelled]: test rel-L2 0.0719 (median 0.0507)  residual MSE    1.389   (70 s CPU)
+operator [data, 100 labelled]: test rel-L2 0.0581 (median 0.0372)  residual MSE   55.601   (18 s CPU)
+operator [both, 100 labelled]: test rel-L2 0.0636 (median 0.0440)  residual MSE    1.392   (68 s CPU)
+operator [pde ,   0 labelled]: test rel-L2 0.1349 (median 0.1017)  residual MSE    1.390   (56 s CPU)
+fine-tune from [data25] (6 instances, 200 steps, 4.0 s CPU each): rel-L2 0.0922 -> 0.0702  (per instance: 0.146>0.056 0.100>0.139 0.067>0.058 0.087>0.065 0.091>0.060 0.063>0.042)  residual MSE 70.84 -> 6.469
+fine-tune from [both25] (6 instances, 200 steps, 3.9 s CPU each): rel-L2 0.0527 -> 0.0254  (per instance: 0.059>0.047 0.056>0.022 0.033>0.021 0.104>0.016 0.024>0.025 0.039>0.020)  residual MSE 0.57 -> 0.021
+fine-tune from [pde0  ] (6 instances, 200 steps, 3.8 s CPU each): rel-L2 0.0964 -> 0.0227  (per instance: 0.075>0.051 0.183>0.026 0.078>0.011 0.105>0.024 0.088>0.005 0.050>0.018)  residual MSE 0.72 -> 0.037
+fine-tune from [random] (6 instances, 200 steps, 3.9 s CPU each): rel-L2 0.6565 -> 0.0537  (per instance: 0.171>0.063 1.149>0.051 0.756>0.062 0.754>0.083 0.842>0.031 0.268>0.032)  residual MSE 130.16 -> 1.122
+wall 647 s (CPU 328 s)

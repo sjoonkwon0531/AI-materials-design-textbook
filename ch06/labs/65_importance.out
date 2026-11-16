@@ -1,0 +1,15 @@
+--- RF with noise probe: test MAE = 0.452 eV ---
+top 8 by MDI (impurity)            | top 8 by permutation (test MAE increase, eV)
+  mean NpValence                 0.088   | mean NpValence                 0.168
+  mean SpaceGroupNumber          0.034   | mean Row                       0.046
+  mode SpaceGroupNumber          0.033   | avg_dev Electronegativity      0.045
+  avg_dev Electronegativity      0.028   | mode SpaceGroupNumber          0.038
+  avg_dev Column                 0.028   | mean SpaceGroupNumber          0.037
+  mean MeltingT                  0.026   | maximum MendeleevNumber        0.037
+  minimum GSvolume_pa            0.025   | mean MeltingT                  0.037
+  maximum MendeleevNumber        0.023   | mean CovalentRadius            0.035
+noise probe: MDI = 0.0056 (rank 59/133), permutation = -0.0006 eV (rank 133)
+  number of real Magpie features with MDI below the pure-noise probe: 74
+features with |r|>0.9 with 'mean NpValence': 0
+--- RF with near-duplicate of the top feature: test MAE = 0.449 eV ---
+  'mean NpValence': MDI 0.088 -> 0.073 (+ duplicate 0.081); permutation 0.168 -> 0.122 (duplicate 0.143) eV

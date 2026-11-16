@@ -1,0 +1,12 @@
+--- flux form d = -div J: 2000 steps, training CPU 258 s ---
+  one-step error (true input):   0->2.5: 0.5324 | 2.5->5: 0.1335 | 22.5->25: 0.0207 | 47.5->50: 0.0149 | mean of steps 2..20: 0.0299
+  rollout from the true c(2.5):  t=5: 0.1335 | t=12.5: 0.2587 | t=25: 0.3982 | t=50: 0.5729
+  mass: max drift 5.55e-17;  free energy: increases along the rollouts 384 / 760; one step from true states 7 / 760; F(50) = 4.743 (solver 1.754, excess 170%)
+  growth: L(25) = 2.702, L(50) = 2.973 (solver 2.876, 3.506); slope on 5 <= t <= 50: 0.234 (solver 0.303);  max |c| = 3.539
+  (a) mean of the increment: flux 3.5e-18, cons 1.6e-17, solver 1.2e-09
+  rms J = 0.1973, rms d = 0.2079 (true increment 0.2131)
+  (c) cons increment rebuilt as -div J with J = grad(lap^-1 d): rel. difference 3.8e-03; rms |J| = 0.0709
+      share of the cons increment norm^2 in modes with |kx| = 32 or |ky| = 32: 2.1e-05
+      response to a 4x4 bump of 0.2: solver mean |dG| within 8 cells 6.70e-03, beyond 24 cells 1.39e-04  (ratio 2.1e-02)
+      response to a 4x4 bump of 0.2: cons   mean |dG| within 8 cells 2.22e-02, beyond 24 cells 5.21e-04  (ratio 2.4e-02)
+      response to a 4x4 bump of 0.2: flux   mean |dG| within 8 cells 2.13e-02, beyond 24 cells 5.78e-04  (ratio 2.7e-02)

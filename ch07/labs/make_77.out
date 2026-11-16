@@ -1,0 +1,24 @@
+Fig7.7.1 MLP (xyz)                  F [720.3 742.6 714.4] meV/A slope -0.00 | E [203.  328.7 270.2] meV slope 0.12
+Fig7.7.1 MLP (xyz) + rot. aug.      F [678.5 681.2 706. ] meV/A slope 0.02 | E [105.   99.7 108.7] meV slope 0.02
+Fig7.7.1 MLP (molecular frame)      F [599.1 579.5 577.6] meV/A slope -0.02 | E [105.2 109.7  85.9] meV slope -0.09
+Fig7.7.1 SchNet-like (invariant)    F [124.5 101.1  68.3] meV/A slope -0.26 | E [29.2 29.1 26.7] meV slope -0.04
+Fig7.7.1 NequIP-like (equivariant)  F [116.9 104.1  89.7] meV/A slope -0.11 | E [30.8 28.  27. ] meV slope -0.06
+Fig7.7.1 SchNet-like (invariant)    N=1000, 6000 steps: F 34.2 meV/A
+Fig7.7.1 NequIP-like (equivariant)  N=1000, 6000 steps: F 60.5 meV/A
+Fig7.7.2a MLP (molecular frame)      F MAE 300/600/1000 K: [ 577.6  841.6 1090.1]  ratio 1000/300 1.89
+Fig7.7.2a SchNet-like (invariant)    F MAE 300/600/1000 K: [ 68.3 132.7 267.6]  ratio 1000/300 3.92
+Fig7.7.2a NequIP-like (equivariant)  F MAE 300/600/1000 K: [ 89.7 148.8 260.1]  ratio 1000/300 2.90
+Fig7.7.2b F MAE orig: [714.4 706.  577.6  68.3  89.7] rotated: [713.  708.1 577.9  68.1  89.8] rot err: ['1.1e+00', '5.9e-01', '2.1e-06', '2.7e-06', '2.7e-06']
+Fig7.7.3 statuses: {np.str_('xTB'): np.str_('stable'), np.str_('xTB_seed1'): np.str_('stable'), np.str_('mlp_N1000'): np.str_('UNSTABLE at 0.01 ps'), np.str_('mlp_aug_N1000'): np.str_('UNSTABLE at 0.02 ps'), np.str_('mlp_frame_N1000'): np.str_('UNSTABLE at 0.03 ps'), np.str_('schnet_N1000'): np.str_('stable'), np.str_('nequip_N1000'): np.str_('stable'), np.str_('schnet_N100'): np.str_('stable'), np.str_('nequip_N100'): np.str_('stable'), np.str_('schnet_N1000_long'): np.str_('stable'), np.str_('nequip_N1000_long'): np.str_('stable')}
+Fig7.7.3 xTB                frames  800  max|L| 7.05e-05  final|L| 7.05e-05
+Fig7.7.3 xTB_seed1          frames  800  max|L| 9.95e-05  final|L| 6.77e-05
+Fig7.7.3 mlp_N1000          frames    4  max|L| 3.94e-01  final|L| 3.94e-01
+Fig7.7.3 mlp_aug_N1000      frames    8  max|L| 9.12e-02  final|L| 9.12e-02
+Fig7.7.3 mlp_frame_N1000    frames    9  max|L| 1.41e-15  final|L| 1.02e-15
+Fig7.7.3 schnet_N1000       frames  800  max|L| 1.93e-14  final|L| 1.88e-14
+Fig7.7.3 nequip_N1000       frames  800  max|L| 1.01e-14  final|L| 9.87e-15
+Fig7.7.3 schnet_N100        frames  800  max|L| 1.58e-14  final|L| 1.51e-14
+Fig7.7.3 nequip_N100        frames  800  max|L| 8.58e-15  final|L| 7.62e-15
+Fig7.7.3 schnet_N1000_long  frames  800  max|L| 1.28e-14  final|L| 1.28e-14
+Fig7.7.3 nequip_N1000_long  frames  800  max|L| 9.66e-15  final|L| 7.66e-15
+done

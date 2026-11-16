@@ -1,0 +1,22 @@
+mean len fit 169.94 eval 176.86666666666667 terminated frac 1.0
+critic iters 1500: train MSE 614.7, eval RMSE vs G_t 24.96, mean(V-G) -1.11, mean G 54.9
+   G-V       var/G_t 0.2925  |mean|   487.5  cos(exact) +0.970
+   lam=0     var/G_t 0.0085  |mean|     8.3  cos(exact) -0.661
+   lam=0.5   var/G_t 0.0118  |mean|    18.8  cos(exact) -0.425
+   lam=0.8   var/G_t 0.0266  |mean|    24.5  cos(exact) -0.001
+   lam=0.9   var/G_t 0.0485  |mean|    31.4  cos(exact) +0.815
+   lam=0.95  var/G_t 0.0856  |mean|    85.3  cos(exact) +0.981
+   lam=0.99  var/G_t 0.2085  |mean|   330.8  cos(exact) +0.962
+   lam=1.0   var/G_t 0.2925  |mean|   487.5  cos(exact) +0.970
+critic iters 100: train MSE 1077.6, eval RMSE vs G_t 33.52, mean(V-G) -22.39, mean G 54.9
+   G-V       var/G_t 0.3612  |mean|   537.7  cos(exact) +0.976
+   lam=0     var/G_t 0.0032  |mean|     4.5  cos(exact) -0.609
+   lam=0.5   var/G_t 0.0045  |mean|    10.8  cos(exact) -0.299
+   lam=0.8   var/G_t 0.0111  |mean|    16.2  cos(exact) +0.267
+   lam=0.9   var/G_t 0.0226  |mean|    27.9  cos(exact) +0.896
+   lam=0.95  var/G_t 0.0470  |mean|    74.4  cos(exact) +0.986
+   lam=0.99  var/G_t 0.1833  |mean|   317.4  cos(exact) +0.969
+   lam=1.0   var/G_t 0.3612  |mean|   537.7  cos(exact) +0.976
+   exact |mean| 288.7, reward-to-go var ref 5.06e+06
+[80 s]
+wall 80 s

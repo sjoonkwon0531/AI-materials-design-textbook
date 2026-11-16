@@ -1,0 +1,16 @@
+E std 300/600/1000 K: 0.133 0.255 0.497 eV; |F| mean 0.715 1.021 1.337 eV/A
+N= 100 mlp       params  36737 | 300K: E  203.0 meV F   720 meV/A | 600K F  1035 | 1000K F  1326 | rotated 300K F   720 | rot.err F 1.2e+00 E 2.4e+02 meV | cpu   14 s
+N= 100 mlp_aug   params  36737 | 300K: E  105.0 meV F   679 meV/A | 600K F   982 | 1000K F  1247 | rotated 300K F   681 | rot.err F 6.6e-01 E 3.4e+01 meV | cpu   16 s
+N= 100 mlp_frame params  36737 | 300K: E  105.2 meV F   599 meV/A | 600K F   862 | 1000K F  1109 | rotated 300K F   601 | rot.err F 2.1e-06 E 1.1e-03 meV | cpu   25 s
+N= 100 schnet    params  58369 | 300K: E   29.2 meV F   124 meV/A | 600K F   224 | 1000K F   403 | rotated 300K F   124 | rot.err F 2.8e-06 E 7.6e-04 meV | cpu   22 s
+N= 100 nequip    params  59072 | 300K: E   30.8 meV F   117 meV/A | 600K F   187 | 1000K F   307 | rotated 300K F   117 | rot.err F 2.8e-06 E 1.2e-03 meV | cpu   84 s
+N= 300 mlp       params  36737 | 300K: E  328.7 meV F   743 meV/A | 600K F  1026 | 1000K F  1292 | rotated 300K F   729 | rot.err F 1.1e+00 E 4.5e+02 meV | cpu   16 s
+N= 300 mlp_aug   params  36737 | 300K: E   99.7 meV F   681 meV/A | 600K F   982 | 1000K F  1250 | rotated 300K F   681 | rot.err F 7.4e-01 E 3.7e+01 meV | cpu   19 s
+N= 300 mlp_frame params  36737 | 300K: E  109.7 meV F   579 meV/A | 600K F   842 | 1000K F  1088 | rotated 300K F   580 | rot.err F 2.2e-06 E 4.6e-04 meV | cpu   27 s
+N= 300 schnet    params  58369 | 300K: E   29.1 meV F   101 meV/A | 600K F   183 | 1000K F   332 | rotated 300K F   101 | rot.err F 2.8e-06 E 9.2e-04 meV | cpu   34 s
+N= 300 nequip    params  59072 | 300K: E   28.0 meV F   104 meV/A | 600K F   170 | 1000K F   286 | rotated 300K F   104 | rot.err F 2.7e-06 E 7.6e-04 meV | cpu  117 s
+N=1000 mlp       params  36737 | 300K: E  270.2 meV F   714 meV/A | 600K F  1011 | 1000K F  1280 | rotated 300K F   713 | rot.err F 1.1e+00 E 3.2e+02 meV | cpu   12 s
+N=1000 mlp_aug   params  36737 | 300K: E  108.7 meV F   706 meV/A | 600K F  1021 | 1000K F  1309 | rotated 300K F   708 | rot.err F 5.9e-01 E 2.3e+01 meV | cpu   13 s
+N=1000 mlp_frame params  36737 | 300K: E   85.9 meV F   578 meV/A | 600K F   842 | 1000K F  1090 | rotated 300K F   578 | rot.err F 2.1e-06 E 6.1e-04 meV | cpu   21 s
+N=1000 schnet    params  58369 | 300K: E   26.7 meV F    68 meV/A | 600K F   133 | 1000K F   268 | rotated 300K F    68 | rot.err F 2.7e-06 E 7.6e-04 meV | cpu   50 s
+N=1000 nequip    params  59072 | 300K: E   27.0 meV F    90 meV/A | 600K F   149 | 1000K F   260 | rotated 300K F    90 | rot.err F 2.7e-06 E 6.1e-04 meV | cpu  189 s

@@ -1,0 +1,22 @@
+patterns: 4000, per class [400, 400, 400, 400, 400, 400, 400, 400, 400, 400], median #peaks 8
+equivariance check: |conv(shift x) - shift conv(x)|max = 0.0e+00 (circular padding, shift 7)
+   maxpool(2): shift 8 -> output shift 4: 0.0e+00;  shift 7 (odd) -> best integer shift 3: 0.89
+train 3000, test 1000; 20 epochs AdamW + one-cycle; accuracy vs test zero shift (deg); 2 seeds
+model                         #params     0.0    0.1    0.2    0.3    0.5    1.0    2.0
+MLP                            213642   0.794  0.803  0.781  0.753  0.727  0.662  0.554   [time 26 s]
+CNN+flatten                     38794   0.935  0.936  0.924  0.917  0.898  0.810  0.685   [time 290 s]
+CNN+global pool                 11274   0.515  0.511  0.499  0.517  0.515  0.509  0.511   [time 547 s]
+deep CNN+global pool            54730   0.954  0.955  0.948  0.949  0.956  0.955  0.955   [time 954 s]
+   confusion (rows true, cols pred; seed 1, no shift): fcc bcc hcp rock CsCl zinc wurt fluo ruti pero
+   fcc            95    0    0    0    0    0    0    0    0    0
+   bcc             0  113    0    0    4    0    0    0    0    0
+   hcp             0    0   99    0    0    0    1    0    0    0
+   rocksalt        4    3    0   74    1    0    0    0    0    0
+   CsCl            0   14    0    0   79    0    0    2    0    2
+   zincblende      0    0    0    0    0   99    0    0    0    0
+   wurtzite        0    0    1    0    0    0   91    0    0    0
+   fluorite        0    0    0    4    1    5    0  110    0    0
+   rutile          0    0    0    0    0    0    0    0   88    0
+   perovskite      0    0    0    1    0    1    0    1    0  107
+MLP + shift augmentation       213642   0.880  0.883  0.888  0.880  0.867  0.832  0.719   [time 969 s]
+wall 969 s

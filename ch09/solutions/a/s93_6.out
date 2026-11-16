@@ -1,0 +1,10 @@
+flux: pre-train 1200 updates: one-step test rel-L2 0.0020 (45 s CPU); fine-tune 600: 0.0016 (23 s CPU)
+onestep     : one-step 0.0016 err(1) 0.0018 err(10) 0.015 | valid time  50.8 +/- 15.1 | blow-ups in 2000 steps 0/16 | mean drift t=400 2.2e-03, t=2000 2.4e-03 | high-k amplitude (k>32) median 2.2e-03 max 3.8e-02
+cons(mean)  : one-step 0.0016 err(1) 0.0017 err(10) 0.012 | valid time  55.9 +/- 14.0 | blow-ups in 2000 steps 0/16 | mean drift t=400 1.8e-07, t=2000 2.6e-07 | high-k amplitude (k>32) median 1.9e-03 max 2.0e-03
+flux        : one-step 0.0016 err(1) 0.0015 err(10) 0.014 | valid time  43.7 +/-  9.0 | blow-ups in 2000 steps 16/16 (first at t=64) | mean drift t=400 2.6e+04, t=2000 3.2e+04 | high-k amplitude (k>32) median 4.4e+05 max 4.5e+05
+flux+filter : one-step 0.0016 err(1) 0.0015 err(10) 0.014 | valid time  51.8 +/- 15.1 | blow-ups in 2000 steps 15/16 (first at t=645) | mean drift t=400 1.4e-07, t=2000 9.3e+03 | high-k amplitude (k>32) median 4.5e-07 max 1.7e+03
+[cons] |g(k)| at u=0: k=0: 1.000000; k=25: 1.0093, k=40: 1.0093, k=55: 1.0093, k=63: 1.0093, k=64: 1.0093; max over k>24: 1.0093; max_k 1.277 at k=7
+[flux] |g(k)| at u=0: k=0: 1.000000; k=25: 1.0000, k=40: 1.0000, k=55: 1.0000, k=63: 1.0000, k=64: 1.0000; max over k>24: 1.0000; max_k 1.281 at k=7
+(d) learned flux vs exact time-integrated flux Jbar: rel L2 0.0068; instantaneous J(u_n) vs Jbar: 0.227; J(u_n+1) vs Jbar: 0.226; trapezoid: 0.030
+    learned flux vs instantaneous J(u_n): 0.224; without removing the mean: 0.396; mean of raw J_theta +0.478 (std over states 0.050), mean of J(u_n) +0.853; Nyquist amplitude of raw J_theta 7.41e-06
+    rms Jbar 0.490, rms J_inst 0.495

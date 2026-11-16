@@ -1,0 +1,21 @@
+1D S=0.50: vacuum max|E|=8.692e-01   with n=3.5 slab max|E|=2.408e-01
+1D S=1.00: vacuum max|E|=5.007e-01   with n=3.5 slab max|E|=2.133e-01
+1D S=1.01: vacuum max|E|=inf   with n=3.5 slab max|E|=inf
+1D S=1.05: vacuum max|E|=inf   with n=3.5 slab max|E|=inf
+1D S=3.50 (slab-local CFL) with slab: max|E|=inf
+1D S=3.50 in uniform n=3.5 medium   : max|E|=5.007e-01  (local CFL c/n dt/dx<=1 holds)
+1D S=3.60 in uniform n=3.5 medium   : max|E|=inf
+2D S=0.7000 (limit 1/sqrt2=0.7071): max|Ez|=1.234e-01
+2D S=0.7071 (limit 1/sqrt2=0.7071): max|Ez|=1.229e-01
+2D S=0.7200 (limit 1/sqrt2=0.7071): max|Ez|=inf
+
+cost for fixed physical size & time, P = 20 cells per wavelength in the densest medium:
+  d=1 n_max=1.0: work relative to n=1 ->      1.0x
+  d=1 n_max=2.0: work relative to n=1 ->      4.0x
+  d=1 n_max=3.5: work relative to n=1 ->     12.2x
+  d=2 n_max=1.0: work relative to n=1 ->      1.0x
+  d=2 n_max=2.0: work relative to n=1 ->      8.0x
+  d=2 n_max=3.5: work relative to n=1 ->     42.9x
+  d=3 n_max=1.0: work relative to n=1 ->      1.0x
+  d=3 n_max=2.0: work relative to n=1 ->     16.0x
+  d=3 n_max=3.5: work relative to n=1 ->    150.1x

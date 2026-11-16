@@ -1,0 +1,15 @@
+=== Part A: ||d h_T / d x_t|| vs lag, hidden 32, input 1, T=200, mean of 10 random inits ===
+vanilla RNN (tanh)     lag   1:  1.1e-01  lag  10:  1.2e-03  lag  25:  3.3e-07  lag  50:  4.8e-12  lag 100:  1.5e-21  lag 199:  6.0e-40
+LSTM, forget bias 0    lag   1:  5.5e-02  lag  10:  7.9e-04  lag  25:  7.1e-07  lag  50:  1.6e-11  lag 100:  1.5e-20  lag 199:  2.0e-38
+LSTM, forget bias +3   lag   1:  4.3e-02  lag  10:  4.1e-02  lag  25:  4.3e-02  lag  50:  4.5e-02  lag 100:  3.2e-02  lag 199:  3.0e-01
+=== Part B: 150 train cells / 50 test cells; windows train 25268, test 4473 (test windows whose horizon reaches past the knee: 0.38) ===
+cell lengths to 60% capacity: median 1009, range 701-1200 cycles
+[MLP trained, 3 seeds, 81 s]
+[LSTM trained, 3 seeds, 1425 s]
+model                     RMSE all  pre-knee      knee  RMSE@h=10   @h=100   (% of nominal capacity)
+persistence                  2.830     0.653     4.526      0.491    5.155
+linear extrapolation         1.041     0.349     1.634      0.295    2.068
+quadratic extrapolation      1.276     1.256     1.307      0.318    2.519
+MLP                          0.569     0.357     0.804      0.222    1.098   +/- 0.000 over seeds, 35940 params
+LSTM                         0.580     0.360     0.822      0.230    1.119   +/- 0.005 over seeds, 23652 params
+wall 1781 s

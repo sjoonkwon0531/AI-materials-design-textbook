@@ -1,0 +1,3 @@
+sees true yields      : regret @10 0.190 @20 0.145 @50 0.093 | mean distance of query to incumbent 0.603
+blindfolded (y := 0.5): regret @10 0.200 @20 0.153 @50 0.099 | mean distance of query to incumbent 0.603
+reference: mean distance between two uniform points in the unit cube 0.660

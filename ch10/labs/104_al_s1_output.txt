@@ -1,0 +1,29 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+WARNING:root:Default dtype float32 does not match model dtype float64, converting models to float32.
+[qbc] round 1 T=900 K: explore MD failed at steps [None, None]; 300 candidates, dev median 0.102 max 0.173 eV/A, 294 in window, picked dev 0.140-0.173; labels now 10
+[qbc] round 2 T=1500 K: explore MD failed at steps [None, None]; 300 candidates, dev median 0.125 max 0.267 eV/A, 295 in window, picked dev 0.195-0.267; labels now 16
+[qbc] round 3 T=2000 K: explore MD failed at steps [None, None]; 300 candidates, dev median 0.094 max 0.253 eV/A, 263 in window, picked dev 0.176-0.253; labels now 22
+[qbc] round 4 T=2500 K: explore MD failed at steps [None, 104]; 254 candidates, dev median 0.052 max 0.300 eV/A, 139 in window, picked dev 0.094-0.300; labels now 28
+[qbc] round 5 T=2500 K: explore MD failed at steps [None, None]; 300 candidates, dev median 0.081 max 0.177 eV/A, 257 in window, picked dev 0.126-0.177; labels now 34
+[qbc] n= 4: F   735 ( 313) meV/A, stable [124, 144] | n=10: F   636 ( 225) meV/A, stable [287, 153] | n=16: F   533 ( 217) meV/A, stable [137, 410] | n=22: F   405 ( 293) meV/A, stable [500, 325] | n=28: F   385 ( 302) meV/A, stable [381, 500] | n=34: F   384 ( 270) meV/A, stable [285, 112]
+[rand] round 1 T=900 K: explore MD failed at steps [None, None]; 300 candidates, random pick; labels now 10
+[rand] round 2 T=1500 K: explore MD failed at steps [None, None]; 300 candidates, random pick; labels now 16
+[rand] round 3 T=2000 K: explore MD failed at steps [None, None]; 300 candidates, random pick; labels now 22
+[rand] round 4 T=2500 K: explore MD failed at steps [None, None]; 300 candidates, random pick; labels now 28
+[rand] round 5 T=2500 K: explore MD failed at steps [None, None]; 300 candidates, random pick; labels now 34
+[rand] n= 4: F   735 ( 313) meV/A, stable [124, 144] | n=10: F   669 ( 244) meV/A, stable [169, 115] | n=16: F   579 ( 217) meV/A, stable [178, 187] | n=22: F   438 ( 243) meV/A, stable [500, 500] | n=28: F   387 ( 259) meV/A, stable [500, 337] | n=34: F   353 ( 222) meV/A, stable [341, 353]
+[aimd] round 1 T=900 K: oracle-MD frames at T in [300, 900]; labels now 10
+[aimd] round 2 T=1500 K: oracle-MD frames at T in [300, 900, 1500]; labels now 16
+[aimd] round 3 T=2000 K: oracle-MD frames at T in [300, 900, 1500, 2000]; labels now 22
+[aimd] round 4 T=2500 K: oracle-MD frames at T in [300, 900, 1500, 2000, 2500]; labels now 28
+[aimd] round 5 T=2500 K: oracle-MD frames at T in [300, 900, 1500, 2000, 2500]; labels now 34
+[aimd] n= 4: F   735 ( 313) meV/A, stable [124, 144] | n=10: F   711 ( 253) meV/A, stable [196, 170] | n=16: F   579 ( 209) meV/A, stable [207, 197] | n=22: F   496 ( 201) meV/A, stable [136, 112] | n=28: F   420 ( 210) meV/A, stable [228, 191] | n=34: F   405 ( 203) meV/A, stable [235, 192]
+summary at equal labels (force RMSE on 2500 K test, meV/A; MD steps survived at 2500 K out of 500, two runs):
+  labels  4 -> qbc:   735, [124, 144] | rand:   735, [124, 144] | aimd:   735, [124, 144]
+  labels 10 -> qbc:   636, [287, 153] | rand:   669, [169, 115] | aimd:   711, [196, 170]
+  labels 16 -> qbc:   533, [137, 410] | rand:   579, [178, 187] | aimd:   579, [207, 197]
+  labels 22 -> qbc:   405, [500, 325] | rand:   438, [500, 500] | aimd:   496, [136, 112]
+  labels 28 -> qbc:   385, [381, 500] | rand:   387, [500, 337] | aimd:   420, [228, 191]
+  labels 34 -> qbc:   384, [285, 112] | rand:   353, [341, 353] | aimd:   405, [235, 192]
+oracle calls spent by the end: qbc 34, rand 34, aimd 1004
+CPU 506 s

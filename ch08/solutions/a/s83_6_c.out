@@ -1,0 +1,5 @@
+600 K frames available 3000, test uses 500, added 30 from the other 2500; overlap with test: 0
+Adam 270x300K + 30x600K, 1200 steps, seed 0: F300   105 F600   182 F1000   315 meV/A | lam_max   1208.6 | cpu 30 s  [84 s]
+Adam 270x300K + 30x600K, 1200 steps, seed 1: F300    89 F600   159 F1000   281 meV/A | lam_max    703.5 | cpu 28 s  [162 s]
+Adam 270x300K + 30x600K, 1200 steps, seed 2: F300   107 F600   188 F1000   328 meV/A | lam_max    594.2 | cpu 29 s  [254 s]
+wall 254 s

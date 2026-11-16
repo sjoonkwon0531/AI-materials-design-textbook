@@ -1,0 +1,13 @@
+rho=0.3000, P_p0=0.4399, P_fine=0.2843, dP=0.1555, A=-0.04665
+int r^2 dr = 14.2917;  int r^2 g_target dr = 14.2882 (ratio 0.9998)
+(b) g=1: dP = pi rho^2 A rc^2/6 = -0.02693;  with g_target: -0.02692
+    contribution of r<1 to int r^2 dr: 0.3333; to int r^2 g dr: 0.0006; excess of int r^2 (g-1) dr over 1<r<2: 0.5457
+linear response with fixed g_target, finalized potentials: ramp only -0.02621, IBI only -0.04174, both -0.06794
+   (finalize() vs raw: max |V_none - V| = 8.53e+00)
+  unchanged      : P_CG per seed (301,401,501,601) = [0.4437 0.4427 0.4432 0.4464], mean = 0.4440 +/- 0.0008 (sd 0.0016)
+  ramp only      : P_CG per seed (301,401,501,601) = [0.4195 0.415  0.4217 0.4238], mean = 0.4200 +/- 0.0019 (sd 0.0038)
+  IBI only       : P_CG per seed (301,401,501,601) = [0.4182 0.4089 0.4157 0.4155], mean = 0.4146 +/- 0.0020 (sd 0.0040)
+  ramp+IBI (Lab) : P_CG per seed (301,401,501,601) = [0.3892 0.3909 0.3946 0.3877], mean = 0.3906 +/- 0.0015 (sd 0.0030)
+  mean change vs unchanged: ramp only       -0.0240
+  mean change vs unchanged: IBI only        -0.0294
+  mean change vs unchanged: ramp+IBI (Lab)  -0.0534

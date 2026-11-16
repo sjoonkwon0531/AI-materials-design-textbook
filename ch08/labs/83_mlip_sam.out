@@ -1,0 +1,16 @@
+  SAM rho=0.01: val force MAE 116 meV/A  (104 s)
+  SAM rho=0.05: val force MAE 163 meV/A  (244 s)
+  SAM rho=0.2: val force MAE 753 meV/A  (375 s)
+   Adam  seed 0: E300  29.1 meV | F300  101 F600  183 F1000  332 meV/A | lam_max   1214.9 | cpu   29 s
+   Adam  seed 1: E300  25.7 meV | F300   84 F600  151 F1000  274 meV/A | lam_max    531.6 | cpu   29 s
+   Adam  seed 2: E300  27.7 meV | F300   98 F600  173 F1000  302 meV/A | lam_max    601.6 | cpu   29 s
+Adam  (rho 0) F300   94+/- 8  F600  169+/-13  F1000  302+/-24 meV/A  ratio 1000/300 3.21  lam_max 783+/-307
+   SAM   seed 0: E300  26.2 meV | F300  116 F600  213 F1000  378 meV/A | lam_max    287.2 | cpu   57 s
+   SAM   seed 1: E300  30.9 meV | F300  106 F600  195 F1000  333 meV/A | lam_max    249.0 | cpu   55 s
+   SAM   seed 2: E300  27.0 meV | F300  112 F600  197 F1000  334 meV/A | lam_max    257.0 | cpu   56 s
+SAM   (rho 0.01) F300  111+/- 4  F600  201+/- 8  F1000  348+/-21 meV/A  ratio 1000/300 3.13  lam_max 264+/-16
+   ASAM  seed 0: E300  25.9 meV | F300  109 F600  214 F1000  382 meV/A | lam_max    287.9 | cpu   53 s
+   ASAM  seed 1: E300  26.9 meV | F300  106 F600  199 F1000  356 meV/A | lam_max    289.6 | cpu   53 s
+   ASAM  seed 2: E300  28.2 meV | F300  110 F600  193 F1000  331 meV/A | lam_max    287.6 | cpu   55 s
+ASAM  (rho 0.1) F300  109+/- 2  F600  202+/- 9  F1000  356+/-21 meV/A  ratio 1000/300 3.28  lam_max 288+/-1
+wall 1147 s

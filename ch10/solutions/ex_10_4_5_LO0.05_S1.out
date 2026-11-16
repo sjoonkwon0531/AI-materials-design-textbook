@@ -1,0 +1,8 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+WARNING:root:Default dtype float32 does not match model dtype float64, converting models to float32.
+round 1 T=900 K ('perfect', 'perfect'): explore fails [None, None]; 300 candidates, dev median 0.102 max 0.173; in window [0.05,1.5): 294; labelled 6 ['perfect', 'perfect', 'perfect', 'perfect', 'perfect', 'perfect']; labels now 10
+round 2 T=1500 K ('perfect', 'perfect'): explore fails [None, None]; 300 candidates, dev median 0.125 max 0.267; in window [0.05,1.5): 295; labelled 6 ['perfect', 'perfect', 'perfect', 'perfect', 'perfect', 'perfect']; labels now 16
+round 3 T=2000 K ('perfect', 'perfect'): explore fails [None, None]; 300 candidates, dev median 0.094 max 0.253; in window [0.05,1.5): 263; labelled 6 ['perfect', 'perfect', 'perfect', 'perfect', 'perfect', 'perfect']; labels now 22
+round 4 T=2500 K ('perfect', 'perfect'): explore fails [None, 104]; 254 candidates, dev median 0.052 max 0.300; in window [0.05,1.5): 139; labelled 6 ['perfect', 'perfect', 'perfect', 'perfect', 'perfect', 'perfect']; labels now 28
+round 5 T=2500 K ('perfect', 'perfect'): explore fails [None, None]; 300 candidates, dev median 0.081 max 0.177; in window [0.05,1.5): 257; labelled 6 ['perfect', 'perfect', 'perfect', 'perfect', 'perfect', 'perfect']; labels now 34
+[LO0.05_S1_base_M3] final: labels 34 (oracle calls 34), F-RMSE 2500 K 384 meV/A (1500 K 270), 2500 K MD steps survived [285, 112]; CPU 257 s

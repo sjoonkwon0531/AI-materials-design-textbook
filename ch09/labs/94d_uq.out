@@ -1,0 +1,47 @@
+(0) residual operator on the exact solution exp(-nu k^2 t) sin k(x - ct): rms r = 2.6e-05 (rms u_t = 1.35)
+
+(1)(2) ensemble of 4: error, spread, residual (300 trajectories each, block t = 0.1..1.0)
+  set        err(member0)  err(ens)   mean sd    cover 1.96sd  cover 3.18sd   rho_S(sd,err)  rho_S(res,err)   rms res
+  cal           0.72%      0.55%   0.0017      90.2%         96.8%          0.94           0.94        0.014
+  ID            0.72%      0.56%   0.0017      90.5%         96.9%          0.94           0.93        0.015
+  low-nu        3.70%      2.74%   0.0088      92.8%         97.6%          0.85           0.95        0.048
+  high-k       27.46%     26.68%   0.0096       9.7%         15.8%          0.82           0.79        1.076
+  reaction     46.63%     46.63%   0.0015       0.6%          1.0%         -0.08           0.90        0.515
+  pooled (1200): Spearman(sd, err) = 0.09, Spearman(res, err) = 0.85; Pearson of logs: sd 0.17, res 0.95
+  detecting 'relative error > 5%' (639 of 1200): AUROC sd 0.557, residual 1.000
+    ID        error/spread =   0.8,  error/residual = 0.140  (medians)
+    low-nu    error/spread =   0.8,  error/residual = 0.228  (medians)
+    high-k    error/spread =  11.1,  error/residual = 0.115  (medians)
+    reaction  error/spread = 186.3,  error/residual = 0.574  (medians)
+
+(3) split conformal (calibration: 300 ID trajectories, nominal 90%)
+  whole-field bands |u - mu| <= q * scale for all (x, t):  local scale sd(x,t): q = 22.0;  trajectory scale rms(sd): q = 8.58
+  error-norm bounds:  ||e|| <= q ||sd||: q = 1.30;  ||e|| <= q ||r||: q = 0.195
+  set        band, local scale     band, trajectory scale   bound from spread   bound from residual
+             (coverage; half-width / rms u)                  (coverage; bound / error, median)
+  ID           89.7% (0.098)          91.7% (0.045)           90.0% ( 1.5x)        86.0% ( 1.4x)
+  low-nu       91.3% (0.474)          85.0% (0.225)           84.3% ( 1.6x)        20.7% ( 0.9x)
+  high-k        0.0% (0.429)           0.0% (0.201)            0.0% ( 0.1x)        93.7% ( 1.7x)
+  reaction      0.0% (0.054)           0.0% (0.025)            0.0% ( 0.0x)         0.0% ( 0.3x)
+
+(4) solver fallback on the pooled 1200 trajectories (mean relative error of what remains with the surrogate counted as 0 for re-solved cases)
+  fallback fraction     random    ensemble sd   PDE residual   oracle
+        0.00           19.15%      19.15%       19.15%      19.15%
+        0.10           17.44%      16.71%       15.70%      13.41%
+        0.25           14.16%      14.63%       10.45%       6.77%
+        0.50            9.04%      11.40%        0.92%       0.80%
+
+(5) cost per query u0 -> u(T), CPU-ms per trajectory (batch of 300, one thread)
+  FNO member 0: 0.125 | ensemble of 4: 0.628 | member 0 + residual (forward-mode AD): 0.627
+  FNO member 0 relative error at T: 1.42%
+  ETDRK4 n = 256, dt = 0.005 (200 steps):  18.261 ms, relative error at T 2.54e-06%
+  ETDRK4 n =  64, dt = 0.020 ( 50 steps):   1.569 ms, relative error at T 9.21e-04%
+  ETDRK4 n =  32, dt = 0.050 ( 20 steps):   0.415 ms, relative error at T 1.02e-01%
+  ETDRK4 n =  32, dt = 0.100 ( 10 steps):   0.321 ms, relative error at T 1.02e-01%
+  ETDRK4 n =  16, dt = 0.100 ( 10 steps):   0.158 ms, relative error at T 1.66e+00%
+  training set: 2000 reference solves = 38 CPU-s; training one member = 58 CPU-s
+  break-even vs reference solver (256, 5e-3)               single FNO   : speed-up  146.1x, N* = 5,265 queries
+  break-even vs reference solver (256, 5e-3)               ensemble of 4: speed-up   29.1x, N* = 15,199 queries
+  break-even vs solver at matched accuracy (n=32, dt=0.1)  single FNO   : speed-up    2.6x, N* = 487,049 queries
+  break-even vs solver at matched accuracy (n=32, dt=0.1)  ensemble of 4: speed-up    0.5x, N* = inf queries
+total 70 CPU-s

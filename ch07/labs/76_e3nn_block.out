@@ -1,0 +1,13 @@
+irreps of block outputs: ['16x0e+8x1o+8x1e', '16x0e+8x1o+8x1e']
+block 2: TP paths = 7, TP weights per edge = 1152 (from radial MLP), block params = 37760
+model parameters: 59072
+hidden features of block 2: max |h(Rx) - D(R) h(x)| = 5.3e-16  (max |h| = 0.92)
+energy:  max |E(Rx) - E(x)| = 4.4e-16 eV
+forces:  max |F(Rx) - R F(x)| = 6.9e-16 eV/A
+inversion: max |h(-x) - D(P) h(x)| = 0.0e+00, |E(-x)-E(x)| = 0.0e+00, |F(-x)+F(x)| = 0.0e+00
+translation: |dE| = 4.4e-16, |dF| = 7.2e-16
+permutation of two H: |dE| = 2.2e-16, |F_perm - P F| = 1.4e-16
+Bessel*envelope (n=1) at r = 4.5, 4.9, 4.99, 5.0 A: ['1.7e-03', '3.4e-06', '3.5e-10', '0.0e+00']
+bug (xyz labelled 4x0e): |E(Rx)-E(x)| = 1.4e-01 eV (spread of E over 4 frames 4.8e-02), |F(Rx)-R F(x)| / |F| = 0.52
+float32: |E(Rx)-E(x)| = 4.8e-07, |F(Rx)-R F(x)| = 3.6e-07
+wall 8.3 s

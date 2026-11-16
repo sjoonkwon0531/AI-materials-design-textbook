@@ -1,0 +1,25 @@
+feature pairs with |r|>0.95: 34 of 11026
+families: {'other': 1536, 'chalcogenide': 1348, 'oxide': 1048, 'pnictide': 384, 'halide': 285}
+baseline: predict training mean -> MAE = 1.143 eV
+random 5-fold (seed 0)             MAE = 0.359 eV  (fold mean 0.359 +/- 0.019)
+random 5-fold (seed 1)             MAE = 0.356 eV  (fold mean 0.356 +/- 0.022)
+random 5-fold (seed 2)             MAE = 0.360 eV  (fold mean 0.360 +/- 0.016)
+group 5-fold (chemical system)     MAE = 0.376 eV  (fold mean 0.376 +/- 0.023)
+leave-one-cluster-out (k=5)        MAE = 0.688 eV  (fold mean 0.599 +/- 0.480)
+    cluster 0: n=1255  mean gap 1.49 eV  metal 56%  top family oxide        (76%)  MAE 1.47 eV
+    cluster 1: n= 732  mean gap 0.03 eV  metal 96%  top family other        (92%)  MAE 0.07 eV
+    cluster 2: n= 914  mean gap 1.54 eV  metal 19%  top family chalcogenide (81%)  MAE 0.61 eV
+    cluster 3: n= 823  mean gap 1.28 eV  metal 9%  top family chalcogenide (53%)  MAE 0.60 eV
+    cluster 4: n= 877  mean gap 0.15 eV  metal 90%  top family other        (82%)  MAE 0.26 eV
+leave-one-cluster-out (k=10)       MAE = 0.568 eV  (fold mean 0.559 +/- 0.367)
+    cluster 0: n= 574  mean gap 1.81 eV  metal 11%  top family chalcogenide (84%)  MAE 0.62 eV
+    cluster 1: n= 499  mean gap 0.26 eV  metal 79%  top family other        (62%)  MAE 0.19 eV
+    cluster 2: n= 165  mean gap 0.69 eV  metal 74%  top family pnictide     (41%)  MAE 0.97 eV
+    cluster 3: n= 439  mean gap 1.96 eV  metal 17%  top family chalcogenide (42%)  MAE 0.82 eV
+    cluster 4: n= 557  mean gap 0.89 eV  metal 10%  top family chalcogenide (60%)  MAE 0.56 eV
+    cluster 5: n= 505  mean gap 0.08 eV  metal 90%  top family other        (82%)  MAE 0.13 eV
+    cluster 6: n= 583  mean gap 1.69 eV  metal 45%  top family oxide        (71%)  MAE 1.00 eV
+    cluster 7: n= 414  mean gap 0.23 eV  metal 84%  top family other        (84%)  MAE 0.23 eV
+    cluster 8: n= 563  mean gap 1.29 eV  metal 67%  top family oxide        (78%)  MAE 1.03 eV
+    cluster 9: n= 302  mean gap 0.01 eV  metal 100%  top family other        (95%)  MAE 0.04 eV
+wall 159 s

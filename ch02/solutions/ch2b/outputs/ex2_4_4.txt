@@ -1,0 +1,4 @@
+N=  4: nodal max err=4.44e-16  u_h(1)=1.000000 (exact 1.000000)  last-element slope=0.6250 (g=0.5)
+N= 16: nodal max err=1.11e-16  u_h(1)=1.000000 (exact 1.000000)  last-element slope=0.5312 (g=0.5)
+N= 64: nodal max err=1.28e-14  u_h(1)=1.000000 (exact 1.000000)  last-element slope=0.5078 (g=0.5)
+without g*v(1) term: u_h(1)=0.500000  -> solves u'(1)=0 problem (exact 0.500000)

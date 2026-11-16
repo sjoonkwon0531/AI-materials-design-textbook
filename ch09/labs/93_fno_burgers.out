@@ -1,0 +1,23 @@
+data: 1000 train / 200 test, nu=0.005, T=0.25; width 32, depth 4, 50 epochs, batch 20
+FNO(kmax=16) trained at s= 32 (  73 s): test rel-L2 at s=32: 0.0290  64: 0.0305  128: 0.0314  256: 0.0314  512: 0.0314
+FNO(kmax=16) trained at s= 64 (  82 s): test rel-L2 at s=32: 0.0233  64: 0.0242  128: 0.0244  256: 0.0245  512: 0.0245
+FNO(kmax=16) trained at s=128 ( 101 s): test rel-L2 at s=32: 0.0228  64: 0.0237  128: 0.0239  256: 0.0239  512: 0.0239
+FNO parameters: 145729
+  s= 32 -> 512: zero-shot 0.0314 | FNO@32 + Fourier interp 0.0568 | interp of exact coarse solution (floor) 0.0484
+  s= 64 -> 512: zero-shot 0.0245 | FNO@64 + Fourier interp 0.0284 | interp of exact coarse solution (floor) 0.0112
+  s=128 -> 512: zero-shot 0.0239 | FNO@128 + Fourier interp 0.0239 | interp of exact coarse solution (floor) 0.0009
+  rms |u_k| at k=  8: truth 3.48e-02  FNO(train 64, eval 512) 3.37e-02  error 1.17e-02
+  rms |u_k| at k= 24: truth 6.61e-03  FNO(train 64, eval 512) 5.51e-03  error 3.20e-03
+  rms |u_k| at k= 40: truth 1.89e-03  FNO(train 64, eval 512) 1.29e-03  error 1.24e-03
+  rms |u_k| at k= 64: truth 3.38e-04  FNO(train 64, eval 512) 8.14e-05  error 3.34e-04
+  rms |u_k| at k= 96: truth 3.93e-05  FNO(train 64, eval 512) 2.72e-05  error 5.37e-05
+  evaluate at 512 but feed the upsampled COARSE input: train 32: 0.0317 | train 64: 0.0244
+CNN(kernel 33 points, 137537 params) trained at s=64 (160 s): 32: 0.5569  64: 0.0387  128: 0.5611  256: 0.7142  512: 0.7668
+self-consistency of FNO(train 64): ||G(a_s)|_64 - G(a_64)|| / ||G(a_64)||  s=128: 0.0013  s=512: 0.0013
+  band-limited input (|k|<8), grid s vs grid 512: s=32: 1.6e-03  s=64: 3.7e-06  s=128: 1.5e-07
+mean conservation |mean(pred) - mean(u0)|: mean 3.20e-03, max 6.33e-02  (solver: 1e-15)
+cost per sample: FNO forward (s=64) 0.256 ms | reference solver N=512, dt=5e-4: 31.2 ms
+   coarse solver N= 64, dt=2.50e-03: 0.86 ms, rel-L2 at 512 (after Fourier interpolation) 0.0268
+   coarse solver N= 96, dt=1.25e-03: 2.33 ms, rel-L2 at 512 (after Fourier interpolation) 0.0091
+   coarse solver N=128, dt=1.25e-03: 2.34 ms, rel-L2 at 512 (after Fourier interpolation) 0.0039
+wall 435 s (CPU 176 s)

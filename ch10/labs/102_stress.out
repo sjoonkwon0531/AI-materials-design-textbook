@@ -1,0 +1,15 @@
+(A) stress: autodiff vs central finite differences (h = 1e-4), test cell 0
+  MACE-MP-0 : sigma_xx  -0.9063 GPa (AD)  -0.9063 (FD); max |AD-FD| over 9 components = 5.3e-07 GPa
+  EqNet     : max |AD-FD| = 1.5e-09 GPa  (symmetric: max|S-S^T| = 0.0e+00 GPa)
+  oracle stress over test cells: mean |sigma_ab| = 3.21 GPa
+(B) what the labels buy (test: 200 cells; E in meV/atom, F in meV/A)
+  E only                 N= 10 | E MAE    28.1 (offset   +17.4, after shift  25.1) | F MAE   792 | S MAE  2.63 GPa | cpu   19 s
+  E+F                    N= 10 | E MAE     8.8 (offset    +3.0, after shift   8.3) | F MAE    63 | S MAE  0.95 GPa | cpu   25 s
+  E only                 N= 40 | E MAE    11.3 (offset    +4.7, after shift  12.1) | F MAE   285 | S MAE  0.99 GPa | cpu   19 s
+  E+F                    N= 40 | E MAE    17.8 (offset    +4.6, after shift  17.4) | F MAE    51 | S MAE  2.16 GPa | cpu   24 s
+  E only                 N=160 | E MAE     8.4 (offset    +1.8, after shift   8.7) | F MAE   218 | S MAE  0.88 GPa | cpu   18 s
+  E+F                    N=160 | E MAE    18.8 (offset    +1.8, after shift  18.8) | F MAE    59 | S MAE  2.37 GPa | cpu   27 s
+  F only                 N=160 | E MAE   306.1 (offset  -306.1, after shift  34.6) | F MAE    51 | S MAE  4.14 GPa | cpu   26 s
+  E+F, F noise 0.2 eV/A  N=160 | E MAE    14.0 (offset    +2.7, after shift  13.8) | F MAE    56 | S MAE  1.92 GPa | cpu   24 s
+  E+F+S                  N= 40 | E MAE     2.4 (offset    -0.1, after shift   2.4) | F MAE    47 | S MAE  0.40 GPa | cpu   27 s
+  labels per 8-atom cell: energy 1, forces 24, stress 6 -> E+F carries 25x the scalars of E only

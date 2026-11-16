@@ -1,0 +1,23 @@
+orientation of raw frames relative to frame 0 (Kabsch on C,C,O): median 130 deg, 5-95% 34-173 deg
+Transformer, raw frames      params  72833  (229 s)
+MLP(xyz), canonical          params  20225  (51 s)
+Transformer, canonical       params  72833  (301 s)
+Transformer, canonical +aug  params  72833  (250 s)
+SchNet, raw frames           params  18337  (306 s)
+
+model                          E MAE   F MAE | rotated test: E       F | |E(Qx)-E(x)| |F(Qx)-QF(x)|
+Transformer, raw frames        203.5   716.0 |           172.1   717.6 |        171.9         125.1
+MLP(xyz), canonical             73.1   523.7 |         16394.2  3204.5 |      16398.4        3141.5
+Transformer, canonical          97.1   391.7 |          8922.0  1253.3 |       8891.5        1187.0
+Transformer, canonical +aug    119.7   702.8 |           122.4   703.9 |         68.5          95.9
+SchNet, raw frames              25.1    71.3 |            25.1    71.4 |          0.0           0.0
+units: meV (energy per molecule) and meV/A; test = 800 later frames (in each model's own frame convention); rotated = one uniform random rotation per test frame; baseline (zero force) F MAE = 712 meV/A
+val F MAE vs step Transformer, raw frames     : 100:741  500:743  1000:741  2000:740  3000:738
+val F MAE vs step MLP(xyz), canonical         : 100:738  500:728  1000:638  2000:542  3000:528
+val F MAE vs step Transformer, canonical      : 100:738  500:734  1000:725  2000:503  3000:394
+val F MAE vs step Transformer, canonical +aug : 100:737  500:737  1000:739  2000:736  3000:729
+val F MAE vs step SchNet, raw frames          : 100:259  500:131  1000:103  2000:80  3000:72
+sweep Transformer, canonical      : F MAE at 0/15/45/90/180 deg = 392 / 1133 / 1426 / 1158 / 1230 meV/A
+sweep Transformer, canonical +aug : F MAE at 0/15/45/90/180 deg = 703 / 699 / 703 / 713 / 702 meV/A
+sweep SchNet, raw frames          : F MAE at 0/15/45/90/180 deg = 71 / 71 / 71 / 71 / 71 meV/A
+wall 1174 s

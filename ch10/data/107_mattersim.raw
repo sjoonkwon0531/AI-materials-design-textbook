@@ -1,0 +1,21 @@
+[32m2026-10-24 13:32:03.229[0m | [1mINFO    [0m | [36mmattersim.forcefield.potential[0m:[36mfrom_checkpoint[0m:[36m873[0m - [1mLoading the pre-trained mattersim-v1.0.0-1M.pth model[0m
+=== MatterSim-v1.0.0-1M  (890,034 parameters, float32) ===
+  EOS: a0 = 3.9454 A, B = 168.4 GPa   (exp a = 3.905 A; PBE/VASP 3.944 A)
+  phonons at a = 3.9454 A (own), 3 displaced 40-atom supercells, CPU 0.7 s
+     G: 128i 128i 128i -0 -0 0  ... max 504 cm-1
+     X: 46i 46i 98 98 154 157  ... max 691 cm-1
+     M: 32 42 95 106 106 249  ... max 764 cm-1
+     R: 63i 63i 63i 125 125 125  ... max 793 cm-1
+  phonons at a = 3.9440 A (pbe), 3 displaced 40-atom supercells, CPU 0.7 s
+     G: 126i 126i 126i -0 0 0  ... max 505 cm-1
+     X: 39i 39i 98 98 155 158  ... max 692 cm-1
+     M: 32 47 95 106 106 249  ... max 765 cm-1
+     R: 64i 64i 64i 125 125 125  ... max 794 cm-1
+  phonons at a = 3.9050 A (exp), 3 displaced 40-atom supercells, CPU 0.7 s
+     G: 34i 34i 34i -0 0 0  ... max 536 cm-1
+     X: 107 107 108 108 164 168  ... max 730 cm-1
+     M: 22i 104 110 116 116 259  ... max 805 cm-1
+     R: 78i 78i 78i 135 135 135  ... max 832 cm-1
+  rigid a0a0c- tilt at a0: min -2.06 meV/f.u. at 4.0 deg; E(10 deg) = +52.3 meV/f.u.
+  relaxed tilt (I4/mcm, 10 steps, CPU 9.7 s): phi = 4.06 deg, dE = -2.32 meV/f.u., cell 7.8794 7.8794 7.9042 A, c/a(pseudo) = 1.00315
+  CPU per 40-atom energy+force call (median of 5): 226 ms; total CPU of this script 26 s

@@ -1,0 +1,12 @@
+linear case (beta = rho = 0): max |u - exact| at T = 1: 9.4e-15
+pre   : |u(dt=1e-2) - u(5e-3)| = 5.5e-09, |u(5e-3) - u(2.5e-3)| = 3.4e-10 (ratio 16.0); |u_256 - u_512| = 2.2e-16
+react : |u(dt=1e-2) - u(5e-3)| = 8.9e-08, |u(5e-3) - u(2.5e-3)| = 5.7e-09 (ratio 15.4); |u_256 - u_512| = 6.2e-13
+lownu : |u(dt=1e-2) - u(5e-3)| = 5.4e-07, |u(5e-3) - u(2.5e-3)| = 3.5e-08 (ratio 15.5); |u_256 - u_512| = 5.3e-08
+pre_train    N = 2000  kind = pre    {}                       max|u| = 1.29  cpu  38.6 s  wall  88.7 s
+pre_cal      N =  300  kind = pre    {}                       max|u| = 1.25  cpu   5.8 s  wall  14.8 s
+pre_test     N =  300  kind = pre    {}                       max|u| = 1.28  cpu   5.6 s  wall  14.4 s
+lownu_test   N =  300  kind = lownu  {}                       max|u| = 1.28  cpu   5.6 s  wall  14.2 s
+react_train  N =  256  kind = react  {}                       max|u| = 1.28  cpu   5.0 s  wall  14.4 s
+react_test   N =  300  kind = react  {}                       max|u| = 1.22  cpu   5.5 s  wall  13.9 s
+highk_test   N =  300  kind = pre    {'kmax': 10, 'amp': 1.5} max|u| = 1.74  cpu   5.1 s  wall  10.5 s
+solver cost: 19.0 CPU-ms per trajectory (batched, 256 points, 200 steps); total 71 CPU-s for 3756 trajectories

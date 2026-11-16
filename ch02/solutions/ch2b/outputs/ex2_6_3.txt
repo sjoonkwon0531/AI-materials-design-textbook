@@ -1,0 +1,8 @@
+dx=0.04909, k_max(1D)=64.0, |k|^2_max(2D corner)=8192
+theory c~0 (f''=-1): dt_max = 2/max|sigma| = 3.017e-06
+theory c~+-1 (f''=2): dt_max = 2/max|sigma| = 2.909e-06
+scaling forms: dx^4/eps^2 = 5.806e-04;  dx^4/(pi^4 eps^2) = 5.960e-06;  2D corner 2/(eps^2 (2 pi^2/dx^2)^2) = dx^4/(2 pi^4 eps^2) = 2.980e-06
+measured explicit limit from noise (t=0): dt_crit in [3.012e-06, 3.025e-06] (4000-step test)
+   semi-implicit dt=0.05 / dt_crit = 16,598x ;  explicit steps to T=400: 1.33e+08
+measured explicit limit from phase-separated (t=40 state): dt_crit in [2.925e-06, 2.938e-06] (4000-step test)
+   semi-implicit dt=0.05 / dt_crit = 17,094x ;  explicit steps to T=400: 1.37e+08

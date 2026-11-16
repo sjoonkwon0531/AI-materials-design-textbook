@@ -1,0 +1,10 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+model: MACE-MP-0 (small) 3847696
+CHGNet v0.3.0 initialized with 412,525 parameters
+CHGNet will run on cpu
+
+=== Part C: pre-relax with MACE, finish with the reference (CHGNet 0.3.0 as the stand-in for DFT) ===
+  SrTiO3 free, rattled  : reference calls from raw start  21 | MACE calls  19 then reference calls   5 | final E difference -0.06 meV
+  Si vacancy 63 atoms   : reference calls from raw start  15 | MACE calls  22 then reference calls  17 | final E difference -0.06 meV
+
+CPU total 53.5 s

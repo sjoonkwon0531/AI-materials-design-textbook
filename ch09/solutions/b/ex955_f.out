@@ -1,0 +1,5 @@
+[f] 924,749 real parameters, 4000 pairs
+[f] epoch 1: train loss 0.0382 | CPU 52 s
+[f] epoch 2: train loss 0.0076 | CPU 103 s
+[f] epoch 3: train loss 0.0048 | CPU 155 s
+[f] epoch 4: train loss 0.0038 | CPU 206 s

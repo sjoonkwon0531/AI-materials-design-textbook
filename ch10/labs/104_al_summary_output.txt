@@ -1,0 +1,10 @@
+labels | force RMSE 2500 K, mean of 2 seeds (meV/A) | stable MD steps at 2500 K, mean of 4 runs (min-max)
+   4  | qbc  632, 121 (89-144) | rand  632, 121 (89-144) | aimd  632, 121 (89-144)
+  10  | qbc  630, 196 (141-287) | rand  634, 176 (115-281) | aimd  649, 186 (140-236)
+  16  | qbc  559, 225 (116-410) | rand  600, 143 (83-187) | aimd  611, 167 (111-207)
+  22  | qbc  408, 376 (179-500) | rand  438, 379 (210-500) | aimd  564, 112 (100-136)
+  28  | qbc  399, 427 (328-500) | rand  390, 361 (280-500) | aimd  408, 188 (158-228)
+  34  | qbc  392, 349 (112-500) | rand  360, 424 (341-500) | aimd  389, 202 (186-235)
+qbc: rounds with 22-34 labels, 6 of 12 MD runs reached 500 steps; mean 384 steps
+rand: rounds with 22-34 labels, 5 of 12 MD runs reached 500 steps; mean 388 steps
+aimd: rounds with 22-34 labels, 0 of 12 MD runs reached 500 steps; mean 168 steps

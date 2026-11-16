@@ -1,0 +1,5 @@
+pretrained (zero-shot): target-test error 46.63 %, rms residual 0.516
+  residual only, 400 steps (0 labels)    target-test error  15.38 +- 0.48 %   rms residual 0.206   (21 CPU-s per run)
+  residual only, 1600 steps (0 labels)   target-test error   7.52 +- 0.17 %   rms residual 0.111   (82 CPU-s per run)
+  residual + K = 16 labels, 400 steps    target-test error  15.05 +- 0.80 %   rms residual 0.218   (30 CPU-s per run)
+  ID-test error after 1600 residual-only steps (seed 0): 32.19 %

@@ -1,0 +1,4 @@
+wide fraction of raw query coords outside [0,1]: 0.077 | mean |L| diag 0.272 | corner fraction (all 3 coords clamped) 0.002
+narrow fraction of raw query coords outside [0,1]: 0.028 | mean |L| diag 0.227 | corner fraction (all 3 coords clamped) 0.000
+wide max |x_normal - x_blind| = 4.08e-01, mean = 2.19e-02 | sd of observed y within a run (narrow test): median 0.048
+narrow max |x_normal - x_blind| = 2.25e-02, mean = 2.12e-03 | sd of observed y within a run (narrow test): median 0.044

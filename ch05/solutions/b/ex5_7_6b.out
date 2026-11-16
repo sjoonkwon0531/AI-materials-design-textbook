@@ -1,0 +1,6 @@
+numba 0.67.0, threads 2
+B= 1: prange  18.0 ns/update (  55.6 Mupd/s), serial  18.0 ns/update, parallel speed-up x1.00
+B= 2: prange   9.8 ns/update ( 102.4 Mupd/s), serial  16.2 ns/update, parallel speed-up x1.65
+B= 4: prange   9.5 ns/update ( 105.3 Mupd/s), serial  16.7 ns/update, parallel speed-up x1.76
+B= 8: prange   9.5 ns/update ( 105.5 Mupd/s), serial  16.9 ns/update, parallel speed-up x1.78
+B=16: prange   9.5 ns/update ( 104.9 Mupd/s), serial  17.3 ns/update, parallel speed-up x1.81

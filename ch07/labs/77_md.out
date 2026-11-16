@@ -1,0 +1,13 @@
+NVE, dt 0.5 fs, 4000 steps (2.0 ps), start: 300 K test frame 2200 + MB(300 K, seed 0) velocities, P = L = 0
+model              status                      drift std(Etot)   max|L|      <T> | bond mean (W1 vs xTB) [A]
+xTB                stable                   -1.86 meV/ps   1.32 meV   0.0001    333 K | O-H 0.969 (0.000)  C-C 1.535 (0.000)  C-O 1.413 (0.000)  [cpu 12 s]
+xTB_seed1          stable                   -1.16 meV/ps   1.10 meV   0.0001    340 K | O-H 0.966 (0.017)  C-C 1.535 (0.003)  C-O 1.414 (0.005)  [cpu 12 s]
+mlp_N1000          UNSTABLE at 0.01 ps        nan meV/ps   0.20 meV   0.3937    477 K | O-H 1.044 (0.076)  C-C 1.472 (0.066)  C-O 1.424 (0.017)  [cpu 0 s]
+mlp_aug_N1000      UNSTABLE at 0.02 ps        nan meV/ps   0.00 meV   0.0912    230 K | O-H 1.198 (0.229)  C-C 1.453 (0.082)  C-O 1.410 (0.021)  [cpu 0 s]
+mlp_frame_N1000    UNSTABLE at 0.03 ps        nan meV/ps   0.24 meV   0.0000    255 K | O-H 1.088 (0.119)  C-C 1.430 (0.106)  C-O 1.438 (0.026)  [cpu 0 s]
+schnet_N1000       stable                   -0.09 meV/ps   0.61 meV   0.0000    326 K | O-H 0.967 (0.005)  C-C 1.536 (0.003)  C-O 1.415 (0.012)  [cpu 18 s]
+nequip_N1000       stable                    0.03 meV/ps   0.67 meV   0.0000    318 K | O-H 0.968 (0.004)  C-C 1.535 (0.007)  C-O 1.414 (0.003)  [cpu 70 s]
+schnet_N100        stable                   -0.09 meV/ps   0.79 meV   0.0000    296 K | O-H 0.968 (0.003)  C-C 1.534 (0.005)  C-O 1.416 (0.017)  [cpu 18 s]
+nequip_N100        stable                   -0.15 meV/ps   1.01 meV   0.0000    323 K | O-H 0.968 (0.002)  C-C 1.536 (0.006)  C-O 1.417 (0.008)  [cpu 72 s]
+schnet_N1000_long  stable                   -0.05 meV/ps   0.94 meV   0.0000    327 K | O-H 0.970 (0.004)  C-C 1.534 (0.002)  C-O 1.413 (0.008)  [cpu 18 s]
+nequip_N1000_long  stable                    0.08 meV/ps   0.56 meV   0.0000    324 K | O-H 0.966 (0.013)  C-C 1.536 (0.002)  C-O 1.415 (0.010)  [cpu 70 s]

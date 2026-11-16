@@ -1,0 +1,2 @@
+N=1000 schnet  6000 steps | 300K: E   9.4 meV F   34 meV/A | 600K F   79 | 1000K F  188 | cpu  146 s
+N=1000 nequip  6000 steps | 300K: E  19.1 meV F   60 meV/A | 600K F  109 | 1000K F  206 | cpu  534 s

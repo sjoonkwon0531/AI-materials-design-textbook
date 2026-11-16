@@ -1,0 +1,32 @@
+=== strain off: N=400 cells; E/atom std 18.1 meV
+   ordered    cells with 0.3<x<0.7: n=50, mean E/atom 29.2 meV
+   random     cells with 0.3<x<0.7: n=49, mean E/atom 41.9 meV
+   segregated cells with 0.3<x<0.7: n=53, mean E/atom 57.7 meV
+   x=0.5 cells: E/atom from 8.6 to 72.1 meV (n=7)
+   SOAP per atom: 390 dims, 3.9 ms per 32-atom cell
+   baseline (predict mean)                      MAE  14.08 meV/atom
+   composition, cubic ridge                     MAE   7.72 meV/atom
+   composition, RBF-KRR                         MAE   7.55 meV/atom
+   + NN pair fractions (hand-built), ridge      MAE   3.17 meV/atom
+   SOAP, DScribe average='inner', ridge         MAE   6.38 meV/atom
+   SOAP, DScribe average='inner', RBF-KRR       MAE   6.56 meV/atom
+   SOAP, power spectra averaged ('outer'), ridge MAE   0.27 meV/atom
+   SOAP summed per centre species, ridge        MAE   0.08 meV/atom
+=== strain +-2%: N=400 cells; E/atom std 22.9 meV
+   SOAP per atom: 390 dims, 2.7 ms per 32-atom cell
+   baseline (predict mean)                      MAE  17.29 meV/atom
+   composition + volume, cubic ridge            MAE  12.44 meV/atom
+   composition + volume, RBF-KRR                MAE   8.68 meV/atom
+   + NN pair fractions (hand-built), ridge      MAE   8.26 meV/atom
+   SOAP, DScribe average='inner', ridge         MAE   7.35 meV/atom
+   SOAP, DScribe average='inner', RBF-KRR       MAE   7.59 meV/atom
+   SOAP, power spectra averaged ('outer'), ridge MAE   0.88 meV/atom
+   SOAP summed per centre species, ridge        MAE   0.21 meV/atom
+learning curve (strain off; 80 held-out cells; 5 random draws):
+   n_train= 10  composition 8.82+/-3.09   SOAP(centre-resolved) 4.65+/-1.31 meV/atom
+   n_train= 20  composition 8.25+/-1.18   SOAP(centre-resolved) 3.91+/-0.55 meV/atom
+   n_train= 40  composition 8.88+/-1.22   SOAP(centre-resolved) 1.70+/-0.34 meV/atom
+   n_train= 80  composition 7.72+/-0.98   SOAP(centre-resolved) 0.64+/-0.12 meV/atom
+   n_train=160  composition 8.33+/-0.30   SOAP(centre-resolved) 0.21+/-0.04 meV/atom
+   n_train=320  composition 7.56+/-0.73   SOAP(centre-resolved) 0.08+/-0.01 meV/atom
+wall 191 s

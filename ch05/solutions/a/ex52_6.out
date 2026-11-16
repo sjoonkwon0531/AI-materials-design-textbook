@@ -1,0 +1,25 @@
+=== 2D, beta_c = 0.4406868, Wolff runs as in the 2D FSS lab ===
+  L=  8: dU4/dbeta =   1.3978 +/- 0.0107   (reweighting finite difference   1.3978)
+  L= 16: dU4/dbeta =   2.7839 +/- 0.0279   (reweighting finite difference   2.7839)
+  L= 32: dU4/dbeta =   5.5150 +/- 0.1262   (reweighting finite difference   5.5150)
+  L= 64: dU4/dbeta =  11.4248 +/- 0.3336   (reweighting finite difference  11.4253)
+  fit L >=  8: 1/nu = 1.0005 +/- 0.0107  (chi2/dof = 0.51)
+  fit L >= 16: 1/nu = 1.0105 +/- 0.0200  (chi2/dof = 0.66)
+  fit L >= 32: 1/nu = 1.0508 +/- 0.0535  (chi2/dof = 0.00)
+  2D time 31 s
+=== 3D, beta0 = 0.2216546, Wolff runs as in the 3D FSS lab ===
+  L=  6: dU4/dbeta =   11.6287 +/- 0.1027
+  L=  8: dU4/dbeta =   18.7692 +/- 0.2407
+  L= 12: dU4/dbeta =   35.6288 +/- 0.7370
+  L= 16: dU4/dbeta =   59.6629 +/- 0.6538
+  L= 24: dU4/dbeta =  109.7050 +/- 2.5455
+  L= 32: dU4/dbeta =  174.1398 +/- 7.1334
+  fit L >=  6 (6 sizes): 1/nu = 1.6424 +/- 0.0114  (chi2/dof = 2.17)   bootstrap 1.5874
+  fit L >=  8 (5 sizes): 1/nu = 1.6308 +/- 0.0183  (chi2/dof = 2.67)   bootstrap 1.5874
+  fit L >= 12 (4 sizes): 1/nu = 1.6002 +/- 0.0361  (chi2/dof = 3.52)   bootstrap 1.5874
+  fit L >= 16 (3 sizes): 1/nu = 1.5246 +/- 0.0463  (chi2/dof = 0.27)   bootstrap 1.5874
+  fit L >= 24 (2 sizes): 1/nu = 1.6062 +/- 0.1636  (chi2/dof = 0.00)   bootstrap 1.5874
+  successive pairs: (6,8): 1.664, (8,12): 1.581, (12,16): 1.792, (16,24): 1.502, (24,32): 1.606
+  2D successive pairs: (8,16): 0.994, (16,32): 0.986, (32,64): 1.051
+  3D fit with correction (omega=0.83): 1/nu = 1.537 +/- 0.063, B = -0.78
+  3D time 282 s

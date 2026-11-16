@@ -1,0 +1,8 @@
+P1 diag / : 5-point stencil -> {(-1, 0): np.float64(-1.0), (0, -1): np.float64(-1.0), (0, 0): np.float64(4.0), (0, 1): np.float64(-1.0), (1, 0): np.float64(-1.0)}
+P1 diag \ : 5-point stencil -> {(-1, 0): np.float64(-1.0), (0, -1): np.float64(-1.0), (0, 0): np.float64(4.0), (0, 1): np.float64(-1.0), (1, 0): np.float64(-1.0)}
+Q1        : 9-point stencil -> {(-1, -1): np.float64(-0.333333333333), (-1, 0): np.float64(-0.333333333333), (-1, 1): np.float64(-0.333333333333), (0, -1): np.float64(-0.333333333333), (0, 0): np.float64(2.666666666667), (0, 1): np.float64(-0.333333333333), (1, -1): np.float64(-0.333333333333), (1, 0): np.float64(-0.333333333333), (1, 1): np.float64(-0.333333333333)}
+equilateral: {'centre': np.float64(3.464102), 'nbr0': np.float64(-0.57735), 'nbr1': np.float64(-0.57735), 'nbr2': np.float64(-0.57735), 'nbr3': np.float64(-0.57735), 'nbr4': np.float64(-0.57735), 'nbr5': np.float64(-0.57735)}  (1/sqrt3 = 0.57735 )
+right-isosceles hypotenuse edge: -(cot90+cot90)/2 = 0.0 ; leg edge: -(cot45+cot45)/2 = -1.0
+n=  8: nodal max err FDM=1.295e-02   P1(consistent load)=1.288e-02
+n= 16: nodal max err FDM=3.219e-03   P1(consistent load)=3.214e-03
+n= 32: nodal max err FDM=8.036e-04   P1(consistent load)=8.033e-04

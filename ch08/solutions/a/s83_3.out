@@ -1,0 +1,16 @@
+n: train 2615 (of which val 326), ID test 653, OOD oxide 1048, halide 285
+mean gap: train 0.726  ID 0.738  oxide 1.541  halide 1.732 eV; metals in train 53%
+8.3.2(c) lambda_max restricted to all      :    26.116
+8.3.2(c) lambda_max restricted to W1,b1    :    12.512
+8.3.2(c) lambda_max restricted to W2       :     4.819
+8.3.2(c) lambda_max restricted to b2,W3,b3 :    11.990
+8.3.2(c) top eigvec weight: W1,b1 0.429  W2 0.179  b2,W3,b3 0.392
+   a=4.0: predicted by block scaling: 16*lam(W2)=77.1
+   a=0.25: 16*lam(W1,b1)=200.2
+[8 s]
+B=   32 lr=5.0e-04 epochs=  30.6 | train MSE 0.0442+/-0.0014 (MAE 0.114) | lam_max   38.2+/- 2.4 | lam(THT) 0.105 | ID 0.267+/-0.004 | oxide 1.892+/-0.091 | cpu 10 s
+B=   64 lr=1.0e-03 epochs=  61.2 | train MSE 0.0103+/-0.0002 (MAE 0.051) | lam_max   29.5+/- 2.4 | lam(THT) 0.100 | ID 0.261+/-0.004 | oxide 1.992+/-0.200 | cpu 10 s
+B=  256 lr=4.0e-03 epochs= 244.7 | train MSE 0.0029+/-0.0010 (MAE 0.015) | lam_max   22.1+/- 0.9 | lam(THT) 0.115 | ID 0.259+/-0.005 | oxide 2.006+/-0.141 | cpu 15 s
+B= 1024 lr=1.6e-02 epochs= 979.0 | train MSE 1.0081+/-0.0002 (MAE 0.850) | lam_max    2.0+/- 0.0 | lam(THT) 1.052 | ID 0.850+/-0.001 | oxide 1.622+/-0.000 | cpu 34 s
+B= 1024 lr=4.0e-03 (control) | train MSE 0.0013 | lam_max 31.8+/-1.2 | ID 0.259 | oxide 2.220
+wall 276 s

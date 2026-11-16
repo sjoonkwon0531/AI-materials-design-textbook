@@ -1,0 +1,13 @@
+=== Part A: L2 gradient boosting, depth-2 trees, nu=0.1, n=200, noise sd=0.25 (var 0.0625) ===
+  M=  1: train MSE = 0.2649   test MSE (n=2000) = 0.2925
+  M= 10: train MSE = 0.0931   test MSE (n=2000) = 0.1203
+  M= 50: train MSE = 0.0400   test MSE (n=2000) = 0.0702
+  M=100: train MSE = 0.0337   test MSE (n=2000) = 0.0713
+  M=200: train MSE = 0.0229   test MSE (n=2000) = 0.0754
+  M=500: train MSE = 0.0084   test MSE (n=2000) = 0.0865
+  best test MSE 0.0701 at M=51
+=== Part B: one XGBoost stump on expt_gap (n=4601), squared loss, lambda=1, eta=1 ===
+  root split chosen by XGBoost: MagpieData mean NpValence < 1.7217
+  left : n=1779  G=  1497.82  H=  1779  -G/(H+lam)=-0.84147   xgboost leaf=-0.84147
+  right: n=2822  G= -1497.82  H=  2822  -G/(H+lam)=+0.53058   xgboost leaf=+0.53058
+  gain by hand GL^2/(HL+lam)+GR^2/(HR+lam)-G^2/(H+lam) = 2055.093   xgboost root gain = 2055.093

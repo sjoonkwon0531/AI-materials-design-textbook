@@ -1,0 +1,7 @@
+phi_dot  = 2*x(t)*Derivative(x(t), t) + 2*y(t)*Derivative(y(t), t)
+phi_ddot = -2*g*y(t) - 2*lam*x(t)**2 - 2*lam*y(t)**2 + 2*Derivative(x(t), t)**2 + 2*Derivative(y(t), t)**2
+lambda   = (-g*y(t) + Derivative(x(t), t)**2 + Derivative(y(t), t)**2)/(x(t)**2 + y(t)**2)
+lambda(X,Y,vx,vy) = (-Y*g + vx**2 + vy**2)/(X**2 + Y**2)
+at bottom (0,-1), speed v: g + v**2
+released from horizontal, at bottom: lambda = 3*g
+numeric (g=9.81): 29.43

@@ -1,0 +1,15 @@
+=== (A) Estimate: 1 ms of MD at dt = 1 fs ===
+  steps needed = 1e+12
+  this machine, N=256 LJ (numba, O(N^2) pair loop, 1 core): 0.224 ms per force call = 4465 steps/s
+  -> 1e12 steps would take 7 years for this 256-atom box
+  optimistic O(N) extrapolation, N=1e+04: 2.8e+02 years on one core
+  optimistic O(N) extrapolation, N=1e+06: 2.8e+04 years on one core
+=== (B) Mori-Zwanzig in miniature: dx/dt = -a x + b y, dy/dt = c x - g y; eliminate y ===
+  g/a =   0.5 (fast/slow rate ratio): max|x_exact - x_Markov| = 3.13e-01;  with memory kernel: 9.2e-12
+  g/a =   2.0 (fast/slow rate ratio): max|x_exact - x_Markov| = 7.52e-02;  with memory kernel: 6.4e-12
+  g/a =  10.0 (fast/slow rate ratio): max|x_exact - x_Markov| = 6.49e-03;  with memory kernel: 7.3e-12
+  g/a =  50.0 (fast/slow rate ratio): max|x_exact - x_Markov| = 3.48e-04;  with memory kernel: 2.1e-11
+=== (C) Rare event: harmonic-TST rate k = nu exp(-Ea/kT), nu = 1e13 1/s, T = 300 K ===
+  Ea = 0.3 eV: Ea/kT = 11.6, k = 9.12e+07 1/s, mean waiting time = 1.10e-08 s = 1.1e+07 MD steps of 1 fs
+  Ea = 0.5 eV: Ea/kT = 19.3, k = 3.98e+04 1/s, mean waiting time = 2.51e-05 s = 2.5e+10 MD steps of 1 fs
+  Ea = 0.8 eV: Ea/kT = 30.9, k = 3.64e-01 1/s, mean waiting time = 2.75e+00 s = 2.8e+15 MD steps of 1 fs

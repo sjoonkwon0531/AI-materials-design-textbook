@@ -1,0 +1,19 @@
+training rows 4352, global batch 256 = 2 ranks x 128, 4 epochs
+--- MLP 149-128-128-1 (35841 parameters), AdamW lr 1e-3 ---
+rank-local gradient norms (layer 1, first batch): rank0 0.1885, rank1 0.1715
+DDP gradient - mean of local gradients: max |diff| = 0.0e+00
+after training: max |theta_rank0 - theta_rank1| = 0.0e+00
+after training: max |theta_DDP - theta_single(global batch)| = 4.9e-07  (max |theta| = 0.16)
+wall: single process 1.06 s (16352 samples/s) | DDP 2 procs 2.18 s (7986 samples/s) | speed-up 0.49
+--- MLP 149-128-128-1 (35841 parameters), SGD lr 0.05 momentum 0.9 ---
+rank-local gradient norms (layer 1, first batch): rank0 0.1885, rank1 0.1715
+DDP gradient - mean of local gradients: max |diff| = 0.0e+00
+after training: max |theta_rank0 - theta_rank1| = 0.0e+00
+after training: max |theta_DDP - theta_single(global batch)| = 1.0e-07  (max |theta| = 0.45)
+wall: single process 0.74 s (23489 samples/s) | DDP 2 procs 1.86 s (9360 samples/s) | speed-up 0.40
+--- MLP 149-1024-1024-1 (1204225 parameters), AdamW lr 1e-3 ---
+rank-local gradient norms (layer 1, first batch): rank0 0.2125, rank1 0.2334
+DDP gradient - mean of local gradients: max |diff| = 0.0e+00
+after training: max |theta_rank0 - theta_rank1| = 0.0e+00
+after training: max |theta_DDP - theta_single(global batch)| = 6.3e-06  (max |theta| = 0.13)
+wall: single process 10.23 s (1702 samples/s) | DDP 2 procs 16.63 s (1047 samples/s) | speed-up 0.61

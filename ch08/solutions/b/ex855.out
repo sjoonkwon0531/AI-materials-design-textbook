@@ -1,0 +1,13 @@
+label sd 1.402; NN distance between training runs (action units): median 0.285, max 0.445
+seed 0 done (20 s)
+seed 1 done (35 s)
+seed 2 done (46 s)
+seed 3 done (57 s)
+seed 4 done (68 s)
+model        d_max  pred J         true J          gap dist[au]      T range
+AdamW          0.2   -0.12   -2.96+/-0.87   2.84+/-1.85    0.201   677- 727 K | per seed true J -2.88 -2.91 -2.32 -2.29 -4.43
+AdamW          0.5    1.56   -4.22+/-1.54   5.79+/-3.38    0.493   673- 746 K | per seed true J -3.74 -3.90 -3.04 -3.52 -6.91
+AdamW          1.0    4.15  -12.72+/-8.62  16.87+/-11.60    0.980   652- 775 K | per seed true J -10.55 -11.30 -5.70 -8.40 -27.63
+SAM rho=0.2    0.2   -1.41   -2.44+/-0.36   1.03+/-0.42    0.191   665- 713 K | per seed true J -2.18 -2.16 -2.18 -2.81 -2.85
+SAM rho=0.2    0.5   -0.57   -4.15+/-0.64   3.58+/-0.64    0.498   668- 751 K | per seed true J -3.89 -3.87 -4.00 -5.27 -3.71
+SAM rho=0.2    1.0    0.71  -16.33+/-5.44  17.04+/-5.48    0.996   644- 789 K | per seed true J -8.78 -15.95 -19.15 -23.37 -14.38

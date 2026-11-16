@@ -1,0 +1,9 @@
+[big] params 61505, epochs 400, training frames at steps [np.int64(21), np.int64(22), np.int64(25), np.int64(28), np.int64(39), np.int64(47), np.int64(52), np.int64(53), np.int64(71), np.int64(75), np.int64(82), np.int64(83), np.int64(85), np.int64(87), np.int64(90), np.int64(92), np.int64(100), np.int64(102), np.int64(103), np.int64(107), np.int64(117), np.int64(119), np.int64(128), np.int64(129)]
+  training frames    ( 24 frames): F-RMSE   93.2 meV/A, E-RMSE   1.86 meV/atom
+  gap 2-4 fs         ( 51 frames): F-RMSE   93.8 meV/A, E-RMSE   1.78 meV/atom
+  gap 6-10 fs        ( 32 frames): F-RMSE   96.9 meV/A, E-RMSE   1.68 meV/atom
+  gap 12-20 fs       ( 12 frames): F-RMSE  100.0 meV/A, E-RMSE   1.17 meV/atom
+  gap 22-40 fs       ( 10 frames): F-RMSE  114.7 meV/A, E-RMSE   2.01 meV/atom
+  gap >= 42 fs       ( 51 frames): F-RMSE   99.6 meV/A, E-RMSE   3.15 meV/atom
+  independent 1500 K trajectory ( 21 frames): F-RMSE  110.6 meV/A, E-RMSE   3.24 meV/atom
+CPU 279 s

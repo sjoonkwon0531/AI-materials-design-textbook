@@ -1,0 +1,26 @@
+ex2_3_A exit=0 1s
+ex2_3_BC exit=0 17s
+ex2_4_4 exit=0 0s
+ex2_4_5 exit=0 0s
+ex2_4_6 exit=0 0s
+ex2_4_7 exit=0 1s
+ex2_4_8 exit=0 1s
+ex2_4_9 exit=0 1s
+ex2_5_1 exit=0 0s
+ex2_5_2 exit=0 1s
+ex2_5_3 exit=0 2s
+ex2_5_4 exit=0 1s
+ex2_5_5 exit=0 1s
+ex2_5_6 exit=0 1s
+ex2_6_1_2 exit=0 26s
+ex2_6_3 exit=0 232s
+ex2_6_4 exit=0 467s
+ex2_6_5 exit=0 233s
+ex2_6_5_ch exit=0 68s
+ex2_6_6 exit=0 153s
+ex2_7_1 exit=0 131s
+ex2_7_2 exit=0 61s
+ex2_7_3 exit=0 0s
+ex2_7_4 exit=0 7s
+ex2_7_5 exit=0 41s
+DONE

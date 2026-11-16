@@ -1,0 +1,31 @@
+E/atom std 18.1 meV (Lab: 18.1)
+(c) 5-fold CV MAE (meV/atom):
+   composition (x,x^2,x^3)          7.716  (dim 3)
+   SOAP inner                       6.383  (dim 390)
+   SOAP outer                       0.269  (dim 390)
+   SOAP outer x [x_Au, x_Cu]        0.284  (dim 780)
+   SOAP outer x [x_Au, x_Cu] + x    0.284  (dim 781)
+   SOAP per-centre sum              0.078  (dim 780)
+   SOAP per-centre sum + x          0.078  (dim 781)
+   rel. diff ||x_Au*outer - (1/N)sum_Au p_i|| / ||...||: median 0.341 over 0<x<1 cells
+(d) extrapolation: train x<0.5, test x>0.5
+   n_train 182 n_test 211; y train mean 29.7 test mean 28.1
+   composition (x,x^2,x^3)          MAE   31.47  mean signed  -27.12
+   SOAP inner                       MAE  444.80  mean signed -444.80
+   SOAP outer                       MAE    7.55  mean signed   -7.25
+   SOAP outer x [x_Au, x_Cu]        MAE   30.55  mean signed  -30.41
+   SOAP outer x [x_Au, x_Cu] + x    MAE   30.56  mean signed  -30.42
+   SOAP per-centre sum              MAE    8.02  mean signed   -7.95
+   SOAP per-centre sum + x          MAE    8.04  mean signed   -7.97
+   baseline (train mean)            MAE   12.45
+(d') reverse: train x>0.5, test x<0.5
+   composition (x,x^2,x^3)          MAE   34.10
+   SOAP inner                       MAE  540.28
+   SOAP outer                       MAE   14.86
+   SOAP per-centre sum              MAE   19.03
+(d'') random split of same size (reference)
+   composition (x,x^2,x^3)          MAE    8.22
+   SOAP inner                       MAE    6.93
+   SOAP outer                       MAE    0.32
+   SOAP per-centre sum              MAE    0.17
+time 8 s

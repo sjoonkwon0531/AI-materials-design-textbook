@@ -1,0 +1,5 @@
+tau* = 1/2 + sqrt(3/16) = 0.933013
+ny=32 tau=0.6: predicted u_s/u_max=-9.244792e-04, measured=-9.244792e-04, std/mean of (u-u_a)=3.3e-09, L2 err=1.266e-03, iters=77400
+ny=16 tau=0.6: predicted u_s/u_max=-3.697917e-03, measured=-3.697917e-03, std/mean of (u-u_a)=1.5e-10, L2 err=5.064e-03, iters=20600
+ny=32 tau=0.8: predicted u_s/u_max=-5.078125e-04, measured=-5.078125e-04, std/mean of (u-u_a)=2.5e-09, L2 err=6.954e-04, iters=27000
+ny=32 tau=1.2: predicted u_s/u_max=+1.575521e-03, measured=+1.575521e-03, std/mean of (u-u_a)=1.7e-10, L2 err=2.157e-03, iters=12200

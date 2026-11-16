@@ -1,0 +1,9 @@
+pre-training set: 2000 trajectories x 40 times x 128 points
+    step  1000  loss 0.0142  (53 s)
+    step  2000  loss 0.0091  (104 s)
+    step  3000  loss 0.0065  (139 s)
+member 0: 137697 params, 3000 steps, 60 CPU-s (wall 139 s) | ID 0.72% | low-nu 3.70% | high-k 27.46% | reaction 46.63%
+member 1: 137697 params, 3000 steps, 56 CPU-s (wall 103 s) | ID 0.76% | low-nu 3.79% | high-k 26.19% | reaction 46.64%
+member 2: 137697 params, 3000 steps, 58 CPU-s (wall 119 s) | ID 0.73% | low-nu 3.60% | high-k 26.57% | reaction 46.63%
+member 3: 137697 params, 3000 steps, 57 CPU-s (wall 147 s) | ID 0.73% | low-nu 3.57% | high-k 26.78% | reaction 46.62%
+mean training cost per member: 58 CPU-s

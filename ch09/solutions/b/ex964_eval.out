@@ -1,0 +1,23 @@
+=== (a) ===
+--- cons (Lab 9.20): all 3,200 pairs, 2,000 steps ---
+  one-step error (true input):   0->2.5: 0.4977 | 2.5->5: 0.1094 | 22.5->25: 0.0137 | 47.5->50: 0.0100 | mean of steps 2..20: 0.0219
+  rollout from the true c(2.5):  t=5: 0.1094 | t=12.5: 0.2176 | t=25: 0.3177 | t=50: 0.4275
+  mass: max drift 1.11e-16;  free energy: increases along the rollouts 306 / 760; one step from true states 0 / 760; F(50) = 3.140 (solver 1.754, excess 79%)
+  growth: L(25) = 2.768, L(50) = 3.066 (solver 2.876, 3.506); slope on 5 <= t <= 50: 0.250 (solver 0.303);  max |c| = 1.586
+--- cons without the quench pairs: 3,040 pairs, 1900 steps, training CPU 244 s ---
+  one-step error (true input):   0->2.5: 0.9750 | 2.5->5: 0.1183 | 22.5->25: 0.0143 | 47.5->50: 0.0100 | mean of steps 2..20: 0.0228
+  rollout from the true c(2.5):  t=5: 0.1183 | t=12.5: 0.2367 | t=25: 0.3252 | t=50: 0.4143
+  mass: max drift 8.33e-17;  free energy: increases along the rollouts 238 / 760; one step from true states 0 / 760; F(50) = 2.815 (solver 1.754, excess 60%)
+  growth: L(25) = 2.777, L(50) = 3.112 (solver 2.876, 3.506); slope on 5 <= t <= 50: 0.257 (solver 0.303);  max |c| = 1.441
+=== (b) quench step c(0) -> c(2.5), 40 test trajectories ===
+  model                                  first-step rel. L2   std(c - m)   L(2.5)   F(2.5)   max|c|
+  solver                                 0                    0.770        1.496    4.945    1.033
+  persistence c(0)                       0.9817
+  Lab free                               0.7785               0.267        1.122    9.535    1.236
+  Lab cons                               0.4977               0.685        1.577    8.363    2.868
+  Lab cons_pf                            0.8872               0.103        1.070    9.582    0.505
+  quench-only, raw input                 0.4311 (+- 0.024)    0.707        1.541    6.912    2.473   [300 steps, CPU 35 s]
+      error on 40 training quenches: 0.4279
+  quench-only, (c - m)/std and m         0.3711 (+- 0.032)    0.739        1.416    5.797    1.424   [300 steps, CPU 34 s]
+      error on 40 training quenches: 0.2099
+      then cons_pf from the predicted c(2.5): L(50) = 2.808 (solver 3.506), F(50) = 4.267, max|c| = 1.68, slope 0.234

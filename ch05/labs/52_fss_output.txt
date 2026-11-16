@@ -1,0 +1,23 @@
+=== 2D Ising, Wolff (measure once per sweep-equivalent), single run per L at T0 = T_c = 2.269185 ===
+  L=  8: 200000 sweeps, U4(T_c) = 0.6129 +/- 0.0003   (5 s)
+  L= 16: 150000 sweeps, U4(T_c) = 0.6116 +/- 0.0003   (7 s)
+  L= 32:  80000 sweeps, U4(T_c) = 0.6118 +/- 0.0007   (14 s)
+  L= 64:  30000 sweeps, U4(T_c) = 0.6100 +/- 0.0011   (31 s)
+  pitfall, L=16 measured 'after >= N flipped spins' (state-dependent stopping): U4(T_c) = 0.6289 +/- 0.0002  (biased)
+=== Binder crossings of reweighted U4(T) (jackknife errors) ===
+  ( 8, 16): T* = 2.26451 +/- 0.00164   (T*-T_c)/T_c = -2.1e-03   U* = 0.6141
+  (16, 32): T* = 2.26956 +/- 0.00146   (T*-T_c)/T_c = +1.7e-04   U* = 0.6114
+  (32, 64): T* = 2.26752 +/- 0.00111   (T*-T_c)/T_c = -7.4e-04   U* = 0.6136
+  exact T_c = 2.26919
+=== check: reweighted (from T_c run) vs direct Wolff run, L=32 ===
+  energy std at T_c: sigma_E = 98.6  -> window |dbeta| ~ 1/sigma_E = 0.0101  (|dT| ~ 0.052)
+  T=2.23 (|dbeta|*sigma_E =  0.8): reweighted U4 = 0.6415 +/- 0.0002   direct U4 = 0.6418 +/- 0.0004
+  T=2.31 (|dbeta|*sigma_E =  0.8): reweighted U4 = 0.5510 +/- 0.0023   direct U4 = 0.5524 +/- 0.0016
+  T=2.60 (|dbeta|*sigma_E =  5.5): reweighted U4 = 0.3099 +/- 0.0455   direct U4 = 0.0749 +/- 0.0064
+=== data collapse: chi' L^(-gamma/nu) vs t L^(1/nu), gamma = 7/4, nu = 1 ===
+  L=  8: chi'_max =    1.767 at T = 2.5280  (x = 0.91),  chi'_max L^-7/4 = 0.0464
+  L= 16: chi'_max =    6.054 at T = 2.3980  (x = 0.91),  chi'_max L^-7/4 = 0.0473
+  L= 32: chi'_max =   20.666 at T = 2.3320  (x = 0.89),  chi'_max L^-7/4 = 0.0480
+  L= 64: chi'_max =   72.215 at T = 2.3020  (x = 0.93),  chi'_max L^-7/4 = 0.0499
+  fit chi'_max ~ L^1.783  (gamma/nu = 1.75)
+total 214 s

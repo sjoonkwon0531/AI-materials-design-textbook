@@ -1,0 +1,13 @@
+    energy: |sum_i F_i| over test cells: mean 5.42e-13 meV/A, max 2.51e-12 meV/A
+(A) energy: params 25921  test E MAE 8.9 meV/atom  F MAE 34 meV/A  train cpu 56 s
+    direct: |sum_i F_i| over test cells: mean 9.09e+01 meV/A, max 5.55e+02 meV/A
+(A) direct: params 25921  test E MAE 5.7 meV/atom  F MAE 32 meV/A  train cpu 27 s
+(B) energy dt=1.0 fs: t_end 5.00 ps | drift of E_model+K   -0.000 meV/atom/ps, fluct 0.004 meV/atom | drift of E_oracle+K   +0.112 meV/atom/ps | <T> 2nd half   304 K | max disp 0.33 A, centre-of-mass shift 0.00 A | cpu 39 s
+(B) energy dt=0.5 fs: t_end 5.00 ps | drift of E_model+K   -0.000 meV/atom/ps, fluct 0.001 meV/atom | drift of E_oracle+K   +0.114 meV/atom/ps | <T> 2nd half   304 K | max disp 0.32 A, centre-of-mass shift 0.00 A | cpu 62 s
+(B) direct dt=1.0 fs: t_end 5.00 ps | drift of E_model+K   +1.751 meV/atom/ps, fluct 1.015 meV/atom | drift of E_oracle+K   +2.141 meV/atom/ps | <T> 2nd half   329 K | max disp 1.36 A, centre-of-mass shift 1.36 A | cpu 27 s
+(B) direct dt=0.5 fs: t_end 5.00 ps | drift of E_model+K   +1.745 meV/atom/ps, fluct 1.012 meV/atom | drift of E_oracle+K   +2.134 meV/atom/ps | <T> 2nd half   329 K | max disp 1.35 A, centre-of-mass shift 1.35 A | cpu 39 s
+(C) student Hessian: max |AD - FD| = 2.1e-05 eV/A^2 (max |H| = 8.52); asymmetry of AD Hessian 4.4e-16
+    oracle Hessian by FD: 48 force calls, cpu 5 s
+    8-atom-cell modes (THz), highest four: student [11.06 11.84 11.84 11.84]  oracle [10.9  11.71 11.71 11.71]
+    three acoustic (should be 0): student [-0. -0.  0.]  oracle [-0. -0. -0.]
+    mean |student - oracle| over the 21 non-acoustic modes: 0.12 THz

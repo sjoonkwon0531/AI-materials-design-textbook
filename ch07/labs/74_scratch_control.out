@@ -1,0 +1,4 @@
+pretraining geometries: 1500 (600 K: 1000, 1000 K: 500); 300 K pool 2000, test 1000
+300 K test set: E std 127 meV, |F| component MAD from 0 714 meV/A
+N=  50 scratch, 2300 steps: E MAE   32.9 (33.5, 32.3) meV   F MAE  119.2 (124.4, 114.0) meV/A   [t=240s]
+N= 200 scratch, 2300 steps: E MAE   33.4 (29.3, 37.4) meV   F MAE  119.5 (112.3, 126.8) meV/A   [t=488s]

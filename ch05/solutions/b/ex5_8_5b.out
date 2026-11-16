@@ -1,0 +1,13 @@
+seed 3, lateral 4x4: erf w = 0.3810, tanh lambda = 0.4615  (8 s)
+seed 3, lateral 6x6: erf w = 0.3452, tanh lambda = 0.4154  (23 s)
+seed 3, lateral 12x12: erf w = 0.4094, tanh lambda = 0.4980  (85 s)
+seed 4, lateral 4x4: erf w = 0.3170, tanh lambda = 0.3804  (91 s)
+seed 4, lateral 6x6: erf w = 0.3526, tanh lambda = 0.4247  (106 s)
+seed 4, lateral 12x12: erf w = 0.4194, tanh lambda = 0.5112  (167 s)
+L=4: <w^2> = 0.1151 +/- 0.0150  (w_rms = 0.3393, n=3)
+L=6: <w^2> = 0.1271 +/- 0.0056  (w_rms = 0.3565, n=3)
+L=12: <w^2> = 0.1707 +/- 0.0026  (w_rms = 0.4132, n=3)
+fit <w^2> = 0.0225 + 0.0596 ln L  (slope error 0.0077) -> capillary tension kT/(2 pi slope) = 2.67 [2.36, 3.07];  Helfand-Tagami rho a sqrt(chi/6) = 2.51
+intrinsic w0 = sqrt(<w^2> - (kT/2 pi gamma_HT) ln(L/xi)) with xi=0.5: 0.000, 0.000, 0.000
+intrinsic w0 = sqrt(<w^2> - (kT/2 pi gamma_HT) ln(L/xi)) with xi=1.0: 0.165, 0.116, 0.115
+wall 167 s

@@ -1,0 +1,38 @@
+[film] t=400 snapshot S(m q0)/n: 0.3882, 0.0001, 0.0204, 0.0000  (73 s)
+[film, dense pattern h=0.2, t=400-800] |Fourier|^2 of composition psi: m=1 0.3595, m=3 0.0160;  of number-weighted rho*psi/<rho>: m=1 0.3757, m=3 0.0148;  density in domain centres/mean = 1.033, 1.031
+[film, dense pattern h=0.2, t=400-800] psi(centre of A)=0.9993, psi(centre of B)=-1.0000; total density at interface/mean = 0.893, 0.893
+[film, dense pattern h=0.2, t=400-800] tanh fit: A=1.0044, lambda=0.4057 (rms 0.0079);  erf fit: A=0.9942, w=0.3374 (rms 0.0103)
+[film, dense pattern h=0.2, t=400-800] time-averaged S(m q0)/n, m=1..4: 0.3834, 0.0001, 0.0179, 0.0001
+[film, dense pattern h=0.2, t=400-800] w from S3/S1 = 0.3357;  w from S1 alone (amplitude 1 assumed) = 0.2405
+[film, dense pattern h=0.2, t=400-800]   profile-fit (tanh) predicts S(q0)/n=0.3596, S(3q0)/n=0.0158
+[film, dense pattern h=0.2, t=400-800]   profile-fit (erf) predicts S(q0)/n=0.3591, S(3q0)/n=0.0166
+  (162 s)
+[bulk lamellae, no field, lateral 4x4, t=0-320] |Fourier|^2 of composition psi: m=1 0.3643, m=3 0.0181;  of number-weighted rho*psi/<rho>: m=1 0.3800, m=3 0.0173;  density in domain centres/mean = 1.007, 1.068
+[bulk lamellae, no field, lateral 4x4, t=0-320] psi(centre of A)=1.0000, psi(centre of B)=-1.0000; total density at interface/mean = 0.905, 0.876
+[bulk lamellae, no field, lateral 4x4, t=0-320] tanh fit: A=1.0029, lambda=0.3787 (rms 0.0174);  erf fit: A=0.9939, w=0.3157 (rms 0.0184)
+[bulk lamellae, no field, lateral 4x4, t=0-320] time-averaged S(m q0)/n, m=1..4: 0.3804, 0.0004, 0.0179, 0.0007
+[bulk lamellae, no field, lateral 4x4, t=0-320] w from S3/S1 = 0.3347;  w from S1 alone (amplitude 1 assumed) = 0.2566
+[bulk lamellae, no field, lateral 4x4, t=0-320]   profile-fit (tanh) predicts S(q0)/n=0.3645, S(3q0)/n=0.0178
+[bulk lamellae, no field, lateral 4x4, t=0-320]   profile-fit (erf) predicts S(q0)/n=0.3638, S(3q0)/n=0.0188
+  (169 s)
+[bulk lamellae, no field, lateral 6x6, t=0-320] |Fourier|^2 of composition psi: m=1 0.3495, m=3 0.0129;  of number-weighted rho*psi/<rho>: m=1 0.3627, m=3 0.0120;  density in domain centres/mean = 1.009, 1.027
+[bulk lamellae, no field, lateral 6x6, t=0-320] psi(centre of A)=0.9978, psi(centre of B)=-0.9986; total density at interface/mean = 0.957, 0.924
+[bulk lamellae, no field, lateral 6x6, t=0-320] tanh fit: A=1.0041, lambda=0.4486 (rms 0.0122);  erf fit: A=0.9916, w=0.3712 (rms 0.0141)
+[bulk lamellae, no field, lateral 6x6, t=0-320] time-averaged S(m q0)/n, m=1..4: 0.3630, 0.0004, 0.0125, 0.0004
+[bulk lamellae, no field, lateral 6x6, t=0-320] w from S3/S1 = 0.3905;  w from S1 alone (amplitude 1 assumed) = 0.3388
+[bulk lamellae, no field, lateral 6x6, t=0-320]   profile-fit (tanh) predicts S(q0)/n=0.3494, S(3q0)/n=0.0128
+[bulk lamellae, no field, lateral 6x6, t=0-320]   profile-fit (erf) predicts S(q0)/n=0.3491, S(3q0)/n=0.0134
+  (184 s)
+[bulk lamellae, no field, lateral 12x12, t=0-320] |Fourier|^2 of composition psi: m=1 0.3394, m=3 0.0100;  of number-weighted rho*psi/<rho>: m=1 0.3514, m=3 0.0089;  density in domain centres/mean = 1.014, 1.017
+[bulk lamellae, no field, lateral 12x12, t=0-320] psi(centre of A)=0.9975, psi(centre of B)=-0.9975; total density at interface/mean = 0.932, 0.937
+[bulk lamellae, no field, lateral 12x12, t=0-320] tanh fit: A=1.0081, lambda=0.5001 (rms 0.0069);  erf fit: A=0.9922, w=0.4108 (rms 0.0076)
+[bulk lamellae, no field, lateral 12x12, t=0-320] time-averaged S(m q0)/n, m=1..4: 0.3517, 0.0001, 0.0092, 0.0001
+[bulk lamellae, no field, lateral 12x12, t=0-320] w from S3/S1 = 0.4341;  w from S1 alone (amplitude 1 assumed) = 0.3841
+[bulk lamellae, no field, lateral 12x12, t=0-320]   profile-fit (tanh) predicts S(q0)/n=0.3393, S(3q0)/n=0.0098
+[bulk lamellae, no field, lateral 12x12, t=0-320]   profile-fit (erf) predicts S(q0)/n=0.3392, S(3q0)/n=0.0103
+  (247 s)
+exercise numbers (Lab 5.15 single snapshot S1=0.3882, S3=0.0204): w = 0.3121
+HT tension gamma = rho a sqrt(chi/6) = 2.511 kT per unit area
+Helfand-Tagami lambda = a/sqrt(6 chi) = 0.1951 (chi=4.29); with chi=15/3.27: 0.1887
+equivalent Gaussian std of a tanh(z/lam) profile: slope-matched w = 2 lam/sqrt(2 pi) = 0.1557, small-k Fourier-matched w = pi lam/sqrt(12) = 0.1770
+wall 247 s

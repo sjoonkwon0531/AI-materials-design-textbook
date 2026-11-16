@@ -1,0 +1,30 @@
+[original (levels 0-6)] levels [30, 25, 25, 20, 15, 10, 1], solvable 100 of 106; DP optimum mean 0.0944 median 0.0514; optimal-route reactions mean 7.0, max 16, >12: 0.05; depth cap 12; greedy value/opt 0.102
+  B=  30 tau= 0.1: random 0.204+/-0.037 (opt 0.14) | MCTS 0.408+/-0.045 (opt 0.29) | diff +0.204+/-0.046
+  B=  30 tau= 0.3: random 0.377+/-0.044 (opt 0.26) | MCTS 0.513+/-0.043 (opt 0.33) | diff +0.136+/-0.040
+  B=  30 tau= 1.0: random 0.400+/-0.043 (opt 0.26) | MCTS 0.397+/-0.042 (opt 0.24) | diff -0.003+/-0.036
+  B=  30 tau= inf: random 0.357+/-0.041 (opt 0.19) | MCTS 0.438+/-0.040 (opt 0.22) | diff +0.081+/-0.037
+  B= 100 tau= 0.1: random 0.279+/-0.042 (opt 0.21) | MCTS 0.602+/-0.044 (opt 0.47) | diff +0.323+/-0.047
+  B= 100 tau= 0.3: random 0.576+/-0.045 (opt 0.43) | MCTS 0.671+/-0.042 (opt 0.55) | diff +0.095+/-0.035
+  B= 100 tau= 1.0: random 0.575+/-0.043 (opt 0.38) | MCTS 0.684+/-0.041 (opt 0.50) | diff +0.109+/-0.035
+  B= 100 tau= inf: random 0.566+/-0.042 (opt 0.36) | MCTS 0.612+/-0.040 (opt 0.40) | diff +0.046+/-0.034
+[10 s]
+[deep (levels 0-9), cap 12] levels [30, 25, 25, 20, 20, 15, 15, 10, 10, 1], solvable 100 of 101; DP optimum mean 0.0243 median 0.0083; optimal-route reactions mean 13.2, max 41, >12: 0.48; depth cap 12; greedy value/opt 0.020
+  B=  30 tau= 0.1: random 0.082+/-0.026 (opt 0.06) | MCTS 0.199+/-0.038 (opt 0.13) | diff +0.117+/-0.033
+  B=  30 tau= 0.3: random 0.160+/-0.034 (opt 0.09) | MCTS 0.188+/-0.036 (opt 0.11) | diff +0.028+/-0.031
+  B=  30 tau= 1.0: random 0.141+/-0.031 (opt 0.08) | MCTS 0.122+/-0.030 (opt 0.08) | diff -0.019+/-0.029
+  B=  30 tau= inf: random 0.118+/-0.027 (opt 0.06) | MCTS 0.133+/-0.032 (opt 0.10) | diff +0.015+/-0.027
+  B= 100 tau= 0.1: random 0.130+/-0.033 (opt 0.11) | MCTS 0.302+/-0.043 (opt 0.20) | diff +0.172+/-0.042
+  B= 100 tau= 0.3: random 0.230+/-0.039 (opt 0.16) | MCTS 0.302+/-0.041 (opt 0.17) | diff +0.072+/-0.033
+  B= 100 tau= 1.0: random 0.262+/-0.039 (opt 0.15) | MCTS 0.261+/-0.039 (opt 0.15) | diff -0.001+/-0.030
+  B= 100 tau= inf: random 0.217+/-0.034 (opt 0.09) | MCTS 0.250+/-0.038 (opt 0.14) | diff +0.032+/-0.028
+[22 s]
+[deep (levels 0-9), cap 40] levels [30, 25, 25, 20, 20, 15, 15, 10, 10, 1], solvable 100 of 101; DP optimum mean 0.0243 median 0.0083; optimal-route reactions mean 13.2, max 41, >40: 0.01; depth cap 40; greedy value/opt 0.020
+  B=  30 tau= 0.1: random 0.109+/-0.029 (opt 0.07) | MCTS 0.203+/-0.037 (opt 0.11) | diff +0.094+/-0.035
+  B=  30 tau= 0.3: random 0.163+/-0.034 (opt 0.11) | MCTS 0.195+/-0.036 (opt 0.11) | diff +0.032+/-0.035
+  B=  30 tau= 1.0: random 0.159+/-0.032 (opt 0.09) | MCTS 0.156+/-0.034 (opt 0.12) | diff -0.003+/-0.033
+  B=  30 tau= inf: random 0.117+/-0.027 (opt 0.06) | MCTS 0.133+/-0.030 (opt 0.09) | diff +0.015+/-0.025
+  B= 100 tau= 0.1: random 0.162+/-0.034 (opt 0.11) | MCTS 0.308+/-0.042 (opt 0.19) | diff +0.146+/-0.039
+  B= 100 tau= 0.3: random 0.266+/-0.039 (opt 0.16) | MCTS 0.300+/-0.041 (opt 0.17) | diff +0.033+/-0.037
+  B= 100 tau= 1.0: random 0.248+/-0.037 (opt 0.13) | MCTS 0.326+/-0.041 (opt 0.18) | diff +0.077+/-0.031
+  B= 100 tau= inf: random 0.207+/-0.032 (opt 0.09) | MCTS 0.243+/-0.037 (opt 0.13) | diff +0.036+/-0.029
+wall 36 s

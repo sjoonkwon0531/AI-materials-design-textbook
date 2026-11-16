@@ -1,0 +1,25 @@
+check_env: passed | Box([ 0. -7. -7. -7. -1.], [ 1. 10. 10. 10.  1.], (5,), float32) | Box(-1.0, 1.0, (1,), float32)
+same seed -> same first obs: True
+tuned constant set-point 685 K | tuned two-level (6 steps at 670 K, then 690 K) | oracle actual T 695 K
+random search: best training score -2.131; schedule (K) 684 667 726 621 664 674 712 715 704 667 727 672
+
+TEST: 2000 episodes, seed 12345, delta ~ U(-40,40) K, N = 12 ML
+  tuned constant                 J =  -2.151 +/- 0.007 | w_N 1.907 | TB  12.20 | 5th pct J  -2.741
+  tuned two-level                J =  -2.101 +/- 0.007 | w_N 1.886 | TB  10.73 | 5th pct J  -2.667
+  random search (25k episodes)   J =  -2.762 +/- 0.025 | w_N 1.762 | TB  50.00 | 5th pct J  -5.466
+  [PPO seed 0 trained in 62 s]
+  PPO seed 0                     J =  -1.894 +/- 0.005 | w_N 1.777 | TB   5.85 | 5th pct J  -2.243
+  [PPO seed 1 trained in 65 s]
+  PPO seed 1                     J =  -1.890 +/- 0.005 | w_N 1.768 | TB   6.12 | 5th pct J  -2.243
+  [PPO seed 2 trained in 55 s]
+  PPO seed 2                     J =  -1.898 +/- 0.005 | w_N 1.794 | TB   5.24 | 5th pct J  -2.253
+  PPO over 3 training seeds: J = -1.894 +/- 0.004 (sd over seeds)
+  PPO open-loop seed 0           J =  -2.104 +/- 0.007 | w_N 1.875 | TB  11.43 | 5th pct J  -2.669
+  PPO open-loop seed 1           J =  -2.099 +/- 0.007 | w_N 1.921 | TB   8.93 | 5th pct J  -2.709
+  PPO open-loop seed 2           J =  -2.097 +/- 0.007 | w_N 1.921 | TB   8.78 | 5th pct J  -2.712
+  PPO open-loop over 3 seeds: J = -2.100 +/- 0.004
+  oracle (knows delta)           J =  -1.886 +/- 0.005 | w_N 1.714 | TB   8.59 | 5th pct J  -2.240
+  PPO seed 0: corr(set-point over steps 5-12, delta) = -0.90; slope dT_set/d delta = -0.76
+  PPO seed 1: corr(set-point over steps 5-12, delta) = -0.90; slope dT_set/d delta = -0.64
+  PPO seed 2: corr(set-point over steps 5-12, delta) = -0.90; slope dT_set/d delta = -0.64
+wall 374 s

@@ -1,0 +1,3 @@
+pre_test   : solver max drift 6.0e-08 | FNO mean drift 5.27e-04, max 7.46e-03 (rms u = 0.37; mean drift / rms error = 0.13)
+lownu_test : solver max drift 6.0e-08 | FNO mean drift 3.69e-03, max 3.01e-02 (rms u = 0.41; mean drift / rms error = 0.19)
+highk_test : solver max drift 6.0e-08 | FNO mean drift 1.03e-03, max 1.18e-02 (rms u = 0.49; mean drift / rms error = 0.01)

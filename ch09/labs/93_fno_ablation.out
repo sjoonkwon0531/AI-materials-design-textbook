@@ -1,0 +1,6 @@
+kmax= 4: params   47425  test rel-L2 (s=64) 0.0378   [truth content above kmax: 0.1334]
+kmax= 8: params   80193  test rel-L2 (s=64) 0.0232   [truth content above kmax: 0.0717]
+kmax=16: params  145729  test rel-L2 (s=64) 0.0242   [truth content above kmax: 0.0289]
+kmax=32: params  276801  test rel-L2 (s=64) 0.0243   [truth content above kmax: 0.0067]
+translation equivariance error (shift 5/64): no grid channel 1.6e-07 (test error 0.0242) | with grid channel 1.0e-02 (test error 0.0281)
+wall 489 s (CPU 132 s)

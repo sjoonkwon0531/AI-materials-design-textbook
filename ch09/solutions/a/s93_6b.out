@@ -1,0 +1,12 @@
+[cons] empirical gain on attractor states: k=4: 1.061  k=7: 1.086  k=12: 0.372  k=20: 0.858  k=26: 0.958  k=30: 0.953  k=40: 0.946  k=50: 0.946  k=60: 0.946  k=63: 0.946
+[flux] empirical gain on attractor states: k=4: 1.061  k=7: 1.084  k=12: 0.367  k=20: 0.950  k=26: 1.013  k=30: 1.009  k=40: 1.000  k=50: 1.000  k=60: 1.003  k=63: 1.002
+   flux response |dJ_k/du_k| at k=30: c = 0.0043, q c = 0.013, sqrt(1+(qc)^2) = 1.000
+   flux response |dJ_k/du_k| at k=50: c = 0.0026, q c = 0.013, sqrt(1+(qc)^2) = 1.000
+   flux response |dJ_k/du_k| at k=60: c = 0.0165, q c = 0.097, sqrt(1+(qc)^2) = 1.005
+[cons] high-k amplitude (k>32), median over trajectories still bounded / max: t=1: 5.3e-04/1.2e-03  t=10: 1.2e-03/2.2e-03  t=20: 1.5e-03/2.0e-03  t=30: 1.8e-03/2.2e-03  t=40: 1.7e-03/2.3e-03  t=50: 1.6e-03/3.0e-03  t=60: 1.9e-03/2.4e-03  t=80: 1.8e-03/2.7e-03  t=100: 1.9e-03/2.7e-03
+[cons] max mean drift over bounded trajectories (number bounded): t=1: 1.8e-08 (16)  t=10: 5.5e-08 (16)  t=20: 1.0e-07 (16)  t=30: 1.1e-07 (16)  t=40: 1.5e-07 (16)  t=50: 1.8e-07 (16)  t=60: 2.0e-07 (16)  t=80: 1.7e-07 (16)  t=100: 2.0e-07 (16)
+[cons] blow-up times (|u|>20): none
+[flux] high-k amplitude (k>32), median over trajectories still bounded / max: t=1: 5.6e-04/1.4e-03  t=10: 3.6e-03/7.5e-03  t=20: 1.4e-02/2.3e-02  t=30: 4.4e-02/1.0e-01  t=40: 1.1e-01/2.4e-01  t=50: 3.4e-01/7.4e-01  t=60: 7.8e-01/2.2e+00  t=80: 2.8e+00/1.4e+01  t=100: nan/8.8e+01
+[flux] max mean drift over bounded trajectories (number bounded): t=1: 1.4e-08 (16)  t=10: 2.4e-08 (16)  t=20: 3.2e-08 (16)  t=30: 4.8e-08 (16)  t=40: 4.7e-08 (16)  t=50: 5.6e-08 (16)  t=60: 7.5e-08 (16)  t=80: 4.3e-08 (4)  t=100: nan (0)
+[flux] blow-up times (|u|>20): [64, 68, 68, 69, 69, 69, 71, 75, 76, 77, 78, 80, 81, 82, 83, 85]; median 76
+[flux] trajectory 0 at t=61 (max|u|=8.0): amplitude by band k<=24: 1.31e+00, 25-32: 5.21e-01, 33-48: 9.44e-01, 49-64: 1.13e+00; peak k = 6

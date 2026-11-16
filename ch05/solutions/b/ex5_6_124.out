@@ -1,0 +1,6 @@
+5.6.1: E_ONIOM(R)=-615.15 eV, E_ONIOM(P)=-614.90 eV, dE_ONIOM=+0.25 eV, dE_low=+0.55 eV
+       correction = d(E_high(I)-E_low(I)) = -0.30 eV; dE_high(I)=+0.50, dE_low(I)=+0.80, env.(low) = -0.25
+5.6.2: drift force = -(U_AT-U_CG) grad w = +2.0 kBT/nm (points toward the CG side); integrated step 2.0 kBT -> equilibrium density ratio exp(2) = 7.39
+5.6.3 note: ring relaxation t_r ~ eps^2/(4 pi^2 * 0.436) = 0.058 eps^2
+5.6.4: eps=1.0 um: fine=5.120e+11 points, HMM micro total=1.678e+07, ratio=3.052e+04, macro cell/eps=31
+5.6.4: eps=0.1 um: fine=5.120e+14 points, HMM micro total=1.678e+07, ratio=3.052e+07, macro cell/eps=312

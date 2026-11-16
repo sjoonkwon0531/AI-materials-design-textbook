@@ -1,0 +1,47 @@
+check_env passed; one FabEnv episode (always first lot): 341 decisions, return -317.07
+route: 9 steps, raw process time 8.2 h; litho load 3.2 h/lot; arrival rate 0.2875 lots/h -> litho utilization 0.92
+RL seed0: theta = step +1.61, p_now -0.20, remaining -1.58, slack -0.54, wait_q -0.70, time_in_fab +0.67, next_queue -0.00 | training mean WIP (lots, 500 h from empty) first10 7.42 last10 5.51 (29 s)
+RL seed1: theta = step +1.49, p_now +0.46, remaining -1.45, slack -0.64, wait_q +0.01, time_in_fab +0.73, next_queue +0.01 | training mean WIP (lots, 500 h from empty) first10 7.80 last10 6.28 (29 s)
+RL seed2: theta = step +1.33, p_now +0.22, remaining -1.31, slack -0.34, wait_q -0.82, time_in_fab +0.44, next_queue +0.01 | training mean WIP (lots, 500 h from empty) first10 6.95 last10 5.45 (26 s)
+RL from least-slack: theta = step +1.19, p_now -0.01, remaining -1.17, slack -1.10, wait_q -1.60, time_in_fab +0.22, next_queue -0.00 | training mean WIP (lots, 500 h from empty) first10 6.50 last10 5.54 (26 s)
+
+test: 30 scenarios, horizon 2000 h, statistics over lots released after 200 h warm-up (mean +/- SE)
+arrival rate 0.2875 (litho utilization 0.92):
+  FIFO                         WIP   9.1+/-0.6 | Little CT   31.4 h | CT(finished)   32.5 | p95   64.8 | late 0.63 | thr 0.2831 | left in fab  9.3, oldest    27 h
+  FIFO (fab)                   WIP   8.7+/-0.6 | Little CT   29.2 h | CT(finished)   30.5 | p95   56.9 | late 0.60 | thr 0.2884 | left in fab  9.0, oldest    27 h
+  SPT                          WIP   8.9+/-0.7 | Little CT   30.5 h | CT(finished)   31.6 | p95   63.1 | late 0.61 | thr 0.2830 | left in fab 10.1, oldest    31 h
+  LBFS                         WIP   8.7+/-0.6 | Little CT   29.2 h | CT(finished)   30.5 | p95   56.9 | late 0.60 | thr 0.2884 | left in fab  9.0, oldest    27 h
+  FBFS                         WIP  17.7+/-2.1 | Little CT   61.4 h | CT(finished)   61.4 | p95  146.8 | late 0.70 | thr 0.2734 | left in fab 21.2, oldest    61 h
+  least slack                  WIP   7.3+/-0.4 | Little CT   25.4 h | CT(finished)   26.2 | p95   51.7 | late 0.54 | thr 0.2816 | left in fab  8.4, oldest    22 h
+  random                       WIP   8.8+/-0.7 | Little CT   30.6 h | CT(finished)   31.5 | p95   76.2 | late 0.53 | thr 0.2778 | left in fab 11.5, oldest    47 h
+  RL seed0 (greedy)            WIP   8.1+/-0.5 | Little CT   27.5 h | CT(finished)   24.9 | p95   65.4 | late 0.22 | thr 0.2874 | left in fab  8.9, oldest   158 h
+  RL seed0 (stochastic)        WIP  10.4+/-1.1 | Little CT   34.4 h | CT(finished)   28.1 | p95   63.5 | late 0.34 | thr 0.2882 | left in fab 13.4, oldest   358 h
+  RL seed1 (greedy)            WIP   8.7+/-0.6 | Little CT   29.2 h | CT(finished)   30.5 | p95   56.9 | late 0.60 | thr 0.2884 | left in fab  9.0, oldest    27 h
+  RL seed2 (greedy)            WIP   8.2+/-0.6 | Little CT   27.8 h | CT(finished)   24.8 | p95   66.3 | late 0.22 | thr 0.2878 | left in fab  8.5, oldest   212 h
+  RL from least-slack (greedy) WIP   8.5+/-0.6 | Little CT   28.6 h | CT(finished)   25.8 | p95   67.6 | late 0.22 | thr 0.2885 | left in fab 11.5, oldest   291 h
+  least slack (softmax T=1)    WIP   8.3+/-0.5 | Little CT   28.8 h | CT(finished)   29.5 | p95   60.2 | late 0.57 | thr 0.2811 | left in fab  9.1, oldest    31 h
+  paired WIP difference RL seed0 (greedy) - least slack: +0.80 +/- 0.66
+  paired WIP difference RL seed0 (stochastic) - least slack: +3.05 +/- 1.17
+  paired WIP difference RL seed1 (greedy) - least slack: +1.37 +/- 0.71
+  paired WIP difference RL seed2 (greedy) - least slack: +0.89 +/- 0.67
+  paired WIP difference RL from least-slack (greedy) - least slack: +1.21 +/- 0.72
+arrival rate 0.3 (litho utilization 0.96):
+  FIFO                         WIP  15.2+/-1.5 | Little CT   49.5 h | CT(finished)   52.2 | p95   97.2 | late 0.78 | thr 0.2931 | left in fab 19.2, oldest    58 h
+  FIFO (fab)                   WIP   9.9+/-0.6 | Little CT   32.8 h | CT(finished)   34.5 | p95   67.1 | late 0.67 | thr 0.2937 | left in fab 12.0, oldest    35 h
+  SPT                          WIP  15.6+/-1.4 | Little CT   50.6 h | CT(finished)   53.9 | p95  101.4 | late 0.79 | thr 0.2929 | left in fab 20.1, oldest    60 h
+  LBFS                         WIP   9.9+/-0.6 | Little CT   32.8 h | CT(finished)   34.5 | p95   67.1 | late 0.67 | thr 0.2937 | left in fab 12.0, oldest    35 h
+  FBFS                         WIP  32.4+/-4.3 | Little CT  105.7 h | CT(finished)  114.4 | p95  222.1 | late 0.84 | thr 0.2796 | left in fab 40.8, oldest   126 h
+  least slack                  WIP  10.8+/-0.9 | Little CT   35.3 h | CT(finished)   36.8 | p95   68.8 | late 0.69 | thr 0.2949 | left in fab 12.3, oldest    38 h
+  random                       WIP  18.4+/-1.7 | Little CT   59.2 h | CT(finished)   62.6 | p95  149.5 | late 0.79 | thr 0.2975 | left in fab 19.0, oldest   112 h
+  RL seed0 (greedy)            WIP  10.2+/-0.8 | Little CT   33.5 h | CT(finished)   27.9 | p95   85.7 | late 0.23 | thr 0.2939 | left in fab 13.0, oldest   384 h
+  RL seed0 (stochastic)        WIP  11.4+/-1.3 | Little CT   37.2 h | CT(finished)   29.9 | p95   64.1 | late 0.36 | thr 0.2933 | left in fab 14.8, oldest   517 h
+  RL seed1 (greedy)            WIP   9.9+/-0.6 | Little CT   32.8 h | CT(finished)   34.5 | p95   67.1 | late 0.67 | thr 0.2937 | left in fab 12.0, oldest    35 h
+  RL seed2 (greedy)            WIP  10.0+/-0.8 | Little CT   32.9 h | CT(finished)   27.6 | p95   81.7 | late 0.24 | thr 0.2940 | left in fab 12.9, oldest   347 h
+  RL from least-slack (greedy) WIP  11.0+/-0.8 | Little CT   35.9 h | CT(finished)   28.5 | p95   84.5 | late 0.23 | thr 0.2946 | left in fab 16.0, oldest   558 h
+  least slack (softmax T=1)    WIP  12.3+/-0.9 | Little CT   40.3 h | CT(finished)   42.4 | p95   80.6 | late 0.76 | thr 0.2950 | left in fab 16.6, oldest    52 h
+  paired WIP difference RL seed0 (greedy) - FIFO (fab): +0.27 +/- 0.42
+  paired WIP difference RL seed0 (stochastic) - FIFO (fab): +1.47 +/- 1.38
+  paired WIP difference RL seed1 (greedy) - FIFO (fab): +0.00 +/- 0.00
+  paired WIP difference RL seed2 (greedy) - FIFO (fab): +0.08 +/- 0.50
+  paired WIP difference RL from least-slack (greedy) - FIFO (fab): +1.08 +/- 0.65
+wall 170 s

@@ -1,0 +1,39 @@
+Using backend: pytorch
+Other supported backends: tensorflow.compat.v1, tensorflow, jax, paddle.
+paddle supports more examples now and is recommended.
+Set the default float type to float64
+Crank-Nicolson (nx = nt = n):   n   max|err| at t=1   rel. L2 on its own grid   CPU (ms)
+                                25   4.36e-04          5.04e-04                    0.42
+                                50   1.09e-04          1.26e-04                    0.86
+                               100   2.73e-05          3.17e-05                    1.80
+                               200   6.82e-06          7.93e-06                    4.21
+                               400   1.70e-06          1.98e-06                    9.79
+                               800   4.26e-07          4.96e-07                   25.59
+Compiling model...
+'compile' took 2.511380 s
+
+Compiling model...
+'compile' took 0.000294 s
+
+
+DeepXDE PINN, soft constraints (PDE + BC + IC losses): FNN 2-32-32-32-1 tanh, 1400 training points
+  stage        steps   CPU (s)    loss terms                         rel. L2 (101x101)   max|err|
+  Adam 1000     1000      12.1   7.2e-04 / 3.9e-04 / 2.8e-04        1.97e-02            5.58e-02
+  Adam 3000     3000      34.4   7.3e-05 / 4.7e-05 / 1.4e-05        6.47e-03            1.77e-02
+  + L-BFGS      5123      75.6   1.4e-07 / 1.9e-08 / 3.9e-09        1.31e-04            4.66e-04
+  u(0.5, 0.5): PINN 0.610451, exact 0.610498;  u(0.5, 1): PINN 0.372704, exact 0.372708
+  max|err| on the line t = 1: 4.66e-04
+Compiling model...
+'compile' took 0.000164 s
+
+Compiling model...
+'compile' took 0.000156 s
+
+
+DeepXDE PINN, hard constraints (output transform): FNN 2-32-32-32-1 tanh, 1000 training points
+  stage        steps   CPU (s)    loss terms                         rel. L2 (101x101)   max|err|
+  Adam 1000     1000       8.3   1.4e-04                            3.13e-03            3.49e-03
+  Adam 3000     3000      24.5   6.3e-06                            4.77e-04            5.68e-04
+  + L-BFGS      5000      41.9   4.7e-08                            2.84e-05            3.64e-05
+  u(0.5, 0.5): PINN 0.610511, exact 0.610498;  u(0.5, 1): PINN 0.372689, exact 0.372708
+  max|err| on the line t = 1: 1.89e-05

@@ -1,0 +1,48 @@
+compounds 576: perovskite 313, non-perovskite 263; train 460 / test 116
+max |t - table| = 0.008; |tau - table|: median 0.003, 99th pct 0.182, max 19.17 (at rA/rB=1.032, VCrO3)
+all rA > rB: True
+agreement with table predictions: t 1.000, tau 1.000
+accuracy            all     train   test
+t (0.825<t<1.059)  0.738   0.733   0.759
+tau < 4.18         0.917   0.911   0.940
+by anion   n   perov%   acc_t   acc_tau
+  O      369    62.9   0.827   0.919
+  F       66    77.3   0.833   0.924
+  Cl      71    25.4   0.507   0.901
+  Br      27    18.5   0.556   0.926
+  I       43    16.3   0.326   0.907
+refit on train: tau threshold 4.184 -> test acc 0.940 ; t depth-2 tree test acc 0.750, thresholds [0.815, 0.829, 1.06]
+(t, mu) depth-3 tree: train 0.850 test 0.862
+Platt: P(perovskite) = 1/(1+exp(-(-1.968*tau +8.348)))  -> P=0.5 at tau=4.242
+test: Brier 0.0821  log-loss 0.2807 ; corr with table tau_prob 0.999, mean|diff| 0.017
+  P in [0.0,0.2): n=130  observed perovskite fraction 0.06
+  P in [0.2,0.4): n= 72  observed perovskite fraction 0.06
+  P in [0.4,0.6): n= 94  observed perovskite fraction 0.37
+  P in [0.6,0.8): n=115  observed perovskite fraction 0.90
+  P in [0.8,1.0): n=165  observed perovskite fraction 0.99
+model                                  test(split)   5x5-CV mean +/- std
+logistic (raw 6)                       0.810        0.810 +/- 0.027
+tree depth 4 (raw 6)                   0.819        0.867 +/- 0.027
+random forest (raw 6)                  0.888        0.914 +/- 0.025
+random forest (raw 6 + t, mu, tau)     0.966        0.934 +/- 0.017
+logistic (tau only)                    0.905        0.897 +/- 0.019
+random forest (Magpie, 132)            0.828        0.874 +/- 0.032
+tau<4.18 (fixed rule) 5x5-CV-equivalent: 0.917 (no fitting; single test-split value 0.940)
+  n= 20  tau-stump 0.897+/-0.032   RF raw6 0.731+/-0.063   RF Magpie 0.736+/-0.041
+  n= 40  tau-stump 0.900+/-0.033   RF raw6 0.770+/-0.063   RF Magpie 0.775+/-0.031
+  n= 80  tau-stump 0.912+/-0.028   RF raw6 0.840+/-0.035   RF Magpie 0.799+/-0.032
+  n=160  tau-stump 0.927+/-0.025   RF raw6 0.868+/-0.032   RF Magpie 0.826+/-0.027
+  n=320  tau-stump 0.937+/-0.013   RF raw6 0.891+/-0.022   RF Magpie 0.836+/-0.019
+  n=460  tau-stump 0.940+/-0.000   RF raw6 0.897+/-0.000   RF Magpie 0.836+/-0.000
+extrapolation across anion families (accuracy):
+  direction            tau<4.18   tau-stump(refit)   RF raw6   RF Magpie
+  oxides -> halides    0.913      0.899              0.522     0.609   (n_test=207)
+  halides -> oxides    0.919      0.919              0.339     0.642   (n_test=369)
+Table S2: 73 compounds with PBE dH_dec; tau agrees with sign(dH_dec) for 64 (87.7%); t for 37
+Table S3: 2021 double perovskites ({('Cs', 'Cl'): 990, ('MA', 'Br'): 1031})
+  Cs2BB'Cl6: n=990, tau-predicted perovskite 833 (84.1%), t-predicted 927 (93.6%), P(tau)>0.8: 0
+  MA2BB'Br6: n=1031, tau-predicted perovskite 860 (83.4%), t-predicted 860 (83.4%), P(tau)>0.8: 0
+Table S3: max P(tau) 0.75, median 0.69; tau range 3.68-7.52
+RF(raw 6, all 576) on Table S3 averaged-B inputs: predicts perovskite 66.8%; agrees with tau 82.4%
+range check, Table S3 vs training: rA 1.88-2.17 (train 0.54-1.88), rX 1.81-1.96 (train 1.33-2.20)
+wall 249 s

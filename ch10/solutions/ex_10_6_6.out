@@ -1,0 +1,7 @@
+   d (A) |  L = 20 A   L = 50 A   L = 100 A
+      6  |     3.096      0.907      0.405
+     12  |     9.648      2.242      0.907
+     24  |    38.304      6.530      2.242
+L = 50 A, d = 6: 6,246 owned atoms, 5,663 ghost atoms
+L = 50 A, d = 12: 6,246 owned atoms, 14,002 ghost atoms
+L = 50 A, d = 24: 6,246 owned atoms, 40,783 ghost atoms

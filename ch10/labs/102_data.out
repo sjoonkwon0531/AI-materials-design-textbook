@@ -1,0 +1,4 @@
+oracle calls: 600   cpu 64.7 s   (108 ms per 8-atom cell)
+E/atom: mean -5.2126 eV, std of E/atom 147.6 meV
+|F| component mean 1.090 eV/A, max 16.65 eV/A
+oracle isolated Si atom energy: -1.0148 eV

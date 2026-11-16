@@ -1,0 +1,13 @@
+alias-free FNO, upsampling x4, trained at s=64 (74 s CPU): test 32: 0.0441  64: 0.0262  128: 0.0245  256: 0.0246  512: 0.0246
+  [AA x4] band-limited input (|k|<8), grid s vs 512 (pointwise): s=32: 3.0e-02  s=64: 5.4e-03  s=128: 2.0e-04 | vs low-passed 512 output: 3.6e-04  9.6e-06  2.8e-07 | modes k<=8 only: 1.4e-04  2.6e-06  1.7e-07
+  same weights on grid 32: ||G_r - G_8|| / ||G_8||  r=1 (plain GELU): 3.0e-02  r=2: 6.5e-04  r=4: 2.7e-06
+  same weights on grid 64: ||G_r - G_8|| / ||G_8||  r=1 (plain GELU): 5.6e-03  r=2: 1.6e-05  r=4: 2.2e-07
+  same weights on grid 128: ||G_r - G_8|| / ||G_8||  r=1 (plain GELU): 2.9e-04  r=2: 2.2e-07  r=4: 2.2e-07
+  weights trained with x4, evaluated with x1: test (s=64) 0.0242
+  [AA x4 weights, eval x1] band-limited input (|k|<8), grid s vs 512 (pointwise): s=32: 1.5e-03  s=64: 3.5e-06  s=128: 1.5e-07 | vs low-passed 512 output: 3.0e-02  5.4e-03  2.0e-04 | modes k<=8 only: 1.2e-02  2.0e-04  1.0e-06
+  weights trained with x4, evaluated with x4: test (s=64) 0.0262
+  [AA x4 weights, eval x4] band-limited input (|k|<8), grid s vs 512 (pointwise): s=32: 3.0e-02  s=64: 5.4e-03  s=128: 2.0e-04 | vs low-passed 512 output: 3.6e-04  9.6e-06  2.8e-07 | modes k<=8 only: 1.4e-04  2.6e-06  1.7e-07
+  weights trained with x4, evaluated with x8: test (s=64) 0.0262
+  [AA x4 weights, eval x8] band-limited input (|k|<8), grid s vs 512 (pointwise): s=32: 3.0e-02  s=64: 5.4e-03  s=128: 2.0e-04 | vs low-passed 512 output: 3.6e-04  9.5e-06  2.5e-07 | modes k<=8 only: 1.4e-04  2.6e-06  1.3e-07
+  translation equivariance error (shift 5/64): 2.4e-07
+  spectrum at 512: k=8: truth 3.48e-02 err 1.17e-02; k=24: truth 6.61e-03 err 3.19e-03; k=40: truth 1.89e-03 err 1.29e-03; k=64: truth 3.38e-04 err 3.76e-04; k=96: truth 3.93e-05 err 5.17e-05

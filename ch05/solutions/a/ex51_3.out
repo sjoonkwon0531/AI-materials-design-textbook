@@ -1,0 +1,11 @@
+g      max|x_exact - x_Markov|   (Markov: dx/dt = (-a+kappa) x)
+    5  8.594e-02   impulse std of transient noise b*s/g (s=1) = 0.447
+   10  5.624e-02   impulse std of transient noise b*s/g (s=1) = 0.316
+   20  3.424e-02   impulse std of transient noise b*s/g (s=1) = 0.224
+   50  1.622e-02   impulse std of transient noise b*s/g (s=1) = 0.141
+  100  8.784e-03   impulse std of transient noise b*s/g (s=1) = 0.100
+  200  4.635e-03   impulse std of transient noise b*s/g (s=1) = 0.071
+  500  1.927e-03   impulse std of transient noise b*s/g (s=1) = 0.045
+slope d ln err / d ln g = -0.830
+g=10: weight of kernel inside [0,t] at t=0.05: 0.3935, at t=0.5: 0.993262
+g=100: weight of kernel inside [0,t] at t=0.05: 0.9933, at t=0.5: 1.000000

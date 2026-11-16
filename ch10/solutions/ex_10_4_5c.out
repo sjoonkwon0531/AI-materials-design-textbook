@@ -1,0 +1,9 @@
+M=2: eps_F median 0.122 eV/A, 90th pct 0.214, max 0.259; atom-mean deviation median 0.034; fraction >= 0.05/0.1/0.2: 0.95/0.75/0.14; frames 150, MD fail None
+M=3: eps_F median 0.114 eV/A, 90th pct 0.219, max 0.261; atom-mean deviation median 0.039; fraction >= 0.05/0.1/0.2: 0.96/0.70/0.17; frames 150, MD fail None
+M=5: eps_F median 0.111 eV/A, 90th pct 0.188, max 0.225; atom-mean deviation median 0.043; fraction >= 0.05/0.1/0.2: 0.96/0.59/0.07; frames 150, MD fail None
+M=2, all 10 subsets: median eps_F ranges 0.041-0.122 eV/A
+M=3, all 10 subsets: median eps_F ranges 0.081-0.119 eV/A
+iid noise: sqrt((M-1)/M) = 0.707
+iid noise: sqrt((M-1)/M) = 0.816
+iid noise: sqrt((M-1)/M) = 0.894
+CPU 127 s

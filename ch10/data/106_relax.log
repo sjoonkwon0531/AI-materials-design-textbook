@@ -1,0 +1,19 @@
+models: MACE-MP-0 (small) 3847696 | CHGNet 0.3.0 412525
+
+=== Part A: cubic SrTiO3, start a = 4.10 A (exp 3.905, PBE 3.944) ===
+  E(free) - E(cubic) = -5.02 meV per 5-atom cell
+  free: Ti-O distances = 1.8921 1.8955 1.9238 A
+  cubic a = 3.9432 A : +0.98% vs exp 3.905, -0.02% vs PBE(VASP) 3.944
+  force tolerance (sym-constrained, from a = 4.10 A):
+    fmax  0.0500 eV/A: steps   2, a = 3.94476 A, residual pressure -0.1824 GPa
+    fmax  0.0100 eV/A: steps   3, a = 3.94321 A, residual pressure +0.0090 GPa
+    fmax  0.0010 eV/A: steps   3, a = 3.94321 A, residual pressure +0.0090 GPa
+    fmax  0.0001 eV/A: steps   4, a = 3.94328 A, residual pressure -0.0000 GPa
+
+=== Part B: neutral Si monovacancy (MACE-MP-0 small) ===
+  bulk Si: a = 5.4646 A, E/atom = -5.37090 eV
+           neighbour-neighbour distances = 3.509 3.511 3.512 3.512 3.513 3.515 A (ideal 3.864); max displacement 0.217 A
+           neighbour-neighbour distances = 3.293 3.297 3.299 3.299 3.301 3.306 A (ideal 3.864); max displacement 0.350 A
+
+=== Part C: pre-relax with MACE, finish with the reference (CHGNet as the stand-in for DFT) ===
+  SrTiO3 cell+pos, sym  : reference calls from raw start   4 | MACE calls   4 then reference calls   1 | final E difference +0.02 meV

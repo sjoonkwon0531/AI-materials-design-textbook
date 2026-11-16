@@ -1,0 +1,4 @@
+wall 0 s
+PPO without clipping (same batching, normalization, 4 epochs): last50 500.0 +- 0.0 per seed [500, 500, 500, 500, 500] | first475 [116, 135, 138, 127, 101] | collapse(<300 after 475) [False, False, False, False, False]
+PPO 1 epoch (clip inactive): last50 378.8 +- 40.8 per seed [480, 451, 308, 265, 390] | first475 [274, 293, -1, -1, 289] | collapse(<300 after 475) [False, False, None, None, False]
+wall 65 s

@@ -1,0 +1,16 @@
+training pairs: 8000;  one-step fit residual (rel) = 4.40e-02
+rho(A) = 1.0036;  #eigenvalues with |mu|>1: 15
+rollout step     1 (t=5+   0.1): max|c_pred| = 1.030e+00  max err = 6.500e-02
+rollout step    10 (t=5+   1.0): max|c_pred| = 1.365e+00  max err = 5.045e-01
+rollout step    50 (t=5+   5.0): max|c_pred| = 1.700e+00  max err = 1.128e+00
+rollout step   100 (t=5+  10.0): max|c_pred| = 1.956e+00  max err = 1.588e+00
+rollout step   200 (t=5+  20.0): max|c_pred| = 2.135e+00  max err = 1.693e+00
+rollout step   500 (t=5+  50.0): max|c_pred| = 3.385e+00  max err = 3.340e+00
+rollout step  1000 (t=5+ 100.0): max|c_pred| = 1.565e+01  max err = 1.531e+01
+late growth factor per step = 1.0031  vs rho(A) = 1.0036
+clipped rho = 1.0000:  max|c_pred| at step 1000 = 3.211, max err = 3.447  (true max|c| = 0.999)
+  ||Ac^n||_2 for n=10,100,1000 (non-normal transient): [np.float64(46.09), np.float64(85.49), np.float64(145.49)]
+  max|c_pred| (clipped) at steps 100, 2000: 1.808 4.855
+modes with |mu|>1 (|mu|, dominant |k| of eigenvector): [(np.float64(1.0036), 3.0), (np.float64(1.0033), 4.0), (np.float64(1.0033), 4.0), (np.float64(1.0029), 4.0)]
+continuous linear theory: sigma(k*) = 1/(4 eps^2) = 25.0 -> exp(sigma Dt) = 12.18
+sigma_max(A) = 8.747 (non-normal: >> rho(A));  SV-clipped: rho = 0.9933, max|c_pred| at steps 100/1000/2000 = 0.072/0.000/0.000, err at 1000 = 0.999

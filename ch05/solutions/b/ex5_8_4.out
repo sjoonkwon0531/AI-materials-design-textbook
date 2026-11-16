@@ -1,0 +1,8 @@
+(a) continuous Gaussian f=0.5: (q*Rg)^2=3.7852, q*Rg=1.9456, (chi N)_s=10.4949
+(a) continuous Gaussian f=0.3: (q*Rg)^2=4.0395, q*Rg=2.0098, (chi N)_s=14.6349
+(a) continuous Gaussian f=0.2: (q*Rg)^2=4.4708, q*Rg=2.1144, (chi N)_s=24.6133
+(b) discrete Gaussian N=10, bond <b^2>=0.895 (exercise): q*=1.6463, Rg=1.2152, q*Rg=2.0006, chi_s N=9.9438
+(b) discrete Gaussian N=10, b^2=<Re^2>/9=0.982: q*=1.5715, Rg=1.2731, q*Rg=2.0006, chi_s N=9.9438
+(b) discrete Gaussian N=20, N=20: q*=1.1356, Rg=1.7251, q*Rg=1.9589, chi_s N=10.3537
+(b) discrete Gaussian N=40, N=40: q*=0.7981, Rg=2.4419, q*Rg=1.9489, chi_s N=10.4593
+(b) discrete Gaussian N=160, N=160: q*=0.3983, Rg=4.8853, q*Rg=1.9458, chi_s N=10.4926

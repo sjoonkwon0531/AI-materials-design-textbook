@@ -1,0 +1,11 @@
+direct budget cost of the first step: lam*E[tb]: 600 K 0.0000, 650 K 0.0016
+seed 0: J = -1.895 +/- 0.005 | w_N 1.772 | TB 6.13 | 5th pct -2.255 | corr(set-point 5-12, delta) -0.90 slope -0.74 | mean set-point by step 650 613 659 653 667 674 680 685 689 693 696 700 | 170 s
+     |delta|>30 K: J -1.906; |delta|<5 K: J -1.897
+seed 1: J = -1.890 +/- 0.005 | w_N 1.772 | TB 5.86 | 5th pct -2.240 | corr(set-point 5-12, delta) -0.90 slope -0.65 | mean set-point by step 650 647 658 665 671 676 681 686 689 693 696 699 | 343 s
+     |delta|>30 K: J -1.913; |delta|<5 K: J -1.883
+seed 2: J = -1.897 +/- 0.005 | w_N 1.789 | TB 5.38 | 5th pct -2.248 | corr(set-point 5-12, delta) -0.91 slope -0.64 | mean set-point by step 650 636 652 660 667 673 679 684 688 692 696 699 | 486 s
+     |delta|>30 K: J -1.919; |delta|<5 K: J -1.889
+PPO (first step fixed at 650 K) over 3 seeds: J = -1.894 +/- 0.004
+Lab PPO seed 0: J -1.894; |delta|>30 K: -1.900; |delta|<5 K: -1.900
+Lab PPO seed 1: J -1.890; |delta|>30 K: -1.916; |delta|<5 K: -1.882
+Lab PPO seed 2: J -1.898; |delta|>30 K: -1.920; |delta|<5 K: -1.891

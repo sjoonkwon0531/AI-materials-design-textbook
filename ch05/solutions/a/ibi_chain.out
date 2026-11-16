@@ -1,0 +1,12 @@
+  chain: fine MD P_fine=0.2843 (63 s)
+    alpha=1.0 it=0: g RMSE=0.0897  P_CG=0.5092
+    alpha=1.0 it=1: g RMSE=0.0394  P_CG=0.6189
+    alpha=1.0 it=2: g RMSE=0.0255  P_CG=0.5870
+    alpha=1.0 it=3: g RMSE=0.0242  P_CG=0.5480
+    alpha=1.0 it=4: g RMSE=0.0212  P_CG=0.5008
+    alpha=1.0 it=5: g RMSE=0.0203  P_CG=0.4692
+    alpha=1.0 it=6: g RMSE=0.0198  P_CG=0.4666
+    alpha=1.0 it=7: g RMSE=0.0192  P_CG=0.4440
+    alpha=1.0 it=8: g RMSE=0.0180  P_CG=0.4434
+  chain: pressure step 0 P_CG=0.4399 (150 s)
+errs: [0.0897 0.0394 0.0255 0.0242 0.0212 0.0203 0.0198 0.0192 0.018 ] Ps: [0.5092 0.6189 0.587  0.548  0.5008 0.4692 0.4666 0.444  0.4434] P_p0: 0.4399

@@ -1,0 +1,13 @@
+
+=== 4.4.5 MD (NVT) vs Metropolis MC, 2D LJ N=36 rho=0.7 T=1.0 ===
+  MC: acceptance=0.57, running-energy bookkeeping error=3.6e-12, time 309s
+  MD Langevin done, time 100s
+  MD rescale done, time 78s
+  MC Metropolis            <U>/N = -1.7593 +/- 0.0021
+  MD Langevin (BAOAB)      <U>/N = -1.7611 +/- 0.0018
+  MD vel. rescale (Lab C)  <U>/N = -1.7597 +/- 0.0017
+  g(r) first peak: MC r=1.112 g=2.745 | Langevin g=2.754 | rescale g=2.733
+  max|g_MD(Langevin)-g_MC| for r>0.8: 0.015;  max|g_MD(rescale)-g_MC|: 0.011
+
+  Diffusion from MD (NVE after NVT equilibration, unwrapped coordinates):
+  NVE mean T=1.025; MSD(t=10)=3.318, MSD(t=100)=39.712; D = slope/4 (t in [20,100]) = 0.0897 (LJ units)

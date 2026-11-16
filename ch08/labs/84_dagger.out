@@ -1,0 +1,9 @@
+expert on nominal plant: mean |e| 6.3 K
+bc      n=  120:  38.3+/- 0.7 K | n=  240:  94.2+/-127.6 K | n=  360:  32.0+/-10.7 K | n=  480:  30.1+/-19.7 K | n=  600:  31.7+/-11.8 K | n=  720:  40.4+/-25.3 K
+dagger  n=  120:  38.3+/- 0.7 K | n=  240:  44.6+/- 6.0 K | n=  360:  43.6+/-20.5 K | n=  480:  26.0+/- 8.0 K | n=  600:  16.9+/- 4.6 K | n=  720:  14.8+/- 2.5 K
+NN distance to BC data (standardised, median / p90): expert-visited 0.541 / 1.113, BC-learner-visited 1.938 / 20.940
+T= 30: expert   8.2 K | BC   19.0 +/-   4.8 K | DAgger  19.8 +/-  4.3 K  (total cost per episode: BC 568.7, DAgger 595.0, expert 245.8 K s)
+T= 60: expert   6.3 K | BC   40.4 +/-  25.3 K | DAgger  14.8 +/-  2.5 K  (total cost per episode: BC 2424.5, DAgger 887.1, expert 376.3 K s)
+T=120: expert   5.1 K | BC   30.3 +/-  14.7 K | DAgger  10.0 +/-  1.9 K  (total cost per episode: BC 3634.5, DAgger 1200.7, expert 614.2 K s)
+T=240: expert   4.4 K | BC   24.1 +/-  19.0 K | DAgger   7.1 +/-  1.6 K  (total cost per episode: BC 5795.7, DAgger 1700.0, expert 1055.9 K s)
+wall 38 s

@@ -1,0 +1,6 @@
+scratch  K = 224, 3000 steps, lr 3e-03: target-test error  3.72% (62 CPU-s)
+scratch  K = 224, 3000 steps, lr 1e-03: target-test error  5.14% (62 CPU-s)
+full     K = 224, 3000 steps, lr 3e-03: target-test error  3.52% (62 CPU-s)
+full     K = 224, 3000 steps, lr 1e-03: target-test error  4.01% (60 CPU-s)
+lora4    K = 224, 3000 steps, lr 1e-02: target-test error  5.12% (62 CPU-s)
+lora4    K = 224, 3000 steps, lr 3e-03: target-test error  6.06% (67 CPU-s)

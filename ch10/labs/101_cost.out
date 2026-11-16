@@ -1,0 +1,23 @@
+DFT  N=  2  nao=   8  E=-7.184311 Ha  cpu=10.0 s
+DFT  N=  8  nao=  32  E=-31.136709 Ha  cpu=77.8 s
+MACE N=    8  cpu/call=0.224 s  per atom=27.94 ms
+MACE N=   64  cpu/call=0.854 s  per atom=13.35 ms
+MACE N=  216  cpu/call=3.685 s  per atom=17.06 ms
+MACE N=  512  cpu/call=8.892 s  per atom=17.37 ms
+MACE N= 1000  cpu/call=17.209 s  per atom=17.21 ms
+EMT  N=  108  cpu/call=0.0105 s  per atom=97.7 us
+EMT  N=  500  cpu/call=0.0483 s  per atom=96.6 us
+EMT  N= 2048  cpu/call=0.2015 s  per atom=98.4 us
+EMT  N= 4000  cpu/call=0.3645 s  per atom=91.1 us
+measured slope d ln t / d ln N:  DFT (N=2-8) 1.48   MACE (N>=216) 1.01
+N=   64: DFT model  slope 1.48:  1.67e+03 s   cubic:  3.98e+04 s   | MACE measured   0.854 s   ratio 1.96e+03 .. 4.66e+04
+N=  216: DFT model  slope 1.48:  1.01e+04 s   cubic:  1.53e+06 s   | MACE measured   3.685 s   ratio 2.74e+03 .. 4.15e+05
+N= 1000: DFT model  slope 1.48:  9.68e+04 s   cubic:  1.52e+08 s   | MACE measured  17.209 s   ratio 5.63e+03 .. 8.83e+06
+per atom-step: MACE 17.2 ms, EMT 96 us, MACE/EMT = 179
+Si cube     1 nm: N =  5.00e+01 atoms; one MACE step  8.60e-01 s; 1 ns (1e6 steps of 1 fs)  2.73e-02 core-years
+Si cube    10 nm: N =  5.00e+04 atoms; one MACE step  8.60e+02 s; 1 ns (1e6 steps of 1 fs)  2.73e+01 core-years
+Si cube   100 nm: N =  5.00e+07 atoms; one MACE step  8.60e+05 s; 1 ns (1e6 steps of 1 fs)  2.73e+04 core-years
+Si cube  1000 nm: N =  5.00e+10 atoms; one MACE step  8.60e+08 s; 1 ns (1e6 steps of 1 fs)  2.73e+07 core-years
+break-even (N=64, 400 labels of 8 atoms, C_train=100 s): build cost 3.12e+04 s; S* = 18.6 steps (slope model) .. 0.784 steps (cubic)
+break-even (N=216, 400 labels of 8 atoms, C_train=100 s): build cost 3.12e+04 s; S* = 3.1 steps (slope model) .. 0.0204 steps (cubic)
+ROI: 1 ns (1e6 steps) of 64 atoms = 6.4e+07 atom-steps; MLIP route 1.6e+05 atom-steps per DFT call (400 calls); AIMD route 64 atom-steps per DFT call; ratio 2500

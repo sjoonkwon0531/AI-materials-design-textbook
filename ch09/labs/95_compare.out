@@ -1,0 +1,35 @@
+reference 128^2, dt = 2.5e-3: CPU 56 s for 8 samples to T = 20
+
+(1) classical solver at decreasing resolution (query: w0 -> w(t), error on the 64^2 grid)
+    N    dt       err t=1    err t=5    err t=20    ms per unit time (1 sample)
+    64   1e-02    5.23e-06   1.61e-06   3.89e-06     18.19
+    48   1e-02    5.24e-06   1.61e-06   3.89e-06     14.17
+    32   2e-02    1.85e-04   7.45e-06   4.80e-05      5.13
+    24   2e-02    1.17e-03   4.56e-05   3.21e-04      4.46
+    16   4e-02    1.27e-02   1.85e-03   5.26e-03      1.95
+    12   4e-02    2.68e-02   5.88e-03   1.33e-02      1.86
+    8    4e-02    1.01e-01   4.68e-02   1.30e-01      1.70
+
+(2) FNO-2D (Lab 9.5 (b)), autoregressive from w0
+    err t=1: 4.45e-02, t=5: 2.23e-02, t=20: 1.46e-02;  3.39 ms per unit time (1 sample)
+    modes outside the FNO band (max(|kx|,|ky|) >= 12): share of ||w0||^2 = 1.03e-03, of ||w(1)||^2 = 3.19e-09; share of the squared first-step error = 0.61, of the error at t = 20 = 0.34
+    one-off cost (CPU time): data generation 113 s (240 trajectories) + training 269 s = 382 s
+
+(3) PINN for one instance (test trajectory 0), horizon T = 5, same CPU budget as the whole FNO training
+    soft IC: err t=1..5: 0.642 0.896 0.960 0.981 0.990;  CPU time 241 s for this one instance
+    hard IC: err t=1..5: 0.662 0.904 0.930 0.908 0.881;  CPU time 200 s for this one instance
+    same instance: FNO err t=1: 0.052, t=5: 0.023; 64^2 solver t=5: 9.6e-07;  'nothing happens' (w = w0) t=1: 0.610, t=5: 1.084
+
+(4) break-even number of queries (one query = one initial condition advanced to T = 20)
+    vs solver 64^2 (err 3.9e-06)   :   363.8 ms vs FNO 67.9 ms per query -> speed-up   5.4x, break-even N* = 1,290 queries
+    vs solver 48^2 (err 3.9e-06)   :   283.5 ms vs FNO 67.9 ms per query -> speed-up   4.2x, break-even N* = 1,771 queries
+    vs solver 32^2 (err 4.8e-05)   :   102.5 ms vs FNO 67.9 ms per query -> speed-up   1.5x, break-even N* = 11,014 queries
+    vs solver 24^2 (err 3.2e-04)   :    89.2 ms vs FNO 67.9 ms per query -> speed-up   1.3x, break-even N* = 17,892 queries
+    vs solver 16^2 (err 5.3e-03)   :    39.1 ms vs FNO 67.9 ms per query -> the solver is 1.7x faster; no break-even
+    vs solver 12^2 (err 1.3e-02)   :    37.2 ms vs FNO 67.9 ms per query -> the solver is 1.8x faster; no break-even
+    vs solver 8^2 (err 1.3e-01)    :    34.0 ms vs FNO 67.9 ms per query -> the solver is 2.0x faster; no break-even
+    matched accuracy at t = 20 (FNO error 1.46e-02): coarsest solver at least as accurate is 12^2 (error 1.3e-02, 1.86 ms per unit time vs FNO 3.39 ms)
+
+(5) heat equation of Lab 9.5 (a): PINN vs Crank-Nicolson
+    soft-constraint PINN: rel. L2 1.31e-04 in 76 s;  CN with n = 50 reaches 1.26e-04 in 0.86 ms  -> ratio 88,201x
+    hard-constraint PINN: rel. L2 2.84e-05 in 42 s;  CN with n = 200 reaches 7.93e-06 in 4.21 ms  -> ratio 9,953x

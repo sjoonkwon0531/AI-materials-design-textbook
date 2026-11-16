@@ -1,0 +1,13 @@
+[1] Taylor-Green, N=64, nu=1e-2, t=1: rel. L2 error = 4.10e-08
+[2] GRF sample (4 fields): std(w0) = 0.206, max|w0| = 0.692
+    N=64  dt=2.0e-02: error vs dt=2.5e-4 at t=4 = 4.39e-06
+    N=64  dt=1.0e-02: error vs dt=2.5e-4 at t=4 = 1.10e-06   (ratio 4.01)
+    N=64  dt=5.0e-03: error vs dt=2.5e-4 at t=4 = 2.73e-07   (ratio 4.01)
+    N=64  dt=2.5e-03: error vs dt=2.5e-4 at t=4 = 6.78e-08   (ratio 4.03)
+[3] N=64  dt=2.5e-03: error vs N=128 at t=4 (on the 64^2 grid) = 5.75e-08
+[3] N=48  dt=5.0e-03: error vs N=128 at t=4 (on the 64^2 grid) = 2.63e-07
+[3] N=32  dt=5.0e-03: error vs N=128 at t=4 (on the 64^2 grid) = 2.16e-06
+[3] N=24  dt=1.0e-02: error vs N=128 at t=4 (on the 64^2 grid) = 3.24e-05
+[3] N=16  dt=1.0e-02: error vs N=128 at t=4 (on the 64^2 grid) = 1.52e-03
+[4] N=64, t=20: error with 2/3 dealiasing = 3.09e-06, without = 3.09e-06
+    N=16, t=20: error with 2/3 dealiasing = 3.28e-03, without = 6.37e-04

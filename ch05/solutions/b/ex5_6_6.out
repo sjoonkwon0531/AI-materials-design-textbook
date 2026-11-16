@@ -1,0 +1,31 @@
+33-point HMM : err t=0.01 0.0534, t=0.1 0.0211, steady 0.0117; flux 0.3975; micro cost 1.06e+09 walker-steps
+homogenized  : err t=0.01 0.0488, t=0.1 0.0135, steady 0.0056; flux 0.3967
+round 0: 5 micro runs at x=[0.0, 0.25, 0.5, 0.75, 1.0]
+   kernel 2.61**2 * RBF(length_scale=1.42) + WhiteKernel(noise_level=0.0486)
+   GP mean |rel err| vs homogenized D = 0.040 (max 0.070); max post. std/mean = 0.172
+   macro err t=0.01 0.0385, t=0.1 0.0096, steady 0.0106; flux 0.3886; micro cost 1.60e+08 walker-steps (15% of 33-point HMM)
+   -> next micro run at x=0.9688 (posterior std 0.0389)
+round 1: 6 micro runs at x=[0.0, 0.25, 0.5, 0.75, 0.9688, 1.0]
+   kernel 1.12**2 * RBF(length_scale=0.325) + WhiteKernel(noise_level=1e-06)
+   GP mean |rel err| vs homogenized D = 0.060 (max 0.115); max post. std/mean = 0.024
+   macro err t=0.01 0.0562, t=0.1 0.0220, steady 0.0251; flux 0.3922; micro cost 1.92e+08 walker-steps (18% of 33-point HMM)
+   -> next micro run at x=0.0938 (posterior std 0.0065)
+round 2: 7 micro runs at x=[0.0, 0.0938, 0.25, 0.5, 0.75, 0.9688, 1.0]
+   kernel 0.996**2 * RBF(length_scale=0.324) + WhiteKernel(noise_level=1e-06)
+   GP mean |rel err| vs homogenized D = 0.059 (max 0.116); max post. std/mean = 0.003
+   macro err t=0.01 0.0564, t=0.1 0.0228, steady 0.0243; flux 0.3915; micro cost 2.24e+08 walker-steps (21% of 33-point HMM)
+   -> next micro run at x=0.6250 (posterior std 0.0012)
+round 3: 8 micro runs at x=[0.0, 0.0938, 0.25, 0.5, 0.625, 0.75, 0.9688, 1.0]
+   kernel 2.74**2 * RBF(length_scale=1.53) + WhiteKernel(noise_level=0.0352)
+   GP mean |rel err| vs homogenized D = 0.022 (max 0.055); max post. std/mean = 0.145
+   macro err t=0.01 0.0407, t=0.1 0.0107, steady 0.0061; flux 0.3957; micro cost 2.56e+08 walker-steps (24% of 33-point HMM)
+--- variant: fixed heteroscedastic noise alpha_i = (0.056 y_i)^2, kernel C*RBF, explicit mean removal
+round 0: n=5, kernel 0.467**2 * RBF(length_scale=1.78); |rel err| mean 0.035 max 0.076; err 0.0469 0.0126 0.0052; flux 0.3854
+   -> next x=0.9688 (std 0.0250)
+round 1: n=6, kernel 0.523**2 * RBF(length_scale=1.99); |rel err| mean 0.031 max 0.060; err 0.0471 0.0126 0.0046; flux 0.3864
+   -> next x=0.9375 (std 0.0188)
+round 2: n=7, kernel 0.55**2 * RBF(length_scale=2.07); |rel err| mean 0.027 max 0.050; err 0.0473 0.0127 0.0047; flux 0.3874
+   -> next x=0.9062 (std 0.0155)
+round 3: n=8, kernel 0.562**2 * RBF(length_scale=2.09); |rel err| mean 0.021 max 0.036; err 0.0478 0.0128 0.0049; flux 0.3892
+linear fit to the 33 HMM values: D = 0.4260 x + 0.2239  (exact 0.4359 x + 0.2179)
+wall 25 s

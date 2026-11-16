@@ -1,0 +1,7 @@
+rc = 3.0 A: mean neighbours per atom = 4.00
+rc = 4.2 A: mean neighbours per atom = 16.11
+zero-force baseline on test: F MAE = 997 meV/A
+inv rc=3.0 N=400 params= 10145 | E MAE   11.1 meV/atom  F MAE   118 meV/A | cpu  26.1 s
+eq  rc=3.0 N=400 params= 25921 | E MAE    8.9 meV/atom  F MAE    34 meV/A | cpu  61.1 s
+inv rc=4.2 N=400 params= 10145 | E MAE    4.9 meV/atom  F MAE    86 meV/A | cpu  53.7 s
+eq  rc=4.2 N=400 params= 25921 | E MAE    3.0 meV/atom  F MAE    54 meV/A | cpu 154.7 s

@@ -1,0 +1,4 @@
+adam rho=0.0 3600 steps seed 0: F300    51 F600   109 F1000   235 meV/A | lam_max    841.0 | cpu 92 s  [245 s]
+adam rho=0.0 3600 steps seed 1: F300    48 F600   102 F1000   229 meV/A | lam_max    412.3 | cpu 85 s  [400 s]
+adam rho=0.0 3600 steps seed 2: F300    60 F600   120 F1000   242 meV/A | lam_max    588.1 | cpu 85 s  [544 s]
+wall 544 s

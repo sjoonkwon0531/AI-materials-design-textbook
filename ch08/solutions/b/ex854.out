@@ -1,0 +1,10 @@
+per-episode sd of J, constant 700 K: 0.770 (mean -2.405)
+per-episode sd of J, random candidate #0: 4.207 (mean -5.459)
+pool 3 n_eval   1 (25000 cand): best train  -1.473 | test  -3.909 | gap  2.436 | schedule max 748 K | 29 s
+pool 3 n_eval  10 ( 2500 cand): best train  -2.131 | test  -2.762 | gap  0.632 | schedule max 727 K | 34 s
+pool 3 n_eval 100 (  250 cand): best train  -2.420 | test  -2.377 | gap -0.043 | schedule max 715 K | 36 s
+pool 3 two-stage (2000x10 + 50x100): best stage-2 score  -2.293 | test  -2.340 | gap  0.047
+pool 4 n_eval   1 (25000 cand): best train  -1.408 | test  -3.597 | gap  2.189 | schedule max 746 K | 72 s
+pool 4 n_eval  10 ( 2500 cand): best train  -2.019 | test  -2.982 | gap  0.963 | schedule max 737 K | 76 s
+pool 4 n_eval 100 (  250 cand): best train  -2.644 | test  -2.604 | gap -0.040 | schedule max 733 K | 78 s
+pool 4 two-stage (2000x10 + 50x100): best stage-2 score  -2.210 | test  -2.221 | gap  0.010

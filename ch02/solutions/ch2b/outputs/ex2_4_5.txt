@@ -1,0 +1,10 @@
+   N | unif FEM L2  ord  | clust FEM L2 ord  | clust FEM nodal | clust FDM nodal ord | hmax/hmin | jitter FEM L2 | jitter FDM nodal
+   8 | 9.910e-03   --  | 1.426e-02   --  | 1.31e-04        | 4.784e-02   --  |   6.15    | 1.504e-02     | 6.192e-03
+  16 | 2.486e-03  2.00 | 3.707e-03  1.94 | 8.49e-06        | 1.221e-02  1.97 |   8.07    | 3.474e-03     | 4.410e-03
+  32 | 6.220e-04  2.00 | 9.362e-04  1.99 | 5.35e-07        | 3.069e-03  1.99 |   8.75    | 8.740e-04     | 8.394e-04
+  64 | 1.555e-04  2.00 | 2.346e-04  2.00 | 3.35e-08        | 7.683e-04  2.00 |   8.94    | 1.965e-04     | 2.548e-04
+ 128 | 3.888e-05  2.00 | 5.870e-05  2.00 | 2.10e-09        | 1.921e-04  2.00 |   8.98    | 5.084e-05     | 6.396e-05
+ 256 | 9.721e-06  2.00 | 1.468e-05  2.00 | 1.31e-10        | 4.804e-05  2.00 |   9.00    | 1.303e-05     | 1.495e-05
+jitter mesh N=32: max local truncation error of FDM stencil = 1.498e-01
+jitter mesh N=128: max local truncation error of FDM stencil = 7.795e-02
+jitter mesh N=512: max local truncation error of FDM stencil = 2.028e-02

@@ -1,0 +1,8 @@
+104_test 21 RMS force component 1158 meV/A
+104_transfer_1800K 7 RMS force component 1197 meV/A
+104_transfer_strain 6 RMS force component 1101 meV/A
+104_transfer_vacancy 6 RMS force component 832 meV/A
+104_rattle 16 RMS force component 1582 meV/A
+104_pool 600 RMS force component 835 meV/A
+student SchNet parameters: 13217
+force-ACF minimum at lag (fs): {300: 46, 900: 44, 1500: 44}

@@ -1,0 +1,19 @@
+=== inverse problem: identify D from sparse noisy data (noise sigma = 0.02, initial guess D = 0.5) ===
+../ch09/labs/92_inverse.py:39: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  log=lambda it: traj.append((it, float(torch.exp(logD)))))
+  B1 seed 0: D_hat = 0.0998 (true 0.1000), data RMSE 0.0188 (noise sigma 0.02), cpu 38.0 s
+  B1 seed 1: D_hat = 0.1008 (true 0.1000), data RMSE 0.0150 (noise sigma 0.02), cpu 36.6 s
+  B1 seed 2: D_hat = 0.1014 (true 0.1000), data RMSE 0.0179 (noise sigma 0.02), cpu 34.9 s
+  B1 seed 3: D_hat = 0.1000 (true 0.1000), data RMSE 0.0197 (noise sigma 0.02), cpu 33.5 s
+  B1 seed 4: D_hat = 0.0999 (true 0.1000), data RMSE 0.0176 (noise sigma 0.02), cpu 34.4 s
+  B1 PINN : D = 0.1004 +/- 0.0006 (5 noise/init seeds), |bias| 0.4 %, cpu 35.5 s
+  B1 CN + scalar least squares: D = 0.1004 +/- 0.0005, cpu 38 ms (13 forward solves)
+  B2 seed 0: D_hat = 0.0976 (true 0.1000), data RMSE 0.0174 (noise sigma 0.02), cpu 29.0 s
+  B2 seed 1: D_hat = 0.1061 (true 0.1000), data RMSE 0.0157 (noise sigma 0.02), cpu 29.7 s
+  B2 seed 2: D_hat = 0.0996 (true 0.1000), data RMSE 0.0180 (noise sigma 0.02), cpu 29.8 s
+  B2 seed 3: D_hat = 0.1000 (true 0.1000), data RMSE 0.0203 (noise sigma 0.02), cpu 30.5 s
+  B2 seed 4: D_hat = 0.1009 (true 0.1000), data RMSE 0.0186 (noise sigma 0.02), cpu 29.7 s
+  B2 PINN : D = 0.1009 +/- 0.0029 (5 noise/init seeds), |bias| 0.9 %, cpu 29.7 s
+  B2 sine-series least squares (BC assumed known): D = 0.1014 +/- 0.0012, cpu 3 ms
+total cpu 326 s

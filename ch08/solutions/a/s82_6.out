@@ -1,0 +1,18 @@
+least slack  WIP 7.30 | LittleCT 25.4 | CT(fin) 26.2 | late 0.54 | oldest 22 h
+LBFS         WIP 8.67 | LittleCT 29.2 | CT(fin) 30.5 | late 0.60 | oldest 27 h
+beta 0.00 warm   0 seed 0: theta step+1.61 p_now-0.20 remaining-1.58 slack-0.54 wait_q-0.70 time_in_fab+0.67 next_queue-0.00 | WIP 8.11 (vs LS +0.80+/-0.66) | LittleCT 27.5 | CT(fin) 24.9 | late 0.22 | oldest 158 h (39 s)
+beta 0.00 warm   0 seed 1: theta step+1.49 p_now+0.46 remaining-1.45 slack-0.64 wait_q+0.01 time_in_fab+0.73 next_queue+0.01 | WIP 8.67 (vs LS +1.37+/-0.71) | LittleCT 29.2 | CT(fin) 30.5 | late 0.60 | oldest 27 h (42 s)
+beta 0.00 warm   0 seed 2: theta step+1.33 p_now+0.22 remaining-1.31 slack-0.34 wait_q-0.82 time_in_fab+0.44 next_queue+0.01 | WIP 8.20 (vs LS +0.89+/-0.67) | LittleCT 27.8 | CT(fin) 24.8 | late 0.22 | oldest 212 h (32 s)
+beta 0.05 warm   0 seed 0: theta step+1.32 p_now-0.12 remaining-1.27 slack+0.11 wait_q-0.87 time_in_fab+0.03 next_queue+0.00 | WIP 9.06 (vs LS +1.75+/-0.81) | LittleCT 30.3 | CT(fin) 25.2 | late 0.22 | oldest 385 h (46 s)
+beta 0.05 warm   0 seed 1: theta step+0.59 p_now+0.38 remaining-0.50 slack-1.35 wait_q+1.17 time_in_fab+1.28 next_queue+0.00 | WIP 8.36 (vs LS +1.05+/-0.72) | LittleCT 28.3 | CT(fin) 29.4 | late 0.56 | oldest 30 h (33 s)
+beta 0.05 warm   0 seed 2: theta step+0.82 p_now+0.72 remaining-0.77 slack-0.27 wait_q-0.93 time_in_fab+0.32 next_queue+0.01 | WIP 8.58 (vs LS +1.28+/-0.75) | LittleCT 29.1 | CT(fin) 25.8 | late 0.21 | oldest 340 h (59 s)
+beta 0.20 warm   0 seed 0: theta step+0.57 p_now-0.46 remaining-0.65 slack-0.40 wait_q+2.59 time_in_fab+0.44 next_queue+0.00 | WIP 9.36 (vs LS +2.06+/-0.79) | LittleCT 31.8 | CT(fin) 32.9 | late 0.59 | oldest 35 h (66 s)
+beta 0.20 warm   0 seed 1: theta step+1.49 p_now-0.89 remaining-1.47 slack-0.53 wait_q-0.58 time_in_fab+0.65 next_queue+0.01 | WIP 8.13 (vs LS +0.83+/-0.67) | LittleCT 27.6 | CT(fin) 24.9 | late 0.21 | oldest 178 h (65 s)
+beta 0.20 warm   0 seed 2: theta step+0.87 p_now+0.70 remaining-0.88 slack-0.33 wait_q-1.19 time_in_fab+0.38 next_queue+0.01 | WIP 7.54 (vs LS +0.24+/-0.73) | LittleCT 25.8 | CT(fin) 23.8 | late 0.20 | oldest 204 h (68 s)
+beta 0.00 warm 200 seed 0: theta step+1.50 p_now+0.63 remaining-1.51 slack-0.64 wait_q-0.01 time_in_fab+0.73 next_queue+0.00 | WIP 8.67 (vs LS +1.37+/-0.71) | LittleCT 29.2 | CT(fin) 30.5 | late 0.60 | oldest 27 h (72 s)
+beta 0.00 warm 200 seed 1: theta step+1.11 p_now-0.05 remaining-1.10 slack-0.51 wait_q-1.26 time_in_fab+0.58 next_queue+0.00 | WIP 8.24 (vs LS +0.94+/-0.64) | LittleCT 28.0 | CT(fin) 25.6 | late 0.22 | oldest 267 h (66 s)
+beta 0.00 warm 200 seed 2: theta step+1.22 p_now-1.17 remaining-1.20 slack-0.19 wait_q+1.45 time_in_fab+0.32 next_queue-0.00 | WIP 7.46 (vs LS +0.15+/-0.57) | LittleCT 25.8 | CT(fin) 26.5 | late 0.52 | oldest 21 h (50 s)
+beta 0.20 warm 200 seed 0: theta step+1.01 p_now+0.46 remaining-1.01 slack-0.74 wait_q+1.28 time_in_fab+0.77 next_queue+0.02 | WIP 8.44 (vs LS +1.14+/-0.59) | LittleCT 28.6 | CT(fin) 29.7 | late 0.61 | oldest 30 h (41 s)
+beta 0.20 warm 200 seed 1: theta step+1.16 p_now-0.48 remaining-1.20 slack-0.33 wait_q-1.43 time_in_fab+0.43 next_queue-0.00 | WIP 8.04 (vs LS +0.73+/-0.67) | LittleCT 27.4 | CT(fin) 24.7 | late 0.21 | oldest 161 h (57 s)
+beta 0.20 warm 200 seed 2: theta step+2.03 p_now-0.10 remaining-1.95 slack-0.78 wait_q-0.19 time_in_fab+0.92 next_queue-0.00 | WIP 8.67 (vs LS +1.37+/-0.71) | LittleCT 29.2 | CT(fin) 30.5 | late 0.60 | oldest 27 h (59 s)
+wall 798 s

@@ -1,0 +1,5 @@
+mode feat: 28,162 parameters, extra features True, resampling False, 1 window of length 5, Adam 2000 + L-BFGS 300 per window
+  loss PDE 6.28e-03 (fresh points 1.31e-02), Poisson 3.52e-03
+rel. L2 error vs the 64^2 solver at t = 1..5: 0.6001 0.8401 0.8748 0.8561 0.8263
+'nothing happens' (w = w0) at t = 1..5:        0.6098 0.9382 1.0456 1.0763 1.0839
+CPU time 210 s

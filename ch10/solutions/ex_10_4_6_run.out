@@ -1,0 +1,8 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+WARNING:root:Default dtype float32 does not match model dtype float64, converting models to float32.
+round 1 T=900 K ('perfect', 'strain+0.03'): explore fails [None, None]; 300 candidates, dev median 0.115 max 0.197; in window [0.05,1.5): 287; labelled 6 ['strain+0.03', 'strain+0.03', 'strain+0.03', 'strain+0.03', 'strain+0.03', 'strain+0.03']; labels now 10
+round 2 T=1500 K ('perfect', 'vacancy'): explore fails [None, None]; 300 candidates, dev median 0.158 max 0.300; in window [0.05,1.5): 296; labelled 6 ['vacancy', 'vacancy', 'vacancy', 'vacancy', 'vacancy', 'vacancy']; labels now 16
+round 3 T=2000 K ('perfect', 'strain-0.03'): explore fails [None, None]; 300 candidates, dev median 0.286 max 0.625; in window [0.05,1.5): 293; labelled 6 ['strain-0.03', 'strain-0.03', 'strain-0.03', 'strain-0.03', 'strain-0.03', 'strain-0.03']; labels now 22
+round 4 T=2500 K ('perfect', 'vacancy'): explore fails [None, None]; 300 candidates, dev median 0.166 max 0.413; in window [0.05,1.5): 296; labelled 6 ['perfect', 'vacancy', 'perfect', 'vacancy', 'vacancy', 'vacancy']; labels now 28
+round 5 T=2500 K ('perfect', 'strain+0.03'): explore fails [21, None]; 171 candidates, dev median 0.182 max 0.499; in window [0.05,1.5): 168; labelled 6 ['strain+0.03', 'strain+0.03', 'strain+0.03', 'strain+0.03', 'strain+0.03', 'strain+0.03']; labels now 34
+[LO0.05_S0_mixed_M3] final: labels 34 (oracle calls 34), F-RMSE 2500 K 398 meV/A (1500 K 271), 2500 K MD steps survived [500, 500]; CPU 258 s

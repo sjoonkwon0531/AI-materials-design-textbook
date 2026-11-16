@@ -1,0 +1,7 @@
+[cons_pf] FNO-2D modes 16, width 20, 4 layers, 1,641,569 real parameters; 3040 training triples, loss 'pf', seed 0
+[cons_pf] epoch 1: train loss 0.4152 | test one-step rel. L2: all 0.1122, first step 0.9815, later steps 0.0665 | 404 s
+[cons_pf] epoch 2: train loss 0.2191 | test one-step rel. L2: all 0.0870, first step 0.9631, later steps 0.0408 | 722 s
+[cons_pf] epoch 3: train loss 0.1637 | test one-step rel. L2: all 0.0748, first step 0.9102, later steps 0.0308 | 911 s
+[cons_pf] epoch 4: train loss 0.1381 | test one-step rel. L2: all 0.0690, first step 0.8894, later steps 0.0258 | 1080 s
+[cons_pf] epoch 5: train loss 0.1271 | test one-step rel. L2: all 0.0680, first step 0.8872, later steps 0.0249 | 1207 s
+[cons_pf] training: wall 1207 s on a shared machine, CPU time 496 s (1900 Adam steps, batch 8)

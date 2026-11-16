@@ -1,0 +1,5 @@
+replay set: 20 cells; forgetting probes: 15 cells (lab set); 40 Adam steps; replay batches strat5
+lambda 0.3: xTB test E  11.89 meV/atom, F  175 meV/A | a0 5.4906 B  91.2 GPa | drift C/SiC/Ge/Al/NaCl 32/58/35/32/4 (mean 32) meV/A | 58 s
+lambda 1.0: xTB test E  11.63 meV/atom, F  183 meV/A | a0 5.4846 B  92.4 GPa | drift C/SiC/Ge/Al/NaCl 59/50/31/55/4 (mean 40) meV/A | 57 s
+lambda 3.0: xTB test E  11.80 meV/atom, F  199 meV/A | a0 5.4754 B  94.8 GPa | drift C/SiC/Ge/Al/NaCl 97/44/23/63/3 (mean 46) meV/A | 56 s
+CPU 172 s

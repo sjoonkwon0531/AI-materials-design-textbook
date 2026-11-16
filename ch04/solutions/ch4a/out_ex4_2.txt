@@ -1,0 +1,102 @@
+=== 4.2.4 (a) weak coupling lamH=0.5 ===
+  alpha=0.3: iterations to |dn|<1e-9 = 82
+  alpha=0.5: iterations to |dn|<1e-9 = 45
+  alpha=0.7: iterations to |dn|<1e-9 = 29
+  alpha=1.0: iterations to |dn|<1e-9 = 16
+
+=== 4.2.4 (b) strong coupling lamH=4.0, alpha=1 |dn| history ===
+  first 10 |dn|: [3.119 2.874 2.825 2.815 2.812 2.812 2.811 2.811 2.811 2.811]
+  last 6  |dn|: [2.811 2.811 2.811 2.811 2.811 2.811]  converged: None
+  2-cycle densities parity asymmetry: ||n(x)-n(-x)||=5.7e-14, 4.2e-14;  centre density n(0) alternates 1.378 <-> 0.007
+  ||g(g(n))-n|| = 8.00e-15  vs ||g(n)-n|| = 2.811  (period-2 orbit)
+
+  lamH=0.5: fixed point from alpha=0.3 in 109 its, final |dn|=9.5e-13, parity asymmetry ||n(x)-n(-x)||=5.3e-15
+  Jacobian dg/dn: most negative eig=-0.001 (parity of its eigvec <v|Pv>=-1.00), largest eig=0.329, max|Im|=7.3e-10
+     alpha=1.00: predicted contraction rho(M)=0.329  -> ~20 its to 1e-9
+     alpha=0.70: predicted contraction rho(M)=0.531  -> ~34 its to 1e-9
+     alpha=0.50: predicted contraction rho(M)=0.665  -> ~53 its to 1e-9
+     alpha=0.30: predicted contraction rho(M)=0.799  -> ~97 its to 1e-9
+     alpha=0.15: predicted contraction rho(M)=0.899  -> ~206 its to 1e-9
+     even-parity modes: eig range [-0.000, 0.253];  odd-parity modes: [-0.001, 0.329]
+     alpha=1.00: rho_even=0.253, rho_odd=0.329
+     alpha=0.50: rho_even=0.627, rho_odd=0.665
+     alpha=0.40: rho_even=0.701, rho_odd=0.732
+     alpha=0.30: rho_even=0.776, rho_odd=0.799
+     stability limit alpha < 2/(1-lam_min) = 1.998;  optimal alpha = 2/(2-lam_min-lam_max) = 1.196
+
+  lamH=4.0: fixed point from alpha=0.3 in 87 its, final |dn|=7.5e-13, parity asymmetry ||n(x)-n(-x)||=3.1e-14
+  Jacobian dg/dn: most negative eig=-3.750 (parity of its eigvec <v|Pv>=-1.00), largest eig=0.120, max|Im|=6.1e-17
+     alpha=1.00: predicted contraction rho(M)=3.750  -> unstable
+     alpha=0.70: predicted contraction rho(M)=2.325  -> unstable
+     alpha=0.50: predicted contraction rho(M)=1.375  -> unstable
+     alpha=0.30: predicted contraction rho(M)=0.736  -> ~71 its to 1e-9
+     alpha=0.15: predicted contraction rho(M)=0.868  -> ~154 its to 1e-9
+     even-parity modes: eig range [-1.771, 0.120];  odd-parity modes: [-3.750, 0.117]
+     alpha=1.00: rho_even=1.771, rho_odd=3.750
+     alpha=0.50: rho_even=0.560, rho_odd=1.375
+     alpha=0.40: rho_even=0.648, rho_odd=0.900
+     alpha=0.30: rho_even=0.736, rho_odd=0.735
+     stability limit alpha < 2/(1-lam_min) = 0.421;  optimal alpha = 2/(2-lam_min-lam_max) = 0.355
+
+  alpha=0.5, lamH=4, long run with tol=1e-14 (residual history):
+     it  10: |dn|=5.55e-04
+     it  20: |dn|=7.29e-07
+     it  30: |dn|=2.04e-09
+     it  34: |dn|=2.02e-09
+     it  40: |dn|=1.36e-08
+     it  50: |dn|=3.28e-07
+     it  60: |dn|=7.91e-06
+     it  80: |dn|=4.61e-03
+     it 120: |dn|=1.35e+00
+     it 200: |dn|=1.35e+00
+     it 299: |dn|=1.35e+00
+     minimum |dn|=1.22e-09 at iteration 33
+     final parity asymmetry ||n(x)-n(-x)||=0.677
+
+=== 4.2.4 measured iterations at lamH=4 ===
+  alpha=1.00: None
+  alpha=0.70: None
+  alpha=0.60: None
+  alpha=0.50: None
+  alpha=0.30: 64
+  alpha=0.15: 138
+
+=== 4.2.5 acceleration at lamH=4 ===
+  predicted two-step spectral radius alpha=0.3 beta=1.0: even 0.736, odd 0.735
+  predicted two-step spectral radius alpha=0.3 beta=0.5: even 0.671, odd 0.844
+  predicted two-step spectral radius alpha=0.4 beta=1.0: even 0.648, odd 0.900
+  predicted two-step spectral radius alpha=0.4 beta=0.5: even 0.744, odd 0.975
+  predicted two-step spectral radius alpha=0.3 beta=1.5: even 0.780, odd 1.587
+  predicted two-step spectral radius alpha=0.5 beta=0.5: even 0.832, odd 1.090
+  linear alpha=0.4: 45
+  two-step alpha=0.5 beta=0.5 with tol=1e-15: min |dn|=3.6e-10 at it 138, |dn| at it 400=6.52e-01
+  linear  alpha=0.3: 64
+  linear  alpha=0.5: None
+  linear  alpha=0.6: None
+  two-step alpha=0.2 beta=0.5: 88
+  two-step alpha=0.2 beta=1.0: 101
+  two-step alpha=0.2 beta=1.5: 114
+  two-step alpha=0.2 beta=2.0: None
+  two-step alpha=0.3 beta=0.5: 51
+  two-step alpha=0.3 beta=1.0: 64
+  two-step alpha=0.3 beta=1.5: None
+  two-step alpha=0.3 beta=2.0: None
+  two-step alpha=0.4 beta=0.5: 72
+  two-step alpha=0.4 beta=1.0: 45
+  two-step alpha=0.4 beta=1.5: None
+  two-step alpha=0.4 beta=2.0: None
+  two-step alpha=0.5 beta=0.5: 111
+  two-step alpha=0.5 beta=1.0: None
+  two-step alpha=0.5 beta=1.5: None
+  two-step alpha=0.5 beta=2.0: None
+  Pulay/DIIS alpha=0.3 m=3: 41
+  Pulay/DIIS alpha=0.3 m=5: 43
+  Pulay/DIIS alpha=0.3 m=8: 62
+  Pulay/DIIS alpha=0.5 m=3: 26
+  Pulay/DIIS alpha=0.5 m=5: 27
+  Pulay/DIIS alpha=0.5 m=8: 21
+  Pulay/DIIS alpha=1.0 m=3: 42
+  Pulay/DIIS alpha=1.0 m=5: 28
+  Pulay/DIIS alpha=1.0 m=8: 19
+  Pulay(a=1,m=8) fixed point vs linear(a=0.3) fixed point: ||diff||=1.0e-11, parity asym=2.5e-12
+  weak coupling lamH=0.5: linear a=0.5 -> 45 ; Pulay a=0.5 m=5 -> 18

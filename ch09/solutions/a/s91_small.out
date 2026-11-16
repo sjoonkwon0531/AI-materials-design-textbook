@@ -1,0 +1,24 @@
+== 9.1.1 ==
+d=1: 1e+02 points, 8.000e+02 bytes = 8e-07 GB = 7.451e-07 GiB; fits in 64 GB: True
+d=2: 1e+04 points, 8.000e+04 bytes = 8e-05 GB = 7.451e-05 GiB; fits in 64 GB: True
+d=3: 1e+06 points, 8.000e+06 bytes = 0.008 GB = 0.007451 GiB; fits in 64 GB: True
+d=4: 1e+08 points, 8.000e+08 bytes = 0.8 GB = 0.7451 GiB; fits in 64 GB: True
+d=5: 1e+10 points, 8.000e+10 bytes = 80 GB = 74.51 GiB; fits in 64 GB: False
+d=6: 1e+12 points, 8.000e+12 bytes = 8000 GB = 7451 GiB; fits in 64 GB: False
+d=1: grid points x 3.2 per decade of error (MC: x 100)
+d=2: grid points x 10.0 per decade of error (MC: x 100)
+d=3: grid points x 31.6 per decade of error (MC: x 100)
+d=4: grid points x 100.0 per decade of error (MC: x 100)
+d=5: grid points x 316.2 per decade of error (MC: x 100)
+d=6: grid points x 1000.0 per decade of error (MC: x 100)
+d=7: grid points x 3162.3 per decade of error (MC: x 100)
+d=8: grid points x 10000.0 per decade of error (MC: x 100)
+== 9.1.3 ==
+eig [-0.005+0.9999875j -0.005-0.9999875j]  -g/2 = -0.005  omega = 0.999987499921874
+x0=[1.0, 0.0]: H(T)/H(0) = 0.13591   exp(-gT) = 0.13534
+x0=[0.0, 1.0]: H(T)/H(0) = 0.13477   exp(-gT) = 0.13534
+x0=[1.0, 1.0]: H(T)/H(0) = 0.13431   exp(-gT) = 0.13534
+H(t) e^(gt)/H0 over the last period: min 0.99502 max 1.00503
+periods in T=200: 31.8; lost 86.5 %
+omega = 1.004988, phase lag at T=200: 0.9975 rad = 0.1588 periods; H band [H0, H0(1+g)] -> relative width 0.010
+numerical: H/H0 in [1.00000, 1.01000], |q - cos t| at T=200: 0.511, max over t: 0.952

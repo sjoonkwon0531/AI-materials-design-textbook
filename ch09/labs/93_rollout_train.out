@@ -1,0 +1,10 @@
+KS one-step data: 64 trajectories x 200 steps = 12800 pairs; FNO width 32, kmax 24, 211265 parameters; pre-training 1200 updates, fine-tuning 600 updates, batch 64
+pre-train [base]: one-step test rel-L2 0.0020   (237 s wall, 51 s CPU)
+pre-train [cons]: one-step test rel-L2 0.0019   (237 s wall, 51 s CPU)
+noise level sigma = 0.0013 (rms u = 1.308)
+fine-tune [onestep]: one-step test rel-L2 0.0016   (99 s wall, 24 s CPU)
+fine-tune [noise  ]: one-step test rel-L2 0.0016   (92 s wall, 25 s CPU)
+fine-tune [push   ]: one-step test rel-L2 0.0018   (139 s wall, 31 s CPU)
+fine-tune [unroll ]: one-step test rel-L2 0.0018   (363 s wall, 91 s CPU)
+fine-tune [cons   ]: one-step test rel-L2 0.0016   (91 s wall, 25 s CPU)
+wall 1350 s (CPU 322 s)

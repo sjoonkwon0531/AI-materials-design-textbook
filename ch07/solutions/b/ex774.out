@@ -1,0 +1,25 @@
+xTB 0 stable drift -1.86 meV/ps <T> 333 K O-H 0.9686 C-C 1.5352 C-O 1.4134 cpu 13 s
+xTB 1 stable drift -1.16 meV/ps <T> 340 K O-H 0.9656 C-C 1.5346 C-O 1.4138 cpu 14 s
+xTB 2 stable drift -0.69 meV/ps <T> 353 K O-H 0.9653 C-C 1.5373 C-O 1.4160 cpu 12 s
+xTB 3 stable drift -2.34 meV/ps <T> 435 K O-H 0.9757 C-C 1.5397 C-O 1.4156 cpu 14 s
+xTB 4 stable drift -1.63 meV/ps <T> 405 K O-H 0.9682 C-C 1.5380 C-O 1.4163 cpu 13 s
+schnet_N1000 0 stable drift -0.09 meV/ps <T> 326 K O-H 0.9668 C-C 1.5363 C-O 1.4155 cpu 18 s
+schnet_N1000 1 stable drift 0.12 meV/ps <T> 333 K O-H 0.9661 C-C 1.5330 C-O 1.4150 cpu 17 s
+schnet_N1000 2 stable drift -0.22 meV/ps <T> 345 K O-H 0.9679 C-C 1.5329 C-O 1.4158 cpu 16 s
+schnet_N1000 3 UNSTABLE at 0.70 ps drift -0.88 meV/ps <T> 438 K O-H 0.9743 C-C 1.5312 C-O 1.4134 cpu 6 s
+schnet_N1000 4 stable drift -0.28 meV/ps <T> 395 K O-H 0.9688 C-C 1.5352 C-O 1.4138 cpu 16 s
+nequip_N1000 0 stable drift 0.03 meV/ps <T> 318 K O-H 0.9676 C-C 1.5349 C-O 1.4141 cpu 65 s
+nequip_N1000 1 stable drift 0.04 meV/ps <T> 326 K O-H 0.9665 C-C 1.5373 C-O 1.4129 cpu 73 s
+nequip_N1000 2 stable drift -0.11 meV/ps <T> 335 K O-H 0.9667 C-C 1.5322 C-O 1.4188 cpu 72 s
+O-H: noise floor W1(xTB s0-1 vs s2-4) = 0.0079 | schnet_N1000: W1 vs xTB(all 5) 0.0038, vs xTB(same seeds) 0.0038 | nequip_N1000: W1 vs xTB(all 5) 0.0064, vs xTB(same seeds) 0.0059 | schnet vs nequip (seeds 0-2) 0.0015 | single-seed xTB pairwise W1 median 0.0178 (range 0.0015-0.0369)
+     xTB           pooled mean 0.9687 std 0.0312
+     schnet_N1000  pooled mean 0.9680 std 0.0291
+     nequip_N1000  pooled mean 0.9670 std 0.0243
+C-C: noise floor W1(xTB s0-1 vs s2-4) = 0.0078 | schnet_N1000: W1 vs xTB(all 5) 0.0090, vs xTB(same seeds) 0.0090 | nequip_N1000: W1 vs xTB(all 5) 0.0108, vs xTB(same seeds) 0.0077 | schnet vs nequip (seeds 0-2) 0.0025 | single-seed xTB pairwise W1 median 0.0060 (range 0.0027-0.0119)
+     xTB           pooled mean 1.5370 std 0.0507
+     schnet_N1000  pooled mean 1.5341 std 0.0420
+     nequip_N1000  pooled mean 1.5348 std 0.0392
+C-O: noise floor W1(xTB s0-1 vs s2-4) = 0.0077 | schnet_N1000: W1 vs xTB(all 5) 0.0021, vs xTB(same seeds) 0.0021 | nequip_N1000: W1 vs xTB(all 5) 0.0027, vs xTB(same seeds) 0.0015 | schnet vs nequip (seeds 0-2) 0.0022 | single-seed xTB pairwise W1 median 0.0050 (range 0.0020-0.0129)
+     xTB           pooled mean 1.4150 std 0.0357
+     schnet_N1000  pooled mean 1.4149 std 0.0333
+     nequip_N1000  pooled mean 1.4153 std 0.0329

@@ -1,0 +1,12 @@
+random conv layer: relative error  translation (5,11) px: 0.0e+00   rotation 90 deg: 0.99
+--- no augmentation (training lamellae within +-15 deg; mean of 2 seeds; logit change under (13,29)-px roll: 1.2e+00)
+   lamella angle (deg):       0     15     30     45     60     75     90
+   lamellae recall    :   1.000  1.000  0.510  0.000  0.000  0.000  0.000
+   other two classes  :   1.000  1.000  1.000  1.000  1.000  1.000  1.000
+   [time 394 s]
+--- rotation augmentation (training lamellae within +-15 deg; mean of 2 seeds; logit change under (13,29)-px roll: 1.8e+00)
+   lamella angle (deg):       0     15     30     45     60     75     90
+   lamellae recall    :   1.000  1.000  1.000  1.000  1.000  1.000  1.000
+   other two classes  :   1.000  1.000  1.000  0.998  1.000  1.000  1.000
+   [time 814 s]
+wall 814 s

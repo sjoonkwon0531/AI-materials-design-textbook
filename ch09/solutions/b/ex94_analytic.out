@@ -1,0 +1,36 @@
+=== 9.4.1 ===
+(a) N* = (38+58)/(18.261-0.125)ms = 5,293;  speed-up 146.1
+    unrounded: data 37.970 s, train 57.509 s, c_i 0.124968 ms, c_s 18.2611 ms -> N* = 5,265
+(b) ensemble: N* = (38+4*58)/(18.261-0.628)ms = 15,312;  unrounded 15,199;  speed-up 29.1
+(c) 32-point solver: N* = 96/(0.321-0.125)ms = 489,796; unrounded 487,049; ensemble c_i - c_s = 0.307 ms > 0
+(d) few-shot: N* = (64*18.261ms + 8)/(18.261-0.125)ms = 506  (label cost 1.17 s); ratio to (a): 10.5
+    without fine-tuning cost: 64.4 > K = 64
+=== 9.4.2 ===
+(a) max |mean - cos1 sin x| = 2.2e-16; cos 1 = 0.5403; rel. L2 error vs sin(x-1): 0.8415, vs sin(x+1): 0.8415; sin 1 = 0.8415
+(b) u(0,1) = -sin1 = -0.8415 (c=+1), +0.8415 (c=-1); log-likelihoods -0.1166, -4.1557; log odds 4.0391 (= -2 y sin1 / sigma^2 = 4.0391); p(c=+1|y) = 0.9827
+(c) rel. L2 error of the posterior mean vs sin(x-1): 0.0291  (2(1-p) sin1 = 0.0291); amplitude of the mean: 0.9756 (K=0: 0.5403)
+(d) K=0: posterior-expected squared rel. error: mean 0.7081 (rms 0.841), posterior sample 1.4161 (rms 1.190); wrong-branch error 2 sin1 = 1.683 with prob. 0.5000 if c=+1 is true
+(d) after y: posterior-expected squared rel. error: mean 0.0482 (rms 0.219), posterior sample 0.0964 (rms 0.310); wrong-branch error 2 sin1 = 1.683 with prob. 0.0173 if c=+1 is true
+    |E e^(-ick)| for c uniform in +-0.2, k = 3: 0.941
+    |E e^(-ick)| for c uniform in +-0.4, k = 3: 0.777
+=== 9.4.3 ===
+(c) (rho, nu, k) = (0, 0.1, 1): lambda = -0.1, ||e||/||r|| = 0.9516 (RK4 0.9516); (e) bound e^max(Lam,0) = 1.000 -> 1.05x;  first form of (9.22) with Lambda = rho: 1.000 -> 1.05x
+(c) (rho, nu, k) = (3, 0.1, 1): lambda = +2.9, ||e||/||r|| = 5.9221 (RK4 5.9221); (e) bound e^max(Lam,0) = 20.086 -> 3.39x;  first form of (9.22) with Lambda = rho: 6.362 -> 1.07x
+(c) (rho, nu, k) = (0, 0.1, 8): lambda = -6.4, ||e||/||r|| = 0.1560 (RK4 0.1560); (e) bound e^max(Lam,0) = 1.000 -> 6.41x;  first form of (9.22) with Lambda = rho: 1.000 -> 6.41x
+=== 9.4.4 ===
+(a) k = 271; Beta(271, 30): mean 0.9003, sd 0.0172; 5-95% [0.871, 0.927]
+(b) binomial sd 0.0173; combined 0.0244 (exact beta-binomial sd 0.0244); (0.90 - 0.86)/sd = 1.64; from the mean 0.9003: 1.65
+    P(coverage <= 258/300) = 0.064;  check 0.86*300 = 258.0
+(c) smallest n with sd <= 0.005: n = 3594 (sd 0.00500); approx 0.09/0.005^2 - 2 = 3598; solver cost 65.6 CPU-s (1.73 x the training-data cost); test-side binomial sd stays 0.0173 unless more test points
+(d) low-nu: (0.90 - 0.207)/0.0244 = 28.4 sd
+    cal      : median err/res 0.143, share with err/res <= q = 0.195: 90.3%
+    ID       : median err/res 0.140, share with err/res <= q = 0.195: 86.0%
+    low-nu   : median err/res 0.228, share with err/res <= q = 0.195: 20.7%
+    high-k   : median err/res 0.115, share with err/res <= q = 0.195: 93.7%
+    reaction : median err/res 0.574, share with err/res <= q = 0.195: 0.0%
+=== 9.4.5 ===
+(b) v = 0.2731 -> sqrt v = 0.523 %;  b^2 = 0.2453 -> b = 0.495 %;  variance share of the single-model MSE: 0.53
+(c) M -> inf: 0.495 %;  M = 8: 0.529 %, M = 16: 0.512 %
+(d) ratio err/sd for the ensemble mean = sqrt(b^2 + v/M)/sqrt(v): ID model 1.07 (Lab median 0.8)
+    reaction: ratio 186 with M = 4 -> b/sqrt(v) = sqrt(186^2 - 1/4) = 186.3; variance share of the MSE = 2.9e-05
+(a) Monte Carlo (b = sqrt v = 0.5): single MSE 0.5008 (b^2+v = 0.5000); mean-of-4 MSE 0.3127 (b^2+v/4 = 0.3125); E[sample var] = 0.2498

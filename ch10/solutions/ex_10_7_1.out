@@ -1,0 +1,15 @@
+cubic Pm-3m, 2x2x2 (40 atoms): 3 displaced supercells
+   atom  0 (Sr): displacement [1. 0. 0.] x 0.01 A
+   atom  8 (Ti): displacement [1. 0. 0.] x 0.01 A
+   atom 16 (O): displacement [0.707 0.    0.707] x 0.01 A
+site symmetries (Sr, Ti, O, O, O): ['m-3m', 'm-3m', '4/mm.m', '4/mm.m', '4/mm.m']
+O at (1/2,1/2,0): 16 site-symmetry operations; rank of the images of (1,0,1)/sqrt2 = 3
+   rank of images of (1,0,0) = 2, of (0,0,1) = 1
+is_symmetry=False (lattice translations of the supercell still used by phonopy): 15
+fully naive count, every atom of the 40-atom supercell x 3 directions: 120 (x2 with +/-: 240 )
+tilted cell space group: I4/mcm (140)
+I4/mcm, the 40-atom tilted cell as the supercell: primitive cell 10 atoms, 6 displaced supercells
+   displaced atoms: ['Sr', 'Sr', 'Ti', 'O', 'O', 'O']
+I4/mcm, 2x2x2 of the 40-atom cell (320 atoms): primitive cell 10 atoms, 6 displaced supercells
+   displaced atoms: ['Sr', 'Sr', 'Ti', 'O', 'O', 'O']
+I4/mcm Wyckoff positions and site symmetries: {('Sr', 'b'): '-42m', ('Ti', 'c'): '4/m..', ('O', 'a'): '422', ('O', 'h'): 'm.2m'}

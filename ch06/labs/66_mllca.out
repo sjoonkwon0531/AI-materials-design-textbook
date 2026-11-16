@@ -1,0 +1,13 @@
+=== SYNTHETIC data: train n=400 (steps 1-5, MW 30-300); test in-domain n=400; OOD n=400 (steps 6-10, MW 300-800) ===
+model             MAE ln in  MAE ln OOD  median ratio OOD
+linear (ln GWP)       0.279       0.283             0.948
+RF                    0.320       1.367             0.258
+LightGBM              0.322       1.246             0.289
+noise floor: E|eps| = 0.35*sqrt(2/pi) = 0.279
+true ln GWP: train max 2.48, OOD mean 2.49; RF OOD prediction max 2.02
+=== RF tree spread vs actual error ===
+  in-domain : mean tree sd 0.323   mean |error| 0.320
+  OOD       : mean tree sd 0.281   mean |error| 1.367
+=== kNN (k=5) distance in standardised descriptor space, 95th pct of training = 1.145 ===
+  flagged as outside domain: in-domain 0.070, OOD 1.000
+  mixed test set: mean |error| flagged 1.297  vs unflagged 0.322

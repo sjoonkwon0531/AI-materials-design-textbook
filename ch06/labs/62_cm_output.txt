@@ -1,0 +1,37 @@
+=== Part A: ethanol (N=9), random rotation + translation + permutation ===
+  raw Cartesian coordinates : max|dx|      = 4.723 A
+  raw CM (no sorting)       : max|dM|      = 73.017
+  sorted-row CM             : max|dM|      = 7.42e-02
+  eigenvalue spectrum       : max|dlambda| = 4.26e-14
+  row norms of M (atoms CCOHHHHHH): 49.468 56.121 84.084 9.033 7.307 7.307 6.701 6.974 6.974
+  DScribe sorted_l2 vs own  : max diff     = 0.00e+00
+=== Part B: randomized CM (sigma = 1), 5 augmented copies of the same ethanol ===
+  distinct row orders = 5 / 5;  ||M_rand - M_sorted||_F = 1.3, 15.1, 0.2, 7.8, 14.9   (||M_sorted||_F = 114.0)
+=== Part C: stretch hydroxyl O-H by s (A); its row norm crosses a C-H hydrogen at s* = 0.2658 A ===
+     eps      ||sorted(s*+eps)-sorted(s*-eps)||   ||eig(s*+eps)-eig(s*-eps)||
+     1e-01        10.6155                    1.68e-01
+     1e-02         7.8189                    1.87e-02
+     1e-03         7.8177                    1.87e-03
+     1e-04         7.8177                    1.87e-04
+     1e-05         7.8177                    1.87e-05
+=== Part D: a 5-atom C1H4 geometry and a different one with the SAME eigenspectrum ===
+  degrees of freedom 3N-6 = 9 > N = 5 eigenvalues
+  max|lambda(R1) - lambda(R0)| = 7.1e-15
+  sorted C-H distances R0: 0.781 1.104 1.166 1.258
+  sorted C-H distances R1: 0.738 1.097 1.300 1.353
+  sorted H-H distances R0: 1.589 1.644 1.688 1.864 1.883 1.892
+  sorted H-H distances R1: 1.109 1.353 1.544 1.680 1.900 2.018
+  largest difference in a sorted distance = 0.479 A  -> different molecules, same descriptor
+  sorted-row CM distance between them = 1.202
+=== Part E: rattled NaCl conventional cell (8 atoms, sigma = 0.1 A), shift origin by t and wrap ===
+  t = ( 0.30, 0.00, 0.00) A:  cell-CM eig max|d| =   42.072   sine-matrix eig max|d| = 2.3e-13
+  t = ( 1.10, 2.00,-0.70) A:  cell-CM eig max|d| =    3.716   sine-matrix eig max|d| = 4.0e-13
+  t = ( 2.82, 2.82, 2.82) A:  cell-CM eig max|d| =   35.009   sine-matrix eig max|d| = 6.8e-13
+  same crystal, primitive cell (2 atoms): sine eig = [450.05 156.62]
+                conventional cell (8 atoms): sine eig = [593.55 413.29 413.29 413.29 167.33 141.98 141.98 141.98]
+=== Part F: cost of the sine-matrix eigenspectrum vs cell size (Cu fcc supercells, best of 5, 1 BLAS thread) ===
+  N =   32: total     0.17 ms, per atom 0.0054 ms
+  N =  108: total     1.70 ms, per atom 0.0157 ms
+  N =  256: total    31.88 ms, per atom 0.1245 ms
+  N =  500: total   143.77 ms, per atom 0.2875 ms
+  N =  864: total   556.98 ms, per atom 0.6447 ms

@@ -1,0 +1,10 @@
+hard IC: Fourier series of w0 with |k| <= 12 (625 modes), truncation error 3.7e-02
+PINN for one NS instance (hard initial condition): T = 5, two MLPs 21-64-64-64-64-1 tanh, 27,906 parameters, 2048 collocation points (fixed)
+  Adam   500: CPU    43 s | loss PDE 1.16e-02, Poisson 1.64e-02, IC 0.00e+00 | rel. L2 at t=1: 0.5711, at t=5: 0.8928
+  Adam  1000: CPU    85 s | loss PDE 8.26e-03, Poisson 8.53e-03, IC 0.00e+00 | rel. L2 at t=1: 0.6454, at t=5: 0.8768
+  Adam  1500: CPU   128 s | loss PDE 7.02e-03, Poisson 6.86e-03, IC 0.00e+00 | rel. L2 at t=1: 0.6633, at t=5: 0.8870
+  Adam  2000: CPU   169 s | loss PDE 6.56e-03, Poisson 6.40e-03, IC 0.00e+00 | rel. L2 at t=1: 0.6730, at t=5: 0.8927
+  + L-BFGS  : CPU   200 s | loss PDE 6.28e-03, Poisson 3.45e-03, IC 0.00e+00 | rel. L2 at t=1: 0.6617, at t=5: 0.8813
+rel. L2 error vs the 64^2 solver at t = 1..5: 0.6617 0.9037 0.9296 0.9084 0.8813
+this single instance: wall 317 s on a shared machine, CPU time 200 s
+vorticity-equation residual (mean square): 6.28e-03 on the 2048 training points, 1.65e-02 on 2048 fresh points

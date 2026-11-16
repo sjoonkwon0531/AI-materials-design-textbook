@@ -1,0 +1,9 @@
+    40 / 240 trajectories,  157.8 s
+    80 / 240 trajectories,  300.4 s
+   120 / 240 trajectories,  448.3 s
+   160 / 240 trajectories,  611.3 s
+   200 / 240 trajectories,  820.2 s
+   240 / 240 trajectories, 1030.0 s
+generated 240 trajectories x 20 unit-time steps (480,000 solver steps) in 1030.0 s wall, 112.7 s CPU  = 23.5 ms CPU per sample per unit time
+std of w at t = 0, 5, 10, 20: 0.259 0.451 0.695 0.956
+persistence error ||w(t+1)-w(t)||/||w(t+1)|| at t = 0, 5, 10, 19: 0.472 0.137 0.078 0.103

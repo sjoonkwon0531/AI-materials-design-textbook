@@ -1,0 +1,4 @@
+MACE-MP-0 small: well depth -3.48 meV/f.u. = k_B x 40.4 K; harmonic omega at the well bottom 100 cm-1, hbar omega/2 = 6.19 meV; levels E0 +0.10, E1 +4.49, E2 +13.52 meV (barrier top 0)
+CHGNet 0.3.0: well depth -0.95 meV/f.u. = k_B x 11.0 K; harmonic omega at the well bottom 66 cm-1, hbar omega/2 = 4.11 meV; levels E0 +1.51, E1 +6.99, E2 +15.69 meV (barrier top 0)
+k_B T at 50 K = 4.31 meV
+k_B T at 300 K = 25.85 meV

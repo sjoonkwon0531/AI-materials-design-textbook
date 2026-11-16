@@ -1,0 +1,2 @@
+float64: 320 atoms, CPU per MD step 6.53 s -> 1,000 steps 109 min, 5 ps (2,500 steps) 4.5 h
+float32: 320 atoms, CPU per MD step 3.06 s -> 1,000 steps 51 min, 5 ps (2,500 steps) 2.1 h

@@ -1,0 +1,4 @@
+beads/molecule = 4
+all-atom: particles = 5.0e+05, steps = 5.0e+08, particle-steps = 2.50e+14
+MARTINI : particles = 4.0e+04, steps = 1.25e+07, particle-steps = 5.00e+11
+ratio = 500  (= particles 12.5 x dt 10 x time factor 4)

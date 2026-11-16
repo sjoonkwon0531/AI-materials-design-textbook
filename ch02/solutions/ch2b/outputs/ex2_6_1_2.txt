@@ -1,0 +1,15 @@
+f' = c*(c - 1)*(c + 1)   f'' = 3*c**2 - 1   f''(0) = -1   f''(+-1) = 2
+spinodal f''=0 at c = +-1/sqrt(3) = [-0.5773502691896257, 0.5773502691896257]
+
+2.6.2 theory: k* = 1/(eps sqrt2), lambda* = 2 pi sqrt2 eps, sigma_max = 1/(4 eps^2)
+  eps=0.1: k*=7.071  lambda*=0.8886  wavelengths across L=4pi: 14.14  sigma_max=25
+  eps=0.05: k*=14.142  lambda*=0.4443  wavelengths across L=4pi: 28.28  sigma_max=100
+eps=0.10 N=256 dx=0.0491: t=0.160  S(k) peak k=6.50  (theory 7.07),  max|c|=0.592
+eps=0.05 N=256 dx=0.0491: t=0.040  S(k) peak k=14.00  (theory 14.14),  max|c|=0.775
+eps=0.05 N=512 dx=0.0245: t=0.040  S(k) peak k=13.50  (theory 14.14),  max|c|=0.589
+Lab settings, t=1, eps=0.1: L(t)=2pi/<k> = 1.269,  S(k) peak k = 4.50
+Lab settings, t=1, eps=0.05: L(t)=2pi/<k> = 0.790,  S(k) peak k = 6.50
+scheme (S=2, dt=0.05) eps=0.1: fastest-growing k of the discrete map = 4.47 (continuous k*=7.07), g_max=1.2500
+scheme (S=2, dt=0.0001) eps=0.1: fastest-growing k of the discrete map = 7.04 (continuous k*=7.07), g_max=1.0025
+scheme (S=2, dt=0.05) eps=0.05: fastest-growing k of the discrete map = 6.74 (continuous k*=14.14), g_max=1.3471
+scheme (S=2, dt=0.0001) eps=0.05: fastest-growing k of the discrete map = 13.94 (continuous k*=14.14), g_max=1.0095

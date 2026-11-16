@@ -1,0 +1,23 @@
+train pairs 4000, test trajectories 40, sigma = 0.691
+FNO-2D: modes 12, width 20, 4 Fourier layers, 924,769 real parameters
+epoch 1: train loss 0.0601 | test one-step rel. L2 0.0163 | 686 s
+epoch 2: train loss 0.0102 | test one-step rel. L2 0.0080 | 1048 s
+epoch 3: train loss 0.0059 | test one-step rel. L2 0.0054 | 1356 s
+epoch 4: train loss 0.0045 | test one-step rel. L2 0.0049 | 1610 s
+
+training: wall 1610 s on a shared machine, CPU time 269 s (2000 Adam steps, batch 8)
+  t      one-step     rollout      persistence(1 step)   persistence(from t=0)
+   1     0.0436       0.0436       0.4877                0.4877
+   2     0.0114       0.0391       0.3744                0.7980
+   5     0.0033       0.0230       0.1719                1.0123
+  10     0.0016       0.0154       0.0848                1.0592
+  15     0.0016       0.0145       0.0802                1.0962
+  20     0.0030       0.0170       0.1053                1.1013
+mean over t = 1..20: one-step 0.0049, rollout 0.0201; rollout at t = 20: 0.0170 +/- 0.0010 (s.e., 40 samples), worst sample 0.0363
+rms of the rollout error / rms of w at t = 1, 5, 10, 20: 0.0104 / 0.246, 0.0101 / 0.440, 0.0105 / 0.687, 0.0160 / 0.949
+mean |error| at t = 20: on the outermost ring of grid points 0.0182, elsewhere 0.0123  (ratio 1.49)
+enstrophy spectrum at t = 20 (shells |k| = 1, 2, 4, 8, 16):
+  solver : 8.62e-01 3.06e-02 3.41e-03 2.04e-06 6.63e-13
+  FNO    : 8.61e-01 3.08e-02 3.44e-03 2.00e-06 7.07e-06
+  share of the solver enstrophy above |k| = 12: 4.22e-10; FNO: 7.20e-05
+mean vorticity (conserved, = 0): max |<w>| over the FNO rollouts = 1.05e-02, solver 1.49e-08

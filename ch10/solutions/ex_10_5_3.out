@@ -1,0 +1,6 @@
+xTB test force components: 384, RMS |F| 1121 meV/A, max |F| 4.74 eV/A
+MACE-MP-0 small as is      : slope 0.652, Pearson r 0.9778, RMSE 420 meV/A, RMSE after rescaling by 1/k 240 meV/A
+full fine-tune N=48  40 st: slope 1.038, Pearson r 0.9899, RMSE 172 meV/A, residual about the fitted line 166 meV/A
+full fine-tune N=48 200 st: slope 1.006, Pearson r 0.9960, RMSE 101 meV/A, residual about the fitted line 101 meV/A
+zero-shot: RMSE of F_MACE/k0 vs xTB = 240 meV/A (k0 = 0.652)
+CPU 125 s

@@ -1,0 +1,31 @@
+=== Metropolis (random-site), T = T_c, 2000 eq sweeps; tau in sweeps ===
+   L   sweeps    tau_int(m^2)        tau_int(E)       CPU s
+    8   600000       8.8 +/-   0.2      6.7 +/-  0.1      9.5
+   16   400000      38.0 +/-   1.8     21.7 +/-  0.8     13.2
+   32   500000     150.7 +/-  12.8     67.9 +/-  3.9     66.6
+   64   400000     822.4 +/- 182.7    280.4 +/- 36.4    158.7
+=== Wolff, T = T_c, 1000 eq clusters; tau converted to sweeps = tau_cluster * <C>/L^2 ===
+   L  clusters  <C>/L^2   tau_int(m^2)      tau_int(E)      CPU s
+    8   200000   0.6478    1.011 +/- 0.015    1.118 +/- 0.017     3.4
+   16   200000   0.5467    1.199 +/- 0.020    1.423 +/- 0.026     4.1
+   32   150000   0.4604    1.354 +/- 0.030    1.719 +/- 0.043    13.8
+   64    80000   0.3862    1.636 +/- 0.060    2.194 +/- 0.092    26.8
+  128    40000   0.3245    1.822 +/- 0.107    2.781 +/- 0.202    48.9
+=== fits ===
+  Metropolis z (m^2): L=8-64 -> 2.16;  L=16-64 -> 2.22
+  Wolff z (m^2) = 0.21,  Wolff z (E) = 0.33   (L = 8-128)
+  Wolff <C> ~ L^1.750   (gamma/nu = 1.75)
+=== blocking analysis, Metropolis L=32, observable m^2 ===
+  level  blocks  std.err
+      0  500000  2.67e-04
+      2  125000  5.29e-04
+      4   31250  1.03e-03
+      6    7812  1.92e-03
+      8    1953  3.19e-03
+     10     488  4.25e-03
+     12     122  4.46e-03
+     14      30  4.61e-03
+  <m^2> = 0.4616;  naive err = 2.67e-04;  plateau err = 4.49e-03
+  (plateau/naive)^2 = 283   vs   2*tau_int = 301
+=== CPU seconds per independent sample (2 tau_int) at L=64: Metropolis 652.4 ms, Wolff 2.84 ms, ratio 230 ===
+total 345 s

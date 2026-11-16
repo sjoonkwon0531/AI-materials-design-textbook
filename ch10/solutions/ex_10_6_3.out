@@ -1,0 +1,6 @@
+float64: bulk a = 5.4646 A, E/atom = -5.37090 eV
+  N =  64: Ef(unrelaxed) 2.136 eV, Ef(relaxed) 2.070 eV, steps 30, CPU 34 s; nbr-nbr 3.509 3.511 3.512 3.512 3.513 3.515 A
+float32: bulk a = 5.4647 A, E/atom = -5.37090 eV
+  N =  64: Ef(unrelaxed) 2.136 eV, Ef(relaxed) 2.070 eV, steps 30, CPU 23 s; nbr-nbr 3.509 3.511 3.512 3.512 3.513 3.515 A
+  N = 512: Ef(unrelaxed) 2.126 eV, Ef(relaxed) 2.019 eV, steps 43, CPU 512 s; nbr-nbr 3.243 3.246 3.247 3.248 3.250 3.252 A
+CPU total 579 s

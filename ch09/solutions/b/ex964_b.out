@@ -1,0 +1,10 @@
+[quench-raw] epoch 3: train loss 0.6589 | CPU 7 s
+[quench-raw] epoch 6: train loss 0.5284 | CPU 14 s
+[quench-raw] epoch 9: train loss 0.4787 | CPU 21 s
+[quench-raw] epoch 12: train loss 0.4432 | CPU 28 s
+[quench-raw] epoch 15: train loss 0.4300 | CPU 35 s
+[quench-norm] epoch 3: train loss 0.5191 | CPU 7 s
+[quench-norm] epoch 6: train loss 0.3725 | CPU 13 s
+[quench-norm] epoch 9: train loss 0.2696 | CPU 20 s
+[quench-norm] epoch 12: train loss 0.2219 | CPU 27 s
+[quench-norm] epoch 15: train loss 0.2106 | CPU 34 s

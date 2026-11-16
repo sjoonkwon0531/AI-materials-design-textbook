@@ -1,0 +1,21 @@
+== 9.2.2 ==
+float64: h* = 3.206e-05, E* = 1.713e-06 (check 1.713e-06), rel = 4.36e-08; model rel at h=1e-2,3e-3,1e-3,1e-4,3e-5: 2.1e-03, 1.9e-04, 2.1e-05, 2.1e-07, 4.4e-08
+float32: h* = 4.899e-03, E* = 4.000e-02 (check 4.000e-02), rel = 1.02e-03; model rel at h=1e-2,3e-3,1e-3,1e-4,3e-5: 2.2e-03, 1.5e-03, 1.2e-02, 1.2e+00, 1.4e+01
+float64 u''''(sin 2 pi x) max rel err: h=0.1: 6.4e-02; h=0.05: 1.6e-02; h=0.03: 5.9e-03; h=0.02: 2.6e-03; h=0.01: 6.6e-04; h=0.005: 1.6e-04; h=0.003: 5.9e-05; h=0.001: 7.0e-06 | best (np.float64(7.017564120061511e-06), 0.001)
+float32 u''''(sin 2 pi x) max rel err: h=0.1: 6.4e-02; h=0.05: 1.6e-02; h=0.03: 6.3e-03; h=0.02: 6.0e-03; h=0.01: 7.2e-02; h=0.005: 7.5e-01; h=0.003: 9.8e+00; h=0.001: 9.9e+02 | best (np.float64(0.005957369982811705), 0.02)
+model 4th-derivative: h* = 2.685e-02, E* = 11.09, rel to (2pi)^4: 7.11e-03; rounding factor from h*/3: 81
+== 9.2.4 ==
+sigma=1: 3(2 pi s)^4 = 4.676e+03; 105 (2 pi s)^8 = 2.551e+08
+sigma=10: 3(2 pi s)^4 = 4.676e+07; 105 (2 pi s)^8 = 2.551e+16
+sigma=50: 3(2 pi s)^4 = 2.922e+10; 105 (2 pi s)^8 = 9.963e+21
+relative std of sample mean of b^4 with m=4096: 0.051; script/theory = 0.9662
+RFF m=64 pairs sigma=10: Tr Kuu 1.280e+02, Tr Krr 4.596e+11; lam_b 3.590e+09, lam_r 1.000000, lam_b/lam_r 3.590e+09
+  after weighting: Tr(lam_b Kuu) 4.595570e+11 = Tr(lam_r Krr) 4.595570e+11
+  K_rr eigenvalues: max 5.907e+10, smallest nonzero 3.149e-03 (50 nonzero), ratio 1.875e+13; after weighting max 5.907e+10 min 3.149e-03, ratio unchanged
+  (2 pi b)^4 range over the 64 features: 6.134e-03 .. 4.554e+08; 25^4 = 390625
+== 9.2.5 ==
+sigma_D = 0.00573 (5.7 % of D=0.1); B2 PINN 0.0029 -> ratio 1.98; sine-series LS 0.0012 -> ratio 4.78; sqrt(40) = 6.32
+MC two-point estimator: mean 0.10000, std 0.00573
+CRB sigma_D, 80 points: one mode (A1, D unknown) 0.00194; two modes (A1, A3, D) 0.00190; four modes (A1..A4, D) 0.00190
+signal at sensors: t=0.1: [0.614, 0.797, 0.7, 0.797, 0.614], t=1: [0.169, 0.302, 0.373, 0.302, 0.169]; relative noise 0.02/u at t=1: [0.118, 0.066, 0.054, 0.066, 0.118]
+(d) sin(3 pi/3) = 1.2e-16, sin(3*2pi/3) = -2.4e-16; sin(pi/3) = 0.8660; modes invisible: k = 3, 6, 9, ...

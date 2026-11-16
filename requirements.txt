@@ -1,0 +1,32 @@
+# Core (Ch.1-10)
+numpy
+scipy
+matplotlib
+sympy
+numba
+pandas
+pyarrow
+scikit-learn
+# Materials and atomistic (Ch.3-4, 6, 7, 10)
+ase
+pymatgen
+matminer
+dscribe
+phonopy
+# Deep learning (Ch.7-10)
+torch
+e3nn
+mace-torch
+jax
+# Classical ML extras (Ch.6-7)
+lightgbm
+xgboost
+umap-learn
+cvxpy
+# Reinforcement learning (Ch.8)
+gymnasium
+# Optional: semi-empirical labels (Ch.7, Ch.10) and electronic structure
+# tblite        # GFN-xTB labels for the ethanol datasets
+# pyscf
+# mp-api        # Materials Project access (needs an API key)
+# scikit-fem    # Ch.2 finite elements

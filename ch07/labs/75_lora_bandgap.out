@@ -1,0 +1,26 @@
+source (no N/P/As/Sb) train 2906, test 727 | target (pnictogen) pool 400, test 568
+mean gap: source 0.933 eV, target 1.136 eV; metals: source 0.58, target 0.37; target-test MAE of the pool median 1.017 eV
+pretrained: params 132865, source-test MAE 0.401 eV, zero-shot target-test MAE 0.632 eV  (84 s)
+--- N = 50 labelled target compounds (mean +- sd over 5 subsets) ---
+  scratch       trainable  132865  target-test MAE 0.832 +- 0.037   source-test MAE 0.934
+  zero-shot     trainable       0  target-test MAE 0.632 +- 0.000   source-test MAE 0.401
+  linear probe  trainable     129  target-test MAE 0.645 +- 0.013   source-test MAE 0.428
+  full          trainable  132865  target-test MAE 0.617 +- 0.028   source-test MAE 0.455
+  LoRA r=1      trainable    1413  target-test MAE 0.629 +- 0.021   source-test MAE 0.439
+  LoRA r=2      trainable    2826  target-test MAE 0.625 +- 0.016   source-test MAE 0.427
+  LoRA r=4      trainable    5652  target-test MAE 0.623 +- 0.025   source-test MAE 0.456
+  LoRA r=8      trainable   11304  target-test MAE 0.612 +- 0.018   source-test MAE 0.446
+  adapter       trainable   10904  target-test MAE 0.636 +- 0.047   source-test MAE 0.474
+--- N = 200 labelled target compounds (mean +- sd over 5 subsets) ---
+  scratch       trainable  132865  target-test MAE 0.667 +- 0.034   source-test MAE 0.834
+  zero-shot     trainable       0  target-test MAE 0.632 +- 0.000   source-test MAE 0.401
+  linear probe  trainable     129  target-test MAE 0.615 +- 0.018   source-test MAE 0.489
+  full          trainable  132865  target-test MAE 0.565 +- 0.024   source-test MAE 0.500
+  LoRA r=1      trainable    1413  target-test MAE 0.565 +- 0.028   source-test MAE 0.486
+  LoRA r=2      trainable    2826  target-test MAE 0.567 +- 0.035   source-test MAE 0.469
+  LoRA r=4      trainable    5652  target-test MAE 0.570 +- 0.034   source-test MAE 0.465
+  LoRA r=8      trainable   11304  target-test MAE 0.569 +- 0.021   source-test MAE 0.493
+  adapter       trainable   10904  target-test MAE 0.578 +- 0.010   source-test MAE 0.513
+Delta W (layer 2, 256x256) from full FT, N=200: top-5 singular values [1.8497999906539917, 1.3676999807357788, 1.1454999446868896, 1.093500018119812, 0.9739000201225281], s1/s10 = 3.2; energy in top 1/4/8: 0.22/0.50/0.68; ||Delta W||_F/||W||_F = 0.1846
+LoRA r=4 (N=200, seed 0) with adapters switched off: source-test MAE 0.401 eV (= pretrained exactly)
+runtime 689 s

@@ -1,0 +1,49 @@
+training DRO on fresh simulated landscapes (K = 6, c = 0.3, d = 3), batch 128
+  (1) authors' default loss 'oi', 600 iterations
+    iter   100  loss    6.829  mean best-of-50 value 0.641  (17 s)
+    iter   200  loss    5.404  mean best-of-50 value 0.642  (33 s)
+    iter   300  loss    6.225  mean best-of-50 value 0.628  (48 s)
+    iter   400  loss    4.295  mean best-of-50 value 0.619  (62 s)
+    iter   500  loss    4.821  mean best-of-50 value 0.664  (78 s)
+    iter   600  loss    5.233  mean best-of-50 value 0.656  (93 s)
+  (2) best-so-far loss 'bsf' (deviation, see text), 1,200 iterations
+    iter   200  loss  -42.981  mean best-of-50 value 0.927  (123 s)
+    iter   400  loss  -41.236  mean best-of-50 value 0.889  (152 s)
+    iter   600  loss  -41.570  mean best-of-50 value 0.888  (181 s)
+    iter   800  loss  -41.609  mean best-of-50 value 0.892  (210 s)
+    iter  1000  loss  -42.376  mean best-of-50 value 0.907  (240 s)
+    iter  1200  loss  -43.031  mean best-of-50 value 0.919  (269 s)
+
+[in-distribution: K=6, c=0.3]  150 test landscapes; regret = f* - best TRUE value found so far (mean +/- s.e.)
+  method                       after 10       after 20       after 50  P(regret<0.05 @50)
+  DRO-oi (stochastic)      0.321+/-0.017   0.319+/-0.018   0.318+/-0.018                0.04
+  DRO-bsf (stochastic)     0.190+/-0.012   0.145+/-0.010   0.093+/-0.008                0.41
+  DRO-bsf (deterministic)   0.259+/-0.015   0.258+/-0.015   0.258+/-0.015                0.10
+  Nelder-Mead              0.340+/-0.020   0.186+/-0.016   0.093+/-0.013                0.67
+  CMA-ES                   0.208+/-0.015   0.132+/-0.012   0.062+/-0.010                0.76
+  Random search            0.191+/-0.014   0.140+/-0.011   0.084+/-0.006                0.38
+  GP-EI                    0.082+/-0.012   0.017+/-0.004   0.002+/-0.000                1.00
+  (310 s)
+
+[OOD-rugged: K=12, c=0.15]  150 test landscapes; regret = f* - best TRUE value found so far (mean +/- s.e.)
+  method                       after 10       after 20       after 50  P(regret<0.05 @50)
+  DRO-oi (stochastic)      0.449+/-0.015   0.446+/-0.015   0.445+/-0.015                0.02
+  DRO-bsf (stochastic)     0.340+/-0.014   0.293+/-0.013   0.220+/-0.011                0.05
+  DRO-bsf (deterministic)   0.381+/-0.015   0.380+/-0.015   0.380+/-0.015                0.03
+  Nelder-Mead              0.436+/-0.016   0.346+/-0.017   0.247+/-0.019                0.31
+  CMA-ES                   0.359+/-0.015   0.293+/-0.014   0.177+/-0.013                0.25
+  Random search            0.331+/-0.014   0.292+/-0.013   0.213+/-0.011                0.08
+  GP-EI                    0.244+/-0.017   0.138+/-0.014   0.015+/-0.003                0.93
+  (353 s)
+
+[OOD-noisy: K=6, c=0.3, sigma_y=0.05]  150 test landscapes; regret = f* - best TRUE value found so far (mean +/- s.e.)
+  method                       after 10       after 20       after 50  P(regret<0.05 @50)
+  DRO-oi (stochastic)      0.322+/-0.017   0.319+/-0.018   0.318+/-0.018                0.04
+  DRO-bsf (stochastic)     0.190+/-0.012   0.145+/-0.010   0.093+/-0.008                0.38
+  DRO-bsf (deterministic)   0.259+/-0.015   0.258+/-0.015   0.258+/-0.015                0.09
+  Nelder-Mead              0.448+/-0.021   0.431+/-0.021   0.429+/-0.021                0.05
+  CMA-ES                   0.211+/-0.015   0.146+/-0.013   0.065+/-0.009                0.76
+  Random search            0.191+/-0.014   0.140+/-0.011   0.084+/-0.006                0.38
+  GP-EI                    0.149+/-0.016   0.091+/-0.013   0.027+/-0.005                0.91
+  (392 s)
+wall 392 s

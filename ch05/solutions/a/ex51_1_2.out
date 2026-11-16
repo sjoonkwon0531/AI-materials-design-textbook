@@ -1,0 +1,7 @@
+5.1.1 10 us: steps=5.00e+09, atom-steps=5.00e+14, wall=5.000e+06 s = 57.9 days = 0.16 yr
+5.1.1 1 ms: steps=5.00e+11, atom-steps=5.00e+16, wall=5.000e+08 s = 5787.0 days = 15.84 yr
+5.1.2 T=300: Ea/kT=23.210, k=8.319e+02 1/s, 1/k=1.202e-03 s, MD steps(1 fs)=1.20e+12
+5.1.2 T=600: Ea/kT=11.605, k=9.121e+07 1/s, 1/k=1.096e-08 s, MD steps(1 fs)=1.10e+07
+5.1.2 speed-up 300->600 K for Ea=0.6: 1.096e+05
+  two-path example T=300: k2/k1=4.365e-02, fraction via path 2=0.042
+  two-path example T=600: k2/k1=2.089e+00, fraction via path 2=0.676

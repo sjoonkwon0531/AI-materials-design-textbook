@@ -1,0 +1,8 @@
+|g|^2 = nu**2*sin(theta)**2 + cos(theta)**2  = 1 - (1-nu^2) sin^2(theta)
+truncation: (scheme)/dt = -dx**2/(2*dt) * u_xx  + dt/2 * u_tt + ...
+modified eq: u_t + a u_x = D u_xx with D = -(a*dt - dx)*(a*dt + dx)/(2*dt)  = dx^2/(2dt)(1-nu^2), nu = a dt/dx
+nu=0.50 T= 1.0: D_LF=3.75e-03 (upwind would be 1.25e-03); peak=0.4998; max err vs pure advection=5.002e-01, vs modified eq=4.359e-03
+nu=0.90 T= 1.0: D_LF=5.28e-04 (upwind would be 2.50e-04); peak=0.8391; max err vs pure advection=1.610e-01, vs modified eq=8.723e-03
+nu=1.00 T= 1.0: D_LF=0.00e+00 (upwind would be 0.00e+00); peak=1.0000; max err vs pure advection=7.772e-16, vs modified eq=7.772e-16
+nu=1.05 T= 1.0: D_LF=-2.44e-04 (upwind would be -1.25e-04); peak=1.1118; max err vs pure advection=1.130e-01, vs modified eq=1.451e-02
+nu=1.05 T=10.0: UNSTABLE, max|u| = 9.18e+23 after 1905 steps

@@ -1,0 +1,8 @@
+seed 0: J_h(u_exact) on the fixed random points = -2.3229 (exact -2.4674)
+seed 1: J_h(u_exact) on the fixed random points = -2.6308 (exact -2.4674)
+seed 2: J_h(u_exact) on the fixed random points = -3.0618 (exact -2.4674)
+std of J_h(u_exact) over 2000 random 256-point sets: 0.328, mean -2.4666
+fixed random points, seed 0, iter 500: J_h = -2.3718, true J = -2.4014, rel L2 0.076
+fixed random points, seed 0, iter 2000: J_h = -2.4329, true J = -2.3785, rel L2 0.059
+fixed random points, seed 0, iter 5000: J_h = -6.0044, true J = 33.3567, rel L2 1.162
+fixed random points, seed 0, iter 10000: J_h = -8.4361, true J = 190.1701, rel L2 2.878

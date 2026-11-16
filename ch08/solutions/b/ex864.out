@@ -1,0 +1,11 @@
+  narrow training iter 300: mean best-of-50 0.682 (360 s)
+  narrow training iter 600: mean best-of-50 0.679 (481 s)
+  narrow training iter 900: mean best-of-50 0.681 (551 s)
+  narrow training iter 1200: mean best-of-50 0.701 (605 s)
+[test wide (c=0.3)] random search regret@50 0.082 +/- 0.006
+   DRO-bsf trained wide   : regret@50 0.093 +/- 0.008 | blindfolded 0.099 | blind - normal +0.006 (paired s.e. 0.002)
+   DRO-bsf trained narrow : regret@50 0.107 +/- 0.008 | blindfolded 0.107 | blind - normal +0.000 (paired s.e. 0.000)
+[test narrow (c=0.1)] random search regret@50 0.308 +/- 0.016
+   DRO-bsf trained wide   : regret@50 0.322 +/- 0.015 | blindfolded 0.320 | blind - normal -0.002 (paired s.e. 0.006)
+   DRO-bsf trained narrow : regret@50 0.340 +/- 0.017 | blindfolded 0.340 | blind - normal +0.000 (paired s.e. 0.000)
+wall 646 s

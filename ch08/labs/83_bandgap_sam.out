@@ -1,0 +1,13 @@
+n: train 2615 (of which val 326), ID test 653, OOD oxide 1048, halide 285
+mean gap: train 0.726  ID 0.738  oxide 1.541  halide 1.732 eV; metals in train 53%
+  rho selection sam  : rho=0.02 val MAE 0.215  rho=0.05 val MAE 0.214  rho=0.2 val MAE 0.222  -> 0.05   (28 s)
+  rho selection asam : rho=0.2 val MAE 0.219  rho=0.5 val MAE 0.213  rho=2 val MAE 0.216  -> 0.5   (75 s)
+  rho selection fsam : rho=0.02 val MAE 0.216  rho=0.05 val MAE 0.216  rho=0.2 val MAE 0.219  -> 0.02   (132 s)
+AdamW (bs 64)        train 0.053 | ID 0.263+/-0.003 | oxide 2.001+/-0.153 | halide 1.851+/-0.090 | lam_max    30.4+/-  2.5 | lam(THT)   0.10+/- 0.01 | cpu   6 s/model
+AdamW (bs 1024)      train 0.153 | ID 0.270+/-0.003 | oxide 2.067+/-0.117 | halide 1.815+/-0.042 | lam_max    44.6+/-  3.7 | lam(THT)   0.13+/- 0.01 | cpu   2 s/model
+SAM                  train 0.074 | ID 0.261+/-0.003 | oxide 1.806+/-0.069 | halide 1.718+/-0.062 | lam_max    14.3+/-  0.6 | lam(THT)   0.06+/- 0.00 | cpu  11 s/model
+ASAM                 train 0.067 | ID 0.261+/-0.003 | oxide 1.821+/-0.127 | halide 1.745+/-0.091 | lam_max    18.2+/-  1.2 | lam(THT)   0.06+/- 0.00 | cpu  12 s/model
+F-SAM                train 0.058 | ID 0.263+/-0.002 | oxide 1.884+/-0.150 | halide 1.783+/-0.078 | lam_max    21.9+/-  1.3 | lam(THT)   0.08+/- 0.00 | cpu  12 s/model
+AdamW + input noise  train 0.063 | ID 0.262+/-0.004 | oxide 1.868+/-0.098 | halide 1.745+/-0.041 | lam_max    26.1+/-  1.8 | lam(THT)   0.09+/- 0.01 | cpu   7 s/model
+AdamW + FGSM         train 0.067 | ID 0.261+/-0.005 | oxide 1.472+/-0.042 | halide 1.605+/-0.035 | lam_max    23.8+/-  1.8 | lam(THT)   0.07+/- 0.01 | cpu  10 s/model
+wall 825 s

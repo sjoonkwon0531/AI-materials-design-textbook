@@ -1,0 +1,14 @@
+=== Part A: hand-written backprop vs torch.autograd (float64) ===
+MLP sizes [8, 32, 16, 1], batch 64, SiLU hidden, linear output; loss numpy 0.634563041783  torch 0.634563041783
+max |grad_numpy - grad_torch| over all W,b = 2.78e-17   (largest gradient entry 0.049)
+finite difference dL/dW1[3,5] = 0.0001704915   backprop = 0.0001704915   |diff| = 4.1e-11
+=== Part B: wall time of forward vs forward+backward (float32, 1 thread) ===
+width   256: forward    2.65 ms   forward+backward    8.82 ms   ratio 3.33
+width  1024: forward   35.12 ms   forward+backward  110.14 ms   ratio 3.14
+=== Part C: per-layer gradient norm ||dL/dW_l|| in a depth-30, width-64 MLP ===
+sigmoid, Xavier                    layer1  4.67e-20  layer15  8.46e-11  layer30  2.07e-01  ratio first/last  2.26e-19
+tanh, Xavier                       layer1  5.29e-02  layer15  7.21e-02  layer30  4.95e-02  ratio first/last  1.07e+00
+ReLU, N(0,0.05^2)                  layer1  5.72e-17  layer15  5.50e-17  layer30  2.69e-17  ratio first/last  2.12e+00
+ReLU, N(0,0.3^2)                   layer1  5.53e+12  layer15  3.74e+13  layer30  5.17e+13  ratio first/last  1.07e-01
+ReLU, He                           layer1  4.95e-01  layer15  1.39e+00  layer30  1.63e+00  ratio first/last  3.04e-01
+ReLU, He + residual + LayerNorm    layer1  1.58e+01  layer15  7.61e+00  layer30  6.72e+00  ratio first/last  2.35e+00

@@ -1,0 +1,55 @@
+=== lattice constant, bulk modulus, cost ===
+  MACE-MP-0 small  a0 = 3.9433 A (+0.98% vs exp 3.905), B = 164 GPa, params 3,847,696, CPU/40-atom call  687 ms, phonon CPU 2.1 s
+  CHGNet 0.3.0     a0 = 3.9430 A (+0.97% vs exp 3.905), B = 163 GPa, params   412,525, CPU/40-atom call  630 ms, phonon CPU 2.2 s
+  SevenNet-0       a0 = 3.9440 A (+1.00% vs exp 3.905), B = 168 GPa, params   842,623, CPU/40-atom call  788 ms, phonon CPU 2.5 s
+  MatterSim 1M     a0 = 3.9454 A (+1.03% vs exp 3.905), B = 168 GPa, params   890,034, CPU/40-atom call  226 ms, phonon CPU 0.7 s
+  spread of a0: 3.9430-3.9454 A (PBE/VASP 3.944)
+
+=== frequencies (cm-1) at the PBE lattice constant a = 3.944 A (same structure as the DFT column) ===
+                     G_TO1   G_TO2   G_t2u   G_TO3     R4+     R3+     R1+      M3   X_min
+  PBE (Evarestov)     133i     146     226     508     86i     433     798       -       -
+  MACE-MP-0 small     106i     141     233     491     71i     426     804     44i      41
+  CHGNet 0.3.0        115i     145     247     472     29i     406     715      37     52i
+  SevenNet-0          108i     136     236     498     65i     446     791     20i      69
+  MatterSim 1M        126i     146     233     505     64i     475     794      32     39i
+  stable-mode ratio w(MLIP)/w(PBE) for G_TO2, G_t2u, G_TO3, R3+, R1+ and its mean; omega^2 ratio of soft modes:
+    MACE-MP-0 small  0.965 1.032 0.966 0.984 1.007  mean 0.991 | w^2 ratio G_TO1 0.63, R4+ 0.68
+    CHGNet 0.3.0     0.991 1.094 0.928 0.938 0.896  mean 0.969 | w^2 ratio G_TO1 0.75, R4+ 0.11
+    SevenNet-0       0.934 1.046 0.981 1.030 0.991  mean 0.996 | w^2 ratio G_TO1 0.66, R4+ 0.57
+    MatterSim 1M     1.001 1.031 0.994 1.097 0.995  mean 1.024 | w^2 ratio G_TO1 0.89, R4+ 0.55
+
+=== frequencies (cm-1) at each model's own a0 ===
+                     G_TO1   G_TO2   G_t2u   G_TO3     R4+     R3+     R1+      M3   X_min
+  MACE-MP-0 small     104i     141     233     491     71i     427     804     44i      45
+  CHGNet 0.3.0        109i     145     248     473     22i     407     720      49     38i
+  SevenNet-0          108i     136     236     498     65i     446     791     20i      69
+  MatterSim 1M        128i     146     233     504     63i     473     793      32     46i
+
+=== frequencies (cm-1) at the experimental a = 3.905 A ===
+                     G_TO1   G_TO2   G_t2u   G_TO3     R4+     R3+     R1+      M3   X_min
+  MACE-MP-0 small       63     159     234     525     88i     477     846     66i      99
+  CHGNet 0.3.0         144     221     235     535     76i     506     895     30i      99
+  SevenNet-0            54     154     239     535     80i     493     829     43i      99
+  MatterSim 1M         34i     162     234     536     78i     519     832     22i     107
+
+=== a0a0c- tilt (2x2x2, I4/mcm relaxation of cell and positions) ===
+  PBE/VASP (Evarestov): 4.9 deg; experiment 2.1 deg (4 K)
+  MACE-MP-0 small  relaxed tilt 4.75 deg, well depth -3.92 meV/f.u., c/a 1.0040; rigid-tilt minimum -3.46 meV/f.u. at 4.5 deg, E(10 deg) +49.5
+  CHGNet 0.3.0     relaxed tilt 3.93 deg, well depth -1.10 meV/f.u., c/a 1.0026; rigid-tilt minimum -0.96 meV/f.u. at 4.0 deg, E(10 deg) +48.4
+  SevenNet-0       relaxed tilt 4.80 deg, well depth -3.42 meV/f.u., c/a 1.0040; rigid-tilt minimum -2.98 meV/f.u. at 4.5 deg, E(10 deg) +49.3
+  MatterSim 1M     relaxed tilt 4.06 deg, well depth -2.32 meV/f.u., c/a 1.0032; rigid-tilt minimum -2.06 meV/f.u. at 4.0 deg, E(10 deg) +52.3
+  spread: tilt 3.93-4.80 deg, depth -3.92 to -1.10 meV/f.u.
+
+=== cost of the whole lattice-dynamics workflow per model (force calls) ===
+  MACE-MP-0 small  61 calls (9 EOS of 5 atoms, 9 phonon supercells, 22 tilt points, 16 relaxation steps, 5 timing), total CPU 50 s
+  CHGNet 0.3.0     58 calls (9 EOS of 5 atoms, 9 phonon supercells, 22 tilt points, 13 relaxation steps, 5 timing), total CPU 40 s
+  SevenNet-0       55 calls (9 EOS of 5 atoms, 9 phonon supercells, 22 tilt points, 10 relaxation steps, 5 timing), total CPU 47 s
+  MatterSim 1M     56 calls (9 EOS of 5 atoms, 9 phonon supercells, 22 tilt points, 11 relaxation steps, 5 timing), total CPU 26 s
+
+=== two routes to the R4+ curvature: frozen tilt profile E(u) versus phonopy forces ===
+  fit E = c2 u^2 + c4 u^4 per f.u. for tilt <= 6 deg (u = equatorial O displacement, two O per f.u. move),
+  then omega^2 = c2 / m_O ;  1 sqrt(eV/(A^2 amu)) = 521.47 cm-1
+  MACE-MP-0 small  c2 = -0.293 eV/A^2, c4 = 6.16 eV/A^4 ->  71i cm-1 ; phonopy R4+ (0.01 A)  71i cm-1
+  CHGNet 0.3.0     c2 = -0.129 eV/A^2, c4 = 4.40 eV/A^4 ->  47i cm-1 ; phonopy R4+ (0.01 A)  22i cm-1
+  SevenNet-0       c2 = -0.254 eV/A^2, c4 = 5.42 eV/A^4 ->  66i cm-1 ; phonopy R4+ (0.01 A)  65i cm-1
+  MatterSim 1M     c2 = -0.222 eV/A^2, c4 = 5.97 eV/A^4 ->  61i cm-1 ; phonopy R4+ (0.01 A)  63i cm-1

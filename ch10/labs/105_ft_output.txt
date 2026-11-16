@@ -1,0 +1,23 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+WARNING:root:Default dtype float32 does not match model dtype float64, converting models to float32.
+MACE-MP-0 small: 3847696 parameters {'node_embedding': 11392, 'interactions': 3163392, 'products': 670720, 'readouts': 2192}; r_max 6.0 A, 2 interaction layers, hidden irreps 128x0e, 89 elements, E0(Si) -7.6948 eV
+MPtrj (CHGNet paper numbers): 31.2 force vectors per configuration on average
+GFN2-xTB reference EOS: a0 5.5059 A, B 103.8 GPa
+MACE-MP-0 small as is   : test E 40603.8 meV/atom, F   420 meV/A | a0 5.4655 A, B  71.6 GPa
+N= 4 zero-shot: test E  21.07 meV/atom, F   420 meV/A | a0 5.4655, B   71.6 GPa | drift on C/SiC/Ge/Al/NaCl 0/0/0/0/0 meV/A | dE0 -40.611 eV | 2 s
+N= 4 readout  : test E  15.32 meV/atom, F   338 meV/A | a0 5.4650, B   83.2 GPa | drift on C/SiC/Ge/Al/NaCl 283/134/49/34/3 meV/A | dE0 -40.611 eV | 19 s
+N= 4 full     : test E   8.04 meV/atom, F   247 meV/A | a0 5.5258, B   84.3 GPa | drift on C/SiC/Ge/Al/NaCl 35/36/98/9/2 meV/A | dE0 -40.611 eV | 23 s
+N= 4 scratch  : test E  72.63 meV/atom, F  1118 meV/A | a0 5.7509, B    0.9 GPa | drift on C/SiC/Ge/Al/NaCl 2976/1702/459/244/125 meV/A | dE0 -38.424 eV | 22 s
+N=16 zero-shot: test E  20.46 meV/atom, F   420 meV/A | a0 5.4655, B   71.6 GPa | drift on C/SiC/Ge/Al/NaCl 0/0/0/0/0 meV/A | dE0 -40.599 eV | 3 s
+N=16 readout  : test E  17.28 meV/atom, F   356 meV/A | a0 5.4595, B   79.9 GPa | drift on C/SiC/Ge/Al/NaCl 123/103/37/22/2 meV/A | dE0 -40.599 eV | 19 s
+N=16 full     : test E  16.09 meV/atom, F   206 meV/A | a0 5.5002, B   84.1 GPa | drift on C/SiC/Ge/Al/NaCl 87/93/105/13/3 meV/A | dE0 -40.599 eV | 22 s
+N=16 scratch  : test E  66.32 meV/atom, F  1120 meV/A | a0 5.6084, B    0.2 GPa | drift on C/SiC/Ge/Al/NaCl 2977/1701/459/244/125 meV/A | dE0 -38.371 eV | 22 s
+N=48 zero-shot: test E  21.61 meV/atom, F   420 meV/A | a0 5.4655, B   71.6 GPa | drift on C/SiC/Ge/Al/NaCl 0/0/0/0/0 meV/A | dE0 -40.595 eV | 5 s
+N=48 readout  : test E  17.94 meV/atom, F   335 meV/A | a0 5.4477, B   84.1 GPa | drift on C/SiC/Ge/Al/NaCl 89/136/50/25/3 meV/A | dE0 -40.595 eV | 21 s
+N=48 full     : test E  11.30 meV/atom, F   172 meV/A | a0 5.4925, B   90.9 GPa | drift on C/SiC/Ge/Al/NaCl 99/154/75/12/4 meV/A | dE0 -40.595 eV | 25 s
+N=48 scratch  : test E  71.30 meV/atom, F  1120 meV/A | a0 5.6103, B    0.3 GPa | drift on C/SiC/Ge/Al/NaCl 2977/1701/459/244/125 meV/A | dE0 -38.356 eV | 24 s
+N=48 full    200 steps: test E   3.68 meV/atom, F   101 meV/A | a0 5.5120, B   84.2 GPa | drift on C/SiC/Ge/Al/NaCl 176/289/41/48/8 meV/A | 99 s
+N=48 scratch 200 steps: test E  67.10 meV/atom, F  1103 meV/A | a0 5.6316, B    3.7 GPa | drift on C/SiC/Ge/Al/NaCl 2976/1709/459/244/126 meV/A | 96 s
+SchNet from scratch, 48 labels, 300 epochs: test E 85.85 meV/atom, F 83 meV/A | a0 5.2458, B 211.2 GPa
+trainable parameters: readout 2192, full 3847696
+CPU 464 s

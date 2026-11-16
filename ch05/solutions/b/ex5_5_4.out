@@ -1,0 +1,4 @@
+seed-1 map: f2=0.497
+1x1 tiling (128^2 Q1): periodic K_xx=2.6898 K_yy=2.7889 | KUBC K_xx=3.1528 (<j_x>=3.1528, <dw/dx>=3.5e-18) K_yy=3.1423 | excess xx +17.212%  (1 s)
+2x2 tiling (256^2 Q1): periodic K_xx=2.6898 K_yy=2.7889 | KUBC K_xx=2.9185 (<j_x>=2.9185, <dw/dx>=-6.9e-18) K_yy=2.9682 | excess xx +8.499%  (6 s)
+3x3 tiling (384^2 Q1): periodic K_xx=2.6898 K_yy=2.7889 | KUBC K_xx=2.8410 (<j_x>=2.8410, <dw/dx>=-6.9e-18) K_yy=2.9085 | excess xx +5.619%  (24 s)

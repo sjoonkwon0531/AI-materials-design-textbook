@@ -1,0 +1,20 @@
+KS test set: 16 trajectories x 400 steps of dt=1; correlation threshold 0.9
+onestep        : err(1) 0.0018 err(10) 0.015 | valid time  50.8 +/- 15.1 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 2.2e-03 | high-k amplitude (k>32) median 2.2e-03 max 3.8e-02
+noise          : err(1) 0.0018 err(10) 0.014 | valid time  51.7 +/- 15.5 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 3.0e-03 | high-k amplitude (k>32) median 2.1e-03 max 4.2e-02
+push           : err(1) 0.0020 err(10) 0.015 | valid time  50.9 +/- 13.3 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 2.7e-03 | high-k amplitude (k>32) median 2.3e-03 max 2.6e-03
+unroll         : err(1) 0.0020 err(10) 0.012 | valid time  52.9 +/- 13.4 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 4.0e-03 | high-k amplitude (k>32) median 2.2e-03 max 2.3e-03
+cons           : err(1) 0.0017 err(10) 0.012 | valid time  55.9 +/- 14.0 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 1.8e-07 | high-k amplitude (k>32) median 1.9e-03 max 2.0e-03
+onestep+P0     : err(1) 0.0018 err(10) 0.014 | valid time  51.9 +/- 15.6 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 1.3e-08 | high-k amplitude (k>32) median 2.1e-03 max 2.4e-03
+onestep+filter : err(1) 0.0018 err(10) 0.015 | valid time  50.9 +/- 15.2 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 1.6e-03 | high-k amplitude (k>32) median 7.8e-08 max 8.0e-08
+solver         : high-k amplitude (k>32) median over test trajectories 5.1e-04
+twin (solver restarted from the FNO one-step prediction): valid time 65.6 +/- 21.1; error growth rate between t=11 and t=41: 0.088 per unit time (e-folding time 11.3)
+[onestep] Jacobian at u=0: circulant defect 9.3e-09; |g(k)| for k>kmax: min 1.0069 max 1.0069 (flat); max_k |g| = 1.278 at k=7 (exact linear KS: 1.284 at q=0.707, k=7.2)
+[unroll] Jacobian at u=0: circulant defect 6.0e-08; |g(k)| for k>kmax: min 1.0075 max 1.0075 (flat); max_k |g| = 1.276 at k=7 (exact linear KS: 1.284 at q=0.707, k=7.2)
+  k= 4 (q=0.39): empirical gain  solver 1.06e+00 | onestep 1.06e+00 | noise 1.06e+00 | push 1.06e+00 | unroll 1.06e+00
+  k= 7 (q=0.69): empirical gain  solver 1.07e+00 | onestep 1.09e+00 | noise 1.09e+00 | push 1.09e+00 | unroll 1.09e+00
+  k=12 (q=1.18): empirical gain  solver 3.54e-01 | onestep 3.87e-01 | noise 3.87e-01 | push 3.89e-01 | unroll 3.87e-01
+  k=20 (q=1.96): empirical gain  solver 4.29e-03 | onestep 8.77e-01 | noise 8.73e-01 | push 8.67e-01 | unroll 8.65e-01
+  k=30 (q=2.95): empirical gain  solver 3.33e-06 | onestep 9.60e-01 | noise 9.59e-01 | push 9.60e-01 | unroll 9.61e-01
+  k=50 (q=4.91): empirical gain  solver 3.44e-15 | onestep 9.52e-01 | noise 9.52e-01 | push 9.53e-01 | unroll 9.53e-01
+CPU cost per trajectory per unit time: FNO step 0.208 ms | solver, 40 steps of 0.025: 0.382 ms | solver, 10 steps of 0.1: 0.090 ms (one-step rel-L2 6.2e-04)
+wall 141 s (CPU 69 s)

@@ -1,0 +1,12 @@
+continuum harmonic 0.4359, lattice harmonic (16 bonds) 0.4364
+nsteps=8000, nrec=80: E[slope estimate] = 0.4364 (bias vs lattice -0.00%, vs continuum +0.11%); MSD/2t first 0.6371, last 0.4391
+nsteps=1000, nrec=40: E[slope estimate] = 0.4364 (bias vs lattice +0.00%, vs continuum +0.11%); MSD/2t first 0.8483, last 0.4582
+nsteps=1000, nrec=50: E[slope estimate] = 0.4364 (bias vs lattice +0.00%, vs continuum +0.11%); MSD/2t first 0.8738, last 0.4582
+nsteps=2000, nrec=40: E[slope estimate] = 0.4364 (bias vs lattice +0.00%, vs continuum +0.11%); MSD/2t first 0.7497, last 0.4473
+nsteps=4000, nrec=40: E[slope estimate] = 0.4364 (bias vs lattice -0.00%, vs continuum +0.11%); MSD/2t first 0.6371, last 0.4418
+MC, 100 seeds, nsteps=1000, nrec=40: mean = 0.4375 +/- 0.0023
+nsteps=  40 (run 0.041 eps^2/<D>): E[slope]=0.6868 (+57.4%), E[MSD/2t last]=0.7842 (+79.7%)
+nsteps=  80 (run 0.083 eps^2/<D>): E[slope]=0.5534 (+26.8%), E[MSD/2t last]=0.6729 (+54.2%)
+nsteps= 160 (run 0.166 eps^2/<D>): E[slope]=0.4632 (+6.2%), E[MSD/2t last]=0.5704 (+30.7%)
+nsteps= 320 (run 0.332 eps^2/<D>): E[slope]=0.4380 (+0.4%), E[MSD/2t last]=0.5046 (+15.6%)
+10 seeds, nsteps=1000, nrec=40: slope mean 0.4451+/-0.0099; MSD/2t(last) mean 0.4613+/-0.0041

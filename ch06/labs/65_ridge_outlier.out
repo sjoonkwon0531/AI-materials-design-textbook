@@ -1,0 +1,11 @@
+fold 0: ridge MAE = 0.796  max |pred| = 4.0 eV
+fold 1: ridge MAE = 0.764  max |pred| = 3.7 eV
+fold 2: ridge MAE = 0.749  max |pred| = 4.2 eV
+fold 3: ridge MAE = 0.801  max |pred| = 3.9 eV
+fold 4: ridge MAE = 39.923  max |pred| = 36025.3 eV
+  Fe9Co7                 true 0.00  ridge   36025.3 eV  max|z| = 2948924 (minimum GSmagmom)
+  MgF2                   true 11.10  ridge       2.4 eV  max|z| = 3 (maximum Row)
+  LiF                    true 11.70  ridge       3.2 eV  max|z| = 4 (maximum Row)
+ridge MAE without the 1 compound(s) with |error| > 100 eV: 0.775
+ridge MAE with predictions clipped to [0, 11.7] eV: 0.723
+'minimum GSmagmom' is nonzero for 5 of 4601 compounds: Fe9Co7 (1.548), MnNi (0.000), Ti2MnFe (0.000), Sc2Fe (0.000), TiFe2 (0.000)

@@ -1,0 +1,5 @@
+training CPU of one student on the Lab 10.7 schedule (34 labels): 72.9 s
+one student    : C =   72.9 s, n t_U = 10.47 s, Q* = 279 force calls = 279 MD steps = 0.56 ps at 2 fs
+committee of 3 : C =  218.7 s, n t_U = 10.47 s, Q* = 768 force calls = 768 MD steps = 1.54 ps at 2 fs
+upper bound with C = 508 s (whole Lab 10.7): Q* = 1737
+1 ns (5e5 steps at 2 fs): oracle 42.8 h, student 1.32 h + training

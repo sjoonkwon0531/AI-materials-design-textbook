@@ -1,0 +1,23 @@
+[1] micro cell at x0=0.5: A=1.000, arithmetic A<a>=1.0000, harmonic A<1/a>^-1=0.4359
+    D(t)=MSD/2t at first record = 0.6351, at last record = 0.4250
+    lattice-exact harmonic mean (16 bonds) = 0.4364
+    slope estimate (second half) = 0.4193;  micro run length = 8.3 x eps^2/<D>
+    10 independent micro runs: D = 0.4373 +/- 0.0246 (std), exact 0.4359
+
+[2] HMM interface diffusivities (M=32): mean |rel. error| vs homogenized = 0.044, max = 0.090
+
+[3] macro solution error vs fine-scale truth (cell averages, max norm)
+   method         t=0.01     t=0.1      steady
+   HMM           0.0534    0.0211    0.0117
+   homogenized   0.0488    0.0135    0.0056
+   arithmetic    0.1603    0.1716    0.0056
+
+[4] steady flux: fine (exact quadrature) = 0.3981, homogenized = 0.3968, arithmetic = 0.9102
+    macro steady flux (HMM) = 0.3975
+    macro steady flux (homogenized) = 0.3967
+    macro steady flux (arithmetic) = 0.9100
+
+[5] cost: fine FV 2048 cells x 1000 steps; HMM macro 32 cells x 1000 steps + micro 1.06e+09 walker-steps (once, coefficient is time-independent)
+    fine-solver wall time 0.11 s
+
+runtime 71.5 s

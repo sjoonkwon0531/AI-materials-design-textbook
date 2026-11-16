@@ -1,0 +1,53 @@
+[0] laminate check (f2=0.5, k2/k1=10)
+    k_xx FEM = 1.818182   Reuss (series)   = 1.818182
+    k_yy FEM = 5.500000   Voigt (parallel) = 5.500000
+
+[1] CH microstructures (128^2, L=2pi, eps=0.03, dt=0.02, 800 steps, S=2, seed=1)
+   f2     k_eff   aniso   Reuss   HS_low  HS_up   Voigt   inside_HS
+  0.261   1.584  0.044   1.307   1.542   2.462   3.346   True
+  0.340   1.821  0.010   1.441   1.771   2.988   4.061   True
+  0.416   2.135  0.050   1.599   2.033   3.535   4.746   True
+  0.497   2.739  0.036   1.811   2.373   4.173   5.477   True
+  0.503   3.711  0.036   1.826   2.396   4.214   5.523   True
+  0.584   4.742  0.049   2.107   2.829   4.919   6.254   True
+  0.660   5.552  0.009   2.462   3.347   5.646   6.939   True
+  0.739   6.383  0.043   2.989   4.062   6.484   7.654   True
+
+[2] symmetric quench (mean=0): 8 seeds, k1=1, k2=10
+  seed   f2     k_xx    k_yy    k_iso   sqrt(detK(1,10)*detK(10,1))
+    1  0.497   2.690   2.789   2.732   10.1122
+    2  0.501   3.292   3.466   3.367   10.1004
+    3  0.497   2.737   2.817   2.762   10.1054
+    4  0.502   3.890   3.678   3.783   10.0955
+    5  0.499   3.413   2.775   3.075   10.0936
+    6  0.500   2.932   3.635   3.244   10.0925
+    7  0.500   3.384   2.815   3.084   10.0944
+    8  0.500   3.209   2.850   3.022   10.0964
+  ensemble k_iso = 3.134 +/- 0.120 (sem), sample std = 0.339;  Keller-Dykhne sqrt(k1 k2) = 3.1623
+  duality product (seed 1) with 1x1 refinement: 10.1122  (exact 10)
+  duality product (seed 1) with 2x2 refinement: 10.0396  (exact 10)
+  duality product (seed 1) with 4x4 refinement: 10.0144  (exact 10)
+
+[3] mesh refinement at fixed geometry (32^2-pixel map, k2/k1=10)
+   r  elements    k_xx        energy-type quantity decreases monotonically
+   1     1024   2.785884
+   2     4096   2.750014
+   4    16384   2.736947
+   8    65536   2.732091
+
+[4] plane-strain elasticity (E2/E1=10, nu=0.3): kappa1=0.9615, kappa2=9.6154
+   f2     kappa_eff  Reuss   HS_low  HS_up   Voigt   inside_HS
+  0.261   1.3739   1.2563  1.3537  1.9294  3.2174   True
+  0.340   1.5472   1.3858  1.5231  2.3070  3.9051   True
+  0.416   1.7688   1.5376  1.7195  2.7181  4.5638   True
+  0.497   2.1482   1.7411  1.9792  3.2221  5.2668   True
+  0.503   2.7414   1.7554  1.9974  3.2557  5.3101   True
+  0.584   3.6265   2.0259  2.3358  3.8494  6.0131   True
+  0.660   4.3773   2.3675  2.7535  4.5033  6.6718   True
+  0.739   5.1819   2.8736  3.3526  5.3162  7.3595   True
+   C_eff (mean=0 map) =
+ [[ 3.1232  1.1413 -0.0579]
+ [ 1.1413  3.1871 -0.0724]
+ [-0.0579 -0.0724  0.8987]]
+
+runtime 287.4 s

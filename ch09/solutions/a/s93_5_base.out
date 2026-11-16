@@ -1,0 +1,5 @@
+baseline FNO (Lab 9.8 weights, trained at 64): test 32: 0.0233  64: 0.0242  128: 0.0244  256: 0.0245  512: 0.0245
+  [plain GELU] band-limited input (|k|<8), grid s vs 512 (pointwise): s=32: 1.6e-03  s=64: 3.7e-06  s=128: 1.5e-07 | vs low-passed 512 output: 3.0e-02  5.9e-03  1.4e-04 | modes k<=8 only: 1.2e-02  2.6e-04  1.6e-06
+  upsampling x1: 11.8 ms CPU per update (batch 20, s=64); inference 0.093 ms per sample
+  upsampling x2: 20.5 ms CPU per update (batch 20, s=64); inference 0.184 ms per sample
+  upsampling x4: 27.4 ms CPU per update (batch 20, s=64); inference 0.286 ms per sample

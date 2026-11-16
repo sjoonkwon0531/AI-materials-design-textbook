@@ -1,0 +1,14 @@
+=== A. vanilla PINN vs beta (2400 Adam + up to 600 L-BFGS iterations, 1000 collocation points) ===
+  beta =  1: rel L2 = 0.002 (1 seed) | seed 0: L_r 1.8e-06 L_ic 1.4e-06 L_bc 1.0e-06, err(t=0.1) 0.00, err(t=1) 0.00, mean|u(t=1)| 0.637, 180 s
+  beta = 10: rel L2 = 0.001 (1 seed) | seed 0: L_r 1.1e-06 L_ic 1.7e-07 L_bc 2.8e-07, err(t=0.1) 0.00, err(t=1) 0.00, mean|u(t=1)| 0.637, 84 s
+  beta = 20: rel L2 = 0.010 (1 seed) | seed 0: L_r 1.2e-05 L_ic 5.3e-06 L_bc 3.7e-05, err(t=0.1) 0.01, err(t=1) 0.02, mean|u(t=1)| 0.631, 121 s
+  beta = 30: rel L2 = 0.663, 0.700 (2 seeds) | seed 0: L_r 1.0e-03 L_ic 4.2e-04 L_bc 8.9e-03, err(t=0.1) 0.44, err(t=1) 0.85, mean|u(t=1)| 0.117, 162 s
+=== B. remedies at beta = 30 (same total iteration budget) ===
+  curriculum beta = [5, 10, 15, 20, 25, 30]: rel L2 = 0.8173, 0.7153 | seed 0: L_r 4.0e-04 L_ic 5.9e-04 L_bc 1.3e-02, 156 s
+  time marching (10 slabs): rel L2 = 1.0025, 0.9940 | 289 s
+  periodic embedding (cos x, sin x, t): rel L2 = 1.0443, 1.4103 | seed 0: L_r 1.1e-02 L_ic 1.6e-02, 159 s
+=== C. classical baseline at beta = 30: Lax-Wendroff (CFL 0.8), error at t = 1 ===
+  N =  128,   764 steps: rel L2 error 4.34e-03, wall 59.5 ms
+  N =  512,  3056 steps: rel L2 error 2.71e-04, wall 244.8 ms
+  N = 2048, 12224 steps: rel L2 error 1.69e-05, wall 1044.9 ms
+total wall 2019 s

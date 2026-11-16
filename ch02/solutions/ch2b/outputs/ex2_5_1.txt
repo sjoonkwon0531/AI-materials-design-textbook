@@ -1,0 +1,13 @@
+IC: [0.     0.7071 1.     0.7071 0.    ]
+lam=0.4: [0.     0.5414 0.7657 0.5414 0.    ]
+lam=0.6: [0.     0.4586 0.6485 0.4586 0.    ]  weights (lam,1-2lam,lam) = (0.6, -0.2, 0.6)
+lam=0.4: g(theta=k pi h, k=1,2,3) = [ 0.7657  0.2    -0.3657]
+lam=0.6: g(theta=k pi h, k=1,2,3) = [ 0.6485 -0.2    -1.0485]
+lam=0.6 step   10: max|u| = 1.316e-02
+lam=0.6 step  100: max|u| = 1.223e-14
+lam=0.6 step  400: max|u| = 1.825e-08
+lam=0.6 step  800: max|u| = 3.114e+00
+lam=0.6 step 1000: max|u| = 4.068e+04
+lam=0.6 step 1200: max|u| = 5.314e+08
+spike IC, lam=0.6 one step: [ 0.   0.6 -0.2  0.6  0. ]  (centre < 0: max principle broken)
+spike IC, lam=0.4 one step: [0.  0.4 0.2 0.4 0. ]

@@ -1,0 +1,4 @@
+oracle a0 = 5.4647 A, B = 71.2 GPa, E/atom = -5.3709 eV
+pool: 600 frames from oracle MD at 300/900/1500 K
+test: 21 frames, independent 1500 K trajectory
+oracle calls: 932, CPU 291 s (0.31 s per 64-atom call incl. overhead)

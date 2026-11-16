@@ -1,0 +1,10 @@
+Adam it=1: loss=1.078e+00 (pde,ic,bc)=('6.9e-02', '8.5e-01', '1.6e-01'), relL2=1.67e+00
+Adam it=1000: loss=1.855e-04 (pde,ic,bc)=('1.4e-04', '9.6e-06', '3.9e-05'), relL2=6.11e-03
+Adam it=2000: loss=6.302e-05 (pde,ic,bc)=('5.1e-05', '3.1e-06', '8.9e-06'), relL2=3.36e-03
+Adam it=3000: loss=2.624e-05 (pde,ic,bc)=('2.2e-05', '1.1e-06', '3.1e-06'), relL2=2.35e-03
+after L-BFGS: loss=5.654e-07 (pde,ic,bc)=('4.7e-07', '2.0e-08', '8.0e-08'), relL2=2.51e-04
+max abs err on 101x101 grid = 8.17e-04
+  u(0.5,0.0) PINN=0.999809, exact=1.000000
+  u(0.5,0.5) PINN=0.610482, exact=0.610498
+  u(0.5,1.0) PINN=0.372660, exact=0.372708
+wall time 227 s

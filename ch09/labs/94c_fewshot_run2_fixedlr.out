@@ -1,0 +1,35 @@
+pretrained member 0: ID test 0.72% | zero-shot on the reaction family 46.6% (rho channel zeroed: 46.6%)
+trivial baseline u(x, t) = u0(x): 57.9%
+learning-rate selection (K = 16, validation error on 32 other pool trajectories):
+  scratch  lr 3e-04:  37.9%  lr 1e-03:  33.8%  lr 3e-03:  34.5%  lr 1e-02:  36.5%   -> 1e-03
+  last     lr 3e-04:  42.3%  lr 1e-03:  39.4%  lr 3e-03:  35.8%  lr 1e-02:  33.5%   -> 1e-02
+  lora4    lr 3e-04:  35.1%  lr 1e-03:  21.2%  lr 3e-03:  15.4%  lr 1e-02:  14.7%   -> 1e-02
+  full     lr 3e-04:  26.9%  lr 1e-03:  27.0%  lr 3e-03:  27.9%  lr 1e-02:  31.4%   -> 3e-04
+--- K = 4 labelled trajectories (160 space-time fields), 400 steps, 3 subset(s) ---
+  scratch  trainable 137697  target-test error  59.73 +- 5.02 %   ID-test error after adaptation       -   (7 CPU-s per run)
+  last     trainable     65  target-test error  40.30 +- 3.61 %   ID-test error after adaptation  74.46 %   (3 CPU-s per run)
+  lora1    trainable    455  target-test error  36.78 +- 5.36 %   ID-test error after adaptation  81.18 %   (7 CPU-s per run)
+  lora4    trainable   1820  target-test error  35.66 +- 4.55 %   ID-test error after adaptation  80.75 %   (8 CPU-s per run)
+  full     trainable 137697  target-test error  44.18 +- 6.41 %   ID-test error after adaptation  84.02 %   (8 CPU-s per run)
+--- K = 16 labelled trajectories (640 space-time fields), 400 steps, 3 subset(s) ---
+  scratch  trainable 137697  target-test error  28.95 +- 1.94 %   ID-test error after adaptation       -   (8 CPU-s per run)
+  last     trainable     65  target-test error  31.84 +- 0.82 %   ID-test error after adaptation  53.74 %   (3 CPU-s per run)
+  lora1    trainable    455  target-test error  20.34 +- 2.56 %   ID-test error after adaptation  62.28 %   (8 CPU-s per run)
+  lora4    trainable   1820  target-test error  15.41 +- 0.48 %   ID-test error after adaptation  37.33 %   (8 CPU-s per run)
+  full     trainable 137697  target-test error  26.31 +- 1.56 %   ID-test error after adaptation  65.46 %   (8 CPU-s per run)
+--- K = 64 labelled trajectories (2560 space-time fields), 400 steps, 3 subset(s) ---
+  scratch  trainable 137697  target-test error  16.51 +- 0.14 %   ID-test error after adaptation       -   (8 CPU-s per run)
+  last     trainable     65  target-test error  29.89 +- 0.33 %   ID-test error after adaptation  52.25 %   (2 CPU-s per run)
+  lora1    trainable    455  target-test error  14.70 +- 1.73 %   ID-test error after adaptation  44.59 %   (8 CPU-s per run)
+  lora4    trainable   1820  target-test error   9.85 +- 0.49 %   ID-test error after adaptation  24.96 %   (8 CPU-s per run)
+  full     trainable 137697  target-test error  19.96 +- 0.52 %   ID-test error after adaptation  64.35 %   (7 CPU-s per run)
+--- K = 256 labelled trajectories (10240 space-time fields), 400 steps, 1 subset(s) ---
+  scratch  trainable 137697  target-test error  15.24 +- 0.00 %   ID-test error after adaptation       -   (7 CPU-s per run)
+  last     trainable     65  target-test error  29.30 +- 0.00 %   ID-test error after adaptation  51.50 %   (3 CPU-s per run)
+  lora1    trainable    455  target-test error  13.50 +- 0.00 %   ID-test error after adaptation  34.18 %   (7 CPU-s per run)
+  lora4    trainable   1820  target-test error   8.44 +- 0.00 %   ID-test error after adaptation  20.61 %   (8 CPU-s per run)
+  full     trainable 137697  target-test error  17.59 +- 0.00 %   ID-test error after adaptation  63.03 %   (7 CPU-s per run)
+LoRA r=4 (K=64, subset 0) with the adapters switched off: ID-test error 0.72 % (= pretrained)
+scratch, K = 256, 3000 steps: target-test error 4.84 % (53 CPU-s)
+full FT, K = 256, 3000 steps: target-test error 5.74 % (54 CPU-s)
+total 619 CPU-s

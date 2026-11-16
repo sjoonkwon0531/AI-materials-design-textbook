@@ -1,0 +1,22 @@
+CHGNet v0.3.0 initialized with 412,525 parameters
+CHGNet will run on cpu
+=== CHGNet 0.3.0  (412,525 parameters, float32) ===
+  EOS: a0 = 3.9430 A, B = 163.0 GPa   (exp a = 3.905 A; PBE/VASP 3.944 A)
+  phonons at a = 3.9430 A (own), 3 displaced 40-atom supercells, CPU 2.2 s
+     G: 109i 109i 109i -0 -0 0  ... max 473 cm-1
+     X: 38i 38i 96 96 144 166  ... max 644 cm-1
+     M: 49 68 91 92 92 245  ... max 714 cm-1
+     R: 22i 22i 22i 125 125 125  ... max 720 cm-1
+  phonons at a = 3.9440 A (pbe), 3 displaced 40-atom supercells, CPU 1.7 s
+     G: 115i 115i 115i -0 0 0  ... max 472 cm-1
+     X: 52i 52i 96 96 144 166  ... max 643 cm-1
+     M: 37 65 91 92 92 246  ... max 710 cm-1
+     R: 29i 29i 29i 124 124 124  ... max 715 cm-1
+  phonons at a = 3.9050 A (exp), 3 displaced 40-atom supercells, CPU 1.7 s
+     G: -0 -0 0 144 144 144  ... max 535 cm-1
+     X: 99 99 131 131 142 247  ... max 762 cm-1
+     M: 30i 95 106 106 153 247  ... max 858 cm-1
+     R: 76i 76i 76i 127 127 127  ... max 895 cm-1
+  rigid a0a0c- tilt at a0: min -0.96 meV/f.u. at 4.0 deg; E(10 deg) = +48.4 meV/f.u.
+  relaxed tilt (I4/mcm, 12 steps, CPU 14.6 s): phi = 3.93 deg, dE = -1.10 meV/f.u., cell 7.8791 7.8791 7.8998 A, c/a(pseudo) = 1.00263
+  CPU per 40-atom energy+force call (median of 5): 630 ms; total CPU of this script 40 s

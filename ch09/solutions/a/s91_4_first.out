@@ -1,0 +1,9 @@
+E0 = 1.4161
+true field h=0.2: VV max|E-E0| 1.084e-02 (E(T)-E0 +8.95e-05, range [-0.0108,+0.0005]) | RK4 max|E-E0| 6.573e-04 (E(T)-E0 -6.484e-04)
+true field h=0.02: VV max|E-E0| 1.082e-04 (E(T)-E0 +2.35e-06, range [-0.0001,+0.0000]) | RK4 max|E-E0| 7.643e-09 (E(T)-E0 -6.688e-09)
+sepHNN seed 0: train loss 8.12e-04, field RMSE 0.0093, train cpu 138 s, params 8706
+  VV   h=0.2 : max|E-E0| 0.0150, E range [-0.0150,+0.0017], E(T)-E0 -0.0012, mean E-E0 first/last quarter -0.0050/-0.0050; max|H_th-H_th(0)| 1.08e-02, H_th(T)-H_th(0) +1.26e-05
+  RK4  h=0.2 : max|E-E0| 0.0076, E range [-0.0076,+0.0020], E(T)-E0 -0.0034, mean E-E0 first/last quarter -0.0026/-0.0031; max|H_th-H_th(0)| 6.68e-04, H_th(T)-H_th(0) -6.58e-04
+  RK4  h=0.02: max|E-E0| 0.0070, E range [-0.0070,+0.0020], E(T)-E0 -0.0030, mean E-E0 first/last quarter -0.0025/-0.0025; max|H_th-H_th(0)| 7.91e-09, H_th(T)-H_th(0) -6.91e-09
+  VV   h=0.02: max|E-E0| 0.0070, E range [-0.0070,+0.0020], E(T)-E0 -0.0030, mean E-E0 first/last quarter -0.0025/-0.0025; max|H_th-H_th(0)| 1.08e-04, H_th(T)-H_th(0) +8.46e-07
+  max|V'_th - sin q| on [-2,2]: 0.0207; max|T'_th - p| on [-1.5,1.5]: 0.0164

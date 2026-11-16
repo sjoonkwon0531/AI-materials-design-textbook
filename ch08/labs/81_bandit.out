@@ -1,0 +1,8 @@
+K=10 arms, T=1000 pulls, R=2000 problems, mu_k~N(0,1), noise sd=1
+method              avg reward(last100)  %optimal(last100)  cum.regret@1000
+greedy (eps=0)                    1.036              36.4%            511.9
+eps-greedy 0.01                   1.327              61.2%            335.4
+eps-greedy 0.1                    1.367              80.6%            236.1
+UCB c=2                           1.486              85.8%            148.2
+mean of best arm over problems = 1.538
+runtime 1.8 s

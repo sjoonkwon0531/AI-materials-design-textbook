@@ -1,0 +1,3 @@
+flux + filter at k>24: err(1) 0.0077 | valid time 50.5 +/- 14.4 | blow-ups 0/16 | mean drift t=400 1.3e-07, t=2000 3.3e-07 | rms u over t=1000..2000: 1.344 (solver: 1.306)
+flux + filter at k>20: err(1) 0.0229 | valid time 44.7 +/- 13.8 | blow-ups 0/16 | mean drift t=400 1.8e-07, t=2000 4.2e-07 | rms u over t=1000..2000: 1.348 (solver: 1.306)
+content of the solver solution above k=24: 7.12e-03; above 20: 2.44e-02

@@ -1,0 +1,53 @@
+=== Part A: adatom diffusion, rejection-free KMC (BKL) ===
+(i) single adatom, L=40, 200 independent walkers x 20000 hops, a=1 (lattice units):
+  T=  300 K  D_KMC=4.146e+04 +/- 1.1e+03  D_exact=3.984e+04  ratio=1.041
+  T=  350 K  D_KMC=6.571e+05 +/- 1.8e+04  D_exact=6.314e+05  ratio=1.041
+  T=  400 K  D_KMC=5.219e+06 +/- 1.4e+05  D_exact=5.015e+06  ratio=1.041
+  T=  500 K  D_KMC=9.496e+07 +/- 2.5e+06  D_exact=9.125e+07  ratio=1.041
+  T=  600 K  D_KMC=6.569e+08 +/- 1.8e+07  D_exact=6.312e+08  ratio=1.041
+  T=  800 K  D_KMC=7.370e+09 +/- 2.0e+08  D_exact=7.082e+09  ratio=1.041
+  Arrhenius fit: Ea_fit=0.500 eV (input 0.50), prefactor=1.04e+13 (input 1.0e+13)
+(ii) lattice gas L=40, N=160 (theta=0.10), Eb=0.00 eV, 1e5 equil + 3e5 events, 3 seeds:
+  T=  300 K  D=3.501e+04 +/- 3.7e+02  D/D_single=0.879  t_sim=1.31e-02 s  (8.6 s wall)
+  T=  350 K  D=5.548e+05 +/- 5.8e+03  D/D_single=0.879  t_sim=8.25e-04 s  (7.3 s wall)
+  T=  400 K  D=4.406e+06 +/- 4.6e+04  D/D_single=0.879  t_sim=1.04e-04 s  (7.2 s wall)
+  T=  500 K  D=8.017e+07 +/- 8.4e+05  D/D_single=0.879  t_sim=5.71e-06 s  (7.2 s wall)
+  T=  600 K  D=5.546e+08 +/- 5.8e+06  D/D_single=0.879  t_sim=8.25e-07 s  (7.3 s wall)
+  T=  800 K  D=6.222e+09 +/- 6.6e+07  D/D_single=0.879  t_sim=7.35e-08 s  (7.4 s wall)
+  apparent Ea (all T)=0.500 eV; T>=500 K: 0.500 eV; T<500 K: 0.500 eV
+(ii) lattice gas L=40, N=160 (theta=0.10), Eb=0.10 eV, 1e5 equil + 3e5 events, 3 seeds:
+  T=  300 K  D=2.645e+02 +/- 1.0e+01  D/D_single=0.007  t_sim=1.90e+00 s  (7.4 s wall)
+  T=  350 K  D=1.183e+04 +/- 2.0e+02  D/D_single=0.019  t_sim=4.09e-02 s  (7.2 s wall)
+  T=  400 K  D=1.741e+05 +/- 5.4e+03  D/D_single=0.035  t_sim=2.64e-03 s  (7.4 s wall)
+  T=  500 K  D=8.596e+06 +/- 1.6e+05  D/D_single=0.094  t_sim=4.77e-05 s  (7.3 s wall)
+  T=  600 K  D=1.127e+08 +/- 1.7e+06  D/D_single=0.179  t_sim=3.66e-06 s  (7.4 s wall)
+  T=  800 K  D=2.327e+09 +/- 9.0e+07  D/D_single=0.329  t_sim=1.91e-07 s  (7.4 s wall)
+  apparent Ea (all T)=0.662 eV; T>=500 K: 0.643 eV; T<500 K: 0.672 eV
+  300 K, Eb=0.10: 3e5 production events cover t_sim=1.68e+00 s = 1.7e+15 MD steps of 1 fs
+=== Part B: ZGB CO oxidation, L=128, 1500 warm-up + 1500 measured MCS, seed=1 ===
+  y=0.300  theta_CO=0.000  theta_O=1.000  R_CO2=0.0000
+  y=0.340  theta_CO=0.000  theta_O=1.000  R_CO2=0.0000
+  y=0.370  theta_CO=0.000  theta_O=1.000  R_CO2=0.0000
+  y=0.380  theta_CO=0.000  theta_O=1.000  R_CO2=0.0000
+  y=0.385  theta_CO=0.000  theta_O=0.993  R_CO2=0.0027
+  y=0.390  theta_CO=0.000  theta_O=0.952  R_CO2=0.0184
+  y=0.395  theta_CO=0.000  theta_O=0.930  R_CO2=0.0274
+  y=0.400  theta_CO=0.001  theta_O=0.900  R_CO2=0.0399
+  y=0.420  theta_CO=0.002  theta_O=0.825  R_CO2=0.0730
+  y=0.440  theta_CO=0.003  theta_O=0.763  R_CO2=0.1026
+  y=0.460  theta_CO=0.006  theta_O=0.703  R_CO2=0.1337
+  y=0.480  theta_CO=0.011  theta_O=0.640  R_CO2=0.1673
+  y=0.500  theta_CO=0.021  theta_O=0.570  R_CO2=0.2047
+  y=0.505  theta_CO=0.024  theta_O=0.549  R_CO2=0.2154
+  y=0.510  theta_CO=0.030  theta_O=0.526  R_CO2=0.2266
+  y=0.515  theta_CO=0.037  theta_O=0.500  R_CO2=0.2382
+  y=0.520  theta_CO=0.047  theta_O=0.474  R_CO2=0.2493
+  y=0.525  theta_CO=0.068  theta_O=0.435  R_CO2=0.2608
+  y=0.530  theta_CO=0.999  theta_O=0.000  R_CO2=0.0003
+  y=0.535  theta_CO=1.000  theta_O=0.000  R_CO2=0.0000
+  y=0.540  theta_CO=1.000  theta_O=0.000  R_CO2=0.0000
+  y=0.560  theta_CO=1.000  theta_O=0.000  R_CO2=0.0000
+  y=0.600  theta_CO=1.000  theta_O=0.000  R_CO2=0.0000
+  wall time 62 s
+  reactive window (R_CO2>1e-3): 0.385 <= y <= 0.525
+  max R_CO2=0.2608 at y=0.525

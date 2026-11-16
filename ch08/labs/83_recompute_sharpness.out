@@ -1,0 +1,61 @@
+n: train 2615 (of which val 326), ID test 653, OOD oxide 1048, halide 285
+mean gap: train 0.726  ID 0.738  oxide 1.541  halide 1.732 eV; metals in train 53%
+(1) Lab 8.9 band-gap MLPs: per model lambda_max(H) old -> new | lambda_max(THT) old -> new
+   AdamW (bs 64)        seed 0:   26.12 ->   26.12 | 0.0849 -> 0.0850
+   AdamW (bs 64)        seed 1:   32.39 ->   32.39 | 0.1097 -> 0.1097
+   AdamW (bs 64)        seed 2:   29.18 ->   29.18 | 0.1019 -> 0.1019
+   AdamW (bs 64)        seed 3:   31.00 ->   31.00 | 0.1079 -> 0.1079
+   AdamW (bs 64)        seed 4:   33.13 ->   33.13 | 0.1094 -> 0.1094
+   AdamW (bs 1024)      seed 0:   48.89 ->   48.89 | 0.1481 -> 0.1481
+   AdamW (bs 1024)      seed 1:   48.11 ->   48.11 | 0.1455 -> 0.1455
+   AdamW (bs 1024)      seed 2:   38.45 ->   38.45 | 0.1108 -> 0.1108
+   AdamW (bs 1024)      seed 3:   43.92 ->   43.92 | 0.1356 -> 0.1356
+   AdamW (bs 1024)      seed 4:   43.56 ->   43.56 | 0.1274 -> 0.1274
+   SAM                  seed 0:   13.12 ->   13.12 | 0.0567 -> 0.0567
+   SAM                  seed 1:   14.63 ->   14.63 | 0.0554 -> 0.0554
+   SAM                  seed 2:   14.74 ->   14.74 | 0.0650 -> 0.0650
+   SAM                  seed 3:   14.50 ->   14.50 | 0.0601 -> 0.0601
+   SAM                  seed 4:   14.49 ->   14.49 | 0.0613 -> 0.0613
+   ASAM                 seed 0:   15.93 ->   15.93 | 0.0538 -> 0.0538
+   ASAM                 seed 1:   19.33 ->   19.33 | 0.0580 -> 0.0580
+   ASAM                 seed 2:   18.89 ->   18.89 | 0.0618 -> 0.0618
+   ASAM                 seed 3:   18.51 ->   18.51 | 0.0574 -> 0.0574
+   ASAM                 seed 4:   18.47 ->   18.47 | 0.0600 -> 0.0600
+   F-SAM                seed 0:   19.25 ->   19.25 | 0.0708 -> 0.0708
+   F-SAM                seed 1:   22.58 ->   22.58 | 0.0786 -> 0.0786
+   F-SAM                seed 2:   22.02 ->   22.02 | 0.0820 -> 0.0820
+   F-SAM                seed 3:   22.55 ->   22.55 | 0.0824 -> 0.0824
+   F-SAM                seed 4:   22.90 ->   22.91 | 0.0821 -> 0.0821
+   AdamW + input noise  seed 0:   23.59 ->   23.59 | 0.0769 -> 0.0769
+   AdamW + input noise  seed 1:   25.72 ->   25.72 | 0.0837 -> 0.0837
+   AdamW + input noise  seed 2:   25.07 ->   25.07 | 0.0854 -> 0.0854
+   AdamW + input noise  seed 3:   27.59 ->   27.59 | 0.0934 -> 0.0934
+   AdamW + input noise  seed 4:   28.76 ->   28.76 | 0.0940 -> 0.0940
+   AdamW + FGSM         seed 0:   20.56 ->   20.56 | 0.0648 -> 0.0648
+   AdamW + FGSM         seed 1:   23.84 ->   23.84 | 0.0720 -> 0.0720
+   AdamW + FGSM         seed 2:   24.11 ->   24.11 | 0.0754 -> 0.0754
+   AdamW + FGSM         seed 3:   24.47 ->   24.47 | 0.0798 -> 0.0798
+   AdamW + FGSM         seed 4:   26.25 ->   26.25 | 0.0805 -> 0.0805
+Lab 8.9 table (MAE and cpu columns unchanged; sharpness columns recomputed):
+AdamW (bs 64)        train 0.053 | ID 0.263+/-0.003 | oxide 2.001+/-0.153 | halide 1.851+/-0.090 | lam_max    30.4+/-  2.5 | lam(THT)   0.10+/- 0.01 | cpu   6 s/model
+AdamW (bs 1024)      train 0.153 | ID 0.270+/-0.003 | oxide 2.067+/-0.117 | halide 1.815+/-0.042 | lam_max    44.6+/-  3.7 | lam(THT)   0.13+/- 0.01 | cpu   2 s/model
+SAM                  train 0.074 | ID 0.261+/-0.003 | oxide 1.806+/-0.069 | halide 1.718+/-0.062 | lam_max    14.3+/-  0.6 | lam(THT)   0.06+/- 0.00 | cpu  11 s/model
+ASAM                 train 0.067 | ID 0.261+/-0.003 | oxide 1.821+/-0.127 | halide 1.745+/-0.091 | lam_max    18.2+/-  1.2 | lam(THT)   0.06+/- 0.00 | cpu  12 s/model
+F-SAM                train 0.058 | ID 0.263+/-0.002 | oxide 1.884+/-0.150 | halide 1.783+/-0.078 | lam_max    21.9+/-  1.3 | lam(THT)   0.08+/- 0.00 | cpu  12 s/model
+AdamW + input noise  train 0.063 | ID 0.262+/-0.004 | oxide 1.868+/-0.098 | halide 1.745+/-0.041 | lam_max    26.1+/-  1.8 | lam(THT)   0.09+/- 0.01 | cpu   7 s/model
+AdamW + FGSM         train 0.067 | ID 0.261+/-0.005 | oxide 1.472+/-0.042 | halide 1.605+/-0.035 | lam_max    23.8+/-  1.8 | lam(THT)   0.07+/- 0.01 | cpu  10 s/model
+[76 s]
+(2) Lab 8.10 MLIPs: per-seed lines with recomputed lambda_max (old value in brackets)
+   Adam  seed 0: E300  29.1 meV | F300  101 F600  183 F1000  332 meV/A | lam_max   1214.9 | cpu   29 s   [1214.9]
+   Adam  seed 1: E300  25.7 meV | F300   84 F600  151 F1000  274 meV/A | lam_max    531.6 | cpu   29 s   [531.6]
+   Adam  seed 2: E300  27.7 meV | F300   98 F600  173 F1000  302 meV/A | lam_max    601.6 | cpu   29 s   [601.6]
+Adam  (rho 0) F300   94+/- 8  F600  169+/-13  F1000  302+/-24 meV/A  ratio 1000/300 3.21  lam_max 783+/-307
+   SAM   seed 0: E300  26.2 meV | F300  116 F600  213 F1000  378 meV/A | lam_max    287.2 | cpu   57 s   [287.2]
+   SAM   seed 1: E300  30.9 meV | F300  106 F600  195 F1000  333 meV/A | lam_max    249.0 | cpu   55 s   [249.0]
+   SAM   seed 2: E300  27.0 meV | F300  112 F600  197 F1000  334 meV/A | lam_max    257.0 | cpu   56 s   [257.0]
+SAM   (rho 0.01) F300  111+/- 4  F600  201+/- 8  F1000  348+/-21 meV/A  ratio 1000/300 3.13  lam_max 264+/-16
+   ASAM  seed 0: E300  25.9 meV | F300  109 F600  214 F1000  382 meV/A | lam_max    287.9 | cpu   53 s   [287.9]
+   ASAM  seed 1: E300  26.9 meV | F300  106 F600  199 F1000  356 meV/A | lam_max    289.6 | cpu   53 s   [289.6]
+   ASAM  seed 2: E300  28.2 meV | F300  110 F600  193 F1000  331 meV/A | lam_max    287.6 | cpu   55 s   [287.6]
+ASAM  (rho 0.1) F300  109+/- 2  F600  202+/- 9  F1000  356+/-21 meV/A  ratio 1000/300 3.28  lam_max 288+/-1
+wall 138 s

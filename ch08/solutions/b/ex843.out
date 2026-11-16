@@ -1,0 +1,6 @@
+DR d in 1..5               nominal  28.7+/- 9.8 | worst d<=4  81.1 | d=5 col worst  99.7+/-28.1 | d=5,h=0.1  46.8 | DR-test mean  43.3 p90  68.6 overshoot 20.5% (seeds 22.4, 22.0, 17.2) | 41 s
+     d=5 column (h=0.05..0.2): 99.7 67.6 46.8 47.5 77.5 | d=4 column: 62.7 43.9 33.3 45.3 77.3
+DR d 1..4 + u_{t-3},u_{t-4} nominal  31.3+/-13.7 | worst d<=4  76.3 | d=5 col worst 162.2+/-29.6 | d=5,h=0.1  53.8 | DR-test mean  44.8 p90  66.6 overshoot 19.4% (seeds 25.5, 14.8, 17.8) | 95 s
+     d=5 column (h=0.05..0.2): 162.2 91.4 53.8 50.4 71.4 | d=4 column: 65.7 48.1 39.1 45.6 71.2
+DR d 1..5 + u_{t-3},u_{t-4} nominal  35.5+/-16.3 | worst d<=4  96.1 | d=5 col worst  96.3+/-33.2 | d=5,h=0.1  47.6 | DR-test mean  50.4 p90  81.2 overshoot 17.9% (seeds 25.2, 14.8, 13.8) | 144 s
+     d=5 column (h=0.05..0.2): 96.2 66.0 47.6 56.6 92.1 | d=4 column: 66.4 42.5 37.2 54.5 91.8

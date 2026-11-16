@@ -1,0 +1,6 @@
+[noquench] 3040 training pairs (inputs c(2.5) ... c(47.5))
+[noquench] epoch 1: train loss 0.1222 | CPU 48 s
+[noquench] epoch 2: train loss 0.0466 | CPU 97 s
+[noquench] epoch 3: train loss 0.0302 | CPU 146 s
+[noquench] epoch 4: train loss 0.0220 | CPU 193 s
+[noquench] epoch 5: train loss 0.0181 | CPU 244 s

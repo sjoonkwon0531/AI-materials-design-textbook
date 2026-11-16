@@ -1,0 +1,7 @@
+exact: <V> = 11.000, Var V = 11.000
+ln V uniform, coef N+1        : <V> =   11.000   Var V =   11.023   min V visited = 1.18e+00
+V uniform, coef N             : <V> =   11.006   Var V =   11.050   min V visited = 1.58e+00
+L uniform, coef N+2/3         : <V> =   11.001   Var V =   11.010   min V visited = 1.45e+00
+V uniform, coef N+1 (wrong)   : <V> =   12.001   Var V =   12.057   min V visited = 1.56e+00
+ln V uniform, coef 0 (wrong)  : <V> =    0.001   Var V =    0.001   min V visited = 6.20e-197
+LJ wrong run: V = 393.7, kT/V = 0.00508, ideal-gas pressure rho kT = 1.3006

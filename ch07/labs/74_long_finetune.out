@@ -1,0 +1,6 @@
+pretraining geometries: 1500 (600 K: 1000, 1000 K: 500); 300 K pool 2000, test 1000
+300 K test set: E std 127 meV, |F| component MAD from 0 714 meV/A
+N=  50 init=S, 2300 FT steps: E MAE   33.2 (33.3, 33.1) meV   F MAE  117.6 (117.7, 117.5) meV/A   [t=217s]
+N=  50 init=G, 2300 FT steps: E MAE   35.2 (33.4, 37.1) meV   F MAE  117.0 (118.0, 116.0) meV/A   [t=327s]
+N= 200 init=S, 2300 FT steps: E MAE   32.4 (29.7, 35.0) meV   F MAE  111.1 (111.2, 111.0) meV/A   [t=406s]
+N= 200 init=G, 2300 FT steps: E MAE   36.4 (34.7, 38.0) meV   F MAE  114.7 (114.6, 114.8) meV/A   [t=490s]

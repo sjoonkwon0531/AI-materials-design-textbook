@@ -1,0 +1,31 @@
+non-metal subset: n = 2151, p = 130 (after dropping constant columns)
+gap: mean 2.087 eV, std 1.466 eV, min 0.02, max 11.70
+
+=== Part A: OLS on standardized Magpie features ===
+cond(A) = 1.775e+17   cond(A^T A) = 3.150e+34
+singular values: largest 235.4, 10 smallest: 1.48e-14, 1.35e-14, 1.30e-14, 1.18e-14, 1.11e-14, 1.02e-14, 8.07e-15, 5.16e-15, 3.21e-15, 1.33e-15
+number of sigma_i < 1e-6 * sigma_1: 26
+numerical rank of A = 105 of 131 columns
+normal eq.: np.linalg.solve raised LinAlgError ('Singular matrix')
+QR: min |R_ii| = 2.66e-15
+QR (no pivoting)     : train RMSE = 0.7467 eV   ||w|| = 3.293e+14   max|w| = 1.163e+14
+SVD/lstsq (min-norm) : train RMSE = 0.7427 eV   ||w|| = 7.125e+00   max|w| = 4.182e+00
+w_SVD + 10*v_null: ||w|| = 12.279, max |A w2 - A w_SVD| = 4.62e-14
+check exact collinearity: max |range - (max - min)| for Number = 0.0e+00
+
+=== Part B: how the split changes the error ===
+chemical systems: 1617 distinct; 227 systems hold >1 entry, covering 761 of 2151 rows; largest: Ge-Si (23)
+quasi-constant features (>99% identical): 7 -> maximum NsValence, minimum NsUnfilled, minimum NdUnfilled, mode NdUnfilled, mode NfUnfilled, minimum GSmagmom, mode GSmagmom
+leave-cluster-out: KMeans(k=8) on standardized features; cluster sizes: [257, 255, 206, 203, 495, 293, 363, 79]
+model                              random 5-fold   group 5-fold (chem. system)       leave-cluster-out (k=8)
+ridge, 130 feat.                         113.382                        61.848                         0.715
+ridge, 123 feat.                           0.571                         0.573                         0.712
+1-NN, 123 feat.                            0.505                         0.576                         0.929
+5-NN, 123 feat.                            0.476                         0.534                         0.840
+ridge/130, random 5-fold: worst point TiFe2Si |error| = 2.426e+05 eV; median AE = 0.413; MAE without it = 0.577
+(baseline: predict the training mean -> MAE = 1.074 eV)
+median distance (standardized feature space) from a test point to its nearest training point:
+   random 5-fold                 : 2.265
+   group 5-fold (chem. system)   : 3.173
+   leave-cluster-out (k=8)       : 7.654
+time 4.3 s

@@ -1,0 +1,2 @@
+nominal  d=2,G=0.2: fixed h -> h=0.05: 275.3, h=0.07: 95.4, h=0.1: 6.3, h=0.14: 54.6, h=0.2: 127.4 | worst fixed 275.3 K | per-step adversarial h 127.4 K
+DR       d=2,G=0.2: fixed h -> h=0.05: 20.2, h=0.07: 16.4, h=0.1: 20.3, h=0.14: 31.9, h=0.2: 53.9 | worst fixed 53.9 K | per-step adversarial h 329.8 K

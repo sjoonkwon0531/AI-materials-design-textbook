@@ -1,0 +1,9 @@
+=== A. Burgers, nu = 0.01/pi; reference = Cole-Hopf (120-point Gauss-Hermite); max |u_x| = 152.00 at t = 0.510 ===
+  FD N =  100: rel L2 error 2.11e-02, cpu     17 ms (327 RHS evaluations)
+  FD N =  200: rel L2 error 3.75e-03, cpu     19 ms (400 RHS evaluations)
+  FD N =  400: rel L2 error 2.02e-03, cpu     34 ms (793 RHS evaluations)
+  FD N =  800: rel L2 error 5.05e-04, cpu     37 ms (640 RHS evaluations)
+  FD N = 1600: rel L2 error 1.25e-04, cpu     57 ms (526 RHS evaluations)
+  PINN (2-32x4-1 tanh, hard IC/BC, 2000 points) seed 0: rel L2 after Adam 1.12e-01 -> after L-BFGS 1.80e-02, final loss 1.3e-04, cpu 103 s
+  PINN (2-32x4-1 tanh, hard IC/BC, 2000 points) seed 1: rel L2 after Adam 1.36e-01 -> after L-BFGS 6.14e-03, final loss 1.3e-04, cpu 84 s
+total cpu 196 s

@@ -1,0 +1,33 @@
+n = 2151, p = 123
+
+=== Part A: representer theorem check (linear kernel) ===
+primal: solve a 123x123 system;  dual: solve a 2151x2151 system
+max |Z w - K a| = 8.51e-13;  max |w - Z^T a| = 2.13e-13
+
+=== Part B: grouped 5-fold CV (chemical system) ===
+KRR-RBF grid (gamma: MAE at alpha = 0.03 / 0.1 / 0.3):
+   gamma = 0.001 : 0.486 / 0.509 / 0.530
+   gamma = 0.003 : 0.456 / 0.470 / 0.494
+   gamma = 0.01  : 0.449 / 0.451 / 0.469
+   gamma = 0.03  : 0.507 / 0.511 / 0.530
+median squared distance between standardized points = 227.2; 1/median = 0.0044
+ridge (alpha=31.6)          : MAE = 0.570 eV, RMSE = 0.807
+KRR-RBF (gamma=0.01, alpha=0.03): MAE = 0.449 eV, RMSE = 0.683
+(hyperparameters chosen on the same grouped folds: the KRR number is mildly optimistic)
+leave-cluster-out (k=8): ridge MAE = 0.679, KRR MAE = 0.742
+LCO: median over test points of max_j k(x, x_j) = 0.557 (random-like grouped CV would be closer to 1)
+LCO test points with max kernel < 0.2: 160; their KRR MAE = 1.179, ridge MAE = 1.187, |KRR pred - train mean| median = 0.107
+
+=== Part C: Gaussian process = Bayesian KRR with a predictive variance ===
+train n = 1000 (subsample of fold-0 training set), test n = 431
+learned kernel: 1.68**2 * RBF(length_scale=7.51) + WhiteKernel(noise_level=0.0885)
+max |GP mean - KRR(gamma=1/2l^2, alpha=s_n^2/s_f^2)| = 5.04e-10
+GP test MAE = 0.511 eV; mean predictive std = 0.668 eV
+   coverage of mu +/- 1.0*std: 0.731 (nominal 0.683)
+   coverage of mu +/- 1.96*std: 0.898 (nominal 0.95)
+Spearman rank corr(std, |error|) = 0.309
+   std in [0.33, 0.43]: n = 108, MAE = 0.297
+   std in [0.43, 0.54]: n = 108, MAE = 0.428
+   std in [0.54, 0.76]: n = 108, MAE = 0.586
+   std in [0.76, 1.71]: n = 108, MAE = 0.735
+time 278.1 s

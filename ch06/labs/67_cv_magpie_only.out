@@ -1,0 +1,4 @@
+n = 4601; random 5-fold (seed 0); LightGBM settings as in 67_cv_leakage.py
+Magpie only   (p = 132): MAE raw = 0.411 eV, clipped at 0 = 0.401 eV
+all features  (p = 149): MAE raw = 0.369 eV, clipped at 0 = 0.359 eV
+wall 20 s

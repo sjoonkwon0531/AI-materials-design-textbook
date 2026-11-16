@@ -1,0 +1,13 @@
+Cole-Hopf check  N=  64 dt=5e-4 T=1: max|u-u_exact| = 4.39e-13
+Cole-Hopf check  N= 128 dt=5e-4 T=1: max|u-u_exact| = 5.36e-15
+Burgers GRF N=512 dt=1.0e-03 vs (N=1024, dt=1.25e-4): rel-L2 mean 1.6e-06  max 1.3e-05
+Burgers GRF N=512 dt=5.0e-04 vs (N=1024, dt=1.25e-4): rel-L2 mean 5.6e-07  max 9.3e-06
+Burgers: 2000+200 ICs, N=512, nu=0.005, T=0.25, dt=0.0005: 42 s; mean drift max 8.9e-16
+  u0: mean of |mean| 0.818, rms fluctuation 0.769; u(T): rms fluctuation 0.558
+  u(T): relative L2 content above k = 16, 32, 64, 128: 2.92e-02  6.65e-03  5.07e-04  4.91e-06
+KS: 64+16 trajectories, L=64.0, N=128, dt=0.025, stored dt=1.0, 400 steps: 26 s
+  step-halving check over t=20: rel-L2 3.3e-05; mean drift max 2.1e-16; rms u 1.308
+
+real	1m19.320s
+user	0m48.618s
+sys	0m5.041s

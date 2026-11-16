@@ -1,0 +1,12 @@
+family        n     mean gap  metal%  train-mean  MAE_LOFO  MSE(signed) nonmetal-MSE  pred mean  MAE(random5)  MAE(predict train mean)
+oxide         1048    1.54    54.9     0.81     1.122    +0.145      -0.966      1.69      0.653        1.633
+chalcogenide  1348    1.44    12.6     0.78     0.679    -0.243      -0.352      1.20      0.354        0.996
+halide         285    1.73    47.7     0.93     1.310    +0.017      -1.155      1.75      0.727        1.704
+   halide metals: n=136 mean pred 1.30; non-metals: n=149 mean true 3.31 mean pred 2.16; frac under-predicted 0.80
+     true gap in [0,1.5): n=19 mean signed err -0.02
+     true gap in [1.5,3): n=74 mean signed err -0.42
+     true gap in [3,99): n=56 mean signed err -2.51
+pnictide       384    0.71    49.0     1.00     0.437    -0.011      -0.290      0.70      0.353        0.873
+other         1536    0.10    89.9     1.41     0.186    +0.083      -0.387      0.19      0.096        1.362
+overall LOFO MAE 0.634; fold mean 0.747
+time 13s

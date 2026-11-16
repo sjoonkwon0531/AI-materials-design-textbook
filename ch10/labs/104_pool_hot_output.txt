@@ -1,0 +1,5 @@
+  oracle 2000 K, 200 steps: final T 2102 K, min Si-Si 1.99 A, mean CN(2.75 A) 3.88
+  oracle 2500 K, 200 steps: final T 2575 K, min Si-Si 2.06 A, mean CN(2.75 A) 3.72
+  oracle 2500 K, 150 steps: final T 2687 K, min Si-Si 2.09 A, mean CN(2.75 A) 3.72
+hot pool 400 frames, 2500 K test 21 frames, RMS force component 1312 meV/A
+oracle calls 550, CPU 165 s

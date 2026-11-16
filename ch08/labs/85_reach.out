@@ -1,0 +1,7 @@
+median ||x|| 0.657
+adamw 0 ||W1||_op 5.681 ||W1||_F 10.59
+   input-space reach rho*||x||/||W1||_op = 0.0000 action units = 0.00 K
+sam 0.05 ||W1||_op 6.833 ||W1||_F 11.472
+   input-space reach rho*||x||/||W1||_op = 0.0048 action units = 0.48 K
+sam 0.2 ||W1||_op 7.696 ||W1||_F 11.415
+   input-space reach rho*||x||/||W1||_op = 0.0171 action units = 1.71 K

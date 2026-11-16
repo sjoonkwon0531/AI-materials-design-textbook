@@ -1,0 +1,25 @@
+5.8.1
+  N=10 <Re^2>=8.81: Nbar=61.5, FH (chiN)_ODT=20.88 -> chi=2.088, Delta a=7.30; Glaser (chiN)_ODT=33.13 -> chi=3.313, Delta a=11.58
+  N=10 <Re^2>=8.84: Nbar=62.2, FH (chiN)_ODT=20.84 -> chi=2.084, Delta a=7.29; Glaser (chiN)_ODT=33.02 -> chi=3.302, Delta a=11.55
+  N=20 <Re^2>=18.63: Nbar=145.5, FH (chiN)_ODT=18.29 -> chi=0.915, Delta a=3.20; Glaser (chiN)_ODT=25.85 -> chi=1.293, Delta a=4.52
+5.8.2
+  prefactor (32/pi^2)^(1/3) 6^(-1/6) = 1.0980
+  chi=0.04, N=500: chiN=20, L0=28.31 nm, Re0=a sqrt(N)=15.65 nm, L0/Re0=1.809, HT interface width a/sqrt(6chi)=1.429 nm (ratio to L0 0.050)
+  chi=0.16, N=125: chiN=20, L0=14.16 nm, Re0=a sqrt(N)=7.83 nm, L0/Re0=1.809, HT interface width a/sqrt(6chi)=0.714 nm (ratio to L0 0.050)
+  ratio L0(0.16)/L0(0.04) = 0.5000 ; (0.16/0.04)^(-1/2) = 0.5000
+5.8.3
+  f=0.5000: |psi_m|^2 numeric 0.40528, 0.00000, 0.04503, 0.00000, 0.01621, 0.00000
+           analytic (2 sin(pi m f)/(pi m))^2 0.40528, 0.00000, 0.04503, 0.00000, 0.01621, 0.00000
+           S(2q0)/S(q0)=0.0000, S(3q0)/S(q0)=1.11e-01, psi_0=+0.0000
+  f=0.3333: |psi_m|^2 numeric 0.30397, 0.07599, 0.00000, 0.01900, 0.01216, 0.00000
+           analytic (2 sin(pi m f)/(pi m))^2 0.30396, 0.07599, 0.00000, 0.01900, 0.01216, 0.00000
+           S(2q0)/S(q0)=0.2500, S(3q0)/S(q0)=2.22e-33, psi_0=-0.3333
+5.8.6(a)
+  x=0.8: F/Fmin = 1.04667 (+4.67%)
+  x=0.9: F/Fmin = 1.01074 (+1.07%)
+  x=1.1: F/Fmin = 1.00939 (+0.94%)
+  x=1.2: F/Fmin = 1.03556 (+3.56%)
+  x=1.3: F/Fmin = 1.07615 (+7.62%)
+  x=1.5: F/Fmin = 1.19444 (+19.44%)
+  x=1.7: F/Fmin = 1.35549 (+35.55%)
+  N=10 DPD (a=0.99, chi=4.29): SST at D=6.41: F_el=1.293 kT, F_int=2.612 kT per chain; SST optimum D0=6.431, F_min=3 F_el(D0)=3.905 kT

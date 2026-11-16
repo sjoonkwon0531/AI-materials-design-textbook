@@ -1,0 +1,11 @@
+=== B. remedies at beta = 30: every variant uses 3000 loss evaluations in total, like the vanilla runs ===
+  curriculum 6 stages x 400 Adam, L-BFGS (600) only at the end : rel L2 = 0.8173, 0.7153 | seed 0: err(t=0.1) 0.536, err(t=1) 1.038, 38 cpu s per run
+  curriculum 6 stages x (150 Adam + 350 L-BFGS)            : rel L2 = 0.0559, 0.0615 | seed 0: err(t=0.1) 0.038, err(t=1) 0.076, 39 cpu s per run
+  curriculum 10 stages x (60 Adam + 240 L-BFGS)            : rel L2 = 0.0318, 0.0724 | seed 0: err(t=0.1) 0.007, err(t=1) 0.051, 43 cpu s per run
+  time marching, 6 slabs x (150 Adam + 350 L-BFGS)         : rel L2 = 0.0185, 0.0298 | seed 0: err(t=0.1) 0.024, err(t=1) 0.016, 43 cpu s per run
+  periodic embedding (cos x, sin x, t), vanilla training     : rel L2 = 1.0443, 1.4103 | seed 0: err(t=0.1) 0.836, err(t=1) 1.085, L_r 1.1e-02 L_ic 1.6e-02, 33 cpu s per run
+=== C. classical baseline at beta = 30: Lax-Wendroff (CFL 0.8), error at t = 1 ===
+  N =  128,   764 steps: rel L2 error 4.34e-03, cpu 13.1 ms
+  N =  512,  3056 steps: rel L2 error 2.71e-04, cpu 59.3 ms
+  N = 2048, 12224 steps: rel L2 error 1.69e-05, cpu 288.2 ms
+part B: total wall 1950 s, cpu 407 s

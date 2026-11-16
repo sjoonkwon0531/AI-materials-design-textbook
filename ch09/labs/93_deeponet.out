@@ -1,0 +1,11 @@
+[lab     ] POD floor (test rel-L2 of the best p-term linear reconstruction): p=2: 0.5032  p=4: 0.3023  p=8: 0.1752  p=16: 0.0910  p=32: 0.0375  p=64: 0.0000
+[comoving] POD floor (test rel-L2 of the best p-term linear reconstruction): p=2: 0.5664  p=4: 0.3984  p=8: 0.2553  p=16: 0.1364  p=32: 0.0551  p=64: 0.0000
+norm ratio ||v(T)|| / ||u(T)|| (test mean) = 0.622  (errors in the two frames are relative to different norms)
+[lab] deeponet      ( 59009 params): test rel-L2 N=250: 0.4169 (train 0.0443)  N=500: 0.3474 (train 0.0886)  N=1000: 0.2493 (train 0.1446)  N=2000: 0.2052 (train 0.1708)   [572 s]
+[lab] pod_deeponet  ( 28961 params): test rel-L2 N=250: 0.4240 (train 0.0355)  N=500: 0.3500 (train 0.0723)  N=1000: 0.2487 (train 0.1336)  N=2000: 0.2124 (train 0.1659)   [277 s]
+[lab] fno           (145729 params): test rel-L2 N=250: 0.0911 (train 0.0062)  N=500: 0.0455 (train 0.0103)  N=1000: 0.0242 (train 0.0138)  N=2000: 0.0205 (train 0.0151)   [1171 s]
+[comoving, N=1000] deeponet     : test rel-L2 0.1832 (train 0.1225)  -> relative to ||u(T)||: 0.1139   [72 s]
+[comoving, N=1000] pod_deeponet : test rel-L2 0.2053 (train 0.1157)  -> relative to ||u(T)||: 0.1277   [38 s]
+[comoving, N=1000] fno          : test rel-L2 0.0100 (train 0.0068)  -> relative to ||u(T)||: 0.0062   [130 s]
+DeepONet translation-equivariance error (shift 5/64): 0.240
+wall 2336 s (CPU 312 s)

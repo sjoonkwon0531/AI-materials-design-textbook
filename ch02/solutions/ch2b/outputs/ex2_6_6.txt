@@ -1,0 +1,15 @@
+
+<c>0 = 0.0:  (minority = c<0 for <c>=0.4)
+  t=   5: mean=+0.0000  area(c<0)=0.501  #components(c<0)=   5  #components(c>0)=  6  c<0 spans box: True   L(t)=1.743
+  t=  20: mean=+0.0000  area(c<0)=0.502  #components(c<0)=   2  #components(c>0)=  4  c<0 spans box: True   L(t)=2.672
+  t= 100: mean=+0.0000  area(c<0)=0.503  #components(c<0)=   1  #components(c>0)=  3  c<0 spans box: True   L(t)=4.268
+  t= 400: mean=+0.0000  area(c<0)=0.500  #components(c<0)=   1  #components(c>0)=  1  c<0 spans box: True   L(t)=7.301
+
+<c>0 = 0.4:  (minority = c<0 for <c>=0.4)
+  t=   5: mean=+0.4000  area(c<0)=0.268  #components(c<0)=  45  #components(c>0)=  1  c<0 spans box: False   L(t)=1.668
+  t=  20: mean=+0.4000  area(c<0)=0.279  #components(c<0)=  23  #components(c>0)=  1  c<0 spans box: False   L(t)=2.262
+  t= 100: mean=+0.4000  area(c<0)=0.291  #components(c<0)=   6  #components(c>0)=  1  c<0 spans box: False   L(t)=3.671
+  t= 400: mean=+0.4000  area(c<0)=0.293  #components(c<0)=   4  #components(c>0)=  1  c<0 spans box: False   L(t)=4.477
+
+lever rule for <c>=0.4 with phases at -1,+1: minority fraction = (1-0.4)/2 = 0.30
+saved ex2_6_6_morphology.png

@@ -1,0 +1,6 @@
+=== D. diagnosis of the failed vanilla run (beta = 30, seed 0): residual on vs between the collocation points ===
+  rel L2 error 0.663; residual MSE on the 1000 training points 1.03e-03; on 20000 fresh points 2.35e-03
+  fresh-point residual MSE by time slab: [0.0,0.2] 2.2e-03, [0.2,0.4] 7.1e-03, [0.4,0.6] 9.0e-04, [0.6,0.8] 8.2e-04, [0.8,1.0] 7.4e-04
+  wave amplitude sqrt(2<u^2>) at t = 0, 0.25, 0.5, 0.75, 1: 0.977, 0.724, 0.445, 0.306, 0.216
+  for scale: a wave damped like exp(-gamma t) with gamma = 1.51 would have residual MSE gamma^2 <u^2> ~ 3.54e-01
+part D: total wall 211 s, cpu 48 s

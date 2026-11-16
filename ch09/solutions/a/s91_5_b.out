@@ -1,0 +1,2 @@
+damped pendulum gamma=0.05: reference E(0)=1.4161, E(20)=0.5733, E(40)=0.2142, E(60)=0.0773; amplitude max|q| on [50,60] = 0.500
+dhnn seed 0: train loss 7.95e-04, field RMSE 0.0267, max|q-q_ref| [0,20] 0.112, [0,60] 0.135, rms [0,60] 0.060, rms [40,60] 0.050; E(20) 0.5385 E(40) 0.1793 E(60) 0.0579, max|E-E_ref| 0.0437, max|q| on [50,60] 0.448, cpu 75 s, H_th change over T -1.372e+00, max|H_th-H_th(0)| 1.37e+00, increases 0/60, R = [[0.0179,-0.0140],[-0.0140,0.0403]], eig [0.01111135 0.04703817]

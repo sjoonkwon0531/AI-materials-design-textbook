@@ -1,0 +1,30 @@
+5.7.1:
+  s_i*sum s_j = -4: dE = -8 J, acceptance = 1.0000
+  s_i*sum s_j = -2: dE = -4 J, acceptance = 1.0000
+  s_i*sum s_j = +0: dE = +0 J, acceptance = 1.0000
+  s_i*sum s_j = +2: dE = +4 J, acceptance = 0.1889
+  s_i*sum s_j = +4: dE = +8 J, acceptance = 0.0357
+5.7.2: pi = [0.3655 0.1345 0.1345 0.3655]
+K_B =
+ [[0.6321 0.     0.3679 0.    ]
+ [0.     0.     0.     1.    ]
+ [1.     0.     0.     0.    ]
+ [0.     0.3679 0.     0.6321]]
+K_W =
+ [[0.6321 0.3679 0.     0.    ]
+ [1.     0.     0.     0.    ]
+ [0.     0.     0.     1.    ]
+ [0.     0.     0.3679 0.6321]]
+  K_B         : stationarity |pi K - pi| = 0.0e+00, detailed-balance violation max|DK-(DK)^T| = 0.0000
+  K_W         : stationarity |pi K - pi| = 0.0e+00, detailed-balance violation max|DK-(DK)^T| = 0.0000
+  K_B K_W     : stationarity |pi K - pi| = 0.0e+00, detailed-balance violation max|DK-(DK)^T| = 0.0850
+  K_W K_B     : stationarity |pi K - pi| = 0.0e+00, detailed-balance violation max|DK-(DK)^T| = 0.0850
+  K_B K_W K_B : stationarity |pi K - pi| = 0.0e+00, detailed-balance violation max|DK-(DK)^T| = 0.0000
+  K_B K_W =
+ [[0.3996 0.2325 0.     0.3679]
+ [0.     0.     0.3679 0.6321]
+ [0.6321 0.3679 0.     0.    ]
+ [0.3679 0.     0.2325 0.3996]]
+  example: pi((1, 1))K((1, 1)->(1, -1)) = 0.0850  vs  pi((1, -1))K((1, -1)->(1, 1)) = 0.0000
+5.7.3: zM=2.0: Metropolis t_ind(1024) = 3.223e+06 ms = 3223 s = 0.90 h; Wolff = 923.1 ms = 0.92 s; ratio = 3491 (at L=128: 79)
+5.7.3: zM=2.17: Metropolis t_ind(1024) = 4.589e+06 ms = 4589 s = 1.27 h; Wolff = 923.1 ms = 0.92 s; ratio = 4972 (at L=128: 79)

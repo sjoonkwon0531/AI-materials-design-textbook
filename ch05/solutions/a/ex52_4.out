@@ -1,0 +1,13 @@
+phi=0.95: var=0.9967, mean=+0.00623, rho(1)=0.9498 (exact 0.95), rho(5)=+0.7735 (exact +0.7738)
+  tau_int exact = 19.5000;  tau_int(Sokal c=6) = 19.268 +/- 0.416, window W = 116
+  naive err = 9.983e-04;  sqrt(2 tau_ex / n) = 6.245e-03;  sqrt(2 tau_est/n)*sd = 6.198e-03
+  blocking levels: 9.983e-04 1.394e-03 1.935e-03 2.646e-03 3.516e-03 4.444e-03 5.234e-03 5.732e-03 5.986e-03 6.166e-03 6.190e-03 6.148e-03 6.085e-03 6.537e-03 5.657e-03 4.834e-03
+  plateau (levels with 100-2000 blocks): mean = 6.225e-03; (plateau/naive)^2 = 38.880 vs 2 tau_ex = 39.000
+phi=-0.5: var=1.0021, mean=+0.00058, rho(1)=-0.5006 (exact -0.5), rho(5)=-0.0307 (exact -0.0312)
+  tau_int exact = 0.1667;  tau_int(Sokal c=6) = -0.001 +/- -0.000, window W = 1
+  naive err = 1.001e-03;  sqrt(2 tau_ex / n) = 5.774e-04;  sqrt(2 tau_est/n)*sd = 0.000e+00
+  blocking levels: 1.001e-03 7.072e-04 6.621e-04 6.224e-04 6.005e-04 5.901e-04 5.834e-04 5.816e-04 5.797e-04 5.837e-04 5.832e-04 5.740e-04 5.639e-04 6.039e-04 5.243e-04 4.456e-04
+  plateau (levels with 100-2000 blocks): mean = 5.817e-04; (plateau/naive)^2 = 0.338 vs 2 tau_ex = 0.333
+phi=-0.50: n*Var(mean) over 2000 replicas (n=1e4) = 0.333; theory 2 tau_int = 0.333
+phi=+0.00: n*Var(mean) over 2000 replicas (n=1e4) = 0.998; theory 2 tau_int = 1.000
+phi=+0.95: n*Var(mean) over 2000 replicas (n=1e4) = 38.815; theory 2 tau_int = 39.000

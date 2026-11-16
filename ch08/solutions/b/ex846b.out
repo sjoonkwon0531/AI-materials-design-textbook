@@ -1,0 +1,3 @@
++5 frames from 1000 K: F1000 MAE 300 meV/A | F300 MAE 98 meV/A
++50 frames from 1000 K: F1000 MAE 266 meV/A | F300 MAE 98 meV/A
++0 frames (fine-tune only): F1000 MAE 310 meV/A | F300 97

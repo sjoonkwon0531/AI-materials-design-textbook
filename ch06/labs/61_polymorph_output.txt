@@ -1,0 +1,13 @@
+=== Part A: Cu polymorphs, EMT energy at optimized lattice constant ===
+  fcc  a = 3.5898 A   E_EMT =     -7.0 meV/atom
+  hcp  a = 2.5381 A   E_EMT =     -8.0 meV/atom
+  bcc  a = 2.8554 A   E_EMT =     25.6 meV/atom
+  sc   a = 2.4188 A   E_EMT =    446.2 meV/atom
+  relative to fcc (meV/atom): fcc +0.0, hcp -0.9, bcc +32.7, sc +453.3
+  Magpie vector length = 132; ||v(fcc)-v(bcc)|| = 0 by construction (composition is the only input)
+  any composition-only model must err by >= 227.1 meV/atom on at least one of them
+=== Part B: expt_gap (matbench, CrabNet mirror) ===
+  rows = 4601, unique reduced formulas = 4601, metals (gap = 0) = 2450 (53.2%)
+  number of elements per formula: 2: 1039, 3: 2286, 4: 1276
+=== Part C: Magpie featurization cost (300 random formulas, 1 process) ===
+  3.02 ms per formula; feature matrix (300, 132); NaN entries = 0

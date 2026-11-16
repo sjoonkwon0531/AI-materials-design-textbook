@@ -1,0 +1,11 @@
+N=  500: mean=0.4445, sample std=0.0567, std*sqrt(N)=1.268
+N= 1000: mean=0.4419, sample std=0.0403, std*sqrt(N)=1.274
+N= 2000: mean=0.4471, sample std=0.0271, std*sqrt(N)=1.213
+N= 4000: mean=0.4404, sample std=0.0213, std*sqrt(N)=1.346
+N= 8000: mean=0.4344, sample std=0.0145, std*sqrt(N)=1.300
+log-log slope of std vs N = -0.485  (expected -0.5)
+nsteps=1000, nrec=80: every=12, largest record index=82 (array length 80)
+nsteps=1000, nrec=40: mean D = 0.4451 +/- 0.0099 (sem), exact 0.4359, bias +2.1%; run length = 1.04 eps^2/<D>
+nsteps=1000, nrec=50: mean D = 0.4459 +/- 0.0098 (sem), exact 0.4359, bias +2.3%; run length = 1.04 eps^2/<D>
+reference nsteps=8000 (nrec=80): mean D = 0.4404 +/- 0.0067 (sem)
+wall 38 s

@@ -1,0 +1,2 @@
+wS=   100 | E MAE    2.4 meV/atom (offset   -0.1) | F MAE  46.6 meV/A | S MAE  0.40 GPa | P MAE  0.67 GPa | cpu   24 s
+wS=  1000 | E MAE    2.2 meV/atom (offset   -0.6) | F MAE  55.8 meV/A | S MAE  0.29 GPa | P MAE  0.23 GPa | cpu   25 s

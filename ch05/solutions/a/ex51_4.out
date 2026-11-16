@@ -1,0 +1,4 @@
+<R^2> = 99.98 (theory N b^2 = 100)
+histogram mode ~ 8.25 (bin 0.5); theory R* = sqrt(2N/3) = 8.165
+fit ln P = A + p ln R - q R^2: p = 1.907 (theory 2), q = 0.01449 (theory 3/(2N) = 0.01500)
+stiffness ratio 373.15/298.15 K = 1.252

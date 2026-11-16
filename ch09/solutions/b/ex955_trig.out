@@ -1,0 +1,5 @@
+[trig] 924,809 real parameters, 4000 pairs
+[trig] epoch 1: train loss 0.0580 | CPU 54 s
+[trig] epoch 2: train loss 0.0102 | CPU 108 s
+[trig] epoch 3: train loss 0.0061 | CPU 164 s
+[trig] epoch 4: train loss 0.0045 | CPU 218 s

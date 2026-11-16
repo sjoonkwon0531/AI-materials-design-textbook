@@ -1,0 +1,8 @@
+exact J = -pi^2/4 = -2.467401; midpoint-256 energy of the exact solution: -2.467401
+../ch09/solutions/a/s92_3.py:38: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  Jtrain = float(energy(net, xl)) if pts != "fresh" else float("nan"); Jtrue = float(energy(net, xq))
+strong grid  (2000 Adam): rel L2 = 1.24e-04 +/- 1.4e-05 (1.22e-04, 1.42e-04, 1.08e-04), max err 1.69e-04, 2.26 ms/iter, J on training points -2.46740, -2.46740, -2.46740; true J(u_theta) -2.467400, -2.467400, -2.467400 (J - J_exact: +8.1e-07, +1.1e-06, +7.2e-07)
+ritz   grid  (2000 Adam): rel L2 = 3.93e-04 +/- 8.8e-05 (3.88e-04, 2.88e-04, 5.04e-04), max err 5.96e-04, 1.43 ms/iter, J on training points -2.46738, -2.46739, -2.46738; true J(u_theta) -2.467378, -2.467387, -2.467379 (J - J_exact: +2.3e-05, +1.5e-05, +2.2e-05)
+ritz   fresh (2000 Adam): rel L2 = 2.59e-02 +/- 1.5e-02 (4.65e-02, 1.68e-02, 1.44e-02), max err 2.90e-02, 1.42 ms/iter, J on training points nan, nan, nan; true J(u_theta) -2.458133, -2.466292, -2.466533 (J - J_exact: +9.3e-03, +1.1e-03, +8.7e-04)
+ritz   fixed (2000 Adam): rel L2 = 1.27e-01 +/- 6.3e-02 (5.87e-02, 1.12e-01, 2.10e-01), max err 1.40e-01, 1.42 ms/iter, J on training points -2.43289, -2.78027, -3.23270; true J(u_theta) -2.378503, -2.253589, -2.292068 (J - J_exact: +8.9e-02, +2.1e-01, +1.8e-01)

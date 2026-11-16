@@ -1,0 +1,35 @@
+n=4601, p=132 -> 132 after variance filter; fold-0 train 3312 / val 368 / test 921
+=== Part A: optimizers (80 epochs, batch 64, constant LR; LR picked by min val MAE; seeds 0-2) ===
+optimizer        best LR  val MAE  test MAE (mean+/-sd, 3 seeds)  ep to val<0.5
+SGD                3e-02    0.487                  0.493 +/- 0.012             71
+SGD+momentum       1e-02    0.455                  0.465 +/- 0.002             29
+Nesterov           1e-02    0.449                  0.470 +/- 0.010             30
+Adagrad            3e-02    0.445                  0.480 +/- 0.008             20
+RMSProp            1e-03    0.430                  0.483 +/- 0.010             25
+Adam               1e-03    0.417                  0.467 +/- 0.005             29
+AdamW(wd=1e-2)     1e-03    0.419                  0.468 +/- 0.005             29
+[time so far 1358 s]
+=== Part B(i): one parameter, zero-mean gradient noise of scale sigma; theta0=1, lr=1e-3, lambda=0.5, 2000 steps ===
+   sigma  Adam+L2 |theta|  AdamW |theta|   (AdamW decay alone: exp(-lr*lam*steps) = 0.368)
+   0e+00            0.021          0.368
+   1e-03            0.021          0.372
+   1e-01            0.031          0.372
+   1e+00            0.396          0.372
+   1e+01            0.912          0.372
+=== Part B(ii): band-gap MLP, Adam(lr 1e-3) with coupled L2 vs AdamW (decoupled), test MAE (seed 0) ===
+lambda   1e-04   Adam+L2: MAE 0.462  ||W||   22.2   |   AdamW: MAE 0.460  ||W||   24.5
+lambda   1e-03   Adam+L2: MAE 0.468  ||W||   14.2   |   AdamW: MAE 0.460  ||W||   24.4
+lambda   1e-02   Adam+L2: MAE 0.500  ||W||    6.0   |   AdamW: MAE 0.460  ||W||   24.0
+lambda   1e-01   Adam+L2: MAE 0.660  ||W||    2.2   |   AdamW: MAE 0.464  ||W||   20.0
+lambda   1e+00   Adam+L2: MAE 0.821  ||W||    1.2   |   AdamW: MAE 0.528  ||W||    9.2
+[time so far 2605 s]
+=== Part C: schedules, L-BFGS, bf16 autocast (train = fold-0 train, test = fold-0 test, seed 0) ===
+AdamW constant lr 1e-3          : final test MAE 0.460  (min over epochs 0.460; final-5 epoch std 0.0123)
+AdamW warmup(5%)+cosine, peak 3e-3: final test MAE 0.464  (min over epochs 0.462; final-5 epoch std 0.0001)
+AdamW constant lr 1e-3, bf16 autocast: final test MAE 0.461;  wall 53.2 s vs fp32 36.1 s
+L-BFGS full batch (40 x 20 iterations): test MAE after 200 it 0.497, after 800 it 0.530; min 0.482; wall 84.8 s
+   L-BFGS train MAE 0.030  (full-batch second-order-like optimizer, no noise, no regularization)
+fp16 underflow:  [0.0, 1.0013580322265625e-05, 0.0002999305725097656]  | scaled by 2^16 then cast:  [0.0006551742553710938, 0.6552734375, 19.65625]  | unscaled back in fp32:  ['9.997e-09', '9.999e-06', '2.999e-04']
+bf16 keeps range: ['1.001e-08', '1.001e-05', '2.995e-04']
+reference: LightGBM (Lab 6.13 settings) on the same fold 0: test MAE 0.427, clipped at 0: 0.415
+wall 2817 s

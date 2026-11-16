@@ -1,0 +1,5 @@
+analytic Jacobian check: max |J - J_fd| = 7.0e-10
+seed 0: params=81, residuals=524, cost=6.69e-07, nfev=5000, max err (space-time)=4.61e-05, max err at t=0.2=4.61e-05, 21.3s
+seed 1: params=81, residuals=524, cost=3.96e-06, nfev=5000, max err (space-time)=8.32e-05, max err at t=0.2=7.28e-05, 19.7s
+seed 2: params=81, residuals=524, cost=1.28e-06, nfev=5000, max err (space-time)=6.67e-05, max err at t=0.2=6.67e-05, 19.7s
+MOL+CN reference (N=20, dt=0.01, 20 steps): max nodal err at t=0.2 = 3.42e-04

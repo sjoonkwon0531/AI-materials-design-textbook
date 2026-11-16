@@ -1,0 +1,8 @@
+=== <m> at L=16, T=2.5, h=0.05 ===
+ seed set 0: Metropolis 0.6017 | Wolff+accept 0.5985 (acc=0.400, <C>=81.5) | ghost Wolff 0.5999 (ghost in cluster 0.602)
+ seed set 1: Metropolis 0.5968 | Wolff+accept 0.5994 (acc=0.400, <C>=81.8) | ghost Wolff 0.5994 (ghost in cluster 0.604)
+ seed set 2: Metropolis 0.5903 | Wolff+accept 0.5989 (acc=0.402, <C>=81.0) | ghost Wolff 0.6015 (ghost in cluster 0.601)
+=== acceptance of Wolff+accept at T_c, h = 0.01 and 0.05 ===
+  h=0.01: L= 16: acc(all)=0.498, acc(s0=+1, along h)=3.32e-01, <|C|> proposed=140.5, <|C|> accepted=88.6, <m>=0.501, beta*h*L^(15/8)=0.80
+  h=0.01: L= 32: acc(all)=0.260, acc(s0=+1, along h)=1.50e-01, <|C|> proposed=551.5, <|C|> accepted=21.0, <m>=0.742, beta*h*L^(15/8)=2.93
+  h=0.01: L= 64: acc(all)=0.252, acc(s0=+1, along h)=1.47e-01, <|C|> proposed=2182.7, <|C|> accepted=12.7, <m>=0.751, beta*h*L^(15/8)=10.73

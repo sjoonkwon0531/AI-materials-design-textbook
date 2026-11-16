@@ -1,0 +1,7 @@
+CFL=0.8 upwind   steps=  250  max|u|(t=1)=1.000e+00  mass drift/m0=3.7e-16  drift/sum|u|=3.7e-16
+CFL=0.8 central  steps=  250  max|u|(t=1)=2.656e+25  mass drift/m0=1.0e+09  drift/sum|u|=1.6e-16
+CFL=0.1 upwind   steps= 2000  max|u|(t=1)=9.747e-01  mass drift/m0=3.7e-16  drift/sum|u|=3.7e-16
+CFL=0.1 central  steps= 2000  max|u|(t=1)=1.232e+03  mass drift/m0=1.5e-13  drift/sum|u|=3.1e-16
+
+von Neumann central/FTCS, nu=0.8: max|g| = 1.2806 (theta=pi/2);  most amplified mode = 4-cell wavelength
+measured late-time growth factor of max|u| per step = 1.2741  (bound 1.2806)

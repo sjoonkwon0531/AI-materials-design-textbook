@@ -1,0 +1,2 @@
+ex_10_4_LO0.05_S0_mixed_M3.pt: F[T1500]   271 | F[T2500]   398 | F[T1800]   272 | F[strain]   134 | F[vacancy]   178 meV/A | a0 5.6236 A, B  97.2 GPa, nu_Gamma 11.46 THz, E_vac 0.09 eV, MD fail step None; CPU 7 s
+ex_10_4_LO0.05_S0_base_M3.pt: F[T1500]   285 | F[T2500]   400 | F[T1800]   286 | F[strain]   143 | F[vacancy]   185 meV/A | a0 5.6434 A, B  98.1 GPa, nu_Gamma 11.51 THz, E_vac -0.33 eV, MD fail step None; CPU 6 s

@@ -1,0 +1,5 @@
+u* = 1.0000, dE = -0.2500
+u0 = 0e+00: steps 10000, final u 0.000000  (never moves)
+u0 = 1e-03: steps 101, final u 0.999128; linear-phase estimate ln(u*/u0)/ln(1+eta*alpha) = 72
+u0 = 1e-06: steps 173, final u 0.999030; linear-phase estimate ln(u*/u0)/ln(1+eta*alpha) = 145
+u0 = 1e-12: steps 318, final u 0.999040; linear-phase estimate ln(u*/u0)/ln(1+eta*alpha) = 290

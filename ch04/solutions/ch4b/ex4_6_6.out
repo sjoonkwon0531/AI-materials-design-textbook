@@ -1,0 +1,7 @@
+calculator        a0 (A)  B (GPa) dE_relax(eV) BFGS steps  <T> (K) ms/MD step
+EMT               3.5902    133.1       1.8534         53    286.9      38.65
+LJ (user)         3.6100    361.2       4.5348         47    227.7     383.44
+ML-KRR Lab(g=2)   3.5443    768.1       4.6514         41    249.1     546.53
+ML-KRR tuned      3.6101    360.4       4.5344         47    226.7     549.71
+ML Lab(g=2) vs LJ on rattled Cu108: |dE|/atom = 6.54e-01 eV, force RMSE = 4.71e-01 eV/A, pair-energy error at cutoff u_ML(2.5)-u_LJ(2.5) = +0.0420 eps
+ML tuned vs LJ on rattled Cu108: |dE|/atom = 3.15e-03 eV, force RMSE = 3.03e-03 eV/A, pair-energy error at cutoff u_ML(2.5)-u_LJ(2.5) = -0.0002 eps

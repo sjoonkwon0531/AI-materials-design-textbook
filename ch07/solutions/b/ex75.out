@@ -1,0 +1,23 @@
+source (no N/P/As/Sb) train 2906, test 727 | target (pnictogen) pool 400, test 568
+mean gap: source 0.933 eV, target 1.136 eV; metals: source 0.58, target 0.37; target-test MAE of the pool median 1.017 eV
+pretrained: params 132865, source-test MAE 0.401 eV, zero-shot target-test MAE 0.632 eV  (20 s)
+=== Ex 7.5.3 ===
+../ch07/solutions/b/ex75.py:24: RuntimeWarning: invalid value encountered in divide
+  e = sv ** 2 / (sv ** 2).sum(); return [round(float(e[:k].sum()), 3) for k in ks]
+N=50 adam lr=0.001: n_train=40, dim span(x)=40; target-test MAE 0.632; layer1: |dW1 outside span(x)|/|dW1| = nan, numerical rank(1e-6) 0; layer1 energy top1/4/8 [nan, nan, nan]; layer2 energy top1/4/8 [nan, nan, nan]; |dW2|_F 0.000
+N=50 sgd lr=0.01: n_train=40, dim span(x)=40; target-test MAE 0.632; layer1: |dW1 outside span(x)|/|dW1| = nan, numerical rank(1e-6) 0; layer1 energy top1/4/8 [nan, nan, nan]; layer2 energy top1/4/8 [nan, nan, nan]; |dW2|_F 0.000
+N=50 sgd lr=0.03: n_train=40, dim span(x)=40; target-test MAE 0.642; layer1: |dW1 outside span(x)|/|dW1| = 4.34e-06, numerical rank(1e-6) 56; layer1 energy top1/4/8 [0.298, 0.675, 0.868]; layer2 energy top1/4/8 [0.282, 0.652, 0.831]; |dW2|_F 1.152
+N=200 adam lr=0.001: n_train=160, dim span(x)=126; target-test MAE 0.612; layer1: |dW1 outside span(x)|/|dW1| = 8.26e-02, numerical rank(1e-6) 128; layer1 energy top1/4/8 [0.204, 0.57, 0.757]; layer2 energy top1/4/8 [0.22, 0.501, 0.677]; |dW2|_F 3.947
+N=200 sgd lr=0.01: n_train=160, dim span(x)=126; target-test MAE 0.641; layer1: |dW1 outside span(x)|/|dW1| = 7.50e-07, numerical rank(1e-6) 102; layer1 energy top1/4/8 [0.27, 0.629, 0.81]; layer2 energy top1/4/8 [0.266, 0.559, 0.758]; |dW2|_F 0.898
+N=200 sgd lr=0.03: n_train=160, dim span(x)=126; target-test MAE 0.653; layer1: |dW1 outside span(x)|/|dW1| = 4.48e-07, numerical rank(1e-6) 102; layer1 energy top1/4/8 [0.251, 0.627, 0.809]; layer2 energy top1/4/8 [0.251, 0.546, 0.754]; |dW2|_F 1.053
+=== Ex 7.5.5 ===
+full      lambda=  0e+00: target-test 0.565 +- 0.024 | source-test 0.500 +- 0.022
+full      lambda=  1e-04: target-test 0.553 +- 0.006 | source-test 0.494 +- 0.018
+full      lambda=  1e-03: target-test 0.557 +- 0.010 | source-test 0.487 +- 0.018
+full      lambda=  1e-02: target-test 0.582 +- 0.034 | source-test 0.502 +- 0.045
+full      lambda=  1e-01: target-test 0.589 +- 0.045 | source-test 0.436 +- 0.034
+LoRA r=1  lambda=  0e+00: target-test 0.565 +- 0.028 | source-test 0.486 +- 0.046
+LoRA r=2  lambda=  0e+00: target-test 0.567 +- 0.035 | source-test 0.469 +- 0.042
+LoRA r=4  lambda=  0e+00: target-test 0.570 +- 0.034 | source-test 0.465 +- 0.040
+LoRA r=8  lambda=  0e+00: target-test 0.569 +- 0.021 | source-test 0.493 +- 0.033
+runtime 205 s

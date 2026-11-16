@@ -1,0 +1,15 @@
+snapshots: 500 frames x 200 beads (22 s)
+min bead distance in data = 0.931;  rows = 200000, unknowns = 55 (53 with data, first active knot 0.90), cond(G_active) = 1.19e+05
+<|f|^2>/component = 161.7120;  residual chi2 = 136.0352;  explained fraction = 0.1588
+  F at first knots: [366.548 109.609  55.139  24.467]
+  r=1.0: F_MSCG=+60.5861  V_MSCG=+4.9585  V_IBI=+4.2011
+  r=1.2: F_MSCG=+5.2299  V_MSCG=+0.9495  V_IBI=+0.5774
+  r=1.5: F_MSCG=+2.0177  V_MSCG=-0.4399  V_IBI=-0.4039
+  r=2.0: F_MSCG=-1.4618  V_MSCG=-0.5887  V_IBI=-0.3349
+  r=2.3: F_MSCG=-0.3789  V_MSCG=-0.3672  V_IBI=-0.0998
+  r=3.0: F_MSCG=-0.4943  V_MSCG=-0.0646  V_IBI=+0.0004
+  well: MS-CG min -0.8280 at 1.80; IBI min -0.6100 at 1.79
+  CG with MS-CG potential, seed 100: g RMSE = 0.0708, P_CG = 0.3312   (P_fine = 0.2843; IBI: RMSE 0.0180, P 0.4434; IBI+P: 0.0156, 0.3223); first peak g = 1.585 (target 1.529)
+  CG with MS-CG potential, seed 101: g RMSE = 0.0691, P_CG = 0.3360   (P_fine = 0.2843; IBI: RMSE 0.0180, P 0.4434; IBI+P: 0.0156, 0.3223); first peak g = 1.571 (target 1.529)
+  force-matching residual with the IBI force: chi2 = 136.8952  (MS-CG optimum 136.0352)
+total 41 s

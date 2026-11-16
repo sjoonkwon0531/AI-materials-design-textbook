@@ -1,0 +1,4 @@
+MACE-MP-0 (small)    a0 6.0157 A, B  18.0 GPa | lowest G 9i, X 6i, M 33i, R 33i cm-1 | rigid tilt min -68.3 meV/f.u. at 13 deg | I4/mcm relax: 14.64 deg, -93.8 meV/f.u., c/a 1.0377, 17 steps | CPU 28 s
+CHGNet 0.3.0         a0 6.0301 A, B  18.4 GPa | lowest G 24i, X 20i, M 29i, R 29i cm-1 | rigid tilt min -62.9 meV/f.u. at 13 deg | I4/mcm relax: 15.54 deg, -82.3 meV/f.u., c/a 1.0600, 23 steps | CPU 21 s
+SevenNet-0           a0 6.0078 A, B  20.4 GPa | lowest G 20, X 16, M 25i, R 27i cm-1 | rigid tilt min -45.4 meV/f.u. at 11 deg | I4/mcm relax: 13.76 deg, -65.8 meV/f.u., c/a 1.0358, 21 steps | CPU 26 s
+MatterSim-v1.0.0-1M  a0 5.9995 A, B  18.0 GPa | lowest G 43i, X 39i, M 41i, R 41i cm-1 | rigid tilt min -69.2 meV/f.u. at 11 deg | I4/mcm relax: 12.45 deg, -81.0 meV/f.u., c/a 1.0232, 21 steps | CPU 18 s

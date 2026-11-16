@@ -1,0 +1,9 @@
+grid dx=0.1963; forward-Euler CH limit 2/(eps^2 kmax^4 + 2 kmax^2) = 6.38e-04 > Dt=0.0002
+random weights, 1000 steps: |mass drift| flux-form = 0.00e+00,  direct = 3.74e-01  (m0=2.4973)
+trained flux  : params=49, one-step train RMS = 9.385e-06
+trained direct: params=57, one-step train RMS = 9.579e-06
+rollout flux   (5000 steps): mass drift at step 1000 = 8.67e-17, max over run = 4.23e-15; final max|c| = 9.41e-01, final max err vs CH = 1.218e-02
+         error vs CH at steps 1/100/1000/5000: 3.55e-05/2.31e-03/1.09e-02/1.22e-02
+rollout direct (5000 steps): mass drift at step 1000 = 3.22e-03, max over run = 2.63e-02; final max|c| = 9.40e-01, final max err vs CH = 1.698e-02
+         error vs CH at steps 1/100/1000/5000: 4.24e-05/2.81e-03/1.64e-02/1.70e-02
+(true solver mass drift over the same window: 1.74e-16)

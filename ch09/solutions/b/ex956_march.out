@@ -1,0 +1,9 @@
+mode march: 27,906 parameters, extra features False, resampling False, 5 windows of length 1, Adam 400 + L-BFGS 60 per window
+  window [0, 1]: CPU   40 s | loss PDE 1.77e-02 (fresh points 1.92e-02), Poisson 2.55e-02 | rel. L2 at t = 1: 0.6147 | persistence over this window (true): 0.610
+  window [1, 2]: CPU   80 s | loss PDE 6.37e-03 (fresh points 7.72e-03), Poisson 1.22e-02 | rel. L2 at t = 2: 0.5673 | persistence over this window (true): 0.439
+  window [2, 3]: CPU  122 s | loss PDE 6.67e-03 (fresh points 8.03e-03), Poisson 9.33e-03 | rel. L2 at t = 3: 0.5735 | persistence over this window (true): 0.315
+  window [3, 4]: CPU  164 s | loss PDE 7.05e-03 (fresh points 8.59e-03), Poisson 1.12e-02 | rel. L2 at t = 4: 0.5747 | persistence over this window (true): 0.234
+  window [4, 5]: CPU  205 s | loss PDE 7.05e-03 (fresh points 8.73e-03), Poisson 9.50e-03 | rel. L2 at t = 5: 0.5703 | persistence over this window (true): 0.182
+rel. L2 error vs the 64^2 solver at t = 1..5: 0.6147 0.5673 0.5735 0.5747 0.5703
+'nothing happens' (w = w0) at t = 1..5:        0.6098 0.9382 1.0456 1.0763 1.0839
+CPU time 205 s

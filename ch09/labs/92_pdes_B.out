@@ -1,0 +1,9 @@
+=== B. 1D Cahn-Hilliard, eps = 0.25, T = 1.0; spectral reference N=256, dt=2e-5: 2145 ms ===
+  reference self-check: rel L2 diff between dt=2e-5 and dt=1e-5: 5.9e-05
+  reference: max|c| 0.30 -> 0.91; mass drift 1.8e-17; F 1.519 -> 0.948, increases 0/100
+  PINN mixed (c, mu) seed 0: rel L2 after Adam 1.56e-02 -> after L-BFGS 1.11e-03; err(t=0.25,0.5,1) = 1.09e-03, 1.63e-03, 9.25e-04
+       residual losses r1 1.6e-06 r2 6.1e-07; mass drift max|<c>(t)-<c>(0)| 3.1e-05; F 1.519 -> 0.948, increases 0/100; cpu 348 s
+  cost per loss+gradient (2000 points): mixed 61 ms, direct 4th-order 376 ms
+  PINN mixed (c, mu) seed 1: rel L2 after Adam 1.88e-02 -> after L-BFGS 9.76e-04; err(t=0.25,0.5,1) = 8.92e-04, 1.04e-03, 8.89e-04
+       residual losses r1 2.2e-06 r2 5.6e-07; mass drift max|<c>(t)-<c>(0)| 7.4e-05; F 1.519 -> 0.948, increases 0/100; cpu 313 s
+total cpu 672 s

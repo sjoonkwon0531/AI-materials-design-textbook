@@ -1,0 +1,32 @@
+temperatures (K): [500, 700, 900, 1100]  gamma = 0.95  N = 20
+  T=   500 K  k_ann=0.005  k_gen=0.0003  equilibrium n = 1.16
+  T=   700 K  k_ann=0.072  k_gen=0.0098  equilibrium n = 2.41
+  T=   900 K  k_ann=0.313  k_gen=0.0667  equilibrium n = 3.51
+  T=  1100 K  k_ann=0.800  k_gen=0.2256  equilibrium n = 4.40
+
+(a) value iteration: 495 sweeps to |dV|<1e-12; successive ratio -> 0.9377 (k=50), 0.9480 (k=200); gamma = 0.95
+    optimal T*(n) for n=0..20: [500, 500, 500, 700, 900, 1100, 1100, 1100, 1100, 1100, 1100, 1100, 1100, 1100, 1100, 1100, 1100, 1100, 1100, 1100, 1100]
+    V*(n) at n=0,5,10,20: [-0.056, -4.541, -7.316, -12.454]
+(b) policy iteration: 3 evaluations; same policy as VI: True; max|V_PI - V_VI| = 1.9e-11
+    fixed always 1100 K: V(20) = -12.501   (optimal -12.454)
+    fixed always 900 K : V(20) = -15.777   (optimal -12.454)
+    fixed always 700 K : V(20) = -18.835   (optimal -12.454)
+
+(c) policy evaluation of pi*: episodes of H=150 steps, random start, 20 seeds
+      20 episodes  MC        : RMSE = 2.549, bias = 0.594, sd across seeds = 1.114
+      20 episodes  TD0 a=0.1 : RMSE = 6.872, bias = 5.405, sd across seeds = 0.280
+      20 episodes  TD0 a=0.3 : RMSE = 5.968, bias = 4.142, sd across seeds = 0.478
+     200 episodes  MC        : RMSE = 0.154, bias = 0.017, sd across seeds = 0.130
+     200 episodes  TD0 a=0.1 : RMSE = 3.490, bias = 1.707, sd across seeds = 0.289
+     200 episodes  TD0 a=0.3 : RMSE = 1.172, bias = 0.504, sd across seeds = 0.339
+
+(d) Q-learning, eps=0.2 behaviour, alpha=1/N(s,a)^0.6, 5 seeds
+    action gap Q*(best)-Q*(2nd): smallest 0.0005 at n=3, median 0.0799
+    seed 0: max|Q-Q*| = 0.282, greedy policy matches pi* in 19/21 states, worst-state value loss = 0.2377, mismatched n = [2, 3]
+    seed 1: max|Q-Q*| = 0.295, greedy policy matches pi* in 21/21 states, worst-state value loss = 0.0000, mismatched n = []
+    seed 2: max|Q-Q*| = 0.258, greedy policy matches pi* in 20/21 states, worst-state value loss = 0.0354, mismatched n = [4]
+    seed 3: max|Q-Q*| = 0.234, greedy policy matches pi* in 20/21 states, worst-state value loss = 0.0354, mismatched n = [4]
+    seed 4: max|Q-Q*| = 0.324, greedy policy matches pi* in 21/21 states, worst-state value loss = 0.0000, mismatched n = []
+
+under pi* from n=20 (200 runs): step, mean n, mean T: [(10, 14.1, 1100), (20, 10.24, 1100), (40, 6.25, 1044), (60, 4.85, 929), (80, 3.92, 824), (120, 3.23, 721)]
+runtime 60.0 s

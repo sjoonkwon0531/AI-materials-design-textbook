@@ -1,0 +1,7 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+WARNING:root:Default dtype float32 does not match model dtype float64, converting models to float32.
+  48 labelled, 4 geometries skipped (SCF not converged)
+  16 labelled, 2 geometries skipped (SCF not converged)
+GFN2-xTB reference: a0 = 5.5059 A, B = 103.8 GPa
+labels: 48 train + 16 test 8-atom cells; force components std 1.555 eV/A
+xTB calls 71, CPU 147 s

@@ -1,0 +1,20 @@
+features total 132 mode 22 kept 110
+no-mode surrogate: 5-fold MAE 0.424 (folds [0.429, 0.401, 0.387, 0.462, 0.442]), coverage 0.58  [80s]
+family curves (x = #S of 6 anions): new mu+/-sd | old mu+/-sd
+   Cu3In3 0:1.15/0.05|1.09/0.03  1:1.34/0.05|1.54/0.10  2:1.42/0.05|1.56/0.11  3:1.49/0.06|1.14/0.25  4:1.53/0.07|1.34/0.12  5:1.60/0.09|1.42/0.11  6:1.63/0.11|1.56/0.07
+     dip at x=3 vs mean(x=2,4): new +0.013, old -0.311; monotone new True
+   Cu3In1Ga2 0:1.34/0.04|1.36/0.05  1:1.62/0.08|1.86/0.10  2:1.70/0.09|1.89/0.10  3:1.76/0.10|1.39/0.20  4:1.82/0.11|1.69/0.09  5:1.91/0.13|1.78/0.07  6:1.91/0.09|1.91/0.04
+     dip at x=3 vs mean(x=2,4): new -0.004, old -0.393; monotone new False
+   Cu3Ga3 0:1.53/0.02|1.49/0.04  1:1.74/0.11|2.00/0.14  2:1.82/0.12|2.04/0.16  3:1.88/0.10|1.58/0.32  4:1.94/0.10|1.82/0.19  5:2.04/0.09|1.93/0.18  6:2.16/0.09|2.16/0.08
+     dip at x=3 vs mean(x=2,4): new +0.003, old -0.354; monotone new True
+balanced tie sigma 0.081 vs others 0.083; |mu-1.4|<0.05: 64, balanced 1
+grid-wide mean sigma new 0.117 old 0.106; corr(new mu, old mu) 0.979
+[naive] global optimum Cu4In1Ga2S5 mu=1.400 sigma=0.177 bal=False tie=False
+   Q-learning   err 0.018 | bal 0.00 | sigma 0.136 | tie 0.01
+   BFS optimum  err 0.001 | bal 0.00 | sigma 0.170 | tie 0.00
+   most frequent Q end points: Cu4In1Ga2S5(45), Cu1In4Ga1S1Se5(25), Cu2In1Ga5S3Se1(18)
+[charge-bal + sigma] global optimum Cu3In3S2Se4 mu=1.419 sigma=0.052 bal=True tie=False
+   Q-learning   err 0.092 | bal 0.85 | sigma 0.062 | tie 0.08
+   BFS optimum  err 0.022 | bal 0.99 | sigma 0.052 | tie 0.02
+   most frequent Q end points: Cu3In3S2Se4(101), Cu3In1Ga2Se6(30), Cu3In3S3Se3(13)
+wall 112 s

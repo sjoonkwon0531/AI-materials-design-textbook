@@ -1,0 +1,20 @@
+training runs: 400; label J range [-12.44, -1.40]; data T range [620, 743] K; best training label -1.400
+reference: tuned two-level schedule (Lab 8.14) true J = -2.100
+reference: best historical run (label -1.400) re-run 2,000 times: true J = -2.193
+  seed 0 done (44 s)
+  seed 1 done (79 s)
+  seed 2 done (115 s)
+  seed 3 done (150 s)
+  seed 4 done (185 s)
+
+mean +/- sd over 5 seeds; J in units of the reward (higher is better); dist = nearest training run [K]
+surrogate / optimiser         lam_max  MAE id  MAE ood  pred J         true J          gap   dist T range of optimum
+AdamW                            7.72   0.334    16.71    9.28  -99.71+/-42.05 108.99+/-47.05    265    600- 800 K
+SAM rho=0.05                     3.94   0.291    17.33    9.90 -101.91+/-13.13 111.81+/-16.30    278    600- 800 K
+SAM rho=0.2                      2.79   0.222    18.41    3.83 -129.60+/-16.83 133.44+/-16.70    300    600- 800 K
+ASAM rho=0.5                     3.56   0.242    17.85    6.85 -113.52+/-14.77 120.37+/-14.39    287    600- 800 K
+Ensemble-5 LCB                      -   0.304    16.65    1.67  -68.03+/-45.75  69.70+/-47.78    223    600- 799 K
+AdamW + trust region                -   0.334    16.71    3.62   -5.42+/-0.51   9.04+/-3.91    137    627- 742 K
+SAM rho=0.2 + trust region          -   0.222    18.41    0.56   -6.37+/-0.35   6.93+/-0.63    136    633- 742 K
+Ensemble LCB + trust region         -   0.304    16.65   -0.47   -5.06+/-1.54   4.59+/-2.08    104    633- 740 K
+wall 185 s

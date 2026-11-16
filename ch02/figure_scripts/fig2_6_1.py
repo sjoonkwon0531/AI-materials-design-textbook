@@ -1,0 +1,18 @@
+import sys; sys.path.insert(0,'../ch02/figures'); import bookstyle as bs
+import numpy as np, matplotlib.pyplot as plt, logging
+logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
+eps=0.1; kc=1/eps; ks=1/(eps*np.sqrt(2))
+k=np.linspace(0,12.5,500); s=k**2*(1-eps**2*k**2)
+fig,ax=plt.subplots(figsize=(8.5,5.6))
+ax.fill_between(k,0,s,where=(k<=kc),color=bs.ICE,alpha=0.9,lw=0,label=r"unstable band 0 < k < $k_c$")
+ax.plot(k,s,'-',color=bs.NAVY,lw=2.8,label=r"$\sigma(k) = k^2(1-\varepsilon^2k^2)$")
+ax.axhline(0,color=bs.GRAY,lw=0.9)
+ax.axvline(ks,color=bs.RED,ls='--',lw=2.2,label=rf"$k^*$ = 1/($\varepsilon\sqrt{{2}}$) = {ks:.2f}")
+ax.axvline(kc,color=bs.PURPLE,ls=':',lw=2.4,label=rf"$k_c$ = 1/$\varepsilon$ = {kc:.0f}")
+ax.plot(ks,ks**2/2,'o',color=bs.RED,ms=9)
+ax.text(10.25,6,"stable\n(gradient\npenalty)",fontsize=15,ha="left")
+ax.set_xlabel("wavenumber k"); ax.set_ylabel(r"growth rate $\sigma$(k)")
+ax.set_xlim(0,12.5); ax.set_ylim(-30,40)
+ax.legend(frameon=False,loc='upper left',fontsize=14)
+ax.text(0.98,0.97,r"$\varepsilon$ = 0.1",transform=ax.transAxes,ha='right',va='top',fontsize=16)
+fig.tight_layout(); fig.savefig("Fig2.6.1_dispersion.png")

@@ -1,0 +1,71 @@
+=== in-distribution test set: 40 trajectories, |m| <= 0.2 ===
+baselines:  persistence (one step) 0->2.5: 0.982 | 2.5->5: 0.543 | 22.5->25: 0.151 | 47.5->50: 0.082 | mean of steps 2..20: 0.182
+            frozen at c(2.5):      t=5: 0.543 | t=25: 1.193 | t=50: 1.253
+solver:     F(2.5) 4.945 -> F(50) 1.754, increases 0 / 760; L(5) 1.757, L(25) 2.876, L(50) 3.506, slope on 5 <= t <= 50: 0.303
+
+--- free: FNO, one-step loss (training CPU time 296 s) ---
+  one-step error (true input):   0->2.5: 0.7785 | 2.5->5: 0.1166 | 22.5->25: 0.0143 | 47.5->50: 0.0111 | mean of steps 2..20: 0.0233
+  rollout from the true c(2.5):  t=5: 0.1166 | t=12.5: 0.2352 | t=25: 0.3277 | t=50: 0.4370
+  rollout from c(0) (surrogate takes the quench step too): t=2.5: 0.778 | t=25: 2.712 | t=50: 2.834; max |c| = 17.82
+  [1] mass: max |mean(t) - mean(2.5)| over 40 rollouts x 19 steps = 3.31e-02; mean drift at t = 50: 1.39e-02; mean |mean of one-step increment| = 2.31e-03
+  [2] free energy: increases along the rollouts 242 / 760; one step from true states: F(G(c)) > F(c) in 5 / 760; F(50) = 2.746 (solver 1.754)
+  [3] growth law: L(25) = 2.779, L(50) = 3.149 (solver 2.876, 3.506); slope on 5 <= t <= 50: 0.262 (solver 0.303)
+  bounds: max |c| = 1.676 (solver 1.035);  symmetries: ||G(-c) + G(c)|| / ||G(c)|| = 0.0271,  ||G(Sc) - S G(c)|| / ||G(c)|| = 0.0029
+
+--- cons: FNO + zero mode, one-step loss (training CPU time 295 s) ---
+  one-step error (true input):   0->2.5: 0.4977 | 2.5->5: 0.1094 | 22.5->25: 0.0137 | 47.5->50: 0.0100 | mean of steps 2..20: 0.0219
+  rollout from the true c(2.5):  t=5: 0.1094 | t=12.5: 0.2176 | t=25: 0.3177 | t=50: 0.4275
+  rollout from c(0) (surrogate takes the quench step too): t=2.5: 0.498 | t=25: 1.591 | t=50: 1.663; max |c| = 9.49
+  [1] mass: max |mean(t) - mean(2.5)| over 40 rollouts x 19 steps = 1.11e-16; mean drift at t = 50: 3.33e-17; mean |mean of one-step increment| = 8.78e-18
+  [2] free energy: increases along the rollouts 306 / 760; one step from true states: F(G(c)) > F(c) in 0 / 760; F(50) = 3.140 (solver 1.754)
+  [3] growth law: L(25) = 2.768, L(50) = 3.066 (solver 2.876, 3.506); slope on 5 <= t <= 50: 0.250 (solver 0.303)
+  bounds: max |c| = 1.586 (solver 1.035);  symmetries: ||G(-c) + G(c)|| / ||G(c)|| = 0.0256,  ||G(Sc) - S G(c)|| / ||G(c)|| = 0.0028
+
+--- cons_pf: FNO + zero mode, pushforward loss (training CPU time 496 s) ---
+  one-step error (true input):   0->2.5: 0.8872 | 2.5->5: 0.1237 | 22.5->25: 0.0157 | 47.5->50: 0.0115 | mean of steps 2..20: 0.0249
+  rollout from the true c(2.5):  t=5: 0.1237 | t=12.5: 0.2224 | t=25: 0.3230 | t=50: 0.3977
+  rollout from c(0) (surrogate takes the quench step too): t=2.5: 0.887 | t=25: 1.208 | t=50: 1.326; max |c| = 2.41
+  [1] mass: max |mean(t) - mean(2.5)| over 40 rollouts x 19 steps = 6.94e-17; mean drift at t = 50: 2.09e-17; mean |mean of one-step increment| = 4.40e-18
+  [2] free energy: increases along the rollouts 162 / 760; one step from true states: F(G(c)) > F(c) in 0 / 760; F(50) = 2.336 (solver 1.754)
+  [3] growth law: L(25) = 2.803, L(50) = 3.266 (solver 2.876, 3.506); slope on 5 <= t <= 50: 0.278 (solver 0.303)
+  bounds: max |c| = 1.565 (solver 1.035);  symmetries: ||G(-c) + G(c)|| / ||G(c)|| = 0.0274,  ||G(Sc) - S G(c)|| / ||G(c)|| = 0.0033
+
+solver, same symmetry checks: odd 3.6e-16, translation 7.1e-16
+
+=== out of distribution: mean composition outside the training range, 16 trajectories each ===
+  |m|   model     one-step (steps 2..20)   rollout from c(2.5): t=5   t=25    t=50    mass drift   F increases   L(50) model / solver
+  0.3   frozen at c(2.5)                                       0.4586   1.0275  1.1198
+  0.3   free      0.0330                                 0.1206   0.4712  0.6698  6.1e-02      115 / 304     2.72 / 2.96
+  0.3   cons      0.0322                                 0.1159   0.5072  0.6640  1.1e-16      163 / 304     2.46 / 2.96
+  0.3   cons_pf   0.0355                                 0.1331   0.4815  0.6374  5.6e-17      105 / 304     2.72 / 2.96
+        free model, mean composition at t = 50: +0.336 for trajectories started at +0.300, -0.298 for those started at -0.300
+  0.4   frozen at c(2.5)                                       0.3463   0.8885  1.0224
+  0.4   free      0.0387                                 0.1329   0.4582  0.6828  8.0e-02      155 / 304     2.35 / 2.84
+  0.4   cons      0.0379                                 0.1291   0.4355  0.6408  1.1e-16      179 / 304     2.12 / 2.84
+  0.4   cons_pf   0.0396                                 0.1339   0.3824  0.4995  1.1e-16      146 / 304     2.31 / 2.84
+        free model, mean composition at t = 50: +0.460 for trajectories started at +0.401, -0.413 for those started at -0.400
+  0.5   frozen at c(2.5)                                       0.7303   0.8089  0.8238
+  0.5   free      0.0954                                 0.9359   1.1960  1.1675  3.6e-01       98 / 304     1.61 / 2.81
+  0.5   cons      0.0892                                 0.8153   1.5281  1.6262  1.1e-16      244 / 304     1.83 / 2.81
+  0.5   cons_pf   0.0795                                 0.7492   0.8226  0.9570  1.1e-16      149 / 304     2.44 / 2.81
+        free model, mean composition at t = 50: +0.332 for trajectories started at +0.500, -0.861 for those started at -0.500
+  inside the range, free: rollout error at t = 25 for |m| < 0.1: 0.3006 (21 traj.), for 0.1 <= |m| <= 0.2: 0.3575 (19 traj.)
+  inside the range, cons: rollout error at t = 25 for |m| < 0.1: 0.2765 (21 traj.), for 0.1 <= |m| <= 0.2: 0.3632 (19 traj.)
+  inside the range, cons_pf: rollout error at t = 25 for |m| < 0.1: 0.2823 (21 traj.), for 0.1 <= |m| <= 0.2: 0.3679 (19 traj.)
+
+=== cost: one thread, same process, smallest CPU time of 20 calls ===
+one big step (Dt = 2.5): FNO 5.05 ms (batch 1), 3.50 ms/sample (batch 40); solver, 50 steps: 15.95 ms (batch 1), 14.36 ms/sample (batch 40)
+speed-up per big step: 3.16x (batch 1), 4.10x (batch 40)
+one-off cost (CPU time): data 88 s + training 496 s = 583 s; break-even after 2,817 trajectories of 19 big steps
+
+same scheme with a larger time step, started from the true c(2.5); error against the dt = 0.05 data:
+   method            one big step (steps 2..20)   rollout t=5   t=25     t=50     L(50)    slope    F increases   mass drift   ms per Dt (1 sample)
+   solver dt=0.05    0.0000                       0.0000        0.0000   0.0000   3.506    0.303      0 / 760     8.3e-17      16.62
+   solver dt=0.1     0.0608                       0.1952        0.3631   0.3662   3.274    0.303      0 / 760     1.1e-16      6.09
+   solver dt=0.25    0.1207                       0.3750        0.7354   0.7291   2.848    0.270      0 / 760     8.3e-17      3.27
+   solver dt=0.5     0.1478                       0.4515        0.9316   0.9369   2.405    0.204      0 / 760     9.7e-17      1.55
+   solver dt=1.25    0.1668                       0.5033        1.0812   1.1168   1.917    0.105      0 / 760     1.2e-16      0.65
+   solver dt=2.5     0.1738                       0.5221        1.1357   1.1863   1.711    0.057      0 / 760     6.9e-17      0.40
+   free              0.0233                       0.1166        0.3277   0.4370   3.149    0.262    242 / 760     3.3e-02      5.05
+   cons              0.0219                       0.1094        0.3177   0.4275   3.066    0.250    306 / 760     1.1e-16      5.05
+   cons_pf           0.0249                       0.1237        0.3230   0.3977   3.266    0.278    162 / 760     6.9e-17      5.05

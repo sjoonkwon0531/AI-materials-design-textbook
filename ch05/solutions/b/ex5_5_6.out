@@ -1,0 +1,7 @@
+r=1: K(1,10) xx,yy,xy = 2.68984,2.78886,-0.19302; sqrt det = 2.73209 | K(10,1) xx,yy = 3.64437,3.77776; sqrt det = 3.70126 | product = 10.11219  [1 s]
+      Keller prediction from K(1,10): K(10,1) xx,yy,xy = 3.60360,3.73625,-0.25859  vs computed 3.64437,3.77776,-0.26118
+r=2: K(1,10) xx,yy,xy = 2.68196,2.78070,-0.19179; sqrt det = 2.72414 | K(10,1) xx,yy = 3.62852,3.76178; sqrt det = 3.68543 | product = 10.03964  (excess ratio to previous 2.83)  [8 s]
+      Keller prediction from K(1,10): K(10,1) xx,yy,xy = 3.61404,3.74710,-0.25845  vs computed 3.62852,3.76178,-0.25935
+r=4: K(1,10) xx,yy,xy = 2.67898,2.77758,-0.19142; sqrt det = 2.72111 | K(10,1) xx,yy = 3.62335,3.75658; sqrt det = 3.68027 | product = 10.01442  (excess ratio to previous 2.75)  [52 s]
+      Keller prediction from K(1,10): K(10,1) xx,yy,xy = 3.61807,3.75124,-0.25852  vs computed 3.62335,3.75658,-0.25885
+check: K(10,1) on map == K(1,10) on swapped map: True

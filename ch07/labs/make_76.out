@@ -1,0 +1,10 @@
+Fig7.6.1a random 5-fold (seed 0)   LightGBM             all 0.359 metals 0.252 non-metals 0.481
+Fig7.6.1a random 5-fold (seed 0)   MLP (single)         all 0.353 metals 0.157 non-metals 0.576
+Fig7.6.1a random 5-fold (seed 0)   MLP (ensemble of 4)  all 0.340 metals 0.150 non-metals 0.557
+Fig7.6.1a group 5-fold (chemsys)   LightGBM             all 0.378 metals 0.258 non-metals 0.515
+Fig7.6.1a group 5-fold (chemsys)   MLP (single)         all 0.380 metals 0.148 non-metals 0.644
+Fig7.6.1a group 5-fold (chemsys)   MLP (ensemble of 4)  all 0.352 metals 0.146 non-metals 0.587
+Fig7.6.1b decile mean sd: [0.    0.001 0.002 0.003 0.012 0.057 0.108 0.169 0.278 0.762]
+Fig7.6.1b decile MAE  : [0.039 0.022 0.039 0.097 0.212 0.283 0.356 0.498 0.681 1.176]
+Fig7.6.2b: {'hidden h\n(float64)': 5.3e-16, 'energy\n(float64)': 4.4e-16, 'forces\n(float64)': 6.9e-16, 'energy, bug\n(xyz as 4x0e)': 0.14, 'forces\n(float32)': 3.6e-07}
+done

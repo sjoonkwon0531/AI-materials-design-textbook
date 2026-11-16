@@ -1,0 +1,5 @@
+Al atom density            = 6.027e+28 m^-3
+atoms in (50 um)^3          = 7.53e+15
+atoms in (1 um)^3           = 6.03e+10
+core cylinder r=5nm,L=1um   : V = 7.85e-23 m^3, atoms = 4.73e+06
+outer repatoms (1e4 atoms/element) = 6.03e+06;  total DOF ~ 1.08e+07;  reduction = 5.6e+03

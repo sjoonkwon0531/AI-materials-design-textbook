@@ -1,0 +1,12 @@
+ethanol 300 K: 3000 frames, Z=[6, 6, 8, 1, 1, 1, 1, 1, 1], E std 133 meV, <|F_comp|> 715 meV/A
+split: train pool 1900, val 100, test 800 (frames 2200-2999, after a 2 ps gap)
+baseline (predict train mean E, zero F): E MAE 100.9 meV, F MAE 711.7 meV/A
+N=  100 BPNN(ACSF)  params  14259  test E MAE   30.6 meV  F MAE   79.7 meV/A   (203 s)
+N=  100 SchNet      params  18337  test E MAE   29.0 meV  F MAE   64.8 meV/A   (182 s)
+N=  300 BPNN(ACSF)  params  14259  test E MAE   23.8 meV  F MAE   55.0 meV/A   (206 s)
+N=  300 SchNet      params  18337  test E MAE   23.3 meV  F MAE   58.9 meV/A   (298 s)
+N= 1000 BPNN(ACSF)  params  14259  test E MAE   19.0 meV  F MAE   50.4 meV/A   (233 s)
+N= 1000 SchNet      params  18337  test E MAE   23.5 meV  F MAE   63.4 meV/A   (219 s)
+BPNN(ACSF)  force learning-curve slope d log MAE / d log N = -0.20
+SchNet      force learning-curve slope d log MAE / d log N = -0.01
+wall 1349 s

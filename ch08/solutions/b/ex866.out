@@ -1,0 +1,26 @@
+  CMA-ES budget   50 rep 0: test J -3.610 | schedule 682 707 702 687 678 715 717 679 695 716 711 750 | 0 s
+  CMA-ES budget   50 rep 1: test J -2.438 | schedule 669 668 686 687 687 669 703 701 672 706 678 732 | 0 s
+  CMA-ES budget   50 rep 2: test J -2.467 | schedule 723 698 650 651 681 660 700 670 665 715 684 714 | 1 s
+CMA-ES  budget   50: test J -2.838 +/- 0.668 (sd over repeats)
+  GP-EI budget   50 rep 0: test J -6.784 | schedule 606 600 636 600 623 658 744 600 602 600 600 600 (ls 4, noise 1) | 1 s
+  GP-EI budget   50 rep 1: test J -3.058 | schedule 651 601 658 710 720 732 697 604 635 717 614 644 (ls 2, noise 0.3) | 2 s
+  GP-EI budget   50 rep 2: test J -22.532 | schedule 602 607 600 604 751 600 604 736 673 607 800 625 (ls 4, noise 1) | 2 s
+GP-EI   budget   50: test J -10.791 +/- 10.337 (sd over repeats)
+  CMA-ES budget  200 rep 0: test J -4.190 | schedule 656 624 726 685 645 655 731 718 736 672 718 747 | 3 s
+  CMA-ES budget  200 rep 1: test J -3.725 | schedule 680 669 663 717 691 686 744 688 660 743 665 708 | 3 s
+  CMA-ES budget  200 rep 2: test J -2.456 | schedule 661 693 641 694 661 680 685 635 720 723 712 701 | 3 s
+CMA-ES  budget  200: test J -3.457 +/- 0.898 (sd over repeats)
+  GP-EI budget  200 rep 0: test J -2.690 | schedule 692 641 680 661 682 661 664 665 670 658 639 636 (ls 1, noise 0.03) | 5 s
+  GP-EI budget  200 rep 1: test J -2.808 | schedule 654 659 720 665 634 646 600 649 713 624 646 644 (ls 1, noise 0.03) | 7 s
+  GP-EI budget  200 rep 2: test J -3.118 | schedule 670 693 714 603 665 737 617 717 633 715 693 619 (ls 0.5, noise 0.3) | 9 s
+GP-EI   budget  200: test J -2.872 +/- 0.221 (sd over repeats)
+  CMA-ES budget 1000 rep 0: test J -2.276 | schedule 617 684 694 681 651 660 614 700 685 663 707 724 | 10 s
+  CMA-ES budget 1000 rep 1: test J -2.285 | schedule 692 666 651 652 684 662 661 687 691 708 719 716 | 12 s
+  CMA-ES budget 1000 rep 2: test J -2.623 | schedule 603 602 689 655 729 706 626 613 696 722 711 702 | 13 s
+CMA-ES  budget 1000: test J -2.395 +/- 0.198 (sd over repeats)
+  GP-EI budget 1000 rep 0: test J -2.437 | schedule 719 661 698 690 651 698 660 694 661 696 657 675 (ls 1, noise 0.3) | 50 s
+/usr/local/lib/python3.11/dist-packages/numpy/_core/_methods.py:219: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/usr/local/lib/python3.11/dist-packages/numpy/_core/_methods.py:211: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+GP-EI   budget 1000: test J -2.437 +/- nan (sd over repeats)

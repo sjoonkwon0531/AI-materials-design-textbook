@@ -1,0 +1,18 @@
+networks: 100 solvable (of 106 generated); molecules 126, levels 7
+exact DP optimum (product of yields): mean 0.094, median 0.051; molecules DP had to expand: mean 83.5
+greedy (highest-yield step each time): success 0.12, value/optimum 0.102, optimal 0.09
+budget = number of complete simulations (rollouts); 'queried' = distinct molecules sent to the reaction model
+  B=   10 random rollouts  : success 0.43, value/optimum 0.176 +/- 0.031, optimal 0.06, queried 25.6
+  B=   10 MCTS (UCT c=0.4) : success 0.52, value/optimum 0.256 +/- 0.035, optimal 0.07, queried 27.6
+  B=   30 random rollouts  : success 0.61, value/optimum 0.357 +/- 0.041, optimal 0.19, queried 38.8
+  B=   30 MCTS (UCT c=0.4) : success 0.69, value/optimum 0.438 +/- 0.040, optimal 0.22, queried 40.8
+  B=  100 random rollouts  : success 0.83, value/optimum 0.566 +/- 0.042, optimal 0.36, queried 48.9
+  B=  100 MCTS (UCT c=0.4) : success 0.85, value/optimum 0.612 +/- 0.040, optimal 0.40, queried 49.6
+  B=  300 random rollouts  : success 0.88, value/optimum 0.691 +/- 0.039, optimal 0.50, queried 54.1
+  B=  300 MCTS (UCT c=0.4) : success 0.92, value/optimum 0.753 +/- 0.034, optimal 0.55, queried 53.4
+  B= 1000 random rollouts  : success 0.94, value/optimum 0.834 +/- 0.030, optimal 0.65, queried 56.2
+  B= 1000 MCTS (UCT c=0.4) : success 0.95, value/optimum 0.850 +/- 0.027, optimal 0.65, queried 55.1
+  paired difference MCTS - random at B=300: 0.062 +/- 0.026 (SE); MCTS better on 0.28, worse on 0.14 of networks
+  B=  300 MCTS c=0.1: value/optimum 0.715, optimal 0.47
+  B=  300 MCTS c=1.4: value/optimum 0.747, optimal 0.54
+wall 5 s

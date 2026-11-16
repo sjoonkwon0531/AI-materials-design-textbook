@@ -1,0 +1,2 @@
+early-time points (t = xi^2) seed 0 [fraction of points with t<0.25: 0.48, t>0.75: 0.11]: rel L2 0.7595 | err(t=0.1) 0.482 err(t=0.5) 0.765 err(t=1) 1.023 | L_r 6.7e-04 L_ic 9.8e-04 L_bc 1.2e-02 | amplitude t=0,0.5,1: 0.967 0.397 0.185 | cpu 44 s
+early-time points (t = xi^2) seed 1 [fraction of points with t<0.25: 0.51, t>0.75: 0.15]: rel L2 0.6916 | err(t=0.1) 0.100 err(t=0.5) 0.605 err(t=1) 1.006 | L_r 7.7e-04 L_ic 8.0e-04 L_bc 1.4e-02 | amplitude t=0,0.5,1: 0.971 0.488 0.094 | cpu 35 s

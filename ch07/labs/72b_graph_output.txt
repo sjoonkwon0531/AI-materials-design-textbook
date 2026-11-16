@@ -1,0 +1,23 @@
+=== Part A: Si diamond graphs (a = 5.43 A)
+conventional N=8 r_c=2.5 A: directed edges   32, per atom  4, distinct (i,j) pairs  32, max parallel edges 1, self-image edges 0, distances [2.351]
+conventional N=8 r_c=4.0 A: directed edges  128, per atom 16, distinct (i,j) pairs  56, max parallel edges 4, self-image edges 0, distances [2.351, 3.84]
+primitive    N=2 r_c=2.5 A: directed edges    8, per atom  4, distinct (i,j) pairs   2, max parallel edges 4, self-image edges 0, distances [2.351]
+primitive    N=2 r_c=4.0 A: directed edges   32, per atom 16, distinct (i,j) pairs   4, max parallel edges 12, self-image edges 24, distances [2.351, 3.84]
+primitive, r_c=2.5: edges into atom 0 come from atom [1] with image offsets [(0, -1, -1), (-1, 0, -1), (-1, -1, 0), (-1, -1, -1)]
+=== Part B: ethanol graphs (frame 0 of the 300 K xTB trajectory)
+r_c=1.7 A: directed edges  16 (complete graph = 72)
+r_c=2.5 A: directed edges  48 (complete graph = 72)
+r_c=5.0 A: directed edges  72 (complete graph = 72)
+bond-graph Laplacian eigenvalues: [0.    0.282 0.578 1.    1.    1.    2.373 4.086 5.679] | # zero modes = 1
+with a 1.6 A threshold instead: C-C distance in this frame 1.606 A -> # zero modes = 2 (graph splits)
+=== Part C: permutation equivariance (float64, untrained SchNet)
+max|h(P x) - P h(x)| = 4.4e-16   |E(Px) - E(x)| = 2.2e-16
+readouts invariant? sum True, mean True, max True; concat (order-dependent) False
+=== Part D: CH4, tetrahedral vs square planar, r_CH = 1.09 A
+tetrahedral  : H-H distances [1.78]
+square planar: H-H distances [1.541, 2.18]
+SchNet r_c=1.5: edges tet/sq = 8/8; |E_tet - E_sq| over 3 random inits = 0.0e+00, 0.0e+00, 0.0e+00
+SchNet r_c=5.0: edges tet/sq = 20/20; |E_tet - E_sq| over 3 random inits = 3.8e-03, 1.6e-03, 4.1e-03
+angular sums at C:  S_l = sum_{j!=k} P_l(cos theta_jk)
+  tetrahedral  : l=1: -4.0000  l=2: -4.0000  l=3: +4.8889  l=4: +0.1481
+  square planar: l=1: -4.0000  l=2: +0.0000  l=3: -4.0000  l=4: +7.0000

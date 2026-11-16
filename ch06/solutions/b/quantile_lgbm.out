@@ -1,0 +1,10 @@
+all        n=4601 coverage 0.714  below lo 0.159  above hi 0.136  mean width 1.814
+metals     n=2450 coverage 0.656  below lo 0.298  above hi 0.062  mean width 1.212
+non-metals n=2151 coverage 0.780  below lo 0.000  above hi 0.219  mean width 2.499
+metals: lo<=0 fraction 0.702; lo<0 0.702; lo exactly within 1e-6 of 0 0.000
+metals: median of lo -0.0007, median hi 0.491
+non-metals: lo<=0 fraction 0.134; median width 2.384
+crossing lo>hi: 0.0324
+metals with hi<0.1 eV: 0.263; non-metals with hi<0.1: 0.001
+median-model MAE 0.412; metals with median pred <0.05: 0.652
+time 29s

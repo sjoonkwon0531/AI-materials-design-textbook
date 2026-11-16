@@ -1,0 +1,25 @@
+=== 4.3.1 Lab 4.3 re-run (single thread), 3 repetitions ===
+  rep 1: N=200:0.0048s N=400:0.0193s N=800:0.1189s N=1200:0.3530s N=1600:0.8402s N=2400:2.3284s N=3200:5.8698s  | full p=2.59, tail p=2.79
+  rep 2: N=200:0.0040s N=400:0.0146s N=800:0.0892s N=1200:0.2824s N=1600:0.6327s N=2400:2.3059s N=3200:8.2961s  | full p=2.72, tail p=3.21
+  rep 3: N=200:0.0045s N=400:0.0192s N=800:0.1233s N=1200:0.3601s N=1600:0.8298s N=2400:2.9905s N=3200:8.0905s  | full p=2.70, tail p=3.02
+  median tail exponent p=3.02
+  50 atoms 10 s -> 500 atoms with p=3.00: 10000 s = 2.78 h
+  50 atoms 10 s -> 500 atoms with p=3.02: 10490 s = 2.91 h
+  50 atoms, 1e4 MD steps: 27.8 h = 1.2 days
+  500 atoms, 1e4 MD steps: 27777.8 h = 1157.4 days
+
+=== 4.3.5 density matrix decay (1D tight-binding ring, half filling) ===
+  metal  (t1=t2=1)         gap=0.031  |P_0j| at j=[1, 5, 11, 21, 41, 81]: 3.2e-01 6.4e-02 2.9e-02 1.5e-02 7.9e-03 4.2e-03
+                           fit exp: decay length xi=  42.63 sites | fit power law exponent=-0.96
+  insul. (t1=1,t2=0.8)     gap=0.401  |P_0j| at j=[1, 5, 11, 21, 41, 81]: 4.1e-01 8.1e-02 2.6e-02 5.9e-03 4.4e-04 3.6e-06
+                           fit exp: decay length xi=   7.99 sites | fit power law exponent=-4.09
+  insul. (t1=1,t2=0.5)     gap=1.000  |P_0j| at j=[1, 5, 11, 21, 41, 81]: 4.7e-01 4.2e-02 3.4e-03 7.5e-05 5.2e-08 3.5e-14
+                           fit exp: decay length xi=   2.73 sites | fit power law exponent=-7.80
+  insul. (onsite +/-0.5)   gap=1.000  |P_0j| at j=[1, 5, 11, 21, 41, 81]: 3.0e-01 3.2e-02 4.4e-03 2.5e-04 1.2e-06 4.4e-11
+                           fit exp: decay length xi=   3.80 sites | fit power law exponent=-7.53
+
+  truncation: drop P_ij with |i-j|>R and measure loss of idempotency (P^2=P):
+  metal  (t1=t2=1)         idempotency error ||P_R^2-P_R||/||P|| for R=5,11,21,41: 1.3e-01 9.2e-02 6.8e-02 4.9e-02
+  insul. (t1=1,t2=0.8)     idempotency error ||P_R^2-P_R||/||P|| for R=5,11,21,41: 7.7e-02 2.9e-02 7.1e-03 5.6e-04
+  insul. (t1=1,t2=0.5)     idempotency error ||P_R^2-P_R||/||P|| for R=5,11,21,41: 1.9e-02 1.7e-03 4.1e-05 2.9e-08
+  insul. (onsite +/-0.5)   idempotency error ||P_R^2-P_R||/||P|| for R=5,11,21,41: 4.3e-02 7.1e-03 4.5e-04 2.3e-06

@@ -1,0 +1,20 @@
+curve_fit: a=1.46363 b=1.02389 c=4.49652  RMS=0.2266  SSE=0.25683
+  J* = SSE/N = 0.05137
+  param std: [0.08715464 0.01243319 0.75699461]
+  corr matrix:
+ [[ 1.     -0.9983 -0.9252]
+ [-0.9983  1.      0.9054]
+ [-0.9252  0.9054  1.    ]]
+linear fit SSE=0.73600
+profile SSE min at b=1.0239, (a,c)=[1.46356752 4.4969856 ], SSE=0.25683
+Gauss-Newton Hessian eig at optimum: [8.86108169e-02 4.63209041e+01 3.25666892e+05], kappa=3.675e+06, alpha_max=2/lmax=6.141e-06
+GD alpha=1e-06 init=(1, 1, 0): iters=100000 status=ok  a=1.9571 b=0.9651 c=0.137  J=0.8414
+GD alpha=1e-06 init=(1, 1, 0): iters=1000000 status=ok  a=1.9466 b=0.9657 c=0.433  J=0.7322
+GD alpha=1e-06 init=(2, 0.9, 0): iters=100000 status=ok  a=1.9997 b=0.9603 c=0.034  J=0.8655
+GD alpha=1e-06 init=(2, 0.9, 0): iters=1000000 status=ok  a=1.9598 b=0.9644 c=0.333  J=0.7647
+GD alpha=1e-06 init=(0.5, 1.2, 10): iters=100000 status=ok  a=0.9616 b=1.1100 c=9.972  J=1.5628
+GD alpha=1e-06 init=(0.5, 1.2, 10): iters=1000000 status=ok  a=1.0006 b=1.1018 c=9.477  J=1.2893
+GD alpha=1e-06 init=(10, 0.5, 0): iters=100000 status=ok  a=6.8702 b=0.6710 c=-1.079  J=107.5100
+GD alpha=1e-06 init=(10, 0.5, 0): iters=1000000 status=ok  a=2.2489 b=0.9364 c=-1.750  J=1.5878
+GD alpha=1e-06 init=(1, 1.5, 0): iters=100000 status=ok  a=1.9302 b=0.9679 c=0.346  J=0.7711
+GD alpha=1e-06 init=(1, 1.5, 0): iters=1000000 status=ok  a=1.9208 b=0.9684 c=0.630  J=0.6704

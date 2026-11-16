@@ -1,0 +1,9 @@
+ seed 0 done [11 s] ppo clipfrac mean 0.020 (epoch1 0.000, epoch4 0.063)
+ seed 1 done [22 s] ppo clipfrac mean 0.026 (epoch1 0.000, epoch4 0.085)
+ seed 2 done [31 s] ppo clipfrac mean 0.027 (epoch1 0.000, epoch4 0.084)
+ seed 3 done [41 s] ppo clipfrac mean 0.025 (epoch1 0.000, epoch4 0.071)
+ seed 4 done [50 s] ppo clipfrac mean 0.025 (epoch1 0.000, epoch4 0.077)
+A2C: last50 471.6 +- 19.6 per seed [500, 400, 458, 500, 500] | first475 [131, 152, 286, 122, 111] | collapse(<300 after 475) [False, True, False, False, False]
+PPO: last50 500.0 +- 0.0 per seed [500, 500, 500, 500, 500] | first475 [110, 97, 135, 105, 149] | collapse(<300 after 475) [False, False, False, False, False]
+PPO clip fraction overall 0.025; epochs 2-4 only 0.033
+wall 50 s

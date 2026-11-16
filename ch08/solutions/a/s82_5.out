@@ -1,0 +1,49 @@
+[1 machine each, rate 0.2875] utilization dep/litho/etch = 0.75/0.92/0.69
+   FIFO (fab)   WIP   8.67+/-0.65 | CT   30.5 h | thr 0.2884 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 0.0 | oldest 27 h
+   LBFS         WIP   8.67+/-0.65 | CT   30.5 h | thr 0.2884 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 0.0 | oldest 27 h
+   FIFO         WIP   9.13+/-0.62 | CT   32.5 h | thr 0.2831 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 0.0 | oldest 27 h
+   least slack  WIP   7.30+/-0.38 | CT   26.2 h | thr 0.2816 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 0.0 | oldest 22 h
+   paired WIP FIFO(fab) - LBFS: +0.000 +/- 0.000; identical in 1.00 of scenarios  [12 s]
+[2 litho only, rate 0.55 (as stated)] utilization dep/litho/etch = 1.43/0.88/1.32
+   FIFO (fab)   WIP 174.83+/-3.06 | CT  360.4 h | thr 0.3825 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 25.4 | oldest 622 h
+   LBFS         WIP 176.80+/-3.11 | CT  363.8 h | thr 0.3825 | decisions where oldest-in-fab != most-advanced 0.001 | overtakes 46.3 | oldest 625 h
+   FIFO         WIP 233.65+/-5.60 | CT  499.1 h | thr 0.3208 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 27.9 | oldest 838 h
+   least slack  WIP 168.08+/-3.33 | CT  350.1 h | thr 0.3827 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 6.1 | oldest 602 h
+   paired WIP FIFO(fab) - LBFS: -1.968 +/- 1.098; identical in 0.73 of scenarios  [173 s]
+[2 litho only, rate 0.35] utilization dep/litho/etch = 0.91/0.56/0.84
+   FIFO (fab)   WIP   7.84+/-0.67 | CT   22.8 h | thr 0.3465 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 22.4 | oldest 20 h
+   LBFS         WIP   7.85+/-0.66 | CT   22.8 h | thr 0.3467 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 35.8 | oldest 20 h
+   FIFO         WIP  10.14+/-0.70 | CT   29.3 h | thr 0.3477 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 26.2 | oldest 25 h
+   least slack  WIP   8.95+/-0.67 | CT   25.8 h | thr 0.3487 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 11.9 | oldest 20 h
+   paired WIP FIFO(fab) - LBFS: -0.009 +/- 0.014; identical in 0.90 of scenarios  [202 s]
+[2 machines each, rate 0.55] utilization dep/litho/etch = 0.72/0.88/0.66
+   FIFO (fab)   WIP   7.85+/-0.21 | CT   14.3 h | thr 0.5465 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 119.8 | oldest 14 h
+   LBFS         WIP   7.87+/-0.21 | CT   14.4 h | thr 0.5464 | decisions where oldest-in-fab != most-advanced 0.002 | overtakes 177.5 | oldest 14 h
+   FIFO         WIP   8.99+/-0.32 | CT   16.6 h | thr 0.5428 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 148.1 | oldest 14 h
+   least slack  WIP   8.19+/-0.19 | CT   15.0 h | thr 0.5482 | decisions where oldest-in-fab != most-advanced 0.000 | overtakes 84.4 | oldest 13 h
+   paired WIP FIFO(fab) - LBFS: -0.023 +/- 0.028; identical in 0.87 of scenarios  [240 s]
+(c) rate 0.2875: name  L/thr  LittleCT  CT(fin)  CT(fin)-LittleCT  oldest
+   FIFO                   32.1   31.4   32.5   +1.1    27
+   FIFO (fab)             30.2   29.2   30.5   +1.3    27
+   SPT                    31.4   30.5   31.6   +1.1    31
+   LBFS                   30.2   29.2   30.5   +1.3    27
+   FBFS                   64.7   61.4   61.4   +0.0    61
+   least slack            25.9   25.4   26.2   +0.8    22
+   random                 31.7   30.6   31.5   +0.9    47
+   RL seed0 (greedy)      28.2   27.5   24.9   -2.6   158
+   RL seed0 (stoch)       36.1   34.4   28.1   -6.3   358
+   RL seed2 (greedy)      28.5   27.8   24.8   -3.0   212
+   RL from LS (greedy)    29.5   28.6   25.8   -2.8   291
+   Spearman(CT(fin)-LittleCT, oldest) = -0.84 (p=0.001), Pearson -0.97
+(c) rate 0.3: name  L/thr  LittleCT  CT(fin)  CT(fin)-LittleCT  oldest
+   FIFO                   51.9   49.5   52.2   +2.7    58
+   FIFO (fab)             33.7   32.8   34.5   +1.7    35
+   SPT                    53.3   50.6   53.9   +3.3    60
+   FBFS                  115.9  105.7  114.4   +8.7   126
+   least slack            36.6   35.3   36.8   +1.5    38
+   random                 61.8   59.2   62.6   +3.4   112
+   RL seed0 (greedy)      34.7   33.5   27.9   -5.6   384
+   RL seed2 (greedy)      34.0   32.9   27.6   -5.3   347
+   RL from LS (greedy)    37.3   35.9   28.5   -7.4   558
+   Spearman(CT(fin)-LittleCT, oldest) = -0.43 (p=0.244), Pearson -0.84
+wall 242 s

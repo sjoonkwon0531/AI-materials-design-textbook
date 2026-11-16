@@ -1,0 +1,28 @@
+Using backend: pytorch
+Other supported backends: tensorflow.compat.v1, tensorflow, jax, paddle.
+paddle supports more examples now and is recommended.
+Set the default float type to float64
+Compiling model...
+'compile' took 1.662123 s
+
+Compiling model...
+'compile' took 0.000261 s
+
+
+soft (PDE + NeumannBC + IC losses): FNN 2-32-32-32-1 tanh, 1400 training points
+  stage        steps   CPU (s)   loss terms                       rel. L2 (101x101)   max|err|    max|u_x| on x=0,1   max IC error
+  Adam 1000     1000     14.3   1.5e-04 / 2.7e-05 / 1.1e-05      4.82e-03            8.60e-03    1.67e-02            8.60e-03
+  Adam 3000     3000     35.4   3.1e-05 / 1.9e-05 / 4.8e-06      3.48e-03            3.86e-03    7.25e-03            3.86e-03
+  + L-BFGS      5000     62.6   4.0e-07 / 1.0e-07 / 2.9e-08      2.06e-04            3.39e-04    1.09e-03            3.39e-04
+Compiling model...
+'compile' took 0.000095 s
+
+Compiling model...
+'compile' took 0.000198 s
+
+
+hard (feature + output transform): FNN 2-32-32-32-1 tanh, 1000 training points
+  stage        steps   CPU (s)   loss terms                       rel. L2 (101x101)   max|err|    max|u_x| on x=0,1   max IC error
+  Adam 1000     1000      8.1   9.5e-05                          2.25e-03            3.63e-03    3.85e-16            0.00e+00
+  Adam 3000     3000     24.1   7.4e-06                          5.44e-04            6.45e-04    3.85e-16            0.00e+00
+  + L-BFGS      5000     42.4   7.0e-08                          3.90e-05            7.55e-05    3.85e-16            0.00e+00

@@ -1,0 +1,7 @@
+random search (d=2): regret@10 0.097 @50 0.024  (setup 8 s)
+iter   150 loss   7.982 | regret@10 0.241 @50 0.236+/-0.017 | blind @50 0.243 (diff +0.007) | determ @50 0.239 | mean step 0.020 (blind 0.019) | 43 s
+iter   300 loss   4.333 | regret@10 0.253 @50 0.247+/-0.017 | blind @50 0.284 (diff +0.037) | determ @50 0.248 | mean step 0.017 (blind 0.019) | 78 s
+iter   600 loss   5.934 | regret@10 0.323 @50 0.317+/-0.018 | blind @50 0.336 (diff +0.019) | determ @50 0.321 | mean step 0.017 (blind 0.015) | 180 s
+iter  1200 loss   6.084 | regret@10 0.329 @50 0.327+/-0.019 | blind @50 0.323 (diff -0.004) | determ @50 0.328 | mean step 0.011 (blind 0.011) | 409 s
+iter  1800 loss   8.212 | regret@10 0.250 @50 0.248+/-0.017 | blind @50 0.274 (diff +0.026) | determ @50 0.251 | mean step 0.026 (blind 0.027) | 691 s
+iter  2400 loss   8.456 | regret@10 0.244 @50 0.239+/-0.018 | blind @50 0.246 (diff +0.007) | determ @50 0.244 | mean step 0.030 (blind 0.023) | 897 s

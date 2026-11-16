@@ -1,0 +1,8 @@
+inv F=52 seed=0 params=25845 | E MAE 10.9 meV/atom  F MAE 143.4 meV/A | cpu 32 s
+inv F=52 seed=1 params=25845 | E MAE 10.6 meV/atom  F MAE 129.2 meV/A | cpu 31 s
+inv F=52 seed=2 params=25845 | E MAE 10.9 meV/atom  F MAE 118.8 meV/A | cpu 30 s
+inv F=32 seed=1 params=10145 | E MAE 12.0 meV/atom  F MAE 115.8 meV/A | cpu 22 s
+eq F=32 seed=1 params=25921 | E MAE 6.2 meV/atom  F MAE 40.5 meV/A | cpu 53 s
+inv F=32 seed=2 params=10145 | E MAE 11.2 meV/atom  F MAE 128.2 meV/A | cpu 21 s
+eq F=32 seed=2 params=25921 | E MAE 7.5 meV/atom  F MAE 39.4 meV/A | cpu 51 s
+done

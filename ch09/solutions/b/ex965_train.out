@@ -1,0 +1,6 @@
+[flux] 1,641,634 real parameters, 3200 pairs
+[flux] epoch 1: train loss 0.1765 | CPU 51 s
+[flux] epoch 2: train loss 0.1011 | CPU 103 s
+[flux] epoch 3: train loss 0.0825 | CPU 154 s
+[flux] epoch 4: train loss 0.0642 | CPU 205 s
+[flux] epoch 5: train loss 0.0501 | CPU 258 s

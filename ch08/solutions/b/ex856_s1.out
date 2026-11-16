@@ -1,0 +1,7 @@
+check: label J of run 0 = -1.8083 (Lab 8.15 label computed by rollout_batch: -1.8083)
+transitions 4800; data action range [-0.80, 0.43] (T 620-743 K)
+ensemble trained (19 s)
+MBPO-style (random member) seed 1: model return  -0.634 | TRUE J -54.392 +/- 1.055 (w_N 1.339, TB 2652.63) | gap +53.758 | set-points 600-800 K, mean by step 600 800 600 798 600 791 600 782 600 770 600 759 | 34 s
+      |log w| error vs step t=1..12: one-step 0.149 0.231 0.658 0.102 0.562 0.124 0.421 0.181 0.279 0.240 0.151 0.271 | open-loop replay 0.149 0.185 0.656 0.599 0.852 0.688 0.827 0.625 0.689 0.465 0.472 0.274
++ disagreement penalty beta=1 seed 1: model return  -0.756 | TRUE J  -2.420 +/- 0.012 (w_N 1.741, TB 33.96) | gap +1.664 | set-points 600-745 K, mean by step 600 716 600 719 600 720 602 720 606 718 614 713 | 48 s
+      |log w| error vs step t=1..12: one-step 0.149 0.092 0.188 0.122 0.137 0.181 0.073 0.211 0.046 0.226 0.048 0.200 | open-loop replay 0.149 0.129 0.126 0.106 0.114 0.129 0.102 0.223 0.220 0.394 0.410 0.558

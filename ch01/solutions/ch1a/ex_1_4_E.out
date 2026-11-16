@@ -1,0 +1,15 @@
+L=6601.5153, mu=0.484737, kappa=13618.75, x*=[1.641 3.15 ]
+GD        : [lr=0.000302] -> 60200, [lr=0.0003] -> 60601, [lr=0.000302939] -> 63246, [lr=0.0002] -> 90903
+Momentum  : [lr=5.957e-04,beta=0.9663(opt)] -> 969, [lr=3e-06,beta=0.99] -> 59817, [lr=3e-05,beta=0.9] -> 60531, [lr=2e-06,beta=0.99] -> 90123
+RMSprop   : [lr=0.001] -> 10335, [lr=0.0003] -> 33110, [lr=0.0001] -> 98384, [lr=0.003] -> >1e6
+Adam      : [lr=30] -> 135, [lr=10] -> 165, [lr=3] -> 438, [lr=1] -> 1007
+  Adam lr=0.3: iters=2541, max excursion |b| along path = 10.0, |a| = 10.0
+  Adam lr=3: iters=438, max excursion |b| along path = 10.0, |a| = 10.0
+  Adam lr=30: iters=135, max excursion |b| along path = 20.0, |a| = 20.0
+Newton    : [exact Hessian] -> 1
+theory: GD rate (1-2/(kappa+1)) -> iters ~ ln(||e0||/tol)/(2/(kappa+1)) = 63250
+theory: heavy-ball rate (sqrt(k)-1)/(sqrt(k)+1) -> iters ~ 542
+Hessian eigvecs (cols):
+ [[ 0.01515 -0.99989]
+ [-0.99989 -0.01515]]
+kappa(D^-1/2 H D^-1/2) (Jacobi-scaled) = 14.431

@@ -1,0 +1,11 @@
+<r^2>(k) for |i-j|=k: 0.894 1.858 2.854 3.865 4.888 5.916 6.946 7.965 8.930
+<r^2>(k)/(k <b^2>):     1.000 1.038 1.064 1.080 1.093 1.102 1.109 1.113 1.109
+non-Gaussianity <r^4>/<r^2>^2 (Gaussian 5/3): 1.465 1.494 1.507 1.515 1.525 1.532 1.540 1.550 1.561
+(i) measured form factors: grid min Gamma at q=1.580 -> chi_s N = 9.251; parabola fit: q*=1.576, chi_s N = 9.251
+(ii) Gaussian with measured <r_ij^2>: q*=1.586, chi_s N = 9.693
+(iii) Gaussian with uniform b^2=0.894: q*=1.647, chi_s N = 9.944
+  q=1.20: measured s_AA,s_AB = 1.7974,0.8129; Gaussian(meas. r2) = 1.8104,0.8675
+  q=1.50: measured s_AA,s_AB = 1.5284,0.4506; Gaussian(meas. r2) = 1.5551,0.5272
+  q=1.80: measured s_AA,s_AB = 1.2808,0.2253; Gaussian(meas. r2) = 1.3241,0.3116
+Lab-like estimates (6 snapshots, grid step 0.05), 10 groups: mean 9.249, std 0.125, min 9.040, max 9.451; all-snapshot grid-min on the same grid 9.254
+wall 90 s

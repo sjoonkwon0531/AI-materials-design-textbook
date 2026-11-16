@@ -1,0 +1,16 @@
+a* = 1.119611 (nn only: 2^(1/6) = 1.122462),  W(a*) = -1.031242,  W''(a*) = 59.2324  [nn part 60.2642, 2nd-nn part -1.0318];  1D modulus a* W''(a*) = 66.317
+phi''(a*)=60.2642, phi''(2a*)=-0.2580; decaying root(s) of the linearised chain: [0.00432]
+converged=True, max|grad|=9.8e-13
+bond spacings from the end (k=1 is the outermost bond):
+  k=1: 1.121024  (d - a*)/a* = +1.262e-03
+  k=2: 1.119617  (d - a*)/a* = +5.435e-06
+  k=3: 1.119611  (d - a*)/a* = +2.347e-08
+  k=4: 1.119611  (d - a*)/a* = +1.013e-10
+  k=5: 1.119611  (d - a*)/a* = +4.377e-13
+  k=6: 1.119611  (d - a*)/a* = +2.182e-15
+middle bond (k=50): 1.11961087, (d - a*)/a* = -5.0e-15
+  bonds with |d-a*|/a* > 0.001: first 1 from each end
+  bonds with |d-a*|/a* > 1e-06: first 2 from each end
+  bonds with |d-a*|/a* > 1e-09: first 3 from each end
+successive deviation ratios (k+1)/k: [0.0043 0.0043 0.0043 0.0043 0.005 ]
+total energy: relaxed -102.061634, uniform a* -102.061516, N*W(a*) -103.124237; surface energy per end (relaxed - N W) / 2 = 0.531302; relaxation gain 1.18e-04

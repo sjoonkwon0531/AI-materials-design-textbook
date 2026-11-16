@@ -1,0 +1,7 @@
+dP = -0.1824 GPa -> da/a = +3.70e-04, da = +0.00146 A
+dP = +0.0090 GPa -> da/a = -1.83e-05, da = -0.00007 A
+lab: a(fmax 0.05) - a(converged) = +0.00155 A
+G_TO1: d(w^2)/da = -389,872 cm-2/A; da = 0.00155 A -> w = 108.8i cm-1 (from 106i)
+G_TO1: d(w^2)/da = -389,872 cm-2/A; da = 0.00010 A -> w = 106.2i cm-1 (from 106i)
+R4+: d(w^2)/da = 69,308 cm-2/A; da = 0.00155 A -> w = 70.2i cm-1 (from 71i)
+R4+: d(w^2)/da = 69,308 cm-2/A; da = 0.00010 A -> w = 71.0i cm-1 (from 71i)

@@ -1,0 +1,15 @@
+Part A, one student trained on 24 frames of a single 1500 K oracle trajectory:
+  held-out frames within 4 fs of a training frame (51): F-RMSE  190.7 meV/A, E  9.47 meV/atom
+  later time block of the same trajectory (40):        F-RMSE  177.2 meV/A, E 10.48 meV/atom
+  independent 1500 K trajectory (21):                  F-RMSE  198.6 meV/A, E  8.66 meV/atom
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+WARNING:root:Default dtype float32 does not match model dtype float64, converting models to float32.
+CPU time per 64-atom force call: oracle (MACE-MP-0 small, float32) 0.308 s, student SchNet 9.5 ms, ratio 32x
+oracle: a0 5.4647 A, B  71.2 GPa, nu_Gamma 11.47 THz, E_vac 2.07 eV
+qbc   : F[T1500]   285 | F[T2500]   400 | F[T1800]   286 | F[strain]   143 | F[vacancy]   185 meV/A | a0 5.6434 A, B  98.1 GPa, nu_Gamma 11.51 THz, E_vac -0.33 eV, MD fail step None
+rand  : F[T1500]   236 | F[T2500]   366 | F[T1800]   231 | F[strain]   122 | F[vacancy]   150 meV/A | a0 5.5848 A, B  82.1 GPa, nu_Gamma 10.99 THz, E_vac 0.53 eV, MD fail step None
+aimd  : F[T1500]   209 | F[T2500]   374 | F[T1800]   226 | F[strain]   108 | F[vacancy]   136 meV/A | a0 5.5367 A, B  83.7 GPa, nu_Gamma 10.89 THz, E_vac 0.22 eV, MD fail step 158
+  RDF qbc: first-peak height 2.04 at 2.475 A (oracle 2.30 at 2.325 A); integrated |g - g_ref| dr = 0.997 A
+  RDF rand: first-peak height 2.40 at 2.425 A (oracle 2.30 at 2.325 A); integrated |g - g_ref| dr = 0.635 A
+  RDF aimd: first-peak height 2.46 at 2.425 A (oracle 2.30 at 2.325 A); integrated |g - g_ref| dr = 0.454 A
+CPU 77 s
