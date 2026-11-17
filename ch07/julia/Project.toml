@@ -23,3 +23,5 @@ ShowCases = "605ecd9f-84a6-4c9e-81e2-4798472b76a3"
 SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
 Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
 
+[compat]
+Optim = "1"

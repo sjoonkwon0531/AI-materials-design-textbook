@@ -33,7 +33,7 @@ function step!(env::CartPole, a::Int)                  # a ∈ {0, 1}
 end
 
 const GAMMA, LAM = 0.99, 0.95
-mlp(out, rng) = mlp_chain(rng, [4, 32, 32, out], tanh)
+mlp(out, rng) = mlp_chain(rng, [4, 32, 32, out], x -> tanh.(x))   # 활성화 층이 배열 전체를 받으므로 원소별로 적용
 
 "에피소드 하나: S (4 x T, Float32), A (0/1), 보상, terminated, 마지막 상태"
 function rollout(pol, seed; rng = Xoshiro(seed))

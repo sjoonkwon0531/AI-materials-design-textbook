@@ -11,7 +11,8 @@ include("ch10_common2.jl")
 const MP = joinpath(DATA, "mace_mp0_small.model")
 const calc64 = first(make_calc("mace"; dtype = "float64"))
 const net = calc64.models[0]
-pyint(x) = pyconvert(Int, x); pyf(x) = pyconvert(Float64, x); pys(x) = pyconvert(String, pystr(x))
+pyitem(x) = pyhasattr(x, "item") ? x.item() : x                 # torch 텐서, 0차원 ndarray → 파이썬 수
+pyint(x) = pyconvert(Int, pyitem(x)); pyf(x) = pyconvert(Float64, pyitem(x)); pys(x) = pyconvert(String, pystr(x))
 nparam(mod) = sum(pyint(p.numel()) for p in mod.parameters(); init = 0)
 
 # ------------------------------------------------------------------ Part A: 아키텍처
@@ -133,7 +134,7 @@ end
 function partD()
     println("\n=== Part D: many-body expansion of a 6-atom Si cluster ===")
     grab = Dict{Int,Py}()
-    hooks = [net.readouts[i].register_forward_hook((m, inp, o) -> (grab[i] = o.detach().clone(); nothing)) for i in 0:1]
+    hooks = [net.readouts[i].register_forward_hook((m, inp, o) -> (grab[i] = Py(o).detach().clone(); nothing)) for i in 0:1]   # Py(): PythonCall이 텐서 인자를 PyIterable로 감싸 넘긴다
     scale = pyf(net.scale_shift.scale)
     function layer_energies(R)
         a = to_ase(fill(14, size(R, 2)), R, 30.0 .* I3; pbc = false); a.calc = calc64; a.get_potential_energy()

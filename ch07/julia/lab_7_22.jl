@@ -72,7 +72,7 @@ function xtb_ef_factory(Z)
         calc = tb.Calculator("GFN2-xTB", np.array(Z), np.array(permutedims(X) ./ BOHR))
         calc.set("verbosity", 0)
         res = calc.singlepoint()
-        E = pyconvert(Float64, res.get("energy")) * HA
+        E = pyconvert(Float64, res.get("energy").item()) * HA
         G = pyconvert(Matrix{Float64}, res.get("gradient"))             # (9, 3) Hartree/Bohr
         return E, -permutedims(G) .* (HA / BOHR)
     end

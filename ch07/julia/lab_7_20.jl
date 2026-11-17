@@ -58,7 +58,8 @@ function data_parallel(X, y; epochs = 4, B = 256)
             gs = fetch.(futs)
             g = sum(gs) ./ W                                                # all-reduce(합) / 순위 수 = 평균
             if first_step === nothing
-                gfull = only(Zygote.gradient(t -> loss(Flux.destructure(make_model())[2](t), X[:, idx], y[idx]), θ))
+                re = Flux.destructure(make_model())[2]                     # 모형 생성(push!)은 미분 밖에서
+                gfull = only(Zygote.gradient(t -> loss(re(t), X[:, idx], y[idx]), θ))
                 first_step = (norm.(gs), maximum(abs.(g .- gfull)))
             end
             opt, θ = Optimisers.update!(opt, θ, g)

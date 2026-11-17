@@ -131,7 +131,7 @@ function acsf(R::AbstractArray{T,3}, a::ACSFSpec) where {T}
     cut = reshape(fc, n, n, 1, B) .* reshape(fc, n, 1, n, B) .* reshape(fc, 1, n, n, B)
     base = rad .* cut .* reshape(offd, 1, n, n, 1)
     Mjk = reshape(Float32.(a.pairmask), n * n, P)
-    G4 = map([(z, l) for z in a.zetas for l in a.lams]) do (z, l)
+    G4 = map([(z, l) for l in a.lams, z in a.zetas][:]) do (z, l)   # 2차원 내포(z 바깥, l 안쪽 순서): 이중 for 내포는 push!를 써서 Zygote가 미분하지 못함
         ang = Float32(2^(1 - z)) .* max.(1 .+ Float32(l) .* cosv, 0) .^ Float32(z) .* base                         # i j k b
         reshape(permutedims(reshape(reshape(permutedims(ang, (1, 4, 2, 3)), n * B, n * n) * Mjk, n, B, P), (3, 1, 2)), 1, P, n, B)
     end

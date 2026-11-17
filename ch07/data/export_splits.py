@@ -1,4 +1,7 @@
-"""Export the Python labs' train/test indices for the Julia Labs (writes data/splits/*.csv).
+"""Export the Python labs' data tables and train/test indices for the Julia Labs.
+
+Writes data/magpie_expt_gap.csv, data/67_features_clean.csv, data/xrd_peaks.csv, data/xrd_labels.csv
+(Julia reads CSV; the Python Labs read the Parquet/NPZ originals) and data/splits/*.csv.
 
 The Julia Labs in ch07/julia and ch08/julia read these files via read_idx() so that they use exactly the
 same samples as the Python Labs (NumPy and Julia random streams differ).  Each file has one column `idx`
@@ -54,4 +57,17 @@ for N in (50, 200):
 # Labs 7.21, 7.22, 8.10 (72b_utils.split_300K, 77_*.py, 83_mlip_sam.py): ethanol 300 K pool order
 save("ethanol_pool_perm.csv", np.random.default_rng(0).permutation(2000))
 
-print("wrote", len(os.listdir(OUT)), "files to", OUT)
+# Data tables for ch7_common.jl (load_magpie, load_features149) and lab_7_5.jl
+df.to_csv(os.path.join(HERE, "magpie_expt_gap.csv"), index=False)
+d6.to_csv(os.path.join(HERE, "67_features_clean.csv"), index=False)
+xrd = os.path.join(HERE, "..", "labs", "72a_xrd_peaks.npz")   # written by labs/72a_xrd_cnn.py on its first run
+if os.path.exists(xrd):
+    d = np.load(xrd, allow_pickle=True)
+    pid = np.concatenate([np.full(len(x), i) for i, x in enumerate(d["x"])])
+    pd.DataFrame({"pid": pid, "two_theta": np.concatenate(d["x"]), "intensity": np.concatenate(d["y"])}).to_csv(
+        os.path.join(HERE, "xrd_peaks.csv"), index=False)
+    pd.DataFrame({"pid": np.arange(len(d["lab"])), "label": d["lab"]}).to_csv(os.path.join(HERE, "xrd_labels.csv"), index=False)
+else:
+    print("skipped xrd_peaks.csv: run labs/72a_xrd_cnn.py first")
+
+print("wrote", len(os.listdir(OUT)), "split files to", OUT, "and the data CSVs to", HERE)

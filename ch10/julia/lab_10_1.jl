@@ -104,7 +104,7 @@ end
 "수용장: MACE-MP-0 small의 r_max와 상호작용 층 수 (labs/101_receptive.py)"
 function receptive()
     m = pyimport("torch").load(joinpath(DATA, "mace_mp0_small.model"); map_location = "cpu", weights_only = false)
-    rc = pyconvert(Float64, m.r_max); T = pyconvert(Int, m.num_interactions)
+    rc = pyconvert(Float64, m.r_max.item()); T = pyconvert(Int, m.num_interactions.item())
     @printf("MACE-MP-0 small: r_max = %.1f A, interaction layers = %d, receptive field T*r_max = %.0f A\n", rc, T, T * rc)
 end
 

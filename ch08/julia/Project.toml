@@ -1,10 +1,16 @@
 [deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
 ComponentArrays = "b0b7db55-cfe3-40fc-9ded-d10e2dbeff66"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
 Flux = "587475ba-b771-5e3f-ad9e-33799f191a9c"
 ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
+Functors = "d9f16b24-f501-4c13-a1f2-28368ffc5196"
 JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+Lux = "b2108857-7c20-44ae-9111-449ecde12c47"
+MLUtils = "f1d291b0-491e-4a28-83b9-f70985020b54"
+NNlib = "872c559c-99b0-510c-b3b7-b6c96a88d5cd"
 NPZ = "15e1cf62-19b3-5cfa-8e77-841668bca605"
 Optim = "429524aa-4258-5aef-a3af-852621145aeb"
 Optimisers = "3bd65402-5787-11e9-1adc-39752487f4e2"
@@ -12,3 +18,5 @@ ShowCases = "605ecd9f-84a6-4c9e-81e2-4798472b76a3"
 SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
 Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
 
+[compat]
+Optim = "1"

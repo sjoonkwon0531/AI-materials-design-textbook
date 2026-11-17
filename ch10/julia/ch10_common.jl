@@ -14,7 +14,7 @@
 # 배열 약속(column-major): 좌표와 힘은 3 x n(열 = 원자), 배치는 3 x n x B. 셀 행렬 H는 3 x 3이고 "열"이 격자 벡터다
 # (ASE의 cell은 행이 격자 벡터이므로 H = cell'). 이미지 이동은 H * S(S는 정수 3-벡터)이고, 변형은 r → (I + ε) r, H → (I + ε) H다.
 # 정밀도: 학생 모델은 모두 Float64로 계산한다(파이썬의 SchNet 학생은 float32였다).
-using LinearAlgebra, Random, Statistics, Printf, Serialization
+using LinearAlgebra, Random, Statistics, Printf, Serialization, SparseArrays
 using Lux, Zygote, ForwardDiff, NNlib
 import Optimisers
 using PythonCall
@@ -162,7 +162,7 @@ end
 "§10.2의 공용 자료 data/102_si8.npz(8원자 Si 셀 600개, 앞 400개가 학습). R, F: 3 x 8 x n, H, S: 3 x 3 x n"
 function load_si8()
     d = np.load(joinpath(DATA, "102_si8.npz"))
-    n = pyconvert(Int, d["n_train"])
+    n = pyconvert(Int, d["n_train"].item())   # 0차원 ndarray는 .item()으로 꺼낸다
     R = permutedims(jarr(Float64, d["R"]), (3, 2, 1)); H = permutedims(jarr(Float64, d["cell"]), (3, 2, 1))
     F = permutedims(jarr(Float64, d["F"]), (3, 2, 1)); S = permutedims(jarr(Float64, d["S"]), (2, 3, 1))
     E = jarr(Float64, d["E"])
@@ -248,13 +248,28 @@ function strained_geometry(g::BatchGraph, x)
     Hd = [(I3 .+ sym[b]) * g.H[:, :, b] for b in 1:g.nb]                             # H → (I + ε) H
     return Rd, Hd
 end
-"간선 벡터 r_ij = R_j - R_i + H S_ij (3 x E). NNlib.gather의 역전파는 scatter다."
+"간선 벡터 r_ij = R_j - R_i + H S_ij (3 x E). 모으기의 역전파는 흩기다."
 function edge_vectors(g::BatchGraph, R, Hd)
     sh = reduce(hcat, [Hd[b] * g.S[:, g.erange[b]] for b in 1:g.nb])
-    return NNlib.gather(R, g.j) .- NNlib.gather(R, g.i) .+ sh
+    return gat(R, g.j) .- gat(R, g.i) .+ sh
 end
+# 모으기(gather)와 흩기(scatter). 힘을 학습할 때는 Lux가 안쪽 기울기를 ForwardDiff-over-Zygote로 계산한다.
+# 이때 LuxLib이 Dual 배열용으로 정의한 NNlib.gather/scatter를 Zygote가 broadcast로 미분하면
+# Dual 태그 순서 오류가 난다(Lux 1.32, Zygote 0.7). 그래서 모으기는 인덱싱으로, 흩기는 희소 one-hot 행렬 곱으로 계산한다.
+"마지막 축에서 idx 위치를 모은다 (NNlib.gather와 같음)"
+gat(x, idx) = x[ntuple(_ -> Colon(), ndims(x) - 1)..., idx]
+"E x n one-hot 희소 행렬: 간선(또는 원자) e → 묶음 idx[e]"
+onehot_sp(idx, n) = sparse(collect(1:length(idx)), collect(idx), ones(length(idx)), length(idx), n)
+"A * S (S는 상수 희소 행렬). S 쪽 기울기는 만들지 않는다"
+mulS(A, S) = A * S
+Zygote.@adjoint mulS(A, S) = A * S, Δ -> (Δ * transpose(S), nothing)
 "간선 → 원자 합(index_add): F x E → F x N (마지막 축 기준)"
-scatter_to(x, idx, n) = NNlib.scatter(+, x, idx; dstsize = (size(x)[1:end-1]..., n))
+function scatter_to(x, idx, n)
+    S = Zygote.@ignore onehot_sp(idx, n)
+    return reshape(mulS(reshape(x, :, length(idx)), S), size(x)[1:end-1]..., n)
+end
+"벡터 v를 묶음 idx별로 더한다 (길이 n)"
+segsum(v, idx, n) = vec(mulS(reshape(v, 1, :), Zygote.@ignore(onehot_sp(idx, n))))
 
 # ================================================================ 4. 학생 모델 (Lux.jl)
 cosine_cutoff(r, rc) = 0.5 .* (cos.(pi .* r ./ rc) .+ 1) .* (r .< rc)
@@ -282,7 +297,7 @@ function (blk::InvBlock)(x, ps, st)
     h, w, g = x
     W, _ = blk.filt(w, ps.filt, st.filt)
     a, _ = blk.lin(h, ps.lin, st.lin)
-    m = scatter_to(W .* NNlib.gather(a, g.j), g.i, g.N)            # m_i = Σ_j filt(w_ij) ⊙ lin(h)_j
+    m = scatter_to(W .* gat(a, g.j), g.i, g.N)            # m_i = Σ_j filt(w_ij) ⊙ lin(h)_j
     u, _ = blk.upd(m, ps.upd, st.upd)
     return (h .+ u, w, g), st
 end
@@ -307,10 +322,10 @@ function (blk::EqBlock)(x, ps, st)
     s, v, w, rhat, g = x
     F = size(s, 1); N = g.N; E = length(g.i)
     p, _ = blk.phi(s, ps.phi, st.phi); fw, _ = blk.filt(w, ps.filt, st.filt)
-    y = NNlib.gather(p, g.j) .* fw                                      # 3F x E
+    y = gat(p, g.j) .* fw                                      # 3F x E
     ds, dvv, dvs = y[1:F, :], y[F+1:2F, :], y[2F+1:3F, :]
     s = s .+ scatter_to(ds, g.i, N)
-    dv = NNlib.gather(v, g.j) .* reshape(dvv, F, 1, E) .+ reshape(rhat, 1, 3, E) .* reshape(dvs, F, 1, E)
+    dv = gat(v, g.j) .* reshape(dvv, F, 1, E) .+ reshape(rhat, 1, 3, E) .* reshape(dvs, F, 1, E)
     v = v .+ scatter_to(dv, g.i, N)
     Uv = vlinear(blk.U, ps.U, st.U, v); Vv = vlinear(blk.V, ps.V, st.V, v)
     a, _ = blk.upd(vcat(s, reshape(sum(abs2, Vv; dims = 2), F, N)), ps.upd, st.upd)   # |V v_i|²에 결합각이 들어 있다 (식 10.2.4)
@@ -365,7 +380,7 @@ function (m::Student)(x, ps, st)
     s, _ = features(m, ps, st, x)
     e, _ = m.out(s, ps.out, st.out)
     eps_i = vec(e) .* m.escale[] .+ m.e0[]
-    return NNlib.scatter(+, eps_i, g.batch; dstsize = (g.nb,)), st
+    return segsum(eps_i, g.batch, g.nb), st
 end
 "직접 힘 머리: F_i = W v_i (3 x N). 어떤 에너지의 기울기도 아니다."
 function direct_forces(m::Student, ps, st, x)
@@ -386,7 +401,7 @@ function (blk::SchBlock)(x, ps, st)
     h, rbf, fc, g = x
     W, _ = blk.filt(rbf, ps.filt, st.filt)
     a, _ = blk.in2f(h, ps.in2f, st.in2f)
-    m = scatter_to(NNlib.gather(a, g.j) .* (W .* fc), g.i, g.N)
+    m = scatter_to(gat(a, g.j) .* (W .* fc), g.i, g.N)
     o, _ = blk.out(m, ps.out, st.out)
     return (h .+ o, rbf, fc, g), st
 end
@@ -415,7 +430,7 @@ function (m::SchNetS)(x, ps, st)
     h, _ = m.emb(g.Z .+ 1, ps.emb, st.emb)                                # 원자번호 Z는 0부터 센 행(파이썬과 같다)
     (h, _, _, _), _ = m.blocks((h, gaussian_rbf(r, m.mu, m.gamma), reshape(cosine_cutoff(r, m.rc), 1, :), g), ps.blocks, st.blocks)
     e, _ = m.head(h, ps.head, st.head)
-    return NNlib.scatter(+, vec(e) .+ m.e_shift[g.Z], g.batch; dstsize = (g.nb,)), st
+    return segsum(vec(e) .+ m.e_shift[g.Z], g.batch, g.nb), st
 end
 cutoff(m::Student) = m.rc
 cutoff(m::SchNetS) = m.rc

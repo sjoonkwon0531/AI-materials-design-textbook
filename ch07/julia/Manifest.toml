@@ -2,7 +2,7 @@
 
 julia_version = "1.13.4"
 manifest_format = "2.1"
-project_hash = "6524b4ce52e9c3ab6ca3b150a6a6e02ee2949d92"
+project_hash = "573b197ecf38c51d9156c73f11f3e38c46aa12a7"
 
 [[deps.ADTypes]]
 deps = ["PrecompileTools"]
@@ -675,10 +675,10 @@ version = "0.16.15"
 
 [[deps.ForwardDiff]]
 deps = ["CommonSubexpressions", "DiffResults", "DiffRules", "LinearAlgebra", "LogExpFunctions", "NaNMath", "Preferences", "Printf", "Random", "SpecialFunctions"]
-git-tree-sha1 = "d05cff742a91d2c7aff386962aee5982bf57c096"
+git-tree-sha1 = "a6fec1fb7a2cebfa203852419f4f7bdd3f9a8b38"
 registries = "General"
 uuid = "f6369f11-7733-5829-9624-2563aa707210"
-version = "1.4.8"
+version = "1.5.0"
 weakdeps = ["StaticArrays"]
 
     [deps.ForwardDiff.extensions]
@@ -1075,10 +1075,10 @@ version = "3.3.5+1"
 
 [[deps.LineSearches]]
 deps = ["LinearAlgebra", "NLSolversBase", "NaNMath", "Printf"]
-git-tree-sha1 = "a09a85e94e681def2446752cddaf9401a4d82b6d"
+git-tree-sha1 = "9ea3422d03222c6de679934d1c08f0a99405aa03"
 registries = "General"
 uuid = "d3d80556-e9d4-5f37-9878-2ab0fcc64255"
-version = "7.8.2"
+version = "7.5.1"
 
 [[deps.LinearAlgebra]]
 deps = ["Libdl", "OpenBLAS_jll", "libblastrampoline_jll"]
@@ -1389,11 +1389,11 @@ uuid = "14a3606d-f60d-562e-9121-12d972cd8159"
 version = "2026.11.5"
 
 [[deps.NLSolversBase]]
-deps = ["ADTypes", "DifferentiationInterface", "FiniteDiff", "LinearAlgebra"]
-git-tree-sha1 = "f96d38936d92d610318dec4d3b5ef37b0373c20f"
+deps = ["ADTypes", "DifferentiationInterface", "Distributed", "FiniteDiff", "ForwardDiff"]
+git-tree-sha1 = "25a6638571a902ecfb1ae2a18fc1575f86b1d4df"
 registries = "General"
 uuid = "d41bc354-129a-5804-8e4c-c37616107c6c"
-version = "8.0.1"
+version = "7.10.0"
 
 [[deps.NNlib]]
 deps = ["Adapt", "Atomix", "BFloat16s", "ChainRulesCore", "GPUArraysCore", "KernelAbstractions", "LinearAlgebra", "PrecompileTools", "Random", "ScopedValues", "Statistics"]
@@ -1504,11 +1504,11 @@ uuid = "efe28fd5-8261-553b-a9e1-b2916fc3738e"
 version = "0.5.6+0"
 
 [[deps.Optim]]
-deps = ["ADTypes", "EnumX", "FillArrays", "LineSearches", "LinearAlgebra", "NLSolversBase", "NaNMath", "PositiveFactorizations", "Printf", "SparseArrays", "Statistics"]
-git-tree-sha1 = "81f338ad984b25bc82471db4d235e7b8bf21b8d6"
+deps = ["Compat", "EnumX", "FillArrays", "ForwardDiff", "LineSearches", "LinearAlgebra", "NLSolversBase", "NaNMath", "PositiveFactorizations", "Printf", "SparseArrays", "StatsBase"]
+git-tree-sha1 = "48968edaf014f67e58fe4c8a4ce72d392aed3294"
 registries = "General"
 uuid = "429524aa-4258-5aef-a3af-852621145aeb"
-version = "2.3.2"
+version = "1.13.3"
 
     [deps.Optim.extensions]
     OptimMOIExt = "MathOptInterface"

@@ -83,7 +83,20 @@ julia --project=. -e 'using Pkg; Pkg.instantiate()'
 julia --project=. lab_6_1.jl
 ```
 
-Ch.7과 Ch.8의 Julia Lab은 Python Lab과 똑같은 표본을 쓰도록 학습·시험 인덱스를 파일에서 읽습니다(NumPy와 Julia의 난수열이 다르기 때문). 이 파일은 저장소의 `ch07/data/splits/`에 들어 있고, `ch07/data/export_splits.py`로 다시 만들 수 있습니다. `ch06/julia/dscribe_bridge.jl`은 다른 Lab이 `include`하는 도우미 파일이라 단독으로 실행하지 않습니다.
+Ch.7과 Ch.8의 Julia Lab은 Python Lab과 똑같은 표본을 쓰도록 학습·시험 인덱스를 파일에서 읽습니다(NumPy와 Julia의 난수열이 다르기 때문). 이 파일은 저장소의 `ch07/data/splits/`에 들어 있습니다. Julia가 읽는 데이터 표(`ch07/data/magpie_expt_gap.csv`, `67_features_clean.csv`, `xrd_peaks.csv`, `xrd_labels.csv`)도 함께 들어 있습니다. Python Lab은 같은 데이터를 Parquet과 NPZ로 읽습니다. 인덱스와 데이터 표는 모두 `ch07/data/export_splits.py`로 다시 만들 수 있습니다.
+
+Python 모델을 부르는 Julia Lab(Ch.7의 `lab_7_22.jl`, Ch.10)은 PythonCall로 위의 Python 환경을 씁니다. conda를 따로 설치하지 않도록 다음처럼 실행합니다.
+
+```bash
+cd ch10/julia
+JULIA_CONDAPKG_BACKEND=Null JULIA_PYTHONCALL_EXE=$MLIP_PY_A julia --project=. lab_10_2.jl
+```
+
+`lab_10_5.jl`은 MLIP 네 개를 모델마다 따로 실행한 뒤 결과를 합칩니다. `mace`와 `chgnet`은 `MLIP_PY_A`로, `sevennet`과 `mattersim`은 `MLIP_PY_B`로 실행하고, 마지막에 `julia --project=. lab_10_5.jl merge`를 실행합니다.
+
+Optim.jl은 1.x로 고정했습니다(`[compat]`). 2.x에서는 Ch.9 Lab이 쓰는 `only_fg!`가 없어졌습니다.
+
+다음 파일은 다른 Lab이 `include`하는 도우미 파일이라 단독으로 실행하지 않습니다. `ch06/julia/dscribe_bridge.jl`, `ch07/julia/ch7_common.jl`, `equiv_layers.jl`, `flux_tools.jl`, `mlip_common.jl`, `models77.jl`, `so3.jl`, `ch08/julia/bandgap83.jl`, `ch8_common.jl`, `film_env.jl`, `furnace.jl`, `sam.jl`, `ch09/julia/ch9_common.jl`, `fno.jl`, `pinn_common.jl`, `ch10/julia/ch10_common.jl`, `ch10_common2.jl`.
 
 ## 저장소에 넣지 않은 것
 

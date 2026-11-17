@@ -145,7 +145,7 @@ function main()
         k = split(pyconvert(String, kv[0]), ".")[1]; groups[k] = get(groups, k, 0) + pyconvert(Int, kv[1].numel())
     end
     @printf("MACE-MP-0 small: %d parameters %s; r_max %.1f A, %d interaction layers, E0(Si) %.4f eV\n", sum(values(groups)), string(groups),
-            pyconvert(Float64, base.r_max), pyconvert(Int, base.num_interactions), pyconvert(Float64, base.atomic_energies_fn.atomic_energies[SI]))
+            pyconvert(Float64, base.r_max.item()), pyconvert(Int, base.num_interactions.item()), pyconvert(Float64, base.atomic_energies_fn.atomic_energies[SI].item()))
     @printf("MPtrj (CHGNet paper numbers): %.1f force vectors per configuration on average\n", 49295660 / 1580395)
     @printf("GFN2-xTB reference EOS: a0 %.4f A, B %.1f GPa\n", ref["a0"], ref["B_GPa"])
     z0 = pycopy.deepcopy(base)
