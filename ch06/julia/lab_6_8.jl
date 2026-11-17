@@ -1,6 +1,7 @@
 # Lab 6.8 (Julia) — Magpie 공간의 t-SNE·UMAP: 무엇이 보존되고 무엇이 사라지는가
-# 파이썬 labs/64_embed.py 대응. t-SNE는 TSne.jl(정확한 O(n^2) 구현; sklearn의 Barnes-Hut보다 느려
-# 4,601점에서 한 번에 수 분 걸린다), UMAP은 UMAP.jl(0.1 계열 API: umap(X, d; n_neighbors, min_dist),
+# 파이썬 labs/64_embed.py 대응. t-SNE는 TSne.jl(정확한 O(n^2) 구현; sklearn의 Barnes-Hut과 달리 근사가 없어
+# 4,601점 전체에서는 반복 1,000회에 한 번 80분쯤 걸린다). 그래서 t-SNE는 무작위로 뽑은 1,000점에서만 돌리고,
+# 같은 1,000점에 PCA와 UMAP도 돌려 나란히 비교한다(한 번에 약 4분). 전체 4,601점의 표는 PCA와 UMAP만 있다. UMAP은 UMAP.jl(0.1 계열 API: umap(X, d; n_neighbors, min_dist),
 # X는 열 = 관측). trustworthiness, k-NN 겹침, Procrustes 불일치는 정의대로 직접 계산한다.
 # 임베딩은 초기화와 최적화가 모두 난수에 의존하므로 모든 숫자가 통계적으로만 일치한다(PCA 행은 예외로
 # 결정론적이지만 10-NN 정확도는 무작위 KFold에 의존한다). 비교할 것은 표의 순서와 자릿수다.
@@ -49,6 +50,7 @@ end
 
 pca2(Z) = (Zc = Z .- mean(Z; dims = 1); Zc * svd(Zc).V[:, 1:2])
 run_tsne(Z, perp) = tsne(Z, 2, 0, 1000, Float64(perp); progress = false)      # 입력: 행 = 관측
+const N_TSNE = 1000                                                          # t-SNE에 쓰는 부분집합 크기
 run_umap(Z, k; seed = 0) = (Random.seed!(seed); permutedims(umap(permutedims(Z), 2; n_neighbors = k, min_dist = 0.1)))
 
 function main()
@@ -58,24 +60,31 @@ function main()
     @printf("n = %d, p = %d\n", n, p)
     emb = Dict{String,Matrix{Float64}}()
     emb["PCA"] = pca2(Z)
-    t = time(); emb["t-SNE (perp 30)"] = run_tsne(Z, 30); @printf("t-SNE time %.1f s\n", time() - t)
     t = time(); emb["UMAP (k=15)"] = run_umap(Z, 15); @printf("UMAP time %.1f s\n", time() - t)
 
-    sub = randperm(MersenneTwister(0), n)[1:1000]; dh = pdist(Z[sub, :])
-    NH = knn_ids(Z, 10)
+    sub = randperm(MersenneTwister(0), n)[1:N_TSNE]; Zs = Z[sub, :]; ms = metal[sub]; dh = pdist(Zs)
+    NH = knn_ids(Z, 10); NHs = knn_ids(Zs, 10)
+    # 한 행: trustworthiness, k-NN 겹침, 10-NN 정확도, 거리 순위 상관(부분집합 1,000점의 쌍)
+    row(k, Zr, NHr, E, m, Esub) = @printf("%-18s %10.3f %14.3f %10.3f %15.3f\n", k, trustworthiness(Zr, E), knn_overlap(NHr, E),
+                                          knn_cv_acc(E, m), corspearman(dh, pdist(Esub)))
     @printf("\n10-NN metal/non-metal accuracy in the %d-D standardized space (random 5-fold) = %.3f\n", p, knn_cv_acc(Z, metal))
-    @printf("%-18s %10s %14s %10s %15s\n", "embedding", "trust(10)", "10-NN overlap", "10-NN acc", "Spearman(dist)")
-    for k in ("PCA", "t-SNE (perp 30)", "UMAP (k=15)")
-        E = emb[k]
-        @printf("%-18s %10.3f %14.3f %10.3f %15.3f\n", k, trustworthiness(Z, E), knn_overlap(NH, E),
-                knn_cv_acc(E, metal), corspearman(dh, pdist(E[sub, :])))
+    @printf("%-18s %10s %14s %10s %15s\n", "embedding (all)", "trust(10)", "10-NN overlap", "10-NN acc", "Spearman(dist)")
+    for k in ("PCA", "UMAP (k=15)")
+        row(k, Z, NH, emb[k], metal, emb[k][sub, :])
     end
 
-    println("\n=== perplexity / n_neighbors sweep (t-SNE, UMAP; seed 0) ===")
+    t = time(); Ets = run_tsne(Zs, 30); @printf("\nt-SNE time on %d points %.1f s\n", N_TSNE, time() - t)
+    @printf("10-NN accuracy in the %d-D space, same %d points = %.3f\n", p, N_TSNE, knn_cv_acc(Zs, ms))
+    @printf("%-18s %10s %14s %10s %15s\n", "embedding ($(N_TSNE))", "trust(10)", "10-NN overlap", "10-NN acc", "Spearman(dist)")
+    for (k, E) in (("PCA", pca2(Zs)), ("t-SNE (perp 30)", Ets), ("UMAP (k=15)", run_umap(Zs, 15)))
+        row(k, Zs, NHs, E, ms, E)
+    end
+
+    println("\n=== perplexity / n_neighbors sweep (t-SNE on the $(N_TSNE)-point subset, UMAP on all points; seed 0) ===")
     for perp in (5, 100)
-        E = run_tsne(Z, perp)
+        E = run_tsne(Zs, perp)
         @printf("t-SNE perp %3d: trust = %.3f, 10-NN overlap = %.3f, Spearman(dist) = %.3f\n",
-                perp, trustworthiness(Z, E), knn_overlap(NH, E), corspearman(dh, pdist(E[sub, :])))
+                perp, trustworthiness(Zs, E), knn_overlap(NHs, E), corspearman(dh, pdist(E)))
     end
     for kk in (5, 50)
         E = run_umap(Z, kk)
