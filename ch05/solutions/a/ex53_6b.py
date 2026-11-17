@@ -1,6 +1,8 @@
 """Ex 5.3.6 diagnostic: the Lab ZGB picks the reacting neighbour by a cyclic scan from a random start,
 which is not uniform when several neighbours qualify (e.g. two adjacent O's: 3/4 vs 1/4).
-Here: same ZGB with a uniform choice among qualifying neighbours, compared at y = 0.45, L = 64."""
+Here: same ZGB with a uniform choice among qualifying neighbours, compared at y = 0.45, L = 64.
+Note: labs/53_lattice.py now chooses uniformly as well, so the two rows of the output agree.
+The output written before that change (cyclic scan) gave theta_O = 0.7303 at y = 0.45."""
 import sys, importlib
 import numpy as np
 from numba import njit
@@ -54,6 +56,6 @@ def zgb_uniform(L, y, n_warm, n_meas, seed):
 for y in (0.45, 0.50):
     a = np.array([zgb(64, y, 1500, 1500, sd)[:3] for sd in (1, 2, 3)])
     b = np.array([zgb_uniform(64, y, 1500, 1500, sd) for sd in (1, 2, 3)])
-    for name, arr in (("ZGB cyclic-scan choice (Lab)", a), ("ZGB uniform choice          ", b)):
+    for name, arr in (("ZGB Lab zgb()               ", a), ("ZGB uniform choice          ", b)):
         m = arr.mean(0); e = arr.std(0, ddof=1) / np.sqrt(3)
         print(f"y={y:.2f} {name}: theta_O = {m[1]:.4f} +/- {e[1]:.4f}, theta_CO = {m[0]:.4f} +/- {e[0]:.4f}, R_CO2 = {m[2]:.4f} +/- {e[2]:.4f}")
