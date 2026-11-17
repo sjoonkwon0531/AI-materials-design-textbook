@@ -91,6 +91,7 @@ function finetune!(model, frames, params; steps = 40, lr = 1e-3, bs = 4, seed = 
             g["lr"] = cosine_lr(lr, s, steps; eta_min = 0.05lr)
         end
         opt.zero_grad(); loss.backward(); opt.step()
+        GC.gc(false)   # 파이썬 쪽 텐서와 계산 그래프는 Julia GC가 래퍼를 거둘 때 풀린다. 매 단계 거두지 않으면 한 단계에 약 20 MB씩 쌓인다
     end
     for p in model.parameters()
         p.requires_grad_(true)
