@@ -1,0 +1,16 @@
+=== Part A: forward problem, soft vs hard constraints (2-32-32-32-1 tanh, 1000 collocation points) ===
+  Lux forward vs flat-θ forward: 5.6e-17; jet vs nested ForwardDiff: 1.2e-16, 1.7e-16
+  soft seed 0: rel L2 after Adam 2.70e-03 -> after L-BFGS 6.39e-04, max err 3.41e-03, 73.2 s
+  soft seed 1: rel L2 after Adam 2.15e-03 -> after L-BFGS 7.02e-04, max err 2.62e-03, 58.2 s
+  soft seed 2: rel L2 after Adam 3.31e-03 -> after L-BFGS 8.60e-04, max err 3.04e-03, 59.4 s
+  soft: rel L2 = 7.33e-04 +/- 9.3e-05, max = 3.03e-03, 63.6 s (3 seeds)
+  hard seed 0: rel L2 after Adam 1.03e-02 -> after L-BFGS 1.15e-04, max err 3.30e-04, 58.1 s
+  hard seed 1: rel L2 after Adam 1.09e-02 -> after L-BFGS 1.03e-04, max err 3.13e-04, 55.9 s
+  hard seed 2: rel L2 after Adam 1.25e-02 -> after L-BFGS 1.45e-04, max err 3.33e-04, 56.2 s
+  hard: rel L2 = 1.21e-04 +/- 1.8e-05, max = 3.25e-04, 56.7 s (3 seeds)
+=== Crank-Nicolson baseline (tridiagonal LU) ===
+  Nx=Nt=  25: rel L2 5.23e-04, max err 4.35e-04, 0.02 ms
+  Nx=Nt=  50: rel L2 1.31e-04, max err 1.09e-04, 0.06 ms
+  Nx=Nt= 100: rel L2 3.28e-05, max err 2.72e-05, 0.19 ms
+  Nx=Nt= 200: rel L2 8.22e-06, max err 6.80e-06, 0.77 ms
+  Nx=Nt= 400: rel L2 2.06e-06, max err 1.70e-06, 3.13 ms

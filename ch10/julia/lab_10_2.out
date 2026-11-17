@@ -1,0 +1,16 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+(A) stress: autodiff vs central finite differences (h = 1e-4), test cell 0
+  MACE-MP-0 : sigma_xx  -0.9063 GPa (AD)  -0.9063 (FD); max |AD-FD| over 9 components = 5.3e-07 GPa
+  EqNet     : max |AD-FD| = 3.5e-09 GPa  (symmetric: max|S-S^T| = 0.0e+00 GPa)
+  oracle stress over test cells: mean |sigma_ab| = 3.21 GPa
+(B) what the labels buy (test: 200 cells; E in meV/atom, F in meV/A)
+  E only                 N= 10 | E MAE    26.8 (offset    +7.9, after shift  26.6) | F MAE   809 | S MAE  2.13 GPa | cpu   15 s
+  E+F                    N= 10 | E MAE     5.1 (offset    +0.8, after shift   4.9) | F MAE    65 | S MAE  0.70 GPa | cpu   76 s
+  E only                 N= 40 | E MAE    12.1 (offset    +1.6, after shift  12.3) | F MAE   382 | S MAE  1.11 GPa | cpu   10 s
+  E+F                    N= 40 | E MAE     7.7 (offset    +1.9, after shift   7.4) | F MAE    63 | S MAE  0.97 GPa | cpu   40 s
+  E only                 N=160 | E MAE     7.1 (offset    +0.2, after shift   7.1) | F MAE   194 | S MAE  0.82 GPa | cpu    9 s
+  E+F                    N=160 | E MAE    14.8 (offset    +2.3, after shift  14.7) | F MAE    51 | S MAE  1.86 GPa | cpu   43 s
+  F only                 N=160 | E MAE  5800.8 (offset -5800.8, after shift  37.5) | F MAE    43 | S MAE  4.19 GPa | cpu   42 s
+  E+F, F noise 0.2 eV/A  N=160 | E MAE    15.1 (offset    +3.4, after shift  14.7) | F MAE    52 | S MAE  1.77 GPa | cpu   42 s
+  E+F+S                  N= 40 | E MAE     3.0 (offset    -0.9, after shift   3.0) | F MAE    69 | S MAE  0.52 GPa | cpu   52 s
+  labels per 8-atom cell: energy 1, forces 24, stress 6 -> E+F carries 25x the scalars of E only

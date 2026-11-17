@@ -1,0 +1,25 @@
+=== Part A: Ch.2 network X1 -(1001.5)-> X2 <-(0.5/1.0)-> X3 ===
+N0=1000, trajectories=400, mean #events per trajectory=6227
+   t    <x3>_SSA          exact(expm)   |diff|/sem
+ 0.01  0.0044 +/- 0.0001   0.0045       0.42
+ 0.50  0.1764 +/- 0.0006   0.1756       1.35
+ 1.00  0.2586 +/- 0.0007   0.2588       0.33
+ 2.00  0.3165 +/- 0.0007   0.3167       0.24
+ 4.00  0.3341 +/- 0.0007   0.3325       2.15
+ 8.00  0.3342 +/- 0.0007   0.3333       1.13
+fluctuations of x3 = X3/N at t=8 (stationary binomial theory sqrt(p(1-p)/N), p=1/3):
+  N=   100: mean=0.3304  std=0.0459  theory=0.0471
+  N=  1000: mean=0.3338  std=0.0142  theory=0.0149
+  N= 10000: mean=0.3332  std=0.0047  theory=0.0047
+=== Part B: stiffness as event count (X1 <-> X2 fast, X2 <-> X3 slow) ===
+  k_fast=   10.0: stiffness S=    16.4  SSA events/traj=    68716  BDF f-evals= 292
+  k_fast=  100.0: stiffness S=   160.4  SSA events/traj=   658977  BDF f-evals= 275
+  k_fast= 1000.0: stiffness S=  1600.4  SSA events/traj=  6570531  BDF f-evals= 276
+=== Part C: Schloegl model (bistable), volume factor s=4 ===
+  deterministic fixed points: [21.4, 61.9, 141.7] (low/high stable, middle unstable)
+  ODE from x0=59.9: x(50)=21.4
+  ODE from x0=63.9: x(50)=141.7
+  SSA from x0=62, t_max=2000, seed=42: events=1395092, wall=0.06 s
+  fraction of time above unstable point=0.257, basin-to-basin transitions=22
+  mean dwell time per visit=87.0 (time units)
+  mean on low branch=22.7, mean on high branch=131.1

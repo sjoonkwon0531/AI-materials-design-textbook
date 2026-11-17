@@ -1,0 +1,14 @@
+networks: 100 solvable; molecules 126, levels 7
+exact DP optimum (product of yields): mean 0.119, median 0.082; molecules DP had to expand: mean 77.3
+greedy (highest-yield step each time): success 0.11, value/optimum 0.067, optimal 0.03
+  B=   10 random rollouts  : success 0.52, value/optimum 0.247 +/- 0.037, optimal 0.12, queried 24.8
+  B=   10 MCTS (UCT c=0.4) : success 0.54, value/optimum 0.253 +/- 0.035, optimal 0.10, queried 26.3
+  B=   30 random rollouts  : success 0.71, value/optimum 0.427 +/- 0.042, optimal 0.24, queried 36.5
+  B=   30 MCTS (UCT c=0.4) : success 0.76, value/optimum 0.463 +/- 0.040, optimal 0.24, queried 37.8
+  B=  100 random rollouts  : success 0.83, value/optimum 0.624 +/- 0.041, optimal 0.40, queried 45.8
+  B=  100 MCTS (UCT c=0.4) : success 0.86, value/optimum 0.658 +/- 0.040, optimal 0.48, queried 45.3
+  B=  300 random rollouts  : success 0.87, value/optimum 0.737 +/- 0.040, optimal 0.61, queried 50.1
+  B=  300 MCTS (UCT c=0.4) : success 0.91, value/optimum 0.766 +/- 0.037, optimal 0.64, queried 48.2
+  B= 1000 random rollouts  : success 0.95, value/optimum 0.850 +/- 0.029, optimal 0.72, queried 52.3
+  B= 1000 MCTS (UCT c=0.4) : success 0.93, value/optimum 0.818 +/- 0.034, optimal 0.71, queried 49.7
+  paired difference MCTS - random at B=300: 0.029 +/- 0.019 (SE); MCTS better on 0.21, worse on 0.10

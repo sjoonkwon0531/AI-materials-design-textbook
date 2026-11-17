@@ -1,0 +1,9 @@
+residual routine on the exact Cole-Hopf solution: max|r| = 1.3e-13
+Burgers nu=0.02, T=0.25: solver N=256, dt=1e-3 (5.74 ms per trajectory); data loss at s=64, residual at s=128
+operator [data,  25 labelled]: test rel-L2 0.1312 (median 0.1219)  residual MSE   65.790   (36 s)
+operator [both,  25 labelled]: test rel-L2 0.0712 (median 0.0566)  residual MSE    1.071   (95 s)
+operator [pde ,   0 labelled]: test rel-L2 0.1222 (median 0.1004)  residual MSE    1.439   (66 s)
+fine-tune from [data25] (6 instances, 200 steps): rel-L2 0.1753 -> 0.0879   residual MSE 83.24 -> 9.262
+fine-tune from [both25] (6 instances, 200 steps): rel-L2 0.0984 -> 0.0717   residual MSE 1.15 -> 0.036
+fine-tune from [pde0  ] (6 instances, 200 steps): rel-L2 0.1435 -> 0.0933   residual MSE 1.37 -> 0.048
+fine-tune from [random] (6 instances, 200 steps): rel-L2 0.8854 -> 0.1123   residual MSE 137.36 -> 2.422

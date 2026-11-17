@@ -1,0 +1,27 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+[mace] MACE-MP-0 (small): params 3847696, float64
+[mace] EOS Al: V0 =  16.646 A^3/atom (PBE  16.480)  B0 =   79.5 GPa (PBE   78.1)
+[mace] EOS Cu: V0 =  11.789 A^3/atom (PBE  11.951)  B0 =  142.1 GPa (PBE  141.3)
+[mace] EOS Ag: V0 =  18.100 A^3/atom (PBE  17.847)  B0 =   83.6 GPa (PBE   90.1)
+[mace] EOS Au: V0 =  18.103 A^3/atom (PBE  17.974)  B0 =  132.8 GPa (PBE  139.1)
+[mace] EOS Si: V0 =  20.399 A^3/atom (PBE  20.453)  B0 =   71.6 GPa (PBE   88.5)
+[mace] EOS Ge: V0 =  23.588 A^3/atom (PBE  23.915)  B0 =   56.2 GPa (PBE   59.1)
+[mace] EOS Mo: V0 =  15.733 A^3/atom (PBE  15.786)  B0 =  232.0 GPa (PBE  258.9)
+[mace] EOS W : V0 =  16.248 A^3/atom (PBE  16.139)  B0 =  282.5 GPa (PBE  301.6)
+[mace] elastic Si (strain 0.5%): C11 =   95.7, C12 =   57.9, C44 =   29.2 GPa; (C11+2C12)/3 =   70.5 vs B_EOS =   71.6
+[mace] elastic Si (strain 1.0%): C11 =   95.7, C12 =   58.0, C44 =   29.2 GPa; (C11+2C12)/3 =   70.6 vs B_EOS =   71.6
+[mace] elastic Cu (strain 0.5%): C11 =  167.4, C12 =  128.8, C44 =   69.2 GPa; (C11+2C12)/3 =  141.7 vs B_EOS =  142.1
+[mace] elastic Cu (strain 1.0%): C11 =  167.6, C12 =  128.9, C44 =   69.2 GPa; (C11+2C12)/3 =  141.8 vs B_EOS =  142.1
+[mace] Si: sigma_xx calc = +0.000 GPa, FD of E = +0.000 GPa; B from E'' (0.5%/1%) = 70.6/70.8 GPa
+[mace] Cu: sigma_xx calc = +0.006 GPa, FD of E = +0.006 GPa; B from E'' (0.5%/1%) = 141.7/142.0 GPa
+[mace] Si C44 clamped = 50.1 GPa, relaxed = 29.2 GPa, ratio 0.58, max ionic shift 0.0042 A at 1 % shear
+[mace] timing N=   8:   0.069 s CPU per energy+force call,   8.59 ms/atom
+[mace] timing N=  64:   0.492 s CPU per energy+force call,   7.68 ms/atom
+[mace] timing N= 216:   2.311 s CPU per energy+force call,  10.70 ms/atom
+[mace] equivariance (NaCl 64 at, 5 random rotations): max|dE|/N = 0.00e+00 eV, max|F(Qx)-QF(x)| = 7.57e-15 eV/A, max|dsigma| = 1.50e-14 GPa
+[mace] NVE Si64, dt 2.0 fs, 400 steps: <T> = 467 K, drift = +0.007 meV/atom/ps, std(E_tot) = 0.035 meV/atom, CPU 197 s
+[mace] dt = 1.0 fs, 400 steps (0.4 ps): drift (2nd half) = +0.000 meV/atom/ps, std = 0.011 meV/atom, E(end)-E(0) = +0.043 meV/atom, CPU 195 s
+[mace] dt = 2.0 fs, 200 steps (0.4 ps): drift (2nd half) = +0.002 meV/atom/ps, std = 0.044 meV/atom, E(end)-E(0) = +0.174 meV/atom, CPU 105 s
+[mace] dimer Si2: r_min = 2.3 A, E_min = -2.48 eV, E(1.0 A) = +20.22 eV, repulsive wall monotone below r_min: true
+[mace] dimer Cu2: r_min = 2.3 A, E_min = -1.15 eV, E(1.0 A) = +35.87 eV, repulsive wall monotone below r_min: false
+[mace] Si diamond compressed: V/V0=1.0: P=  -0.2 GPa, V/V0=0.9: P=   9.7 GPa, V/V0=0.8: P=  31.5 GPa, V/V0=0.7: P=  67.3 GPa, V/V0=0.6: P= 121.0 GPa

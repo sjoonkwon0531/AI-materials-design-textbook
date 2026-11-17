@@ -1,0 +1,31 @@
+n = 4601, p = 128
+UMAP time 11.0 s
+
+10-NN metal/non-metal accuracy in the 128-D standardized space (random 5-fold) = 0.868
+embedding (all)     trust(10)  10-NN overlap  10-NN acc  Spearman(dist)
+PCA                     0.832          0.150      0.813           0.693
+UMAP (k=15)             0.987          0.481      0.839           0.427
+
+t-SNE time on 1000 points 215.9 s
+10-NN accuracy in the 128-D space, same 1000 points = 0.827
+embedding (1000)    trust(10)  10-NN overlap  10-NN acc  Spearman(dist)
+PCA                     0.836          0.210      0.781           0.698
+t-SNE (perp 30)         0.977          0.611      0.814           0.487
+UMAP (k=15)             0.963          0.489      0.810           0.403
+
+=== perplexity / n_neighbors sweep (t-SNE on the 1000-point subset, UMAP on all points; seed 0) ===
+t-SNE perp   5: trust = 0.971, 10-NN overlap = 0.575, Spearman(dist) = 0.349
+t-SNE perp 100: trust = 0.972, 10-NN overlap = 0.583, Spearman(dist) = 0.544
+UMAP k =   5     : trust = 0.988, 10-NN overlap = 0.579, Spearman(dist) = 0.264
+UMAP k =  50     : trust = 0.966, 10-NN overlap = 0.324, Spearman(dist) = 0.418
+
+=== seed sensitivity (UMAP k=15) ===
+seed 0 vs seed 1: Procrustes disparity = 0.048, trust = 0.988
+seed 0 vs seed 2: Procrustes disparity = 0.066, trust = 0.988
+
+=== synthetic test: three Gaussian blobs in 10-D ===
+input (10-D)  : radius(B)/radius(A) =  4.07   dist(A,C)/dist(A,B) =  3.95
+t-SNE perp 30 : radius(B)/radius(A) =  1.00   dist(A,C)/dist(A,B) =  0.97
+UMAP k=15     : radius(B)/radius(A) =  0.88   dist(A,C)/dist(A,B) =  0.51
+PCA           : radius(B)/radius(A) =  4.15   dist(A,C)/dist(A,B) =  3.95
+time 928.1 s

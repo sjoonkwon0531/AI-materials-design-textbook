@@ -1,0 +1,20 @@
+step 10000: loss 0.0231
+step 20000: loss 0.0055
+step 30000: loss 0.0086
+prior fitting: 30000 steps x 256 tasks = 7.68 M tasks, 207 s, 142096 parameters
+
+in-prior test, 500 tasks (relative L2 error of the predicted u_T for a new u0):
+   K   per-mode LS   exact Bayes   network   |network - Bayes|
+   0      1.000        0.797       0.798        0.004
+   1      2.499        0.241       0.244        0.042
+   2      0.647        0.153       0.155        0.027
+   4      0.337        0.101       0.103        0.019
+   8      0.217        0.069       0.071        0.014
+  16      0.149        0.049       0.051        0.015   (K beyond the training range)
+  32      0.102        0.035       0.044        0.028   (K beyond the training range)
+cost per task (K = 8): grid Bayes 3.61 ms (240160 grid points), network 8.7 us  -> ratio 415
+
+out-of-prior test (K = 8, 500 tasks):
+   nu in [0.005, 0.015] (below the prior range)   LS 0.176 | Bayes(grid prior) 0.103 | network 0.099
+   c in [2, 3] (outside the prior range)          LS 0.217 | Bayes(grid prior) 0.927 | network 0.619
+   in prior (reference)                           LS 0.225 | Bayes(grid prior) 0.072 | network 0.073

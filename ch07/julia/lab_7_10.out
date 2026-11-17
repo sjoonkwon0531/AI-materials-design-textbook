@@ -1,0 +1,7 @@
+orientation of raw frames vs frame 0: median 130 deg
+model                          E MAE   F MAE | rotated test: E       F | |E(Qx)-E(x)| |F(Qx)-QF(x)|
+Transformer, raw frames        120.0   710.0 |           122.3   713.1 |         72.9          92.0   (72833 params)
+MLP(xyz), canonical             73.7   511.2 |         23494.0  2901.1 |      23489.1        2834.0   (20225 params)
+Transformer, canonical          80.0   319.7 |          9569.5  1234.4 |       9591.3        1182.1   (72833 params)
+Transformer, canonical +aug    131.2   674.3 |           147.2   688.1 |         78.5         150.4   (72833 params)
+SchNet, raw frames              26.1    79.3 |            26.1    79.4 |          0.0           0.0   (18337 params)

@@ -1,0 +1,5 @@
+initial mass = 0.3000000000
+final   mass = 0.3000000000
+max relative drift over run = 3.701e-16   (251 records)
+max |u(1) - u0| = 0.475   (numerical diffusion smears the square wave)
+CFL = 1.05: max|u(1)| = 6.149e+05   (nu > 1 -> unstable)

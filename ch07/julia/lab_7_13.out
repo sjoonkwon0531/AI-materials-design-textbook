@@ -1,0 +1,21 @@
+=== Part A: Y_l(R r) = D^l(R) Y_l(r), 1000 random vectors, 10 random rotations ===
+Float32  max error by l=0..2: 0.0e+00 3.6e-07 9.5e-07
+Float64  max error by l=0..2: 0.0e+00 1.8e-15 2.2e-15
+=== Part B: D^l is orthogonal; a direct sum is block diagonal ===
+  l=1: size (3, 3), ||D'D - I||_max = 2.2e-16, det = +1.000000
+  l=2: size (5, 5), ||D'D - I||_max = 2.2e-16, det = +1.000000
+  '2x0e+1x1o+1x2e' dim=10; max |off-block| = 0.0e+00;  sum_{l<=6}(2l+1) = 49 = (l_max+1)^2
+=== Part C: parity ===
+  l=0: max|Y(-r) - (-1)^l Y(r)| = 0.0e+00
+  l=1: max|Y(-r) - (-1)^l Y(r)| = 0.0e+00
+  l=2: max|Y(-r) - (-1)^l Y(r)| = 0.0e+00
+  D(inversion) for 1o: [-1.0, -1.0, -1.0]  for 1e: [1.0, 1.0, 1.0]
+  cross product under proper rotation: |err as 1o| = 1.1e-16, |err as 1e| = 6.8e-17
+  cross product under improper (rotation x inversion): |err as 1o| = 1.4e+00, |err as 1e| = 2.2e-16
+=== Part D: orthonormality ('integral' normalization Y/sqrt(4 pi)), Gauss-Legendre 40 x uniform phi 80 ===
+  Gram matrix 9 x 9 (l <= 2): max|G - I| = 1.1e-14
+=== Part E: SOAP-like coefficients of ethanol atom C1 (frame 0; 'integral' normalization) ===
+  l=0: |c_l| = 1.285386 (Legendre 1.285386), ||c_l(R) - D c_l||_max = 0.0e+00, ||c_l(R) - c_l||_max = 0.000
+  l=1: |c_l| = 0.508726 (Legendre 0.508726), ||c_l(R) - D c_l||_max = 2.2e-16, ||c_l(R) - c_l||_max = 0.396
+  l=2: |c_l| = 0.357865 (Legendre 0.357865), ||c_l(R) - D c_l||_max = 3.3e-16, ||c_l(R) - c_l||_max = 0.354
+  l=3: |c_l| = 1.832262 (Legendre addition theorem; components need l = 3 harmonics)

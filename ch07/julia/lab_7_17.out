@@ -1,0 +1,24 @@
+source train 2906, test 727 | target pool 400, test 568 (pnictogen compounds: 968)
+pretrained: params 132865, source-test MAE 0.384, zero-shot target-test MAE 0.618
+--- N = 50 labelled target compounds (mean +- sd over 5 subsets) ---
+  scratch       trainable  132865  target-test MAE 0.850 +- 0.044   source-test MAE 0.943
+  zero-shot     trainable       0  target-test MAE 0.618 +- 0.000   source-test MAE 0.384
+  linear probe  trainable     129  target-test MAE 0.617 +- 0.004   source-test MAE 0.397
+  full          trainable  132865  target-test MAE 0.623 +- 0.014   source-test MAE 0.413
+  LoRA r=1      trainable    1413  target-test MAE 0.616 +- 0.006   source-test MAE 0.396
+  LoRA r=2      trainable    2826  target-test MAE 0.631 +- 0.030   source-test MAE 0.397
+  LoRA r=4      trainable    5652  target-test MAE 0.614 +- 0.005   source-test MAE 0.386
+  LoRA r=8      trainable   11304  target-test MAE 0.633 +- 0.034   source-test MAE 0.419
+  adapter       trainable   10904  target-test MAE 0.641 +- 0.050   source-test MAE 0.418
+--- N = 200 labelled target compounds (mean +- sd over 5 subsets) ---
+  scratch       trainable  132865  target-test MAE 0.670 +- 0.012   source-test MAE 0.813
+  zero-shot     trainable       0  target-test MAE 0.618 +- 0.000   source-test MAE 0.384
+  linear probe  trainable     129  target-test MAE 0.607 +- 0.002   source-test MAE 0.441
+    Delta W (layer 2, 256x256): top-5 sv Float32[0.0, 0.0, 0.0, 0.0, 0.0], s1/s10 = NaN, energy top 1/4/8: NaN/NaN/NaN, ||dW||/||W|| = 0.0000
+  full          trainable  132865  target-test MAE 0.578 +- 0.033   source-test MAE 0.429
+  LoRA r=1      trainable    1413  target-test MAE 0.594 +- 0.008   source-test MAE 0.405
+  LoRA r=2      trainable    2826  target-test MAE 0.591 +- 0.014   source-test MAE 0.439
+    LoRA r=4 with adapters switched off: source-test MAE 0.384 (pretrained 0.384)
+  LoRA r=4      trainable    5652  target-test MAE 0.580 +- 0.030   source-test MAE 0.420
+  LoRA r=8      trainable   11304  target-test MAE 0.584 +- 0.023   source-test MAE 0.405
+  adapter       trainable   10904  target-test MAE 0.578 +- 0.027   source-test MAE 0.430

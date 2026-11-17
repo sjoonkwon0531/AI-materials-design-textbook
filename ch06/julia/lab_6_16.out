@@ -1,0 +1,27 @@
+feature pairs with |r|>0.95: 34 of 11026
+families: ["other" => 1536, "chalcogenide" => 1348, "oxide" => 1048, "pnictide" => 384, "halide" => 285]
+baseline: predict training mean -> MAE = 1.143 eV
+random 5-fold (seed 0)             MAE = 0.354 eV  (fold mean 0.354 +/- 0.014)
+random 5-fold (seed 1)             MAE = 0.364 eV  (fold mean 0.364 +/- 0.018)
+random 5-fold (seed 2)             MAE = 0.358 eV  (fold mean 0.358 +/- 0.017)
+group 5-fold (chemical system)     MAE = 0.369 eV  (fold mean 0.369 +/- 0.008)
+leave-one-cluster-out (k=5)        MAE = 0.669 eV  (fold mean 0.581 +/- 0.481)
+    cluster 0: n= 918  mean gap 1.53 eV  metal 19%  top family chalcogenide (81%)  MAE 0.57 eV
+    cluster 1: n= 721  mean gap 0.03 eV  metal 96%  top family other        (92%)  MAE 0.06 eV
+    cluster 2: n= 889  mean gap 0.15 eV  metal 90%  top family other        (82%)  MAE 0.23 eV
+    cluster 3: n= 817  mean gap 1.29 eV  metal 9%  top family chalcogenide (53%)  MAE 0.60 eV
+    cluster 4: n=1256  mean gap 1.49 eV  metal 56%  top family oxide        (76%)  MAE 1.45 eV
+leave-one-cluster-out (k=10)       MAE = 0.547 eV  (fold mean 0.508 +/- 0.346)
+    cluster 0: n= 509  mean gap 0.11 eV  metal 88%  top family other        (80%)  MAE 0.12 eV
+    cluster 1: n= 418  mean gap 0.20 eV  metal 88%  top family other        (84%)  MAE 0.23 eV
+    cluster 2: n= 508  mean gap 1.39 eV  metal 11%  top family chalcogenide (53%)  MAE 0.55 eV
+    cluster 3: n= 689  mean gap 1.52 eV  metal 62%  top family oxide        (80%)  MAE 1.13 eV
+    cluster 4: n= 295  mean gap 0.01 eV  metal 100%  top family other        (95%)  MAE 0.04 eV
+    cluster 5: n= 575  mean gap 1.85 eV  metal 11%  top family chalcogenide (85%)  MAE 0.56 eV
+    cluster 6: n= 169  mean gap 0.67 eV  metal 75%  top family pnictide     (43%)  MAE 0.80 eV
+    cluster 7: n= 383  mean gap 1.12 eV  metal 12%  top family chalcogenide (57%)  MAE 0.54 eV
+    cluster 8: n= 582  mean gap 1.49 eV  metal 44%  top family oxide        (67%)  MAE 0.93 eV
+    cluster 9: n= 473  mean gap 0.26 eV  metal 78%  top family other        (63%)  MAE 0.19 eV
+Magpie only   (p = 132): MAE raw = 0.412 eV, clipped at 0 = 0.403 eV
+all features  (p = 149): MAE raw = 0.364 eV, clipped at 0 = 0.354 eV
+wall 91 s

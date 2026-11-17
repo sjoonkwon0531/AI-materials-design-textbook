@@ -1,0 +1,9 @@
+=== T = T_c = 2.2692, observable |m|; tau in sweeps; t_ind = 2 tau x (wall time per sweep) ===
+   L | Metropolis: tau_int     t_ind[ms] |  Wolff: <C>/N   tau_int     t_ind[ms]
+   8 |             3.1+/-   0.1      0.002 |   0.647     1.02+/-0.01     0.0038
+  16 |            10.8+/-   0.4      0.028 |   0.546     1.21+/-0.02     0.0205
+  32 |            43.3+/-   3.1      0.436 |   0.459     1.41+/-0.03     0.0877
+  64 |           199.9+/-  31.0      8.392 |   0.386     1.55+/-0.04     0.3874
+ 128 |           577.0+/- 196.0     91.783 |   0.327     1.68+/-0.04     2.3831
+fit L=16..128: tau_Metropolis ~ L^1.94,  tau_Wolff(sweeps) ~ L^0.16
+L=128: Wolff delivers an independent sample 39x faster in wall time

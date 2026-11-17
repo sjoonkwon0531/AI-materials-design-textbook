@@ -1,0 +1,9 @@
+block 2: TP paths = 7, weights per edge = 1152, block params = 37760; model params = 59072
+hidden features of block 2: max |h(Rx) - D(R) h(x)| = 1.2e-15 (max |h| = 1.30)
+energy: max |E(Rx) - E(x)| = 8.9e-16 eV;  forces: max |F(Rx) - R F(x)| = 1.6e-15 eV/A
+inversion: max |h(-x) - D(P) h(x)| = 0.0e+00, |E(-x) - E(x)| = 0.0e+00, |F(-x) + F(x)| = 0.0e+00
+translation: |dE| = 6.7e-16, |dF| = 1.4e-15
+permutation of two H: |dE| = 2.2e-16, |F_perm - P F| = 2.2e-16
+Bessel x envelope (n = 1) at r = 4.5, 4.9, 4.99, 5.0 A: ["1.7e-03", "3.4e-06", "3.5e-10", "0.0e+00"]
+bug (xyz labelled 4x0e): |E(Rx) - E(x)| = 1.3e-01 eV (spread of E over 4 frames 4.9e-01), |F(Rx) - R F(x)|/|F| = 0.43
+float32: |E(Rx) - E(x)| = 1.9e-07

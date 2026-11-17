@@ -1,0 +1,33 @@
+[LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.000729 seconds.
+You can set `force_row_wise=true` to remove the overhead.
+And if memory is not enough, you can set `force_col_wise=true`.
+[LightGBM] [Info] Total Bins 13712
+[LightGBM] [Info] Number of data points in the train set: 3680, number of used features: 129
+[LightGBM] [Info] Start training from score 0.978340
+[LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.000786 seconds.
+You can set `force_row_wise=true` to remove the overhead.
+And if memory is not enough, you can set `force_col_wise=true`.
+[LightGBM] [Info] Total Bins 13663
+[LightGBM] [Info] Number of data points in the train set: 3681, number of used features: 128
+[LightGBM] [Info] Start training from score 0.976180
+[LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.000741 seconds.
+You can set `force_row_wise=true` to remove the overhead.
+And if memory is not enough, you can set `force_col_wise=true`.
+[LightGBM] [Info] Total Bins 13676
+[LightGBM] [Info] Number of data points in the train set: 3681, number of used features: 128
+[LightGBM] [Info] Start training from score 0.959362
+[LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.000768 seconds.
+You can set `force_row_wise=true` to remove the overhead.
+And if memory is not enough, you can set `force_col_wise=true`.
+[LightGBM] [Info] Total Bins 13696
+[LightGBM] [Info] Number of data points in the train set: 3681, number of used features: 129
+[LightGBM] [Info] Start training from score 0.992570
+[LightGBM] [Warning] Auto-choosing row-wise multi-threading, the overhead of testing was 0.000708 seconds.
+You can set `force_row_wise=true` to remove the overhead.
+And if memory is not enough, you can set `force_col_wise=true`.
+[LightGBM] [Info] Total Bins 13707
+[LightGBM] [Info] Number of data points in the train set: 3681, number of used features: 128
+[LightGBM] [Info] Start training from score 0.971271
+RF        MAE = 0.436  (per fold: 0.471, 0.438, 0.430, 0.414, 0.427)
+XGBoost   MAE = 0.408  (per fold: 0.437, 0.411, 0.404, 0.393, 0.396)
+LightGBM  MAE = 0.406  (per fold: 0.441, 0.411, 0.403, 0.381, 0.393)

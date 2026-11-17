@@ -1,0 +1,49 @@
+=== Part A: rattled Cu fcc 3x3x3 (N=108); rotate cell+atoms, translate+wrap, permute ===
+  raw Cartesian coordinates (after un-permuting): max|dx| = 14.095 A
+  SOAP (per atom)            dim =    252   max|d| = 3.9e-11   relative = 4.0e-13
+  ACSF (per atom)            dim =     17   max|d| = 1.8e-14   relative = 2.3e-15
+  MBTR k=2 (global)          dim =    200   max|d| = 2.9e-15   relative = 1.8e-14
+  MBTR k=3 (global)          dim =    200   max|d| = 4.7e-15   relative = 1.8e-14
+  sine matrix, eigenvalues   dim =    108   max|d| = 3.6e-12   relative = 3.2e-16
+  sine matrix, sorted rows   dim =  11664   max|d| = 8.0e-13   relative = 4.9e-16
+=== Part B: smoothness. Displace along a fixed random pattern u (RMS per atom = amp) ===
+  SOAP (per atom)            rel. distance at 1e-4 A = 1.89e-05, at 0.316 A = 8.37e-02; log-log slope (amp<=0.01 A) = 1.00
+  ACSF (per atom)            rel. distance at 1e-4 A = 1.98e-05, at 0.316 A = 6.80e-02; log-log slope (amp<=0.01 A) = 1.00
+  MBTR k=2 (global)          rel. distance at 1e-4 A = 1.43e-05, at 0.316 A = 3.50e-01; log-log slope (amp<=0.01 A) = 0.87
+  MBTR k=3 (global)          rel. distance at 1e-4 A = 2.77e-05, at 0.316 A = 4.62e-01; log-log slope (amp<=0.01 A) = 0.86
+  sine matrix, eigenvalues   rel. distance at 1e-4 A = 2.61e-06, at 0.316 A = 2.78e-02; log-log slope (amp<=0.01 A) = 1.00
+  sine matrix, sorted rows   rel. distance at 1e-4 A = 6.98e-02, at 0.316 A = 3.77e-01; log-log slope (amp<=0.01 A) = 0.41
+  path scan 0-0.3 A, step 0.001 A: SOAP (per atom)            |dD/ds|/|D| median =    0.286/A, max =    0.372/A
+  path scan 0-0.3 A, step 0.001 A: sine matrix, eigenvalues   |dD/ds|/|D| median =    0.095/A, max =    0.141/A
+  path scan 0-0.3 A, step 0.001 A: sine matrix, sorted rows   |dD/ds|/|D| median =  176.596/A, max =  297.213/A
+  sorted-row order changed in 294 of 300 steps
+=== Part C: dimensions; cost of the Julia ACSF and sine matrix (108 atoms, best of 5) ===
+  SOAP dim (1 species) = n_max(n_max+1)/2 * (l_max+1); e.g. n_max=8, l_max=6 -> 252
+  species scaling:  S   SOAP dim   ACSF dim   MBTR k2 dim   MBTR k3 dim
+                   1       252        17         200         200
+                   2       952        42         600        1200
+                   3      2100        75        1200        3600
+                   4      3696       116        2000        8000
+  time per atom, ACSF (Julia)               = 0.344 ms
+  time per atom, sine matrix, eigenvalues   = 0.025 ms
+  per-atom cost ratio N=256 vs N=108, ACSF (per atom)            = 2.98
+  per-atom cost ratio N=256 vs N=108, sine matrix, eigenvalues   = 2.49
+=== Part D: SOAP kernel k = (p.p'/|p||p'|)^2 between environments (all atoms Cu, NN = 2.55 A) ===
+  r_cut=5.0, sigma=0.5 (Part A-C settings): min K = 0.802, fcc-hcp = 0.9995, fcc-bcc = 0.9948, fcc-diamond = 0.845
+  r_cut=3.5, sigma=0.3 (sharper, used for the heat map):
+    fcc               1.000 0.982 0.964 0.653 0.494 0.944 0.910 0.997 0.995 0.875 0.951
+    hcp               0.982 1.000 0.951 0.677 0.504 0.937 0.920 0.984 0.987 0.907 0.902
+    bcc               0.964 0.951 1.000 0.701 0.495 0.903 0.894 0.968 0.972 0.880 0.886
+    sc                0.653 0.677 0.701 1.000 0.659 0.691 0.779 0.694 0.692 0.788 0.495
+    diamond           0.494 0.504 0.495 0.659 1.000 0.667 0.719 0.541 0.499 0.508 0.472
+    fcc(111) surf     0.944 0.937 0.903 0.691 0.667 1.000 0.983 0.960 0.934 0.828 0.924
+    fcc(100) surf     0.910 0.920 0.894 0.779 0.719 0.983 1.000 0.937 0.915 0.861 0.852
+    fcc vacancy nbr   0.997 0.984 0.968 0.694 0.541 0.960 0.937 1.000 0.995 0.891 0.941
+    fcc rattled 0.10  0.995 0.987 0.972 0.692 0.499 0.934 0.915 0.995 1.000 0.915 0.921
+    fcc rattled 0.30  0.875 0.907 0.880 0.788 0.508 0.828 0.861 0.891 0.915 1.000 0.731
+    icosahedron ctr   0.951 0.902 0.886 0.495 0.472 0.924 0.852 0.941 0.921 0.731 1.000
+  min K = 0.472; fcc-hcp = 0.9824; fcc-bcc = 0.9639; fcc-(fcc rattled 0.10) = 0.9951
+=== Part E: CH4 tetrahedral vs square planar (C-H = 1.09 A), descriptor of the C atom ===
+  ACSF G2 only : ||d_tet - d_sq|| / ||d_tet|| = 0.00e+00
+  ACSF G2+G4   : ||d_tet - d_sq|| / ||d_tet|| = 2.17e-01
+  SOAP         : ||d_tet - d_sq|| / ||d_tet|| = 1.43e-01

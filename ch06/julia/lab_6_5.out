@@ -1,0 +1,47 @@
+n = 2151, p = 123
+
+=== Part A: ridge through the SVD ===
+lambda =    1.0: max|w_SVD - w_direct| = 4.24e-12;  df(lambda) = sum f_i =  94.53;  ||w|| = 2.998
+lambda =  100.0: max|w_SVD - w_direct| = 2.52e-14;  df(lambda) = sum f_i =  60.14;  ||w|| = 0.942
+sigma_1^2 = 55430.5, sigma_50^2 = 248.37, sigma_100^2 = 2.65e-01; #(sigma_i^2 > 100) = 62
+ridge grouped 5-fold CV MAE (eV) vs lambda:
+  1e-03:0.585  1e-02:0.585  1e-01:0.584  1e+00:0.581  1e+01:0.576  1e+02:0.576  1e+03:0.593  1e+04:0.674
+  best lambda = 3.16e+01, MAE = 0.575 +/- 0.007
+
+=== Part B: coordinate-descent LASSO (from scratch) vs Lasso.jl ===
+alpha_max = max_j |z_j^T y|/n = 0.9719 (all weights zero above it)
+alpha = 0.1: sweeps = 5000, nonzero = 15, objective CD = 0.5611618492, Lasso.jl = 0.5611618495, max|w_CD - w_Lasso.jl| = 6.14e-05
+alpha = 0.02: sweeps = 5000, nonzero = 39, objective CD = 0.3925285719, Lasso.jl = 0.3925285744, max|w_CD - w_Lasso.jl| = 6.03e-03
+LASSO   : best alpha = 1.30e-03, MAE = 0.577 +/- 0.008, nonzero = 81;  1-SE alpha = 1.73e-02, MAE = 0.583, nonzero = 41
+EN(0.5) : best alpha = 3.07e-03, MAE = 0.576 +/- 0.007, nonzero = 87;  1-SE alpha = 3.07e-02, MAE = 0.582, nonzero = 47
+first 8 features to enter the LASSO path (alpha at entry):
+   mean Row                     alpha = 7.289e-01
+   avg_dev Electronegativity    alpha = 7.289e-01
+   maximum Electronegativity    alpha = 5.466e-01
+   range Electronegativity      alpha = 2.305e-01
+   maximum NdValence            alpha = 1.728e-01
+   mean NdUnfilled              alpha = 1.728e-01
+   mean NUnfilled               alpha = 1.728e-01
+   mean MeltingT                alpha = 1.296e-01
+LASSO at the 1-SE alpha (1.73e-02) on all data: 42 nonzero; largest |w|:
+   avg_dev Electronegativity    w = +0.536
+   mean Row                     w = -0.288
+   avg_dev Row                  w = -0.239
+   mean CovalentRadius          w = -0.232
+   mean Electronegativity       w = +0.216
+   avg_dev NpValence            w = +0.215
+   avg_dev GSvolume_pa          w = +0.204
+   maximum NdValence            w = -0.180
+
+=== Part D: selection frequency over 50 bootstrap resamples (alpha = 1.73e-02) ===
+LASSO: features selected in >=90% of resamples: 15; in 10-90%: 56
+EN   : features selected in >=90% of resamples: 19; in 10-90%: 72
+LASSO features with freq >= 0.9: avg_dev Row (1.00), mean Electronegativity (1.00), avg_dev Electronegativity (1.00), avg_dev NsValence (1.00), avg_dev NpValence (1.00), maximum NdValence (1.00), avg_dev NpUnfilled (1.00), avg_dev GSvolume_pa (1.00), maximum GSmagmom (1.00), mean CovalentRadius (0.98), mean NdValence (0.98), avg_dev NValence (0.98), mean Row (0.96), minimum NValence (0.92), maximum NpUnfilled (0.92)
+   mean Electronegativity       LASSO freq 1.00  EN freq 1.00
+   maximum Electronegativity    LASSO freq 0.14  EN freq 0.28
+   mean NpValence               LASSO freq 0.06  EN freq 0.08
+   mean Column                  LASSO freq 0.08  EN freq 0.76
+corr(mean Electronegativity, mean Column) = 0.504
+maximum Electronegativity: most correlated partner = minimum CovalentRadius (corr -0.850), its LASSO freq 0.00
+pairs of features with |corr| > 0.95: 26
+time 90.8 s

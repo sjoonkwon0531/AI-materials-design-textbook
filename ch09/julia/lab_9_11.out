@@ -1,0 +1,20 @@
+KS one-step data: 64 trajectories x 200 steps; FNO width 32, kmax 24, 211265 parameters; pre-training 1200 updates, fine-tuning 600 updates, batch 64
+pre-train [onestep]: one-step test rel-L2 0.0019
+pre-train [cons]: one-step test rel-L2 0.0018
+fine-tune [onestep]: one-step test rel-L2 0.0015
+fine-tune [noise  ]: one-step test rel-L2 0.0015
+fine-tune [push   ]: one-step test rel-L2 0.0016
+fine-tune [unroll ]: one-step test rel-L2 0.0017
+fine-tune [cons   ]: one-step test rel-L2 0.0014
+onestep        : err(1) 0.0015 err(10) 0.016 | valid time  46.1 +/- 13.8 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 6.1e-03 | high-k amplitude (k>32) median 2.3e-03 max 2.6e-03
+noise          : err(1) 0.0015 err(10) 0.016 | valid time  46.4 +/- 12.9 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 3.8e-03 | high-k amplitude (k>32) median 2.5e-03 max 2.9e-03
+push           : err(1) 0.0016 err(10) 0.016 | valid time  45.9 +/- 12.6 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 5.0e-03 | high-k amplitude (k>32) median 2.5e-03 max 8.0e-03
+unroll         : err(1) 0.0017 err(10) 0.014 | valid time  45.9 +/- 12.8 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 8.0e-03 | high-k amplitude (k>32) median 2.5e-03 max 3.7e-02
+cons           : err(1) 0.0014 err(10) 0.014 | valid time  49.7 +/- 12.2 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 1.4e-07 | high-k amplitude (k>32) median 2.2e-03 max 2.5e-02
+onestep+P0     : err(1) 0.0015 err(10) 0.015 | valid time  46.7 +/- 13.9 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 1.3e-08 | high-k amplitude (k>32) median 2.4e-03 max 1.9e-02
+onestep+filter : err(1) 0.0015 err(10) 0.016 | valid time  46.8 +/- 13.9 | blow-ups in 2000 steps 0/16 | mean drift(t=400) 6.0e-03 | high-k amplitude (k>32) median 5.1e-08 max 5.4e-08
+solver         : high-k amplitude (k>32) median over test trajectories 5.2e-04
+exact linear KS: max_q exp(q^2 - q^4) = 1.284 at q = 0.707 (k = 7.2)
+[onestep] Jacobian at u=0: circulant defect 7.5e-09; |g(k)| for k>kmax: min 1.0157 max 1.0157 (flat); max_k |g| = 1.275 at k=7
+[unroll] Jacobian at u=0: circulant defect 1.1e-08; |g(k)| for k>kmax: min 1.0159 max 1.0159 (flat); max_k |g| = 1.272 at k=7
+cost per trajectory per unit time: FNO step 0.321 ms | solver, 40 steps of 0.025: 0.451 ms

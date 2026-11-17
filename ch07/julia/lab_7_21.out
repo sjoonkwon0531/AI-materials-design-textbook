@@ -1,0 +1,15 @@
+N= 100 mlp       params  36737 | 300K: E  232.0 meV F   723 meV/A | 600K F  1026 | 1000K F  1349 | rotated 300K F   726 | rot.err F 1.2e+00 E 3.6e+02 meV |   57 s
+N= 100 mlp_aug   params  36737 | 300K: E   99.8 meV F   668 meV/A | 600K F   951 | 1000K F  1239 | rotated 300K F   675 | rot.err F 5.3e-01 E 4.6e+01 meV |   18 s
+N= 100 mlp_frame params  36737 | 300K: E  104.3 meV F   600 meV/A | 600K F   848 | 1000K F  1133 | rotated 300K F   601 | rot.err F 2.1e-06 E 4.6e-04 meV |   35 s
+N= 100 schnet    params  58369 | 300K: E   31.4 meV F   137 meV/A | 600K F   241 | 1000K F   391 | rotated 300K F   137 | rot.err F 1.9e-06 E 5.6e-04 meV |  141 s
+N= 100 nequip    params  59072 | 300K: E   28.7 meV F    97 meV/A | 600K F   165 | 1000K F   301 | rotated 300K F    97 | rot.err F 1.8e-06 E 5.3e-04 meV |  390 s
+N= 300 mlp       params  36737 | 300K: E  311.9 meV F   729 meV/A | 600K F  1012 | 1000K F  1315 | rotated 300K F   728 | rot.err F 1.2e+00 E 3.7e+02 meV |   19 s
+N= 300 mlp_aug   params  36737 | 300K: E  102.6 meV F   687 meV/A | 600K F   982 | 1000K F  1287 | rotated 300K F   688 | rot.err F 9.1e-01 E 3.7e+01 meV |   19 s
+N= 300 mlp_frame params  36737 | 300K: E  109.9 meV F   587 meV/A | 600K F   837 | 1000K F  1118 | rotated 300K F   587 | rot.err F 2.1e-06 E 3.1e-04 meV |   22 s
+N= 300 schnet    params  58369 | 300K: E   27.5 meV F   106 meV/A | 600K F   195 | 1000K F   364 | rotated 300K F   106 | rot.err F 1.9e-06 E 6.0e-04 meV |   94 s
+N= 300 nequip    params  59072 | 300K: E   26.5 meV F    76 meV/A | 600K F   135 | 1000K F   263 | rotated 300K F    76 | rot.err F 1.8e-06 E 5.3e-04 meV |  383 s
+N=1000 mlp       params  36737 | 300K: E  275.7 meV F   714 meV/A | 600K F   981 | 1000K F  1279 | rotated 300K F   713 | rot.err F 1.0e+00 E 2.4e+02 meV |   19 s
+N=1000 mlp_aug   params  36737 | 300K: E  107.8 meV F   708 meV/A | 600K F  1014 | 1000K F  1337 | rotated 300K F   712 | rot.err F 4.5e-01 E 1.8e+01 meV |   20 s
+N=1000 mlp_frame params  36737 | 300K: E   82.6 meV F   577 meV/A | 600K F   830 | 1000K F  1118 | rotated 300K F   578 | rot.err F 2.3e-06 E 3.1e-04 meV |   24 s
+N=1000 schnet    params  58369 | 300K: E   28.6 meV F    81 meV/A | 600K F   157 | 1000K F   298 | rotated 300K F    80 | rot.err F 1.9e-06 E 5.1e-04 meV |  156 s
+N=1000 nequip    params  59072 | 300K: E   22.8 meV F    60 meV/A | 600K F   112 | 1000K F   223 | rotated 300K F    59 | rot.err F 1.8e-06 E 5.3e-04 meV |  600 s

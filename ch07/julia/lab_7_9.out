@@ -1,0 +1,10 @@
+ethanol 300 K: 3000 frames, E std 133 meV, <|F_comp|> 715 meV/A
+baseline (train-mean E, zero F): E MAE 100.9 meV, F MAE 711.7 meV/A
+N=  100 BPNN(ACSF)  params  14259  test E MAE   26.1 meV  F MAE   77.9 meV/A  (184 s)
+N=  100 SchNet      params  18337  test E MAE   23.4 meV  F MAE   74.5 meV/A  (253 s)
+N=  300 BPNN(ACSF)  params  14259  test E MAE   24.8 meV  F MAE   57.3 meV/A  (100 s)
+N=  300 SchNet      params  18337  test E MAE   27.4 meV  F MAE   63.6 meV/A  (206 s)
+N= 1000 BPNN(ACSF)  params  14259  test E MAE   19.7 meV  F MAE   50.3 meV/A  (107 s)
+N= 1000 SchNet      params  18337  test E MAE   24.5 meV  F MAE   66.6 meV/A  (208 s)
+BPNN(ACSF)  force learning-curve slope d log MAE / d log N = -0.19
+SchNet      force learning-curve slope d log MAE / d log N = -0.05

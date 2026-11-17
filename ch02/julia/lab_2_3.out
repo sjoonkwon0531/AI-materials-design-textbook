@@ -1,0 +1,10 @@
+eig = [-1001.5, -1.5, 0.0]   S = 667.7   2/|lmax| = 0.001997
+FE dt=0.0019  max|x(8)| = 6.667e-01
+FE dt=0.0020  max|x(8)| = 1.599e+05
+FE dt=0.0021  max|x(8)| = 2.741e+162
+FE dt=0.0022  max|x(8)| = 1.737e+292
+BDF2 h=0.1   (h|lmax|= 100.2) steps=  80  err(t=8)=1.66e-07  
+BDF2 h=0.04  (h|lmax|=  40.1) steps= 200  err(t=8)=2.51e-08  ratio 6.60
+BDF2 h=0.02  (h|lmax|=  20.0) steps= 400  err(t=8)=6.14e-09  ratio 4.09
+BDF2 h=0.01  (h|lmax|=  10.0) steps= 800  err(t=8)=1.52e-09  ratio 4.04
+RK45 (rtol=1e-6, atol=1e-9): steps=2465  nfev=17186  rejected=399  err(t=8)=2.1e-10

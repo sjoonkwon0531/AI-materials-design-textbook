@@ -1,0 +1,19 @@
+--- (1) Calculator abstraction ---
+  N2 potential energy = 0.5488 eV
+  N2 forces (eV/Ang):
+2×3 Matrix{Float64}:
+ 0.0  0.0  -3.9648
+ 0.0  0.0   3.9648
+
+--- (2) EOS: Cu fcc ---
+  V0=46.277 Ang^3, a=3.5902 Ang, B=133.1 GPa
+
+--- (3) BFGS: Cu cluster ---
+  atoms: 13 | E_init=11.2150 (fmax=1.758) -> E_final=9.3616 (fmax=0.0182); dE=1.8534
+
+--- (4) Langevin NVT MD, Cu 4x4x4 ---
+  atoms=64 mean T(2nd half)=300.4 +/- 30.9 K; E drift=+3.385 eV
+
+--- (5) Pt(111) slab + H ---
+  slab=2.5316 slab+H=2.5455 H2=1.0705  E_ads=-0.5213 eV
+  pbc=[true, true, false], cell=[5.544, 5.544, 20.79]

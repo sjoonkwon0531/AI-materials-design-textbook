@@ -1,0 +1,18 @@
+model                                  test(split)   5x5-CV mean +/- std
+logistic (raw 6)                       0.810        0.809 +/- 0.030
+tree depth 4 (raw 6)                   0.819        0.859 +/- 0.024
+random forest (raw 6)                  0.914        0.917 +/- 0.023
+random forest (raw 6 + t, mu, tau)     0.966        0.931 +/- 0.027
+logistic (tau only)                    0.905        0.898 +/- 0.025
+random forest (Magpie, 132)            0.810        0.868 +/- 0.035
+tau<4.18 (fixed rule) 5x5-CV-equivalent: 0.917 (no fitting; single test-split value 0.940)
+  n= 20  tau-stump 0.895+/-0.063   RF raw6 0.682+/-0.059   RF Magpie 0.719+/-0.076
+  n= 40  tau-stump 0.907+/-0.032   RF raw6 0.798+/-0.051   RF Magpie 0.776+/-0.023
+  n= 80  tau-stump 0.908+/-0.026   RF raw6 0.831+/-0.048   RF Magpie 0.797+/-0.026
+  n=160  tau-stump 0.920+/-0.028   RF raw6 0.876+/-0.022   RF Magpie 0.809+/-0.027
+  n=320  tau-stump 0.937+/-0.013   RF raw6 0.902+/-0.015   RF Magpie 0.826+/-0.021
+  n=460  tau-stump 0.940+/-0.000   RF raw6 0.914+/-0.000   RF Magpie 0.819+/-0.000
+extrapolation across anion families (accuracy):
+  direction            tau<4.18   tau-stump(refit)   RF raw6   RF Magpie
+  oxides -> halides    0.913      0.899              0.478     0.599   (n_test=207)
+  halides -> oxides    0.919      0.919              0.488     0.629   (n_test=369)

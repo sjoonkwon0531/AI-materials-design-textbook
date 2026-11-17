@@ -1,0 +1,8 @@
+[lab     ] POD floor (test rel-L2 of the best p-term linear reconstruction): p=2: 0.4717  p=4: 0.2969  p=8: 0.1696  p=16: 0.0884  p=32: 0.0365  p=64: 0.0000
+[comoving] POD floor (test rel-L2 of the best p-term linear reconstruction): p=2: 0.5792  p=4: 0.4085  p=8: 0.2579  p=16: 0.1387  p=32: 0.0571  p=64: 0.0000
+norm ratio ||v(T)|| / ||u(T)|| (test mean) = 0.594
+[lab, N=1000] deeponet      ( 59009 params): test rel-L2 0.2429 (train 0.1394)
+[lab, N=1000] pod_deeponet  ( 28961 params): test rel-L2 0.2532 (train 0.1290)
+[lab, N=1000] fno           (145729 params): test rel-L2 0.0246 (train 0.0147)
+[comoving, N=1000] deeponet: test rel-L2 0.1912 (train 0.1233)  -> relative to ||u(T)||: 0.1135
+DeepONet translation-equivariance error (shift 5/64): 0.227

@@ -1,0 +1,22 @@
+
+=== case: separated peaks ===
+true spectra: pairwise corr = -0.051, -0.061, -0.062
+excess kurtosis of true spectra (over 2-theta channels): 37.5, 36.1, 38.8
+rank check: singular values of uncentered X (top 4) = 18.75, 9.57, 8.27, 0.36
+PCA explained variance of first 4 PCs: 0.5395, 0.4090, 0.0008, 0.0007
+PCA: |corr| with truth = 0.753, 0.001, 0.828;  negative-intensity share = 0.51, 0.49, 0.51;  fraction MAE = n/a
+ICA: |corr| with truth = 0.999, 0.999, 0.999;  negative-intensity share = 0.01, 0.01, 0.01;  fraction MAE = 0.019
+NMF: |corr| with truth = 1.000, 1.000, 1.000;  negative-intensity share = 0.00, 0.00, 0.00;  fraction MAE = 0.014
+from-scratch one-unit FastICA (tanh): converged in 6 iterations; best |corr| with a true spectrum = 1.000; excess kurtosis of u = 36.0
+   kurtosis along (1-t)*w + t*PC1 direction, t = 0.0: 36.01
+   kurtosis along (1-t)*w + t*PC1 direction, t = 0.5: 13.25
+   kurtosis along (1-t)*w + t*PC1 direction, t = 1.0: 10.75
+
+=== case: overlapping peaks ===
+true spectra: pairwise corr = -0.051, -0.058, +0.323
+excess kurtosis of true spectra (over 2-theta channels): 37.5, 36.1, 30.1
+rank check: singular values of uncentered X (top 4) = 21.63, 9.95, 7.27, 0.36
+PCA explained variance of first 4 PCs: 0.6234, 0.3232, 0.0008, 0.0008
+PCA: |corr| with truth = 0.780, 0.006, 0.631;  negative-intensity share = 0.52, 0.49, 0.46;  fraction MAE = n/a
+ICA: |corr| with truth = 0.999, 0.998, 0.964;  negative-intensity share = 0.01, 0.04, 0.13;  fraction MAE = 0.037
+NMF: |corr| with truth = 1.000, 1.000, 1.000;  negative-intensity share = 0.00, 0.00, 0.00;  fraction MAE = 0.020

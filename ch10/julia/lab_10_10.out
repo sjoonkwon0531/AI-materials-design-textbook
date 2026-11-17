@@ -1,0 +1,28 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+CHGNet v0.3.0 initialized with 412,525 parameters
+CHGNet will run on cpu
+
+=== Part A: cubic SrTiO3, start a = 4.10 A (exp 3.905, PBE 3.944) ===
+  sym-constrained : steps   3,  3.46 s, E = -40.11920 eV, a,b,c = 3.9432 3.9432 3.9432 A, angles 90.00 90.00 90.00, space group Pm-3m
+  free, rattled   : steps  27,  2.08 s, E = -40.12422 eV, a,b,c = 3.9614 3.9585 3.9406 A, angles 90.11 90.12 89.80, space group P1
+  E(free) - E(cubic) = -5.02 meV per 5-atom cell
+  free: Ti-O distances = 1.8921 1.8955 1.9238 A
+  cubic a = 3.9432 A : +0.98% vs exp 3.905, -0.02% vs PBE(VASP) 3.944
+  force tolerance (sym-constrained, from a = 4.10 A):
+    fmax  0.0500 eV/A: steps   2, a = 3.94476 A, residual pressure -0.1824 GPa
+    fmax  0.0100 eV/A: steps   3, a = 3.94321 A, residual pressure +0.0090 GPa
+    fmax  0.0010 eV/A: steps   3, a = 3.94321 A, residual pressure +0.0090 GPa
+    fmax  0.0001 eV/A: steps   4, a = 3.94328 A, residual pressure -0.0000 GPa
+
+=== Part B: neutral Si monovacancy (MACE-MP-0 small) ===
+  bulk Si: a = 5.4646 A, E/atom = -5.37090 eV
+  N =  64: Ef(unrelaxed) = 2.136 eV, Ef(relaxed) = 2.070 eV, relaxation -0.066 eV, steps 30, 17.7 s
+           neighbour-neighbour distances = 3.509 3.511 3.512 3.512 3.513 3.515 A (ideal 3.864); max displacement 0.217 A
+  N = 216: Ef(unrelaxed) = 2.136 eV, Ef(relaxed) = 2.040 eV, relaxation -0.095 eV, steps 36, 95.1 s
+           neighbour-neighbour distances = 3.296 3.298 3.298 3.299 3.300 3.302 A (ideal 3.864); max displacement 0.347 A
+
+=== Part C: pre-relax with MACE, finish with the reference (CHGNet 0.3.0 as the stand-in for DFT) ===
+  SrTiO3 free, rattled  : reference calls from raw start  21 | MACE calls  19 then reference calls   5 | final E difference -0.06 meV
+  Si vacancy 63 atoms   : reference calls from raw start  15 | MACE calls  22 then reference calls  17 | final E difference -0.06 meV
+
+total 160.5 s, MACE calls 163

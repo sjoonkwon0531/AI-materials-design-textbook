@@ -1,0 +1,30 @@
+grid: 1815 compositions (k=5, N=12); charge-balanced 33
+|mu - 1.4| < 0.05 eV: 66 compositions, of which charge-balanced 3
+detectors of 'not charge balanced' (ROC-AUC): sigma 0.55, 5-NN distance 0.78, |MLP-LGBM| 0.51
+environment contract: obs in space, 21 actions, return telescopes to s(x_T) - s(x_0)
+
+T = 8 edits from 200 random starts; columns: mean |mu-target|, charge-balanced fraction, mean sigma, mean |MLP-LGBM|, S=Se tie fraction
+[naive] global optimum of its score: Cu2In1Ga5S2Se2 mu=1.400 sigma=0.144 LGBM=1.46
+   random policy              err 0.753 | bal 0.01 | sigma 0.107 | |MLP-LGBM| 0.23 | tie 0.10 | reaches optimum 0.00
+   greedy (21 queries/step)   err 0.024 | bal 0.10 | sigma 0.117 | |MLP-LGBM| 0.27 | tie 0.24 | reaches optimum 0.09
+   Q-learning (20k ep.)       err 0.017 | bal 0.14 | sigma 0.118 | |MLP-LGBM| 0.31 | tie 0.24 | reaches optimum 0.04
+   T-ball optimum (BFS)       err 0.000 | bal 0.00 | sigma 0.143 | |MLP-LGBM| 0.07 | tie 0.98 | reaches optimum 1.00
+   most frequent Q-learning end points: Cu2In3S4Se3(25), Cu3In1Ga2S3Se3(24), Cu4Ga2Se6(22)
+[sigma-pen (k=2)] global optimum of its score: In4Ga2S3Se3 mu=1.387 sigma=0.021 LGBM=1.82
+   random policy              err 0.733 | bal 0.01 | sigma 0.113 | |MLP-LGBM| 0.23 | tie 0.07 | reaches optimum 0.00
+   greedy (21 queries/step)   err 0.112 | bal 0.00 | sigma 0.067 | |MLP-LGBM| 0.29 | tie 0.21 | reaches optimum 0.12
+   Q-learning (20k ep.)       err 0.062 | bal 0.01 | sigma 0.044 | |MLP-LGBM| 0.30 | tie 0.21 | reaches optimum 0.18
+   T-ball optimum (BFS)       err 0.013 | bal 0.00 | sigma 0.022 | |MLP-LGBM| 0.43 | tie 0.95 | reaches optimum 1.00
+   most frequent Q-learning end points: Cu1In3Ga1Se7(36), In4Ga2S3Se3(35), Cu3In2Ga2S5(22)
+[charge-bal] global optimum of its score: Cu3In1Ga2S3Se3 mu=1.395 sigma=0.196 LGBM=1.72
+   random policy              err 0.736 | bal 0.02 | sigma 0.102 | |MLP-LGBM| 0.22 | tie 0.10 | reaches optimum 0.01
+   greedy (21 queries/step)   err 0.061 | bal 0.41 | sigma 0.112 | |MLP-LGBM| 0.27 | tie 0.28 | reaches optimum 0.08
+   Q-learning (20k ep.)       err 0.047 | bal 0.82 | sigma 0.153 | |MLP-LGBM| 0.27 | tie 0.46 | reaches optimum 0.41
+   T-ball optimum (BFS)       err 0.005 | bal 0.99 | sigma 0.196 | |MLP-LGBM| 0.32 | tie 0.99 | reaches optimum 1.00
+   most frequent Q-learning end points: Cu3In1Ga2S3Se3(81), Cu3In3S5Se1(35), Cu3In1Ga2Se6(31)
+[charge-bal + sigma] global optimum of its score: Cu3In1Ga2Se6 mu=1.356 sigma=0.047 LGBM=1.43
+   random policy              err 0.724 | bal 0.01 | sigma 0.106 | |MLP-LGBM| 0.20 | tie 0.05 | reaches optimum 0.00
+   greedy (21 queries/step)   err 0.126 | bal 0.37 | sigma 0.081 | |MLP-LGBM| 0.29 | tie 0.23 | reaches optimum 0.09
+   Q-learning (20k ep.)       err 0.158 | bal 0.73 | sigma 0.073 | |MLP-LGBM| 0.19 | tie 0.13 | reaches optimum 0.24
+   T-ball optimum (BFS)       err 0.046 | bal 0.99 | sigma 0.052 | |MLP-LGBM| 0.09 | tie 0.01 | reaches optimum 1.00
+   most frequent Q-learning end points: Cu3In1Ga2Se6(48), Cu3In3S2Se4(17), Cu3In3S1Se5(15)

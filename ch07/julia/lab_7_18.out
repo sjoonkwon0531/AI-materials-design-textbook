@@ -1,0 +1,25 @@
+n = 4601, p = 149, metals 53.2%
+  [random] fold 0: LGBM 0.367 | MLP single 0.340 | MLP ens(4) 0.320 eV
+  [random] fold 1: LGBM 0.366 | MLP single 0.364 | MLP ens(4) 0.337 eV
+  [random] fold 2: LGBM 0.333 | MLP single 0.330 | MLP ens(4) 0.322 eV
+  [random] fold 3: LGBM 0.353 | MLP single 0.341 | MLP ens(4) 0.328 eV
+  [random] fold 4: LGBM 0.390 | MLP single 0.377 | MLP ens(4) 0.368 eV
+random 5-fold (seed 0):
+   LightGBM MAE 0.362 | non-metals 0.486
+   MLP single MAE 0.350 | non-metals 0.573
+   MLP ensemble of 4 MAE 0.335 | non-metals 0.546;  average with LGBM 0.337
+   early-stopped epoch: median 60 (range 17-74)
+   spread vs |error|: Pearson r = 0.50; MAE in lowest/highest spread quintile 0.049 / 0.932 eV
+   coverage of mu +/- 1.96 sd: 72.8% (nominal 95%)
+  [group] fold 0: LGBM 0.386 | MLP single 0.328 | MLP ens(4) 0.332 eV
+  [group] fold 1: LGBM 0.343 | MLP single 0.353 | MLP ens(4) 0.332 eV
+  [group] fold 2: LGBM 0.367 | MLP single 0.416 | MLP ens(4) 0.365 eV
+  [group] fold 3: LGBM 0.405 | MLP single 0.424 | MLP ens(4) 0.413 eV
+  [group] fold 4: LGBM 0.376 | MLP single 0.343 | MLP ens(4) 0.342 eV
+group 5-fold (chemsys):
+   LightGBM MAE 0.375 | non-metals 0.512
+   MLP single MAE 0.373 | non-metals 0.636
+   MLP ensemble of 4 MAE 0.357 | non-metals 0.598;  average with LGBM 0.353
+   early-stopped epoch: median 57 (range 21-71)
+   spread vs |error|: Pearson r = 0.54; MAE in lowest/highest spread quintile 0.055 / 0.958 eV
+   coverage of mu +/- 1.96 sd: 71.3% (nominal 95%)

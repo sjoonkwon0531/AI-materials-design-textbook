@@ -1,0 +1,15 @@
+=== inverse problem: identify D from sparse noisy data (noise sigma = 0.02, initial guess D = 0.5) ===
+  B1 seed 0: D_hat = 0.1003 (true 0.1000), data RMSE 0.0185 (noise sigma 0.02), 54.4 s
+  B1 seed 1: D_hat = 0.1000 (true 0.1000), data RMSE 0.0184 (noise sigma 0.02), 39.8 s
+  B1 seed 2: D_hat = 0.1022 (true 0.1000), data RMSE 0.0169 (noise sigma 0.02), 42.5 s
+  B1 seed 3: D_hat = 0.0984 (true 0.1000), data RMSE 0.0149 (noise sigma 0.02), 43.8 s
+  B1 seed 4: D_hat = 0.0993 (true 0.1000), data RMSE 0.0171 (noise sigma 0.02), 42.1 s
+  B1 PINN : D = 0.1000 +/- 0.0013 (5 noise/init seeds), |bias| 0.0 %
+  B1 CN + scalar least squares: D = 0.1000 +/- 0.0014 (15 forward solves)
+  B2 seed 0: D_hat = 0.1036 (true 0.1000), data RMSE 0.0190 (noise sigma 0.02), 41.9 s
+  B2 seed 1: D_hat = 0.0954 (true 0.1000), data RMSE 0.0187 (noise sigma 0.02), 42.2 s
+  B2 seed 2: D_hat = 0.1009 (true 0.1000), data RMSE 0.0181 (noise sigma 0.02), 41.0 s
+  B2 seed 3: D_hat = 0.0968 (true 0.1000), data RMSE 0.0182 (noise sigma 0.02), 38.9 s
+  B2 seed 4: D_hat = 0.0974 (true 0.1000), data RMSE 0.0228 (noise sigma 0.02), 38.3 s
+  B2 PINN : D = 0.0988 +/- 0.0030 (5 noise/init seeds), |bias| 1.2 %
+  B2 sine-series least squares (BC assumed known): D = 0.1000 +/- 0.0017

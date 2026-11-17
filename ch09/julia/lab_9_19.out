@@ -1,0 +1,26 @@
+Lab 2.14 re-run with the batched re-implementation (256^2, T = 400)
+[1] MASS conservation:   max |mean(t)-mean0| = 1.25e-16
+[2] FREE ENERGY:         F: 46.36 -> 3.16,  F-increase steps = 0 / 400
+[3] COARSENING:          late-time log-log slope = 0.32
+time 9.4 s  (1.18 ms per step)
+grid 64^2, L = 2 pi, dx = 0.0982, eps = 0.1, dt = 0.05, S = 2.0; record every 50 steps (Dt = 2.5)
+all 248 trajectories (248000 solver steps): 14.4 s = 0.058 ms per solver step per sample
+[1] mass: max |mean(t) - mean(0)| over 40 test trajectories = 1.53e-16
+[2] free energy: mean F 9.91 -> 1.86; increases between records: 0 / 800
+[3] L(t): 1.49 (t=2.5) -> 3.37 (t=50); slope of mean L on 5 <= t <= 50: 0.289; per-trajectory slopes 0.285 +/- 0.070 (s.d.)
+persistence error of one big step starting at t = 0, 2.5, 5, 10, 25, 47.5: 0.978 0.544 0.390 0.273 0.132 0.073
+one big step (Dt = 2.5) from the formed microstructure c(5) and c(25), 40 test trajectories, vs dt = 0.0025:
+   dt = 0.0125: rel. L2 from c(5): 0.1340   from c(25): 0.0348
+   dt = 0.025 : rel. L2 from c(5): 0.2359   from c(25): 0.0677
+   dt = 0.05  : rel. L2 from c(5): 0.3549   from c(25): 0.1058
+   dt = 0.1   : rel. L2 from c(5): 0.4605   from c(25): 0.1442
+   dt = 0.25  : rel. L2 from c(5): 0.5560   from c(25): 0.1818
+   dt = 0.5   : rel. L2 from c(5): 0.5968   from c(25): 0.1998
+   dt = 2.5   : rel. L2 from c(5): 0.6349   from c(25): 0.2175
+
+amplification of the fastest mode per unit time, scheme (dt = 0.05) vs exact exp(sigma):
+   m = 0.0: scheme  max g^(1/dt) =    81.79 at k = 4;  PDE  exp(sigma_max) =   7.13e+10 at k = 7;  time for 0.058 -> 1 with the scheme: 0.65
+   m = 0.2: scheme  max g^(1/dt) =    46.12 at k = 4;  PDE  exp(sigma_max) =   1.99e+08 at k = 7;  time for 0.058 -> 1 with the scheme: 0.74
+   m = 0.3: scheme  max g^(1/dt) =    22.01 at k = 4;  PDE  exp(sigma_max) =   6.09e+05 at k = 6;  time for 0.058 -> 1 with the scheme: 0.92
+   m = 0.4: scheme  max g^(1/dt) =     7.44 at k = 4;  PDE  exp(sigma_max) =        854 at k = 5;  time for 0.058 -> 1 with the scheme: 1.42
+   m = 0.5: scheme  max g^(1/dt) =     2.07 at k = 3;  PDE  exp(sigma_max) =       4.22 at k = 3;  time for 0.058 -> 1 with the scheme: 3.91

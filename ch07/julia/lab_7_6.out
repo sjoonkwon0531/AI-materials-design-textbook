@@ -1,0 +1,9 @@
+random conv layer: relative error  translation (5,11) px: 0.0e+00   rotation 90 deg: 0.75
+--- no augmentation (logit change under (13,29)-px roll: 1.7e+00)
+   lamella angle (deg):       0     15     30     45     60     75     90
+   lamellae recall    :   1.000  1.000  0.225  0.000  0.000  0.000  0.000
+   other two classes  :   1.000  1.000  1.000  1.000  1.000  1.000  1.000
+--- rotation augmentation (logit change under (13,29)-px roll: 1.8e+00)
+   lamella angle (deg):       0     15     30     45     60     75     90
+   lamellae recall    :   0.060  0.050  0.305  0.290  0.015  0.000  0.000
+   other two classes  :   1.000  1.000  0.998  1.000  0.998  1.000  0.992

@@ -1,0 +1,24 @@
+linear case (beta = rho = 0): max |u - exact| at T = 1: 1.5e-14
+pre   : |u(dt=1e-2) - u(5e-3)| = 3.0e-09, |u(5e-3) - u(2.5e-3)| = 1.9e-10 (ratio 15.9)
+react : |u(dt=1e-2) - u(5e-3)| = 8.5e-07, |u(5e-3) - u(2.5e-3)| = 5.9e-08 (ratio 14.4)
+lownu : |u(dt=1e-2) - u(5e-3)| = 1.0e-08, |u(5e-3) - u(2.5e-3)| = 6.4e-10 (ratio 15.9)
+pre-training set: 2000 trajectories x 40 times x 128 points
+member 0: 137697 params, 3000 steps, 136 s | ID 0.65% | low-nu 3.35% | high-k 26.95% | reaction 46.61%
+member 1: 137697 params, 3000 steps, 119 s | ID 0.63% | low-nu 3.21% | high-k 27.79% | reaction 46.60%
+member 2: 137697 params, 3000 steps, 121 s | ID 0.68% | low-nu 3.35% | high-k 28.09% | reaction 46.62%
+member 3: 137697 params, 3000 steps, 118 s | ID 0.66% | low-nu 3.50% | high-k 26.77% | reaction 46.62%
+pre_test: FNO mean drift 4.52e-04, max 7.72e-03 (the solver conserves the mean to rounding)
+pretrained member 0: ID test 0.65% | zero-shot on the reaction family 46.61%
+trivial baseline u(x, t) = u0(x): 59.2%
+--- K = 16 labelled trajectories (640 space-time fields), 400 steps ---
+  scratch  trainable 137697  lr 1e-02  target-test error  40.62 %   ID-test error after adaptation  69.55 %   (39 s)
+  last     trainable     65  lr 1e-02  target-test error  37.92 %   ID-test error after adaptation  52.53 %   (20 s)
+  lora     trainable   1820  lr 1e-02  target-test error  15.78 %   ID-test error after adaptation  25.75 %   (24 s)
+  full     trainable 137697  lr 3e-03  target-test error  32.40 %   ID-test error after adaptation  73.55 %   (21 s)
+--- K = 64 labelled trajectories (2560 space-time fields), 400 steps ---
+  scratch  trainable 137697  lr 1e-02  target-test error  13.19 %   ID-test error after adaptation  31.40 %   (21 s)
+  last     trainable     65  lr 1e-02  target-test error  33.61 %   ID-test error after adaptation  42.23 %   (19 s)
+  lora     trainable   1820  lr 1e-02  target-test error  10.17 %   ID-test error after adaptation  17.44 %   (20 s)
+  full     trainable 137697  lr 1e-02  target-test error  11.85 %   ID-test error after adaptation  31.22 %   (21 s)
+pretrained (zero-shot): target-test error 46.61 %, rms residual 0.521
+  residual only, 400 steps (0 labels)    target-test error  17.88 %   rms residual 0.230   (52 s)

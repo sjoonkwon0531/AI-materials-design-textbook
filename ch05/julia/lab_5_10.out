@@ -1,0 +1,27 @@
+=== Timing: L=64 (4096 spins), T=2.4, ns per attempted spin update (best of 5) ===
+  naive_any     :     81.5 ns/update   speed-up vs naive x     1
+  vec_cb        :     29.5 ns/update   speed-up vs naive x     3
+  loop_random   :     19.0 ns/update   speed-up vs naive x     4
+  loop_cb       :      7.4 ns/update   speed-up vs naive x    11
+  batch_vec_cb8 :     28.3 ns/update   speed-up vs naive x     3
+  first call incl. JIT compile: loops 0.00 s, batch 0.07 s
+
+=== Correctness: L=64, 1e4 equil + 5e4 meas. sweeps (loop_cb), 20 blocks ===
+  T=1.60: e=-1.9282+/-0.0001 (exact -1.9282)   |m|=0.9796+/-0.0000 (Yang 0.9796)
+  T=1.80: e=-1.8592+/-0.0001 (exact -1.8593)   |m|=0.9568+/-0.0001 (Yang 0.9569)
+  T=2.00: e=-1.7452+/-0.0002 (exact -1.7456)   |m|=0.9111+/-0.0002 (Yang 0.9113)
+  T=2.20: e=-1.5455+/-0.0007 (exact -1.5465)   |m|=0.7826+/-0.0016 (Yang 0.7848)
+  T=2.40: e=-1.2046+/-0.0007 (exact -1.2040)   |m|=0.1647+/-0.0044 (Yang 0.0000)
+  T=2.60: e=-1.0279+/-0.0003 (exact -1.0283)   |m|=0.0754+/-0.0008 (Yang 0.0000)
+  T=3.00: e=-0.8169+/-0.0002 (exact -0.8173)   |m|=0.0426+/-0.0002 (Yang 0.0000)
+
+=== batched (vmap-like) over 8 temperatures: 2e3 equil + 1e4 meas. sweeps ===
+  wall time 12.3 s for 8 x 12000 sweeps
+  T=1.60: e=-1.9284+/-0.0002 (exact -1.9282)  |m|=0.980+/-0.000 (Yang 0.980)
+  T=1.80: e=-1.8588+/-0.0002 (exact -1.8593)  |m|=0.957+/-0.000 (Yang 0.957)
+  T=2.00: e=-1.7452+/-0.0005 (exact -1.7456)  |m|=0.911+/-0.000 (Yang 0.911)
+  T=2.20: e=-1.5333+/-0.0074 (exact -1.5465)  |m|=0.710+/-0.043 (Yang 0.785)
+  T=2.40: e=-1.2027+/-0.0013 (exact -1.2040)  |m|=0.152+/-0.009 (Yang 0.000)
+  T=2.60: e=-1.0277+/-0.0007 (exact -1.0283)  |m|=0.072+/-0.002 (Yang 0.000)
+  T=2.80: e=-0.9085+/-0.0003 (exact -0.9081)  |m|=0.052+/-0.001 (Yang 0.000)
+  T=3.00: e=-0.8179+/-0.0003 (exact -0.8173)  |m|=0.043+/-0.001 (Yang 0.000)

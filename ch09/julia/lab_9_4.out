@@ -1,0 +1,25 @@
+A. network 1-16-16-1 tanh fitted to sin(2 pi x): fit RMSE 4.0e-03
+   reference u_xx by 42-digit arithmetic at 19 points, max|u_xx| = 39.41
+   autodiff (jet)            float64: max rel err 8.6e-16
+   autodiff (nested ForwardDiff) f64: max rel err 7.2e-16
+   autodiff (jet)            float32: max rel err 4.2e-07
+   central FD of the network, max rel err:
+        h      float64    float32
+       1e-01    1.2e-01    1.2e-01
+       3e-02    1.3e-02    1.3e-02
+       1e-02    1.5e-03    1.5e-03
+       3e-03    1.3e-04    1.3e-03
+       1e-03    1.5e-05    8.0e-03
+       3e-04    1.3e-06    1.3e-01
+       1e-04    1.4e-07    9.3e-01
+       3e-05    3.0e-08    1.2e+01
+       1e-05    1.8e-07    1.2e+02
+       1e-06    2.2e-05    1.2e+04
+B. network 2-64-64-64-1 tanh (float64), N = 2000 points, minimum of several runs
+   forward pass only: 2.33 ms
+   k   nested ForwardDiff     Taylor jet           (+param grad, Zygote)   max|nested - jet|
+   1      23.27 ms (  10.0x)       3.92 ms (  1.7x)       9.38 ms             9.6e-17
+   2      35.84 ms (  15.4x)       4.97 ms (  2.1x)      23.68 ms             6.2e-17
+   3      57.92 ms (  24.9x)      13.14 ms (  5.7x)      55.51 ms             9.0e-17
+   4     125.25 ms (  53.9x)      12.48 ms (  5.4x)      59.58 ms             1.8e-16
+   (the jet for k = 3 computes all four orders; k = 3 and 4 share one pass)

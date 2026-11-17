@@ -1,0 +1,25 @@
+=== Deterministic LCIA (medians), kg CO2e per kg X, GWP100 (AR6) ===
+route A: total 24.72 | P1 3.30 (13%), P2 4.05 (16%), electricity 14.48 (59%), heat 2.60 (11%), process CO2 0.30 (1%)
+route B: total 18.67 | P1 3.15 (17%), P2 4.05 (22%), electricity 5.79 (31%), heat 4.55 (24%), process CO2 0.05 (0%), solvent 1.08 (6%)
+with AR5 factors: A 24.65, B 18.61
+=== Monte Carlo, N=100000, seed 42 (Julia MersenneTwister) ===
+route A: mean 26.75  median 25.95  95% interval [17.15, 40.99]  sd 6.11  (mean/deterministic = 1.082)
+route B: mean 20.27  median 19.87  95% interval [14.22, 28.61]  sd 3.69  (mean/deterministic = 1.086)
+A-B, shared background (correlated): mean 6.48  sd 5.18  P(A<B) = 0.074
+A-B, independent background (wrong):  mean 6.47  sd 7.12  P(A<B) = 0.171
+=== Sensitivity of route A total: normalised squared rank correlation ===
+  inv elec     rank corr +0.661  share  48.0%
+  EF elec_CO2  rank corr +0.510  share  28.6%
+  EF P2        rank corr +0.355  share  13.9%
+  EF P1        rank corr +0.242  share   6.4%
+  EF elec_CH4  rank corr +0.125  share   1.7%
+  inv gas      rank corr +0.080  share   0.7%
+electricity CO2 term of A: GSD (MC) = 1.4103, sqrt(ln^2 1.3 + ln^2 1.25) rule = 1.4112
+  median 13.453 (theory 13.500),  mean 14.294 (theory 14.325)
+=== low-carbon grid scenario: A median 12.52, B median 14.35, P(A<B) = 0.906
+=== MC convergence (route A mean) ===
+  N=   100: sd of mean over 20 seeds = 0.7050   sd/sqrt(N) estimate = 0.6110
+  N=  1000: sd of mean over 20 seeds = 0.2006   sd/sqrt(N) estimate = 0.1932
+  N= 10000: sd of mean over 20 seeds = 0.0666   sd/sqrt(N) estimate = 0.0611
+  N=100000: sd of mean over 20 seeds = 0.0163   sd/sqrt(N) estimate = 0.0193
+time 4.8 s

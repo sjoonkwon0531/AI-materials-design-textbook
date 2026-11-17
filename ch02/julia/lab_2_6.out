@@ -1,0 +1,5 @@
+naive      |x^2+y^2-1| at t=20 = 1.41e-03   max over accepted steps = 1.41e-03   nfev = 2594
+Baumgarte  |x^2+y^2-1| at t=20 = 4.45e-07   max over accepted steps = 8.96e-07   nfev = 3218
+drift reduction at t=20: 3.2e+03 x
+naive      1-s window max every 2 s: 3.4e-06 2.6e-05 7.4e-05 1.6e-04 2.7e-04 4.1e-04 5.7e-04 7.8e-04 1.0e-03 1.3e-03
+Baumgarte  1-s window max every 2 s: 8.6e-07 8.7e-07 9.0e-07 9.0e-07 8.6e-07 9.0e-07 9.0e-07 8.9e-07 9.0e-07 9.0e-07

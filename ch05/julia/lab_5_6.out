@@ -1,0 +1,30 @@
+=== Step 1: fine MD, 200 LJ dimers (bond k=500, r0=0.8), rho_mol=0.3, L=25.82, T=1.0, dt=0.005, gamma=1.0 ===
+  frames=2000, P_fine=0.2862, wall=27 s
+  target g_CG(r): first peak r=1.625, g=1.507
+=== Step 2-3: IBI, V_{n+1} = V_n + alpha kT ln(g_n/g_target), alpha=1, CG MD 5k+30k steps ===
+  iter   g RMSE    P_CG      (P_fine=0.2862)
+    0   0.0912   0.5159
+    1   0.0385   0.6154
+    2   0.0275   0.5783
+    3   0.0269   0.5398
+    4   0.0244   0.5263
+    5   0.0228   0.4970
+    6   0.0219   0.4764
+    7   0.0212   0.4639
+    8   0.0223   0.4343
+  noise floor (two independent CG runs, same V): g RMSE=0.0206
+=== Step 4: pressure-corrected IBI, dV = A (1 - r/rc), A = -0.1 kT sign(dP) min(1, 3|dP|) ===
+    0   g RMSE=0.0197   P_CG=0.4433
+    1   g RMSE=0.0181   P_CG=0.4019
+    2   g RMSE=0.0176   P_CG=0.4009
+    3   g RMSE=0.0179   P_CG=0.3908
+    4   g RMSE=0.0166   P_CG=0.3854
+    5   g RMSE=0.0165   P_CG=0.3394
+    6   g RMSE=0.0174   P_CG=0.3516
+=== Step 5: transferability, same potentials at rho_mol=0.20 ===
+  IBI   : g RMSE vs fine=0.0988, P_CG=0.2218, P_fine=0.1294
+  IBI+P : g RMSE vs fine=0.0749, P_CG=0.1884, P_fine=0.1294
+=== Step 6: dynamics, weak Langevin gamma=0.05, rho_mol=0.30, 3 seeds x 30k steps ===
+  per-seed D_fine: [0.306, 0.46, 0.263]  D_CG: [0.408, 0.42, 0.375]
+  cost per step: fine=0.315 ms, CG=0.169 ms, ratio=1.9
+  D_COM(fine)=0.343 +/- 0.060, D(CG, IBI)=0.401 +/- 0.014, speed-up D_CG/D_fine=1.17

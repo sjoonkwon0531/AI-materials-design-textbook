@@ -1,0 +1,28 @@
+(0) residual operator on the exact solution: rms r = 5.0e-14
+
+(1)(2) ensemble of 4: error, spread, residual (300 trajectories each, block t = 0.1..1.0)
+  set        err(member0)  err(ens)   mean sd    cover 1.96sd   rho_S(sd,err)  rho_S(res,err)   rms res
+  cal           0.73%      0.59%   0.0016      87.8%           0.94           0.94        0.016
+  ID            0.65%      0.52%   0.0015      88.5%           0.95           0.95        0.014
+  low-nu        3.35%      2.72%   0.0071      89.6%           0.88           0.96        0.047
+  high-k       26.95%     27.32%   0.0092       9.5%           0.85           0.78        1.049
+  reaction     46.61%     46.61%   0.0016       0.7%          -0.15           0.85        0.521
+  pooled (1200): Spearman(sd, err) = 0.16, Spearman(res, err) = 0.85; Pearson of logs: sd 0.25, res 0.96
+  detecting 'relative error > 5%' (639 of 1200): AUROC sd 0.612, residual 1.000
+
+(3) split conformal (calibration: 300 ID trajectories, nominal 90%): ||e|| <= q ||sd||: q = 1.47;  ||e|| <= q ||r||: q = 0.192
+  ID         bound from spread: coverage  92.3% (bound/error, median  1.6x)   bound from residual: coverage  87.7% ( 1.3x)
+  low-nu     bound from spread: coverage  78.3% (bound/error, median  1.5x)   bound from residual: coverage  13.7% ( 0.8x)
+  high-k     bound from spread: coverage   0.0% (bound/error, median  0.1x)   bound from residual: coverage  92.0% ( 1.6x)
+  reaction   bound from spread: coverage   0.0% (bound/error, median  0.0x)   bound from residual: coverage   0.0% ( 0.3x)
+
+(4) solver fallback on the pooled 1200 trajectories (mean relative error of what remains)
+  fallback fraction     random    ensemble sd   PDE residual   oracle
+        0.00           19.29%      19.29%       19.29%      19.29%
+        0.10           17.33%      16.70%       15.63%      13.41%
+        0.25           14.66%      13.81%       10.54%       6.78%
+        0.50            9.65%      11.08%        0.85%       0.78%
+
+(5) cost per query u0 -> u(T), ms per trajectory: FNO member 0: 0.346 | ensemble of 4: 1.499 | member 0 + residual: 0.803 | ETDRK4 (256, dt 5e-3): 3.850
+  break-even vs reference solver: single FNO    speed-up   11.1x, N* = 37418 queries
+  break-even vs reference solver: ensemble of 4 speed-up    2.6x, N* = 213289 queries

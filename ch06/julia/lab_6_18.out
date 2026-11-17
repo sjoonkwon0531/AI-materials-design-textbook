@@ -1,0 +1,27 @@
+=== strain off: N=400 cells; E/atom std 19.2 meV
+   ordered    cells with 0.3<x<0.7: n=51, mean E/atom 25.5 meV
+   random     cells with 0.3<x<0.7: n=49, mean E/atom 41.0 meV
+   segregated cells with 0.3<x<0.7: n=55, mean E/atom 64.3 meV
+   SOAP per atom: 390 dims
+   baseline (predict mean)                      MAE  14.90 meV/atom
+   composition, cubic ridge                     MAE   9.05 meV/atom
+   + NN pair fractions (hand-built), ridge      MAE   3.33 meV/atom
+   SOAP, DScribe average='inner', ridge         MAE   7.02 meV/atom
+   SOAP, power spectra averaged ('outer'), ridge MAE   0.30 meV/atom
+   SOAP summed per centre species, ridge        MAE   0.08 meV/atom
+=== strain +-2%: N=400 cells; E/atom std 21.2 meV
+   SOAP per atom: 390 dims
+   baseline (predict mean)                      MAE  16.46 meV/atom
+   composition + volume, cubic ridge            MAE  11.36 meV/atom
+   + NN pair fractions (hand-built), ridge      MAE   8.07 meV/atom
+   SOAP, DScribe average='inner', ridge         MAE   7.05 meV/atom
+   SOAP, power spectra averaged ('outer'), ridge MAE   0.82 meV/atom
+   SOAP summed per centre species, ridge        MAE   0.21 meV/atom
+learning curve (strain off; 80 held-out cells; 5 random draws):
+   n_train= 10  composition 10.09+/-0.37   SOAP(centre-resolved) 6.58+/-1.94 meV/atom
+   n_train= 20  composition 9.19+/-1.24   SOAP(centre-resolved) 3.91+/-0.97 meV/atom
+   n_train= 40  composition 9.48+/-0.71   SOAP(centre-resolved) 2.06+/-0.58 meV/atom
+   n_train= 80  composition 9.44+/-1.52   SOAP(centre-resolved) 0.51+/-0.05 meV/atom
+   n_train=160  composition 9.24+/-0.91   SOAP(centre-resolved) 0.21+/-0.02 meV/atom
+   n_train=320  composition 8.71+/-0.87   SOAP(centre-resolved) 0.08+/-0.01 meV/atom
+wall 26 s

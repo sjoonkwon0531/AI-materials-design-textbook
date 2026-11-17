@@ -1,0 +1,14 @@
+=== Part A: 1 (x) 1 = 0 + 1 + 2 ===
+  L=0: U0 = +0.248779 = a.b/sqrt(3);  L=1: max|U1 - (a x b)/sqrt(2)| = 0.0e+00
+  L=2: |U2| = 1.600973;  ||traceless symmetric part of a b'||_F = 1.600973
+  |a|^2|b|^2 = 5.064335 = sum_L |U_L|^2 = 5.064335
+  intertwiner: L=0 1.7e-16, L=1 1.1e-16, L=2 4.4e-16   (|U_L(Ra, Rb) - D^L(R) U_L(a, b)|)
+=== Part B: equivariant point convolution + gate on an ethanol geometry ===
+  Float32: out 8x0e+8x1o+8x2e (dim 72); max equivariance error: SO(3) 3.0e-06, improper O(3) 3.0e-06, translation 1.4e-06, permutation 9.5e-07
+  Float64: out 8x0e+8x1o+8x2e (dim 72); max equivariance error: SO(3) 1.2e-14, improper O(3) 1.2e-14, translation 3.8e-15, permutation 1.8e-15
+=== Part C: which nonlinearity keeps equivariance? (l=1 block, 1000 random rotations) ===
+  component-wise SiLU on vectors: 1.51 (|v|_max 1.88);  norm gate sigma(|v|) v: 6.7e-16
+=== Part D: parameter counts ===
+  TP paths = 7 (e3nn counts 9: the 0e outputs are split into 8 scalars + 16 gates), weights per edge = 704, radial MLP params = 12112
+  unconstrained bilinear map (32) x (9) -> 88: 25344 entries = 36.0 x the TP weights
+  equivariant linear on 16x0e+16x1o+16x2e (dim 144): 768 weights; dense 144->144: 20880 (27.2x)

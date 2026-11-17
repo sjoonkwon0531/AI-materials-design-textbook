@@ -1,0 +1,19 @@
+equivariance: |conv(shift x) - shift conv(x)|max = 0.0e+00 (circular, shift 7)
+   maxpool(2): shift 8 -> 4: 0.0e+00;  shift 7 (odd) -> best integer shift 3: 0.74
+model                         #params      0.0    0.1    0.2    0.3    0.5    1.0    2.0
+MLP                           213642   0.786  0.769  0.766  0.756  0.701  0.651  0.569
+CNN+flatten                    38794   0.942  0.942  0.938  0.931  0.910  0.847  0.716
+CNN+global pool                11274   0.478  0.474  0.482  0.472  0.469  0.471  0.460
+deep CNN+global pool           54730   0.954  0.954  0.953  0.953  0.956  0.952  0.951
+   confusion (rows true, cols pred; seed 1, no shift): fcc bcc hcp rock CsCl zinc wurt fluo ruti pero
+   fcc            97    0    0    0    0    0    0    0    0    0
+   bcc             0   88    0    3    2    0    0    0    0    0
+   hcp             0    0   96    0    0    0    0    0    0    0
+   rocksalt        1    8    0   78    0    0    1    0    0    0
+   CsCl            0   14    0    3   95    0    0    2    0    0
+   zincblende      0    0    0    0    0   96    0    3    0    0
+   wurtzite        0    0    3    0    0    0   96    0    0    0
+   fluorite        0    0    0    2    3    4    0   99    0    1
+   rutile          0    0    0    0    0    0    0    0  100    0
+   perovskite      0    0    0    0    1    0    0    0    0  104
+MLP + shift augmentation      213642   0.881  0.880  0.877  0.879  0.877  0.835  0.714

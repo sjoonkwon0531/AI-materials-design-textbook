@@ -1,0 +1,16 @@
+=== Part A: point groups from generators
+C3v (NH3)                  order  6 | closure true | inverses true | assoc. err 1.1e-16 | abelian false | det(+1):3 det(-1):3
+D4h (square planar)        order 16 | closure true | inverses true | assoc. err 0.0e+00 | abelian false | det(+1):8 det(-1):8
+Oh (cube, SF6)             order 48 | closure true | inverses true | assoc. err 2.0e-31 | abelian false | det(+1):24 det(-1):24
+Td (CH4)                   order 24 | closure true | inverses true | assoc. err 2.0e-31 | abelian false | det(+1):12 det(-1):12
+=== Part B: continuous groups
+SO(2): max |D(a)D(b) - D(a+b)| over 1000 pairs = 9.4e-16
+SO(3): |Rx(90)Rz(90) - Rz(90)Rx(90)|_max = 1.000 -> non-abelian
+random orthogonal Q: |Q'Q - I| = 1.2e-16, det = +1.000000
+=== Part C: characters of C3v (NH3)
+vector (x,y,z)  : chi = [3.0, -0.0, 1.0] -> A1:1, A2:0, E:1 | homomorphism err 0.0e+00
+H permutations  : chi = [3.0, 0.0, 1.0] -> A1:1, A2:0, E:1 | homomorphism err 0.0e+00
+=== Part D: E(3) elements g = (R, t) acting as x -> R x + t (X: 3 x 9, 열 = 원자)
+|g.(h.X) - (gh).X| = 4.4e-16,  |g^-1.(g.X) - X| = 4.4e-16
+translations do not commute with rotations: |(gh).t - (hg).t| = 1.242
+all pair distances preserved by g (det R = -1): max change 8.9e-16

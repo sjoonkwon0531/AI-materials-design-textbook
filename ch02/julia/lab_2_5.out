@@ -1,0 +1,10 @@
+analytic C1=73.4523 C2=-53.4523  T'(0)=12.690456
+iter   slope guess    T(L) hit      error
+   1    250.000000  2988.864597  +2.79e+03
+   5     15.625000   234.486799  +3.45e+01
+  20     12.690067   199.995435  -4.57e-03
+  39     12.690456   200.000000  +5.54e-10
+first iteration with |error| < 1e-8: 39
+converged slope T'(0) = 12.690456
+max |T_shoot - T_exact| over the rod = 4.9e-12
+secant (1 step): slope = 12.690456   residual = -2.3e-13

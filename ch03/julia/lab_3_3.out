@@ -1,0 +1,6 @@
+  Li     x_O=0.000 E_form=+0.000 eV/atom -> STABLE
+  O2     x_O=1.000 E_form=+0.000 eV/atom -> STABLE
+  Li2O   x_O=0.333 E_form=-2.050 eV/atom -> STABLE
+  Li2O2  x_O=0.500 E_form=-1.580 eV/atom -> STABLE
+  LiO2   x_O=0.667 E_form=-0.900 eV/atom -> +0.153 eV/atom above hull
+hull vertices (x_O, E_form): [(0.0, 0.0), (0.333, -2.05), (0.5, -1.58), (1.0, 0.0)]

@@ -1,0 +1,40 @@
+train 3677 / test 924 (chemical systems disjoint: true)
+  num_leaves=15 lr=0.03 min_child= 5 -> grouped-CV MAE 0.421
+  num_leaves=15 lr=0.03 min_child=20 -> grouped-CV MAE 0.425
+  num_leaves=15 lr=0.10 min_child= 5 -> grouped-CV MAE 0.413
+  num_leaves=15 lr=0.10 min_child=20 -> grouped-CV MAE 0.420
+  num_leaves=63 lr=0.03 min_child= 5 -> grouped-CV MAE 0.402
+  num_leaves=63 lr=0.03 min_child=20 -> grouped-CV MAE 0.414
+  num_leaves=63 lr=0.10 min_child= 5 -> grouped-CV MAE 0.417
+  num_leaves=63 lr=0.10 min_child=20 -> grouped-CV MAE 0.418
+selected: (num_leaves = 63, learning_rate = 0.03, min_data_in_leaf = 5)
+direct regression          MAE all 0.403 | metals 0.285 | non-metals 0.552 | false-metal(gap>0 predicted 0) 0
+two-stage (hard gate)      MAE all 0.305 | metals 0.150 | non-metals 0.502 | false-metal(gap>0 predicted 0) 29
+two-stage (soft p*gap)     MAE all 0.311 | metals 0.165 | non-metals 0.497 | false-metal(gap>0 predicted 0) 0
+classifier: accuracy 0.931  ROC-AUC 0.982  | regressor MAE on true non-metals 0.402
+direct regression on metals: fraction predicted < 0.1 eV = 0.62
+family          n_test  mean_gap  MAE_direct  MAE_2stage
+oxide             213      1.67       0.745       0.528
+chalcogenide      231      1.56       0.383       0.351
+halide             62      1.38       0.822       0.552
+pnictide           68      0.69       0.391       0.241
+other             350      0.15       0.136       0.108
+permutation importance (increase in MAE, eV), top 8:
+   MagpieData mode CovalentRadius                   0.085 +/- 0.008
+   MagpieData mode MeltingT                         0.059 +/- 0.003
+   frac p valence electrons                         0.056 +/- 0.008
+   compound possible                                0.031 +/- 0.007
+   MagpieData avg_dev Electronegativity             0.030 +/- 0.004
+   MagpieData avg_dev NpValence                     0.027 +/- 0.003
+   MagpieData mean CovalentRadius                   0.018 +/- 0.001
+   MagpieData minimum MeltingT                      0.018 +/- 0.004
+LightGBM split-count top 5: ["MagpieData avg_dev GSvolume_pa", "MagpieData mean MeltingT", "MagpieData avg_dev CovalentRadius", "MagpieData mean GSvolume_pa", "MagpieData mean Electronegativity"]
+P(non-metal) calibration: Brier raw 0.0506 -> isotonic 0.0513 ; ECE raw 0.0305 -> isotonic 0.0317
+quantile LGBM nominal 90% interval: coverage 0.665, mean width 1.43 eV
+RF (fit on 1288, calibrate on 457 group-disjoint): MAE non-metals 0.468; mean sigma 0.71 eV
+   nominal 0.50 -> Gaussian(sigma) observed 0.608 | conformal (k=0.53) observed 0.468
+   nominal 0.68 -> Gaussian(sigma) observed 0.781 | conformal (k=0.77) observed 0.658
+   nominal 0.90 -> Gaussian(sigma) observed 0.946 | conformal (k=1.35) observed 0.901
+   nominal 0.95 -> Gaussian(sigma) observed 0.970 | conformal (k=1.60) observed 0.936
+Spearman(|error|, sigma) = 0.462
+wall 117 s

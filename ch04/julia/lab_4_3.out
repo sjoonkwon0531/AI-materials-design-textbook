@@ -1,0 +1,19 @@
+=== Diagonalization wall-time vs matrix size (LAPACK via eigvals(Symmetric)) ===
+   N      time(s)   reps
+   200     0.0013   5
+   400     0.0061   5
+   800     0.0381   5
+  1200     0.1419   3
+  1600     0.3109   3
+  2400     0.9870   1
+  3200     2.2397   1
+
+full-range fit p = 2.72  |  asymptotic tail (N>=800) p = 2.91  (ideal=3)
+local doubling exponents:
+  200->400: time x4.62  -> exponent 2.21
+  400->800: time x6.20  -> exponent 2.63
+  800->1200: time x3.72  -> exponent 3.24
+  1200->1600: time x2.19  -> exponent 2.73
+  1600->2400: time x3.17  -> exponent 2.85
+  2400->3200: time x2.27  -> exponent 2.85
+implied slowdown for 10x larger system (cubic): ~1000x

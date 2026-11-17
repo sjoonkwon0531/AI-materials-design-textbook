@@ -1,0 +1,6 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+=== MACE-MP-0 small (float64), a = 3.944 A: lowest frequency (cm-1) at G, X, M, R ===
+  disp 0.005 A: G 105.8i  X  40.4   M  43.7i  R  70.8i   |acoustic at G| max 0.00
+  disp 0.010 A: G 105.4i  X  41.4   M  43.7i  R  70.8i   |acoustic at G| max 0.00
+  disp 0.020 A: G 103.6i  X  45.5   M  43.6i  R  70.7i   |acoustic at G| max 0.00
+  disp 0.040 A: G  96.3i  X  59.2   M  43.4i  R  70.6i   |acoustic at G| max 0.00

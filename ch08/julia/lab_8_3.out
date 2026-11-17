@@ -1,0 +1,10 @@
+(a) cliff walking, eps=0.1, alpha=0.5, gamma=1, 500 episodes, 50 runs
+  sarsa  : online return (episodes 401-500) =  -26.55 +- 0.84;  greedy path length: [17, 19] (counts [38, 2]), greedy policy loops in 10 runs
+  qlearn : online return (episodes 401-500) =  -51.79 +- 1.02;  greedy path length: [13] (counts [50]), greedy policy loops in 0 runs
+  seed-0 greedy path of sarsa  : rows visited [1, 2, 3, 4], length 17
+  seed-0 greedy path of qlearn : rows visited [3, 4], length 13
+
+(b) Baird's counterexample, expected semi-gradient updates, alpha=0.01, gamma=0.99
+  triad   : ||w|| at sweep 1/1000/5000 = 10.4 / 437 / 6.94e+06;  max|v - v_pi| = 12.2 / 677 / 1.06e+07
+  mc      : ||w|| at sweep 1/1000/5000 = 10.3 / 8.63 / 8.63;  max|v - v_pi| = 11.9 / 0.312 / 3.34e-06
+  tabular : ||w|| at sweep 1/1000/5000 = 2.65 / 2.61 / 2.46;  max|v - v_pi| = 1 / 0.986 / 0.931

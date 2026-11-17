@@ -1,0 +1,31 @@
+=== B. EOS: dV0 (%) relative to PBE (WIEN2k) ===
+  Al   |    +1.01    +0.10    -0.14    -0.19|    -1.28
+  Cu   |    -1.36    -1.20    -1.38    -1.14|    -2.55
+  Ag   |    +1.42    +0.53    +1.38    +0.82|    -5.59
+  Au   |    +0.72    +0.79    +0.94    +0.96|    -6.41
+  Si   |    -0.27    -0.12    -0.33    -0.30|    -3.08
+  Ge   |    -1.37    -0.11    -0.60    -0.15|    -6.17
+  Mo   |    -0.34    +0.74    +0.65    +0.94|    -1.76
+  W    |    +0.67    +0.36    +0.56    +0.81|    -2.13
+  MAE  |     0.89     0.49     0.75     0.66|     3.62
+  mean B0(model)/B0(PBE) |    0.937    0.944    0.972    0.997
+  elements with B0(model) < B0(PBE): Dict("7net-0" => 4, "MACE" => 6, "CHGNet" => 5, "MatSim" => 4) of 8
+=== C. Si elastic constants (GPa), strain 0.5 % / 1.0 % ===
+   MACE    C11   95.7/  95.7  C12   57.9/  58.0  C44   29.2/  29.2   (C11+2C12)/3 =   70.5  B_EOS =   71.6
+   CHGNet  C11  114.0/ 105.8  C12   26.5/  38.2  C44   40.2/  37.3   (C11+2C12)/3 =   55.7  B_EOS =   77.9
+   7net-0  C11  154.3/ 152.1  C12   69.6/  69.4  C44   57.9/  57.8   (C11+2C12)/3 =   97.9  B_EOS =   94.6
+   MatSim  C11  133.8/ 133.8  C12   67.1/  67.1  C44   50.3/  50.3   (C11+2C12)/3 =   89.3  B_EOS =   89.3
+=== G. NVE, Si 64 atoms, MB 1200 K start, dt 2 fs, 400 steps ===
+   MACE    drift =  +0.007 meV/atom/ps  std(E) = 0.035 meV/atom   (refit from the stored trace)
+   CHGNet  drift =  +0.327 meV/atom/ps  std(E) = 0.063 meV/atom   (refit from the stored trace)
+   7net-0  drift =  -0.007 meV/atom/ps  std(E) = 0.035 meV/atom   (refit from the stored trace)
+   MatSim  drift =  -0.009 meV/atom/ps  std(E) = 0.035 meV/atom   (refit from the stored trace)
+=== H. OOD probes (refit from the stored dimer curves) ===
+   MACE    Si2: r_min 2.3 A, E_min -2.48 eV, E(1.0 A) +20.22 eV, monotone true
+   MACE    Cu2: r_min 2.3 A, E_min -1.15 eV, E(1.0 A) +35.87 eV, monotone false
+   CHGNet  Si2: r_min 2.2 A, E_min -3.12 eV, E(1.0 A) +19.21 eV, monotone false
+   CHGNet  Cu2: r_min 2.3 A, E_min -1.60 eV, E(1.0 A) +26.98 eV, monotone false
+   7net-0  Si2: r_min 0.6 A, E_min -13.76 eV, E(1.0 A) +7.76 eV, monotone true
+   7net-0  Cu2: r_min 0.6 A, E_min -104.41 eV, E(1.0 A) +6.48 eV, monotone true
+   MatSim  Si2: r_min 2.2 A, E_min -2.75 eV, E(1.0 A) +51.07 eV, monotone true
+   MatSim  Cu2: r_min 2.3 A, E_min -0.79 eV, E(1.0 A) +84.81 eV, monotone true

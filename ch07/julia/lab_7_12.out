@@ -1,0 +1,10 @@
+model                         E inv. err  F equiv. err (SO3)   (det -1)   transl.  asym(dF/dR)   loop work
+(a) SchNet E -> -dE/dR           5.7e-14             1.5e-13    1.3e-13   2.5e-14      5.6e-17  -1.11e-13 meV
+(b) xyz-MLP E -> -dE/dR          1.2e-01             7.1e+00    6.6e+00   1.9e-15      1.2e-16  -2.17e-16 meV
+(c) xyz-MLP direct F                 NaN             6.3e+00    6.9e+00   1.4e-15      9.9e-01   4.52e-01 meV
+(d) SchNet direct equiv. F           NaN             2.2e-15    2.1e-15   1.0e-15      1.1e-02   6.52e-02 meV
+model                         |sum_i F_i|/<|F|>  |sum_i r_i x F_i|/<|F|> (A)
+(a) SchNet E -> -dE/dR                  3.6e-15                      4.0e-15
+(b) xyz-MLP E -> -dE/dR                 2.2e-15                      5.7e+00
+(c) xyz-MLP direct F                    6.5e+00                      1.7e+01
+(d) SchNet direct equiv. F              9.3e-16                      1.4e-15

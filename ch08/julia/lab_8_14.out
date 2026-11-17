@@ -1,0 +1,20 @@
+environment contract: obs 5 x Float32, action in [-1, 1]; same seed -> same first obs: true
+tuned constant set-point 685 K | tuned two-level (6 steps at 670 K, then 690 K) | oracle actual T 695 K
+random search: best training score -2.192; schedule (K) 671 728 610 668 720 672 714 683 694 681 667 702
+
+TEST: 2000 episodes, seed 12345, delta ~ U(-40,40) K, N = 12 ML
+  tuned constant                 J =  -2.153 +/- 0.007 | w_N 1.915 | TB  11.93 | 5th pct J  -2.721
+  tuned two-level                J =  -2.104 +/- 0.007 | w_N 1.895 | TB  10.46 | 5th pct J  -2.668
+  random search (25k episodes)   J =  -2.632 +/- 0.020 | w_N 1.816 | TB  40.82 | 5th pct J  -4.782
+  PPO seed 0                     J =  -1.886 +/- 0.005 | w_N 1.760 | TB   6.31 | 5th pct J  -2.242
+  PPO seed 1                     J =  -1.890 +/- 0.005 | w_N 1.769 | TB   6.04 | 5th pct J  -2.242
+  PPO seed 2                     J =  -1.890 +/- 0.005 | w_N 1.777 | TB   5.68 | 5th pct J  -2.231
+  PPO over 3 training seeds: J = -1.889 +/- 0.002 (sd over seeds)
+  PPO open-loop seed 0           J =  -2.092 +/- 0.007 | w_N 1.891 | TB  10.06 | 5th pct J  -2.657
+  PPO open-loop seed 1           J =  -2.089 +/- 0.007 | w_N 1.868 | TB  11.03 | 5th pct J  -2.650
+  PPO open-loop seed 2           J =  -2.098 +/- 0.007 | w_N 1.916 | TB   9.11 | 5th pct J  -2.692
+  PPO open-loop over 3 seeds: J = -2.093 +/- 0.005
+  oracle (knows delta)           J =  -1.888 +/- 0.005 | w_N 1.716 | TB   8.59 | 5th pct J  -2.239
+  PPO seed 0: corr(set-point over steps 5-12, delta) = -0.90; slope dT_set/d delta = -0.65
+  PPO seed 1: corr(set-point over steps 5-12, delta) = -0.91; slope dT_set/d delta = -0.70
+  PPO seed 2: corr(set-point over steps 5-12, delta) = -0.90; slope dT_set/d delta = -0.70

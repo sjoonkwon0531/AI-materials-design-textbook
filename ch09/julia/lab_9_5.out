@@ -1,0 +1,12 @@
+=== A. Burgers, nu = 0.01/pi; reference = Cole-Hopf (120-point Gauss-Hermite); max |u_x| = 152.00 at t = 0.510 ===
+  FD N =  100: rel L2 error 2.11e-02,   1357 ms
+  FD N =  200: rel L2 error 3.75e-03,      0 ms
+  FD N =  400: rel L2 error 2.02e-03,      1 ms
+  FD N =  800: rel L2 error 5.05e-04,      5 ms
+  FD N = 1600: rel L2 error 1.25e-04,     37 ms
+  PINN (2-32x4-1 tanh, hard IC/BC, 2000 points) seed 0: rel L2 after Adam 1.56e-01 -> after L-BFGS 6.19e-03, final loss 2.1e-04, 207 s
+=== B. 1D Cahn-Hilliard, eps = 0.25, T = 1.0; spectral reference N=256, dt=2e-5: 1145 ms ===
+  reference self-check: rel L2 diff between dt=2e-5 and dt=1e-5: 5.9e-05
+  reference: max|c| 0.30 -> 0.91; mass drift 1.7e-17; F 1.519 -> 0.948, increases 0/100
+  PINN mixed (c, mu) seed 0: rel L2 after Adam 1.15e-01 -> after L-BFGS 1.71e-03; err(t=0.25,0.5,1) = 2.35e-03, 1.90e-03, 1.51e-03
+       residual losses r1 2.2e-06 r2 5.6e-07; mass drift max|<c>(t)-<c>(0)| 7.5e-05; F 1.519 -> 0.948, increases 0/100; 369 s

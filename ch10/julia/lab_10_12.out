@@ -1,0 +1,21 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+=== MACE-MP-0 small  (3847696 parameters, float64) ===
+  EOS: a0 = 3.9433 A, B = 164.3 GPa   (exp a = 3.905 A; PBE/VASP 3.944 A)
+  phonons at a = 3.9433 A (own), 30 displaced 40-atom supercells, 12.5 s
+     G: 104i 104i 104i 0i 0i 0  ... max 491 cm-1
+     X: 45 45 91 91 136 157  ... max 769 cm-1
+     M: 44i 68 90 96 96 244  ... max 776 cm-1
+     R: 71i 71i 71i 114 114 114  ... max 805 cm-1
+  phonons at a = 3.9440 A (pbe), 30 displaced 40-atom supercells, 11.8 s
+     G: 105i 105i 105i 0i 0i 0  ... max 491 cm-1
+     X: 41 41 91 91 136 157  ... max 768 cm-1
+     M: 44i 66 89 96 96 244  ... max 776 cm-1
+     R: 71i 71i 71i 114 114 114  ... max 804 cm-1
+  phonons at a = 3.9050 A (exp), 30 displaced 40-atom supercells, 11.5 s
+     G: 0i 0i 0 63 63 63  ... max 525 cm-1
+     X: 99 99 122 122 142 169  ... max 805 cm-1
+     M: 66i 97 105 105 124 254  ... max 812 cm-1
+     R: 87i 87i 87i 123 123 123  ... max 846 cm-1
+  rigid a0a0c- tilt at a0: min -3.46 meV/f.u. at 4.5 deg; E(10 deg) = +49.5 meV/f.u.
+  relaxed tilt (I4/mcm, 15 steps): phi = 4.75 deg, dE = -3.92 meV/f.u., cell 7.8705 7.8705 7.9018 A, c/a(pseudo) = 1.00397
+  wall time per 40-atom energy+force call (median of 5): 417 ms; force calls of this script 142; total 56 s

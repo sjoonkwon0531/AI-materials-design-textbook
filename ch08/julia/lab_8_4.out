@@ -1,0 +1,13 @@
+reinforce: mean length last 50 episodes =  173.1 +-  36.6 (per seed [126, 135, 210, 96, 299]); first episode with 20-ep avg >= 475: [-1, -1, -1, 188, -1]
+baseline : mean length last 50 episodes =  412.9 +-  53.2 (per seed [489, 491, 225, 364, 497]); first episode with 20-ep avg >= 475: [129, 169, -1, 122, 110]
+a2c      : mean length last 50 episodes =  487.8 +-  12.2 (per seed [500, 500, 500, 500, 439]); first episode with 20-ep avg >= 475: [115, 108, 114, 105, 117]
+
+Gradient-estimator variance at a fixed policy (mean episode length 129.2), 300 episodes
+estimator                    trCov  var/G_t  |mean|   s.e. cos(exact)  cos(G_t)
+total return G_0          4.68e+06    2.844   129.9  124.9      0.715     0.690
+gamma^t G_t (exact)       6.03e+05    0.367   195.3   44.8      1.000     0.997
+reward-to-go G_t          1.64e+06    1.000   304.3   74.0      0.997     1.000
+G_t - const b             6.01e+05    0.366   366.7   44.8      0.981     0.989
+G_t - V(s_t)               8.5e+05    0.517   374.5   53.2      0.989     0.995
+GAE lambda=0.95           2.27e+05    0.138   170.1   27.5      0.950     0.967
+TD residual (lambda=0)    2.18e+04    0.013     2.9    8.5     -0.439    -0.400

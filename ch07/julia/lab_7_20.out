@@ -1,0 +1,4 @@
+training rows 4352, global batch 256 = 2 workers x 128
+local gradient norms (first batch): Float32[0.6516, 0.8467];  max |mean of local grads - full-batch grad| = 3.0e-08
+after training: max |theta_DP - theta_single| = 1.5e-06 (max |theta| = 0.15)
+wall: single 7.66 s | data parallel (2 workers, incl. communication) 13.71 s

@@ -1,0 +1,9 @@
+T=30 (4.77 periods)
+  explicit Euler   E(30)=9.894233  E/E0=19.7885  max|x|=4.106  E in [0.5000, 9.8942]
+  implicit Euler   E(30)=0.025267  E/E0=0.0505  max|x|=1.000  E in [0.0253, 0.5000]
+  RK4              E(30)=0.499998  E/E0=1.0000  max|x|=1.000  E in [0.5000, 0.5000]
+  velocity-Verlet  E(30)=0.498785  E/E0=0.9976  max|x|=1.000  E in [0.4988, 0.5000]
+T=2000 (318.31 periods, 20000 steps)
+  RK4              E_end=0.499861  drift=-0.0277%  E in [0.499861, 0.500000]  band=1.387e-04
+  velocity-Verlet  E_end=0.499845  drift=-0.0311%  E in [0.498750, 0.500000]  band=1.250e-03
+explicit-Euler area factor per step = 1.01, after 300 steps = 19.79

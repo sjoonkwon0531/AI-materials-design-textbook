@@ -1,0 +1,12 @@
+data: 40 trajectories x 21 snapshots (dt=0.2), noise sigma=0.02; 640 windows of K=5 steps
+test orbit: q0=2.0, p0=0, E0=1.4161, period 8.350, T=200
+  NeuralODE-MLP seed 0: train loss 8.41e-04, field RMSE 0.0226, |x-x_ref|(t=20) 0.030, E(T)-E0 +64.6150, max|E-E0| 64.6150, train 63 s
+  NeuralODE-MLP seed 1: train loss 8.30e-04, field RMSE 0.0226, |x-x_ref|(t=20) 0.103, E(T)-E0 +0.1393, max|E-E0| 5.2733, train 56 s
+  NeuralODE-MLP seed 2: train loss 8.25e-04, field RMSE 0.0228, |x-x_ref|(t=20) 0.038, E(T)-E0 +2.2961, max|E-E0| 2.6097, train 56 s
+  NeuralODE-MLP: E(T)-E0 = +22.3501 +/- 29.8988; max|E-E0| = 24.1660 +/- 28.6224; field RMSE 0.0227 +/- 0.0001; train 59 s
+  jet vs nested ForwardDiff (1st, 2nd derivative): (5.551115123125783e-17, 0.0)
+  HNN seed 0: train loss 7.93e-04, field RMSE 0.0169, |x-x_ref|(t=20) 0.069, E(T)-E0 +0.0002, max|E-E0| 0.0103, train 257 s, max|H_theta drift| 1.8e-08
+  HNN seed 1: train loss 7.94e-04, field RMSE 0.0214, |x-x_ref|(t=20) 0.097, E(T)-E0 +0.0042, max|E-E0| 0.0230, train 237 s, max|H_theta drift| 2.4e-08
+  HNN seed 2: train loss 7.92e-04, field RMSE 0.0171, |x-x_ref|(t=20) 0.053, E(T)-E0 +0.0004, max|E-E0| 0.0114, train 234 s, max|H_theta drift| 1.6e-08
+  HNN: E(T)-E0 = +0.0016 +/- 0.0018; max|E-E0| = 0.0149 +/- 0.0057; field RMSE 0.0185 +/- 0.0021; train 243 s
+  true field + RK4 (h=0.02): max|E-E0| = 7.6e-09  (integrator error is negligible)

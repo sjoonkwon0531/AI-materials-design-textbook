@@ -1,0 +1,17 @@
+Cole-Hopf check  N=  64 dt=5e-4 T=1: max|u-u_exact| = 4.42e-13
+Cole-Hopf check  N= 128 dt=5e-4 T=1: max|u-u_exact| = 3.52e-15
+Burgers GRF N=512 dt=1.0e-03 vs (N=1024, dt=1.25e-4): rel-L2 mean 3.2e-06  max 2.8e-05
+Burgers GRF N=512 dt=5.0e-04 vs (N=1024, dt=1.25e-4): rel-L2 mean 4.7e-07  max 4.2e-06
+Burgers: 1200 ICs, N=512: mean drift max 7.2e-07; u(T) rms fluctuation 0.555
+data: 1000 train / 200 test, nu=0.005, T=0.25; width 32, depth 4, 50 epochs, batch 20
+FNO parameters: 145729
+FNO(kmax=16) trained at s= 64 (  47 s): test rel-L2 at s=32: 0.0224  64: 0.0223  128: 0.0220  256: 0.0220  512: 0.0220
+  s= 64 -> 512: zero-shot 0.0220 | FNO@64 + Fourier interp 0.0256 | interp of exact coarse solution (floor) 0.0114
+self-consistency: ||G(a_128)|_64 - G(a_64)|| / ||G(a_64)|| = 0.0013
+self-consistency: ||G(a_512)|_64 - G(a_64)|| / ||G(a_64)|| = 0.0014
+translation equivariance error (shift 5/64): 1.1e-07
+mean conservation |mean(pred) - mean(u0)|: mean 2.21e-03, max 2.25e-02  (solver: 1e-15)
+cost per sample: FNO forward (s=64) 0.173 ms | reference solver N=512, dt=5e-4: 16.8 ms
+   coarse solver N= 64, dt=2.50e-03: 0.54 ms, rel-L2 at 512 (after Fourier interpolation) 0.0273
+   coarse solver N= 96, dt=1.25e-03: 1.98 ms, rel-L2 at 512 (after Fourier interpolation) 0.0092
+   coarse solver N=128, dt=1.25e-03: 1.63 ms, rel-L2 at 512 (after Fourier interpolation) 0.0040

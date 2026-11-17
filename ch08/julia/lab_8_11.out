@@ -1,0 +1,28 @@
+(0) baseline 'predict the training mean 0.726 eV': MAE ID 0.850, oxide 1.622, halide 1.705 eV
+(0) OOD detection, ID test vs oxides / halides: AUROC
+   5-NN distance            oxide 0.959  halide 0.841
+   Mahalanobis              oxide 0.973  halide 0.818
+   ensemble sd (5 AdamW)    oxide 0.977  halide 0.946
+   ID test  ensemble MAE 0.255 eV, mean sd 0.069 eV, coverage of mean +/- 1.96 sd 57.4%
+   oxide    ensemble MAE 1.923 eV, mean sd 0.373 eV, coverage of mean +/- 1.96 sd 22.2%
+(1) reparameterisation of AdamW seed-0 model: W1,b1 *= a, W2 /= a  (exact HVP, power iteration run to convergence: 300 steps)
+   a=1     max|f'-f| = 0.0e+00 eV | lambda_max(H) =    28.66 | lambda_max(THT) = 0.0993
+   a=4     max|f'-f| = 0.0e+00 eV | lambda_max(H) =    97.35 | lambda_max(THT) = 0.0993
+   a=0.25  max|f'-f| = 0.0e+00 eV | lambda_max(H) =   236.96 | lambda_max(THT) = 0.0993
+(2) input-space robustness on the ID test set, increase in MAE [eV]; mean over 5 seeds
+   AdamW (bs 64)        |grad_x f| 0.708+/-0.014 | noise 0.1: +0.009  0.3: +0.054 | FGSM 0.05: +0.307  0.1: +0.590 | lam_max 27.9
+   AdamW (bs 1024)      |grad_x f| 0.653+/-0.036 | noise 0.1: +0.008  0.3: +0.049 | FGSM 0.05: +0.302  0.1: +0.593 | lam_max 47.1
+   SAM                  |grad_x f| 0.534+/-0.011 | noise 0.1: +0.005  0.3: +0.032 | FGSM 0.05: +0.232  0.1: +0.447 | lam_max 14.3
+   ASAM                 |grad_x f| 0.572+/-0.013 | noise 0.1: +0.007  0.3: +0.038 | FGSM 0.05: +0.249  0.1: +0.480 | lam_max 17.6
+   F-SAM                |grad_x f| 0.638+/-0.010 | noise 0.1: +0.008  0.3: +0.045 | FGSM 0.05: +0.277  0.1: +0.534 | lam_max 20.8
+   AdamW + input noise  |grad_x f| 0.563+/-0.012 | noise 0.1: +0.006  0.3: +0.034 | FGSM 0.05: +0.242  0.1: +0.464 | lam_max 24.9
+   AdamW + FGSM         |grad_x f| 0.348+/-0.003 | noise 0.1: +0.002  0.3: +0.015 | FGSM 0.05: +0.131  0.1: +0.249 | lam_max 22.0
+Spearman rank correlations over 35 models:
+   lam_max      vs |grad_x f|   rho = +0.62
+   lam_max      vs FGSM0.1 dMAE rho = +0.64
+   lam_max      vs ID MAE       rho = +0.48
+   lam_max      vs oxide MAE    rho = +0.45
+   lam(THT)     vs ID MAE       rho = +0.51
+   lam(THT)     vs oxide MAE    rho = +0.58
+   |grad_x f|   vs oxide MAE    rho = +0.71
+   ID MAE       vs oxide MAE    rho = +0.27

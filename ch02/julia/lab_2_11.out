@@ -1,0 +1,10 @@
+IC sin(pi x)              = [0.0000 0.7071 1.0000 0.7071 0.0000]
+STABLE   lam=0.4 (k=0.025): [0.0000 0.5414 0.7657 0.5414 0.0000]
+UNSTABLE lam=4   (k=0.25) : [0.0000 -0.9497 -1.3431 -0.9497 0.0000]
+stability bound: lam <= 1/2  ->  k <= h^2/2 = 0.03125
+lam=4 step 1: max|u| = 1.34
+lam=4 step 2: max|u| = 1.80
+lam=4 step 3: max|u| = 2.42
+lam=4 step 4: max|u| = 3.25
+lam=4 step 5: max|u| = 4.37
+lam=4 step 6: max|u| = 5.87

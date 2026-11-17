@@ -1,0 +1,14 @@
+pretraining geometries: 1500; 300 K pool 2000, test 1000
+G zero-shot on GFN2 300 K test: E MAE (mean offset removed) 48 meV, F MAE 179 meV/A
+N=  50 init=0: E MAE   69.5 meV   F MAE  236.7 meV/A   (800 fine-tuning steps)
+N=  50 init=S: E MAE   42.4 meV   F MAE  167.6 meV/A   (800 fine-tuning steps)
+N=  50 init=G: E MAE   42.9 meV   F MAE  178.5 meV/A   (800 fine-tuning steps)
+N= 200 init=0: E MAE   86.3 meV   F MAE  241.8 meV/A   (800 fine-tuning steps)
+N= 200 init=S: E MAE   40.7 meV   F MAE  159.3 meV/A   (800 fine-tuning steps)
+N= 200 init=G: E MAE   43.9 meV   F MAE  170.1 meV/A   (800 fine-tuning steps)
+N=  50 init=0, 2300 steps: E MAE   37.8 meV   F MAE  129.9 meV/A
+N=  50 init=S, 2300 steps: E MAE   35.4 meV   F MAE  135.9 meV/A
+N=  50 init=G, 2300 steps: E MAE   40.6 meV   F MAE  149.7 meV/A
+N= 200 init=0, 2300 steps: E MAE   41.3 meV   F MAE  141.6 meV/A
+N= 200 init=S, 2300 steps: E MAE   38.1 meV   F MAE  129.0 meV/A
+N= 200 init=G, 2300 steps: E MAE   39.8 meV   F MAE  145.7 meV/A

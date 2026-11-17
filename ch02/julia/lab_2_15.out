@@ -1,0 +1,5 @@
+hidden units H=20, collocation pts=80, params=61, LM iterations=3000
+final residual cost (0.5 sum r^2) = 3.99e-12
+max |u_PINN - u_exact|            = 3.06e-10
+u_PINN(0)=-1.4e-10, u_PINN(1)=-2.5e-11   (BC satisfied)
+NOTE: trained WITHOUT any labeled solution values - only the PDE + BC.

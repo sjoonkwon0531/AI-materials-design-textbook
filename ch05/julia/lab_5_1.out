@@ -1,0 +1,25 @@
+=== Part A: NVT MC, N=256, T*=2.0, r_c=2.5 + tail corrections, 3000 eq + 10000 prod sweeps ===
+  rho    delta  acc   U/N (MC)          U/N (EOS)   P (MC)            P (EOS)
+  0.1   1.868  0.57  -0.6642 +/- 0.0008  -0.6674     0.1778 +/- 0.0003   0.1778
+  0.3   0.687  0.37  -1.9199 +/- 0.0017  -1.9302     0.4809 +/- 0.0018   0.4874
+  0.5   0.308  0.41  -3.1486 +/- 0.0018  -3.1525     1.0677 +/- 0.0058   1.0752
+  0.7   0.207  0.37  -4.3027 +/- 0.0027  -4.3024     3.0043 +/- 0.0123   3.0320
+  0.9   0.138  0.37  -5.0339 +/- 0.0044  -5.0263     9.0695 +/- 0.0210   9.0898
+  (max |E_incremental - E_recomputed| at end = 8.8e-11)
+  finite-size check at rho=0.3 (2000 eq + 8000 prod sweeps, seed 11):
+    N= 108: U/N = -1.9128 +/- 0.0028   P = 0.4838 +/- 0.0032
+    N= 256: U/N = -1.9238 +/- 0.0019   P = 0.4872 +/- 0.0020
+    N= 500: U/N = -1.9220 +/- 0.0014   P = 0.4877 +/- 0.0015
+  Part A time 66.5 s
+=== Part B: NPT MC, N=256, T*=2.0, one ln V trial per sweep, 3000 eq + 10000 prod sweeps ===
+  P=1.0: <rho> = 0.4833 +/- 0.0011   EOS rho = 0.4840   acc(lnV) = 0.28  dlnV = 0.0939
+  P=3.0: <rho> = 0.6989 +/- 0.0009   EOS rho = 0.6981   acc(lnV) = 0.32  dlnV = 0.0600
+  P=1.0 WITHOUT the (N+1)ln(V'/V) term: <rho> = 0.6518 +/- 0.0008  (wrong)
+  Part B time 47.1 s
+=== Part C: truncated-and-shifted LJ, T*=2.0, rho=0.6, N=256: Metropolis MC vs Langevin BAOAB MD ===
+  MC  : <U_ts>/N = -3.1073 +/- 0.0020   (10000 sweeps)
+  MD  : <U_ts>/N = -3.1090 +/- 0.0028   kinetic T = 2.0010 +/- 0.0060   (BAOAB, gamma=1, dt=0.005, t_prod=150)
+  Part C time 21.3 s
+=== Part D: hard walls in z (reflecting: moves out of the box rejected), periodic in x,y; rho=0.8, T*=2.0 ===
+  box 5.429 x 5.429 x 10.858; mid-slab density = 0.781; first contact peak = 2.112 at z = 0.05
+  Part D time 6.2 s;  total 141.1 s

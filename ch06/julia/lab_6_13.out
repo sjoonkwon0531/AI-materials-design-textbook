@@ -1,0 +1,54 @@
+data: n=4601, p=132 Magpie features, metals (gap=0) = 0.532
+  fold 0 done (79 s)
+  fold 1 done (148 s)
+  fold 2 done (220 s)
+  fold 3 done (292 s)
+  fold 4 done (361 s)
+=== Part A: regression, 5-fold CV (shuffled KFold) ===
+model            MAE mean  +/- sd   RMSE  MAE gap>0
+dummy               1.144   0.026  1.446      1.335
+ridge               0.865   0.214  6.375      0.860
+tree                0.508   0.029  1.099      0.732
+RF                  0.436   0.021  0.787      0.539
+XGBoost             0.405   0.023  0.749      0.507
+LightGBM            0.406   0.023  0.753      0.511
+stack (OOF)         0.402   0.021  0.745      0.503
+stack (naive)       0.404   0.024  0.749      0.503
+meta weights [intercept, ridge, RF, XGBoost, LightGBM] (mean over folds)
+  OOF  : [-0.040 0.000 0.062 0.658 0.304]
+  naive: [-0.019 0.000 0.000 1.016 0.004]
+correlation of out-of-fold residuals (ridge, RF, XGB, LGBM):
+4×4 Matrix{Float64}:
+ 1.0    0.141  0.122  0.123
+ 0.141  1.0    0.939  0.927
+ 0.122  0.939  1.0    0.957
+ 0.123  0.927  0.957  1.0
+
+=== Part B: metal (gap=0) vs non-metal, 5-fold stratified CV ===
+model         accuracy  ROC-AUC
+logistic         0.864    0.932   (acc sd 0.005)
+tree             0.876    0.896   (acc sd 0.013)
+AdaBoost         0.891    0.954   (acc sd 0.009)
+RF               0.916    0.973   (acc sd 0.012)
+XGBoost          0.918    0.973   (acc sd 0.011)
+LightGBM         0.920    0.974   (acc sd 0.011)
+=== Part C: learning curves: test MAE (eV), mean +/- sd over 5 folds; train MAE in brackets ===
+n_train                 ridge                  tree                    RF              LightGBM
+    250   0.890+/-0.046 [0.679]   0.760+/-0.072 [0.216]   0.668+/-0.032 [0.255]   0.671+/-0.037 [0.017]
+    500   0.857+/-0.034 [0.727]   0.710+/-0.033 [0.184]   0.615+/-0.024 [0.230]   0.605+/-0.034 [0.013]
+   1000   0.824+/-0.019 [0.762]   0.650+/-0.053 [0.177]   0.550+/-0.022 [0.206]   0.536+/-0.026 [0.016]
+   2000  11.790+/-24.595 [0.757]   0.590+/-0.033 [0.161]   0.488+/-0.018 [0.183]   0.448+/-0.016 [0.038]
+   3680   0.865+/-0.214 [0.753]   0.509+/-0.029 [0.145]   0.436+/-0.023 [0.163]   0.408+/-0.022 [0.080]
+RF: log-log slope of test MAE vs n (n>=500) = -0.172
+LightGBM: log-log slope of test MAE vs n (n>=500) = -0.204
+=== Part D: why ridge explodes in one fold ===
+fold 0: ridge MAE = 0.798  max |pred| = 3.6 eV
+fold 1: ridge MAE = 0.780  max |pred| = 3.8 eV
+fold 2: ridge MAE = 0.779  max |pred| = 3.8 eV
+fold 3: ridge MAE = 0.722  max |pred| = 3.7 eV
+fold 4: ridge MAE = 1.244  max |pred| = 425.7 eV
+  Fe9Co7                 true 0.00  ridge     425.7 eV  max|z| = 302128 (minimum GSmagmom)
+  MgF2                   true 11.10  ridge       2.3 eV  max|z| = 3 (maximum Row)
+  LiF                    true 11.70  ridge       3.0 eV  max|z| = 4 (maximum Row)
+ridge MAE without the 1 compound(s) with |error| > 100 eV: 0.772
+ridge MAE with predictions clipped to [0, 11.7] eV: 0.720

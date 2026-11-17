@@ -1,0 +1,8 @@
+film 4L0 x 4L0 x 3, L0=6.41, A5B5, Delta a=15.0, t=400 (10^4 steps, dt=0.04)
+  unguided: t=400  max S(q)/n=0.148 at |q|=1.010 (period 6.22)  P2=-0.36   [t=100: S/n=0.072, P2=-0.16]
+            S/n along x at q = 2pi/(2L0), 2pi/L0, 3(2pi/L0): 0.0004, 0.0046, 0.0002
+  dense   : t=400  max S(q)/n=0.385 at |q|=0.980 (period 6.41)  P2=+0.98   [t=100: S/n=0.374, P2=+0.97]
+            S/n along x at q = 2pi/(2L0), 2pi/L0, 3(2pi/L0): 0.0022, 0.3855, 0.0175
+  sparse  : t=400  max S(q)/n=0.361 at |q|=0.980 (period 6.41)  P2=+0.96   [t=100: S/n=0.360, P2=+0.95]
+            S/n along x at q = 2pi/(2L0), 2pi/L0, 3(2pi/L0): 0.0012, 0.3615, 0.0130
+wall time 120 s

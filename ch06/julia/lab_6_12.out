@@ -1,0 +1,14 @@
+=== Part A: L2 gradient boosting, depth-2 trees, nu=0.1, n=200, noise sd=0.25 (var 0.0625) ===
+  M=  1: train MSE = 0.3005   test MSE (n=2000) = 0.2833
+  M= 10: train MSE = 0.1153   test MSE (n=2000) = 0.1144
+  M= 50: train MSE = 0.0489   test MSE (n=2000) = 0.0745
+  M=100: train MSE = 0.0399   test MSE (n=2000) = 0.0759
+  M=200: train MSE = 0.0264   test MSE (n=2000) = 0.0827
+  M=500: train MSE = 0.0091   test MSE (n=2000) = 0.0992
+  best test MSE 0.0740 at M=37
+=== Part B: one stump on expt_gap (n=4601), squared loss, lambda=1, eta=1, exact greedy in Julia ===
+  best split found by exhaustive search: mean NpValence < 1.7217
+  left : n=1779  G=  1497.82  H=  1779  -G/(H+lam)=-0.84147
+  right: n=2822  G= -1497.82  H=  2822  -G/(H+lam)=+0.53058
+  gain GL^2/(HL+lam)+GR^2/(HR+lam)-G^2/(H+lam) = 2055.093
+  XGBoost.jl root: feature mean NpValence < 1.7217, gain 2055.093; leaves -0.84147, +0.53058

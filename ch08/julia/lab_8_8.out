@@ -1,0 +1,4 @@
+independent Q-learners      : (C,c)=0.92, (B,c)=0.09 | mean converged payoff 5.08
+independent, lenient update : (A,a)=1.00 | mean converged payoff 11.00
+centralized joint-action Q  : (A,a)=1.00 | mean converged payoff 11.00
+expected payoff of agent-1 actions vs a uniformly random partner: [-6.33, -5.67, 1.67]

@@ -1,0 +1,8 @@
+accepted steps = 504   nfev = 3428   rejected = 67
+  period 1: dt min 0.0001  max 0.1675  ratio 2990
+  period 2: dt min 0.0036  max 0.1670  ratio 46
+  period 3: dt min 0.0035  max 0.1673  ratio 48
+  period 4: dt min 0.0011  max 0.1676  ratio 158
+median dt near perihelion (r<0.25) = 0.0066 ; near aphelion (r>1.75) = 0.1394
+position error after 4 periods |Y(T)-Y0| = 7.56e-06
+energy E0=-0.50000000  E_end=-0.50000000  rel drift=-3.93e-09   (adaptive != symplectic)

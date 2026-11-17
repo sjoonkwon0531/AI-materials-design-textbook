@@ -1,0 +1,28 @@
+n=4601, p=132 -> 132 after variance filter; fold-0 train 3312 / val 368 / test 921
+=== Part A: optimizers (80 epochs, batch 64, constant LR; LR by min val MAE; seeds 0-2) ===
+SGD                3e-02    0.487                  0.496 +/- 0.015             64
+SGD+momentum       3e-03    0.461                  0.485 +/- 0.002             63
+Nesterov           1e-02    0.458                  0.471 +/- 0.008             34
+Adagrad            3e-02    0.468                  0.475 +/- 0.011             32
+RMSProp            1e-03    0.423                  0.503 +/- 0.023             28
+Adam               3e-03    0.436                  0.458 +/- 0.014             15
+AdamW(wd=1e-2)     3e-03    0.428                  0.457 +/- 0.013             15
+=== Part B(i): theta0 = 1, lr 1e-3, lambda 0.5, 2000 steps (AdamW decay alone: 0.368) ===
+sigma    0e+00   Adam+L2 |theta|    0.021   AdamW |theta|    0.368
+sigma    1e-03   Adam+L2 |theta|    0.021   AdamW |theta|    0.372
+sigma    1e-01   Adam+L2 |theta|    0.032   AdamW |theta|    0.372
+sigma    1e+00   Adam+L2 |theta|    0.397   AdamW |theta|    0.372
+sigma    1e+01   Adam+L2 |theta|    0.909   AdamW |theta|    0.372
+=== Part B(ii): Adam(lr 1e-3) + coupled L2 vs AdamW (decoupled), test MAE (seed 0) ===
+lambda   1e-04   Adam+L2: MAE 0.470  ||W||   22.4   |   AdamW: MAE 0.466  ||W||   24.9
+lambda   1e-03   Adam+L2: MAE 0.490  ||W||   14.6   |   AdamW: MAE 0.466  ||W||   24.8
+lambda   1e-02   Adam+L2: MAE 0.512  ||W||    6.0   |   AdamW: MAE 0.466  ||W||   24.3
+lambda   1e-01   Adam+L2: MAE 0.665  ||W||    2.3   |   AdamW: MAE 0.470  ||W||   20.4
+lambda   1e+00   Adam+L2: MAE 0.829  ||W||    1.3   |   AdamW: MAE 0.532  ||W||    9.5
+=== Part C: schedules, L-BFGS, number formats ===
+AdamW constant lr 1e-3            : final 0.466 (min 0.458; final-5 std 0.0065)
+AdamW warmup(5%)+cosine, peak 3e-3: final 0.474 (min 0.457; final-5 std 0.0001)
+L-BFGS full batch (40 x 20 it): test MAE after 200 it 0.468, after 800 it 0.501, min 0.468; train MAE 0.129
+fp16 underflow: [0.0, 1.0013580322265625e-5, 0.0002999305725097656] | scaled by 2^16: [0.0006551742553710938, 0.6552734375, 19.65625] | unscaled in fp32: ["9.997e-09", "9.999e-06", "2.999e-04"]
+bf16 keeps range: ["1.001e-08", "1.001e-05", "2.995e-04"]
+reference LightGBM on fold 0: test MAE 0.427, clipped at 0: 0.415

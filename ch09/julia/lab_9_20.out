@@ -1,0 +1,45 @@
+[free] FNO-2D modes 16, width 20, 4 layers, 1641569 real parameters; 3200 training pairs
+[free] training: 608 s; train loss per epoch: 0.1648 0.0923 0.0796 0.0725 0.0690
+[cons] FNO-2D modes 16, width 20, 4 layers, 1641569 real parameters; 3200 training pairs
+[cons] training: 568 s; train loss per epoch: 0.1645 0.0954 0.0786 0.0700 0.0651
+[cons_pf] FNO-2D modes 16, width 20, 4 layers, 1641569 real parameters; 3040 training triples
+[cons_pf] training: 1222 s; train loss per epoch: 0.4180 0.2282 0.1680 0.1432 0.1322
+=== in-distribution test set: 40 trajectories, |m| <= 0.2 ===
+baselines:  persistence (one step) 0->2.5: 0.978 | 2.5->5: 0.544 | 47.5->50: 0.073 | mean of steps 2..20: 0.176
+solver:     F(2.5) 4.939 -> F(50) 1.864, increases 0 / 760; L(25) 2.755, L(50) 3.371, slope on 5 <= t <= 50: 0.289
+
+--- free: FNO, one-step loss (training 608 s) ---
+  one-step error (true input):   0->2.5: 0.9717 | 2.5->5: 0.1289 | 47.5->50: 0.0123 | mean of steps 2..20: 0.0280
+  rollout from the true c(2.5):  t=5: 0.1289 | t=12.5: 0.3098 | t=25: 0.4681 | t=50: 0.6095
+  [1] mass: max |mean(t) - mean(2.5)| over 40 rollouts x 19 steps = 7.88e-02; mean |mean of one-step increment| = 2.77e-03
+  [2] free energy: increases along the rollouts 38 / 760; one step from true states: F(G(c)) > F(c) in 4 / 760; F(50) = 2.393 (solver 1.864)
+  [3] growth law: L(25) = 2.683, L(50) = 3.247 (solver 2.755, 3.371); slope on 5 <= t <= 50: 0.267 (solver 0.289)
+  bounds: max |c| = 1.576 (solver 1.035);  symmetries: ||G(-c) + G(c)|| / ||G(c)|| = 0.0295,  ||G(Sc) - S G(c)|| / ||G(c)|| = 0.0033
+  OOD |m| = 0.3: one-step (steps 2..20) 0.0387 | rollout t=5 0.1244, t=25 0.4861, t=50 0.7449 | mass drift 9.5e-02 | F increases 46 / 304 | L(50) 2.78 / solver 3.00
+  OOD |m| = 0.4: one-step (steps 2..20) 0.0473 | rollout t=5 0.1717, t=25 0.5121, t=50 0.8201 | mass drift 1.3e-01 | F increases 132 / 304 | L(50) 2.65 / solver 2.78
+  OOD |m| = 0.5: one-step (steps 2..20) 0.0938 | rollout t=5 0.7295, t=25 0.8045, t=50 0.8388 | mass drift 2.5e-01 | F increases 149 / 304 | L(50) 3.03 / solver 2.82
+
+--- cons: FNO + zero mode, one-step loss (training 568 s) ---
+  one-step error (true input):   0->2.5: 0.9211 | 2.5->5: 0.1200 | 47.5->50: 0.0109 | mean of steps 2..20: 0.0253
+  rollout from the true c(2.5):  t=5: 0.1200 | t=12.5: 0.2996 | t=25: 0.4441 | t=50: 0.5730
+  [1] mass: max |mean(t) - mean(2.5)| over 40 rollouts x 19 steps = 1.11e-16; mean |mean of one-step increment| = 4.54e-18
+  [2] free energy: increases along the rollouts 336 / 760; one step from true states: F(G(c)) > F(c) in 8 / 760; F(50) = 3.770 (solver 1.864)
+  [3] growth law: L(25) = 2.650, L(50) = 2.893 (solver 2.755, 3.371); slope on 5 <= t <= 50: 0.222 (solver 0.289)
+  bounds: max |c| = 1.761 (solver 1.035);  symmetries: ||G(-c) + G(c)|| / ||G(c)|| = 0.0272,  ||G(Sc) - S G(c)|| / ||G(c)|| = 0.0035
+  OOD |m| = 0.3: one-step (steps 2..20) 0.0345 | rollout t=5 0.1142, t=25 0.4851, t=50 0.7062 | mass drift 1.1e-16 | F increases 186 / 304 | L(50) 2.07 / solver 3.00
+  OOD |m| = 0.4: one-step (steps 2..20) 0.0407 | rollout t=5 0.1464, t=25 0.4640, t=50 0.7755 | mass drift 1.1e-16 | F increases 217 / 304 | L(50) 1.75 / solver 2.78
+  OOD |m| = 0.5: one-step (steps 2..20) 0.0863 | rollout t=5 0.7341, t=25 0.7791, t=50 0.8048 | mass drift 1.1e-16 | F increases 190 / 304 | L(50) 1.89 / solver 2.82
+
+--- cons_pf: FNO + zero mode, pushforward loss (training 1222 s) ---
+  one-step error (true input):   0->2.5: 0.9011 | 2.5->5: 0.1324 | 47.5->50: 0.0114 | mean of steps 2..20: 0.0273
+  rollout from the true c(2.5):  t=5: 0.1324 | t=12.5: 0.3030 | t=25: 0.4420 | t=50: 0.5625
+  [1] mass: max |mean(t) - mean(2.5)| over 40 rollouts x 19 steps = 1.67e-16; mean |mean of one-step increment| = 5.63e-18
+  [2] free energy: increases along the rollouts 410 / 760; one step from true states: F(G(c)) > F(c) in 8 / 760; F(50) = 5.689 (solver 1.864)
+  [3] growth law: L(25) = 2.651, L(50) = 2.471 (solver 2.755, 3.371); slope on 5 <= t <= 50: 0.165 (solver 0.289)
+  bounds: max |c| = 1.587 (solver 1.035);  symmetries: ||G(-c) + G(c)|| / ||G(c)|| = 0.0329,  ||G(Sc) - S G(c)|| / ||G(c)|| = 0.0042
+  OOD |m| = 0.3: one-step (steps 2..20) 0.0362 | rollout t=5 0.1247, t=25 0.4404, t=50 0.6646 | mass drift 1.1e-16 | F increases 189 / 304 | L(50) 1.92 / solver 3.00
+  OOD |m| = 0.4: one-step (steps 2..20) 0.0397 | rollout t=5 0.1325, t=25 0.4472, t=50 0.6550 | mass drift 1.1e-16 | F increases 192 / 304 | L(50) 1.69 / solver 2.78
+  OOD |m| = 0.5: one-step (steps 2..20) 0.0808 | rollout t=5 0.7179, t=25 0.7037, t=50 0.7860 | mass drift 2.2e-16 | F increases 138 / 304 | L(50) 2.88 / solver 2.82
+
+solver, same symmetry checks: odd 0.0e+00, translation 6.6e-16
+one big step (Dt = 2.5): FNO 10.09 ms, solver (50 steps) 3.26 ms -> speed-up 0.32x; one-off cost 1237 s; no break-even: the solver is faster per big step

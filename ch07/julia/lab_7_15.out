@@ -1,0 +1,10 @@
+=== Part A: CH4 tetrahedral vs square planar, C-H 1.09 A, cutoff 1.5 A ===
+  tetrahedral   |sum_j Y_l| l=0..2 (components) 4.0000 0.0000 0.0000 | l=0..4 (Legendre) 4.0000 0.0000 0.0000 7.8881 6.1101
+  square planar |sum_j Y_l| l=0..2 (components) 4.0000 0.0000 4.4721 | l=0..4 (Legendre) 4.0000 0.0000 4.4721 0.0000 9.9499
+  l_max = 1 cannot separate them (no dipole: l=1 vanishes for both); l = 2 vanishes only for the tetrahedron, l = 3 only for the square
+=== Part B: cost of one equivariant convolution vs l_max (multiplicity 16) ===
+  l_max=0: feature dim   16, TP paths   1, weights/edge    256
+  l_max=1: feature dim   64, TP paths   4, weights/edge   1024
+  l_max=2: feature dim  144, TP paths  11, weights/edge   2816
+  l_max=3: feature dim  256, TP paths  23, weights/edge   5888
+  (timing: BenchmarkTools @btime on the l <= 2 layer of lab_7_14.jl, or on e3nn via PythonCall below)

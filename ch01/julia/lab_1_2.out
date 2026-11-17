@@ -1,0 +1,17 @@
+--- Machine epsilon (measured) ---
+FP64: 2.2204e-16
+FP32: 1.1921e-07
+FP16: 9.7656e-04
+BF16: 7.8125e-03
+
+--- Catastrophic cancellation ---
+x=1e+02: naive(FP32)=4.9973e-03, naive(FP64)=4.9999e-03, robust(FP64)=4.9999e-03
+x=1e+04: naive(FP32)=0.0000e+00, naive(FP64)=5.0000e-05, robust(FP64)=5.0000e-05
+x=1e+06: naive(FP32)=0.0000e+00, naive(FP64)=5.0000e-07, robust(FP64)=5.0000e-07
+x=1e+08: naive(FP32)=0.0000e+00, naive(FP64)=0.0000e+00, robust(FP64)=5.0000e-09
+x=1e+10: naive(FP32)=0.0000e+00, naive(FP64)=0.0000e+00, robust(FP64)=5.0000e-11
+
+--- Sum is not associative in FP ---
+Vectorized sum:    1.0999999046
+Commuted order:    1.0999999046
+Sequential sum:    1.0000000000

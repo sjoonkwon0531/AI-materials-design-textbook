@@ -24,7 +24,7 @@ Companion repository for the Korean textbook *AI-Driven Discovery, Design, and O
 ```
 chNN/
   labs/            본문 Hands-on Lab의 Python 코드와 실행 출력(*.out)
-  julia/           같은 Lab의 Julia 대응 코드
+  julia/           같은 Lab의 Julia 대응 코드와 검증 실행 출력(*.out)
   figures/         본문 그림(PNG)과, Ch.5 이후는 그림 생성 스크립트(make_*.py)
   figure_scripts/  Ch.1–4의 그림 생성 스크립트
   solutions/       연습문제 해답 검증 코드와 출력
@@ -93,6 +93,8 @@ JULIA_CONDAPKG_BACKEND=Null JULIA_PYTHONCALL_EXE=$MLIP_PY_A julia --project=. la
 ```
 
 `lab_10_5.jl`은 MLIP 네 개를 모델마다 따로 실행한 뒤 결과를 합칩니다. `mace`와 `chgnet`은 `MLIP_PY_A`로, `sevennet`과 `mattersim`은 `MLIP_PY_B`로 실행하고, 마지막에 `julia --project=. lab_10_5.jl merge`를 실행합니다.
+
+`chNN/julia/*.out`은 검증 실행(Julia 1.13.4, 저장소의 `Manifest.toml`, CPU 2코어)에서 저장한 출력입니다. 집필 당시의 출력이 아니므로, 패키지 판을 바꾼 뒤 결과가 달라지지 않았는지 확인하는 기준으로 씁니다. 인자를 받는 `lab_10_5.jl`은 인자마다 `lab_10_5_mace.out`처럼 따로 저장했습니다. 경고 줄과 내부 경로는 지웠습니다.
 
 Optim.jl은 1.x로 고정했습니다(`[compat]`). 2.x에서는 Ch.9 Lab이 쓰는 `only_fg!`가 없어졌습니다.
 

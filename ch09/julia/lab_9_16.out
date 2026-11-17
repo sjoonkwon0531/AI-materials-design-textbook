@@ -1,0 +1,17 @@
+[1] Taylor-Green, N=64, nu=1e-2, t=1: rel. L2 error = 4.10e-08
+[2] GRF sample (4 fields): std(w0) = 0.244, max|w0| = 0.711
+    N=64  dt=2.0e-02: error vs dt=2.5e-4 at t=4 = 7.75e-06
+    N=64  dt=1.0e-02: error vs dt=2.5e-4 at t=4 = 1.94e-06   (ratio 4.01)
+    N=64  dt=5.0e-03: error vs dt=2.5e-4 at t=4 = 4.83e-07   (ratio 4.01)
+    N=64  dt=2.5e-03: error vs dt=2.5e-4 at t=4 = 1.20e-07   (ratio 4.03)
+[3] N=64  dt=2.5e-03: error vs N=128 at t=4 (on the 64^2 grid) = 1.02e-07
+[3] N=48  dt=5.0e-03: error vs N=128 at t=4 (on the 64^2 grid) = 4.65e-07
+[3] N=32  dt=5.0e-03: error vs N=128 at t=4 (on the 64^2 grid) = 1.36e-06
+[3] N=24  dt=1.0e-02: error vs N=128 at t=4 (on the 64^2 grid) = 2.49e-05
+[3] N=16  dt=1.0e-02: error vs N=128 at t=4 (on the 64^2 grid) = 1.51e-03
+[4] N=64, t=20: error with 2/3 dealiasing = 4.07e-06, without = 4.07e-06
+[4] N=16, t=20: error with 2/3 dealiasing = 5.54e-03, without = 1.59e-03
+    2/3 mask at N = 64: keeps |k| <= 21 in each direction, 946 of 2112 stored modes
+generated 240 trajectories x 20 unit-time steps (480000 solver steps) in 75.6 s = 15.8 ms per sample per unit time
+std of w at t = 0, 5, 10, 20: 0.255 0.448 0.693 0.956
+persistence error ||w(t+1)-w(t)||/||w(t+1)|| at t = 0, 5, 10, 19: 0.468 0.137 0.078 0.103

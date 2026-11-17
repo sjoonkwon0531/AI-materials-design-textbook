@@ -1,0 +1,6 @@
+RHS = sin(pi x)       = [0.7071, 1.0, 0.7071]
+solution u(., k=0.25) = [0.21151, 0.29912, 0.21151]   <- all positive, physical
+5 implicit steps: loop == D^5 * U0 ?  true   (max diff 1.7e-18)
+spectral radius rho(D_implicit) = 0.299
+explicit D = I + 0.4*T : rho = 0.766 -> STABLE
+explicit D = I + 4.0*T : rho = 12.657 -> UNSTABLE

@@ -1,0 +1,6 @@
+model        status                        drift  std(Etot)   max|L|    <T> | bond mean (W1 vs xTB) [A]
+xTB          stable                   -0.14 meV/ps   0.82 meV   0.0004  361 K | O-H 0.966 (0.000)  C-C 1.536 (0.000)  C-O 1.415 (0.000)
+mlp          UNSTABLE at 0.02 ps        NaN meV/ps   0.26 meV   0.0828  502 K | O-H 1.072 (0.107)  C-C 1.546 (0.023)  C-O 1.280 (0.136)
+mlp_aug      UNSTABLE at 0.03 ps      -0.20 meV/ps   0.00 meV   0.0162  286 K | O-H 1.217 (0.251)  C-C 1.503 (0.043)  C-O 1.158 (0.258)
+mlp_frame    UNSTABLE at 0.03 ps        NaN meV/ps   0.21 meV   0.0000  308 K | O-H 0.973 (0.013)  C-C 1.486 (0.059)  C-O 1.228 (0.187)
+schnet       stable                   -0.07 meV/ps   0.82 meV   0.0000  343 K | O-H 0.966 (0.005)  C-C 1.537 (0.008)  C-O 1.417 (0.004)

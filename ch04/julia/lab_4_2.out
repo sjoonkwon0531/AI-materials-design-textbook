@@ -1,0 +1,25 @@
+--- (1) Weak coupling lamH=0.5, mixing alpha=0.3 ---
+  it  0  E=  5.473618  |dn|=8.790e-01  eps0=1.10336
+  it  1  E=  5.483415  |dn|=6.705e-01  eps0=1.14249
+  it  2  E=  5.486576  |dn|=5.129e-01  eps0=1.17027
+  it  3  E=  5.486328  |dn|=3.932e-01  eps0=1.19024
+  it  4  E=  5.484480  |dn|=3.020e-01  eps0=1.20475
+  it  5  E=  5.482024  |dn|=2.322e-01  eps0=1.21541
+  it  6  E=  5.479484  |dn|=1.788e-01  eps0=1.22330
+  it  7  E=  5.477114  |dn|=1.378e-01  eps0=1.22919
+  it  8  E=  5.475025  |dn|=1.063e-01  eps0=1.23361
+  it  9  E=  5.473243  |dn|=8.200e-02  eps0=1.23695
+  it 10  E=  5.471757  |dn|=6.331e-02  eps0=1.23947
+  it 11  E=  5.470537  |dn|=4.890e-02  eps0=1.24140
+
+  converged in 82 iters,  E = 5.465697
+  KS eigenvalues (lowest 4): [1.2477 2.2122 3.3292 4.3025]
+  electron count = 4.000000 (target 4)
+
+--- (2) Strong coupling lamH=4.0 (200 iterations, no early stop) ---
+ alpha   first |dn|<1e-9   |dn| after 200   verdict
+ 1.00             never       2.81e+00   sloshing (no convergence)
+ 0.50                33       1.35e+00   transient dip, then diverges
+ 0.40                45       1.23e-13   converged
+ 0.30                64       5.67e-15   converged
+ 0.15               138       1.43e-13   converged

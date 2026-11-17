@@ -1,0 +1,23 @@
+=== Part A: Si diamond graphs (a = 5.43 A)
+conventional N=8 r_c=2.5 A: directed edges   32, per atom  4, distinct (i,j)  32, max parallel 1, self-image 0, distances [2.351]
+conventional N=8 r_c=4.0 A: directed edges  128, per atom 16, distinct (i,j)  56, max parallel 4, self-image 0, distances [2.351, 3.84]
+primitive    N=2 r_c=2.5 A: directed edges    8, per atom  4, distinct (i,j)   2, max parallel 4, self-image 0, distances [2.351]
+primitive    N=2 r_c=4.0 A: directed edges   32, per atom 16, distinct (i,j)   4, max parallel 12, self-image 24, distances [2.351, 3.84]
+=== Part B: ethanol graphs (frame 0 of the 300 K xTB trajectory)
+r_c=1.7 A: directed edges  16 (complete graph = 72)
+r_c=2.5 A: directed edges  48 (complete graph = 72)
+r_c=5.0 A: directed edges  72 (complete graph = 72)
+bond-graph Laplacian eigenvalues: [0.0, 0.282, 0.578, 1.0, 1.0, 1.0, 2.373, 4.086, 5.679] | # zero modes = 1
+1.6 A threshold: C-C distance 1.606 A -> # zero modes = 2 (graph splits)
+GNNGraph: 9 nodes, 16 directed edges, adjacency matches: true
+=== Part C: permutation equivariance (untrained SchNet; Float64 input)
+max|h(Px) - P h(x)| = 2.2e-16   |E(Px) - E(x)| = 0.0e+00
+readouts invariant? sum true, mean true, max true; concat (order-dependent) false
+=== Part D: CH4, tetrahedral vs square planar, r_CH = 1.09 A
+tetrahedral  : H-H distances [1.78]
+square planar: H-H distances [1.541, 2.18]
+SchNet r_c=1.5: |E_tet - E_sq| over 3 random inits = 0.0e+00, 0.0e+00, 0.0e+00
+SchNet r_c=5.0: |E_tet - E_sq| over 3 random inits = 1.0e-04, 6.0e-03, 1.1e-03
+angular sums at C:  S_l = sum_{j!=k} P_l(cos theta_jk)
+  tetrahedral  : l=1: -4.0000  l=2: -4.0000  l=3: +4.8889  l=4: +0.1481
+  square planar: l=1: -4.0000  l=2: +0.0000  l=3: -4.0000  l=4: +7.0000
